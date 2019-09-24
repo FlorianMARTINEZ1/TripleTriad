@@ -41,6 +41,7 @@ img {
 .plateau {
   width: 318px;
   height: 333px;
+  /*plateau 3*3 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
