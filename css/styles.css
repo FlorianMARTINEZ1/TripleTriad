@@ -39,8 +39,8 @@ img {
 }
 
 .plateau {
-  width: 306px;
-  height: 321px;
+  width: 318px;
+  height: 333px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -50,6 +50,7 @@ img {
 
 .case {
   background-color: rgb(55, 71, 79, 0.6);
+  border: 2px solid rgb(20, 20, 20, 0.8);
 }
 
 .case1 {
