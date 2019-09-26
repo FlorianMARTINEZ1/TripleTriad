@@ -13,7 +13,7 @@ class Carte {
        return $this->nomCarte;
   }
 
-  public function setId($nomCarte2) {
+  public function setNomCarte($nomCarte2) {
        $this->id = $nomCarte;
   }
 

@@ -25,7 +25,7 @@ class Joueur {
 
 public function __construct( $ps = NULL , $g = NULL) {
   if (!is_null($ps) && !is_null($g)) {
-    $this->ps = $ps;
+    $this->pseudo = $ps;
     $this->Game = $g;
   }
 }
