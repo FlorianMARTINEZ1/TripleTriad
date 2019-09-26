@@ -152,4 +152,9 @@ $value = array(
 
 
 }
+
+$tab_c = Carte::getAllCarte();
+foreach ($tab_c as $key => $value) {
+    $value->afficher();
+}
 ?>
