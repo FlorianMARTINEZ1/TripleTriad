@@ -33,6 +33,10 @@ img {
   margin-right: 0;
 }
 
+div {
+  height: 105px;
+}
+
 .plateau {
   width: 318px;
   height: 333px;
@@ -40,8 +44,8 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  grid-column-gap: 4px;
+  grid-row-gap: 1px;
 }
 
 .case {
