@@ -36,6 +36,27 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
 
     }
 
+
+    $listOfCardJ1= array(
+      '0' => $this->listOfCardInGame['0'],
+      '1' => $this->listOfCardInGame['1'],
+      '2' => $this->listOfCardInGame['2'],
+      '3' => $this->listOfCardInGame['3'],
+      '4' => $this->listOfCardInGame['4'],
+    );
+
+    $listOfCardJ2 = array(
+      '0' => $this->listOfCardInGame['5'],
+      '1' => $this->listOfCardInGame['6'],
+      '2' => $this->listOfCardInGame['7'],
+      '3' => $this->listOfCardInGame['8'],
+      '4' => $this->listOfCardInGame['9'],
+
+    );
+
+
+
+
     for ($i=0; $i < 9; $i++) {
        $this->plateau["$id"]=NULL;
     }
@@ -44,8 +65,8 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
 
     $this->$listOfJoueur = array(
 
-       '0' => new Joueur($listOfJoueurString['0'],$this) ,
-       '1' => new Joueur($listOfJoueurString['1'],$this) ,
+       '0' => new Joueur($listOfJoueurString['0'],$this,$listOfCardJ1) ,
+       '1' => new Joueur($listOfJoueurString['1'],$this,$listOfCardJ2) ,
      );
 
 
@@ -70,14 +91,9 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
   }
 
   public function run(){
+      while(!isFinished()){
 
-
-
-
-
-
-
-
+      }
 
   }
 

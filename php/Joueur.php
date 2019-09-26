@@ -23,12 +23,45 @@ class Joueur {
 
 
 
-public function __construct( $ps = NULL , $g = NULL) {
-  if (!is_null($ps) && !is_null($g)) {
+public function __construct( $ps = NULL , $g = NULL, $deck = NULL) {
+  if (!is_null($ps) && !is_null($g) && !is_null($deck)) {
     $this->pseudo = $ps;
     $this->Game = $g;
+    $this->Deck = $deck;
   }
 }
+
+public function playTurn(){
+    $input;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // une methode d'affichage.
   public function afficher() {
