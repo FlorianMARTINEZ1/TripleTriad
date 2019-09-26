@@ -61,12 +61,19 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
 
     );
 
+    $this->plateau = array(
+      '0' => 0 ,
+      '1' => 0 ,
+      '2' => 0 ,
+      '3' => 0 ,
+      '4' => 0 ,
+      '5' => 0 ,
+      '6' => 0 ,
+      '7' => 0 ,
+      '8' => 0 ,
 
 
-
-    for ($i=0; $i < 9; $i++) {
-       $this->plateau["$id"]=NULL;
-    }
+    );
 
 
 
@@ -98,14 +105,22 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
   }
 
   public function run(){
+    require_once("Carte.php");
       if(!$this->isFinished()){
           $this->listOfJoueur[$this->currentPlayer]->playTurn();
+          for ($i=0; $i <9 ; $i++) {
+            if($this->plateau[$i] instanceof Carte){
+              echo "la case $i à pour carte ";$this->plateau[$i]->afficher2();
+           }
+          }
           if($this->currentPlayer==0){
             $this->currentPlayer=1;
           }
           else{
             $this->currentPlayer=0;
           }
+
+          $this->plateau;
 
       }
       echo "GG";

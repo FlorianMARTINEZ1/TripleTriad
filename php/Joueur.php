@@ -37,6 +37,7 @@ public function playTurn(){
 
   $case = $_GET["case"];
   $this->Game->setCardInBoard($this->Deck[$input],$case);
+  
 
   $this->deck[$input]=NULL;
 

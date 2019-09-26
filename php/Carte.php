@@ -7,6 +7,7 @@ class Carte {
   private $valS;
   private $valO;
   private $valE;
+  private $couleur;
 
 
   public function getNomCarte() {
@@ -15,6 +16,14 @@ class Carte {
 
   public function setNomCarte($nomCarte2) {
        $this->id = $nomCarte;
+  }
+
+  public function getCouleur() {
+       return $this->couleur;
+  }
+
+  public function setCouleur($couleur2) {
+       $this->id = $couleur2;
   }
 
   public function getValN() {
@@ -149,9 +158,11 @@ $value = array(
 
 }
 
-
-
 }
+
+
+
+
 
 //$tab_c = Carte::getAllCarte();
 //foreach ($tab_c as $key => $value) {
