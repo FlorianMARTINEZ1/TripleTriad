@@ -1,3 +1,9 @@
+<?php
+
+  $ok = $_GET["Choose"];
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -26,9 +32,9 @@
     <div class="row">
       <div class="col s4">
         <div class="cards">
-          <div class="case"><a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?Choose=1"> <img id="drag1" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"> </a></div>
-          <div class="case"> <a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?Choose=2"><img id="drag2" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"></a></div>
-          <div class="case"> <a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?Choose=3"><img id="drag3" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"></a></div>
+          <div class="case"> <a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?Choose=1"> <img id="drag1" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"></a></div>
+          <div class="case"> <a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?Choose=2"> <img id="drag2" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"></a></div>
+          <div class="case"> <a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?Choose=3"> <img id="drag3" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"></a></div>
         </div>
         <div class="last cards1">
           <div class="case"> <img id="drag4" src="css/cartes/FF8/Acarnan.bleue.jpg" alt="" draggable="true" ondragstart="drag(event)"></div>
@@ -38,7 +44,7 @@
       <div class="col s4">
         <h3 class="center">Plateau de jeu</h3>
         <div class="plateau">
-          <div class="case case1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=1 >" ?><div class="case case1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
           <div class="case case2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
           <div class="case case3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
           <div class="case case4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>

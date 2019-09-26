@@ -11,6 +11,13 @@ class Game {
   private $currentPlayer;
 
 
+
+
+public function setCardInBoard($id){
+  if($this->currentPlayer==0)
+    $this->plateau["$id"];
+}
+
 public function __construct($id = NULL, $listOfJoueurString = NULL) {
   if (!is_null($id) && !is_null($listOfJoueurString)) {
     require_once("Carte.php");

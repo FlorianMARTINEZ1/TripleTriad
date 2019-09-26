@@ -32,10 +32,8 @@ public function __construct( $ps = NULL , $g = NULL, $deck = NULL) {
 }
 
 public function playTurn(){
-    $input;
-
-
-
+  $input = $_GET["choose"];
+  //$this->Game->
 
 
 }
