@@ -23,11 +23,6 @@ tr, td {
   padding: 0;
 }
 
-.last {
-  margin-left: 15%;
-  width: 65%;
-}
-
 .invi {
   visibility: hidden;
 }
@@ -56,12 +51,22 @@ img {
 
 .cards {
   margin-top: 10%;
-  background-color: rgba(55, 71, 79, 0.6);
-  border: 2px solid rgba(20, 20, 20, 0.8);
   width: 318px;
   height: 109px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+}
+
+.cards1 {
+  margin-top: 5%;
+  margin-left: 18%;
+  width: 211px;
+  height: 109px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 3px;
   grid-row-gap: 3px;
