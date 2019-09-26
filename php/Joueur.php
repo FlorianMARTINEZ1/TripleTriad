@@ -6,6 +6,7 @@ class Joueur {
   private $pseudo;
   private $couleur;
   private $Deck;
+  private $Game;
 
 
   public function getId() {
@@ -22,10 +23,10 @@ class Joueur {
 
 
 
-public function __construct($id = NULL, $ps = NULL) {
-  if (!is_null($id) && !is_null($ps)) {
-    $this->id= $id;
+public function __construct( $ps = NULL , $g = NULL) {
+  if (!is_null($ps) && !is_null($g)) {
     $this->ps = $ps;
+    $this->Game = $g;
   }
 }
 
