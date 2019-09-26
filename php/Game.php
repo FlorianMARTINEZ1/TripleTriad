@@ -13,21 +13,21 @@ class Game {
 
 
 
-public function setCardInBoard($id){
-  if($this->currentPlayer==0)
-    $this->plateau["$id"];
+public function setCardInBoard($nomCarte,$case){
+    $this->plateau["$case"]=$nomCarte;
 }
 
 public function __construct($id = NULL, $listOfJoueurString = NULL) {
   if (!is_null($id) && !is_null($listOfJoueurString)) {
     require_once("Carte.php");
+    require_once("Joueur.php");
 
     $this->id= $id;
     $this->currentPlayer=0;
     //Met toute les carte de la base de donnée dans la listOfCard
-    $this->$listOfCard=Carte::getAllCarte();
+    $this->listOfCard=Carte::getAllCarte();
 
-    if($this->$listOfCard.shuffle()){
+    if(shuffle($this->listOfCard)){
       $this->listOfCardInGame = array(
         '0' => $this->listOfCard['0'],
         '1' => $this->listOfCard['1'],
@@ -70,7 +70,7 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
 
 
 
-    $this->$listOfJoueur = array(
+    $this->listOfJoueur = array(
 
        '0' => new Joueur($listOfJoueurString['0'],$this,$listOfCardJ1) ,
        '1' => new Joueur($listOfJoueurString['1'],$this,$listOfCardJ2) ,
@@ -88,7 +88,7 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
   public function isFinished(){
 
     for ($i=0; $i <9 ; $i++) {
-      if($this->plateau["$i"]==NULL){
+      if(empty($this->plateau[$i])){
         return false;
       }
     }
@@ -98,9 +98,17 @@ public function __construct($id = NULL, $listOfJoueurString = NULL) {
   }
 
   public function run(){
-      while(!isFinished()){
+      if(!$this->isFinished()){
+          $this->listOfJoueur[$this->currentPlayer]->playTurn();
+          if($this->currentPlayer==0){
+            $this->currentPlayer=1;
+          }
+          else{
+            $this->currentPlayer=0;
+          }
 
       }
+      echo "GG";
 
   }
 

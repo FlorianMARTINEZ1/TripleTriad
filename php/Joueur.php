@@ -32,9 +32,15 @@ public function __construct( $ps = NULL , $g = NULL, $deck = NULL) {
 }
 
 public function playTurn(){
-  $input = $_GET["choose"];
-  //$this->Game->
+  if($_GET["Choose"]!=NULL && $_GET["case"]!=NULL){
+  $input = $_GET["Choose"];
 
+  $case = $_GET["case"];
+  $this->Game->setCardInBoard($this->Deck[$input],$case);
+
+  $this->deck[$input]=NULL;
+
+}
 
 }
 

@@ -1,7 +1,13 @@
 <?php
-
+  require_once("./php/Game.php");
   $ok = $_GET["Choose"];
+  $listOfJoueur = array(
+    '0' => "infinium",
+    '1' => "tamaman",
 
+  );
+  $Game = new Game(1,$listOfJoueur);
+  $Game->run();
 
 ?>
 <!DOCTYPE html>
@@ -45,14 +51,14 @@
         <h3 class="center">Plateau de jeu</h3>
         <div class="plateau">
           <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=1 >" ?><div class="case case1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
-          <div class="case case2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div class="case case9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=2 >" ?><div class="case case2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=3 >" ?><div class="case case3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=4 >" ?><div class="case case4" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=5 >" ?><div class="case case5" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=6 >" ?><div class="case case6" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=7 >" ?><div class="case case7" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=8 >" ?><div class="case case8" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
+          <?php echo "<a href=".$_SERVER['PHP_SELF']."?Choose=".$ok."&case=9 >" ?><div class="case case9" ondrop="drop(event)" ondragover="allowDrop(event)"></div><?php echo "</a>" ?>
         </div>
       </div>
 
