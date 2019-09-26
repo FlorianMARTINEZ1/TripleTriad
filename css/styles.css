@@ -23,11 +23,6 @@ tr, td {
   padding: 0;
 }
 
-.last {
-  margin-left: 15%;
-  width: 65%;
-}
-
 .invi {
   visibility: hidden;
 }
@@ -60,6 +55,18 @@ img {
   height: 109px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+}
+
+.cards1 {
+  margin-top: 5%;
+  margin-left: 18%;
+  width: 211px;
+  height: 109px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 3px;
   grid-row-gap: 3px;
