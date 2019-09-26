@@ -10,7 +10,7 @@ class Game {
 
 
 public function __construct($id = NULL, $listOfJoueurString = NULL) {
-  if (!is_null($id) && !is_null($listOfJoueur)) {
+  if (!is_null($id) && !is_null($listOfJoueurString)) {
     require_once("Carte.php");
 
     $this->id= $id;

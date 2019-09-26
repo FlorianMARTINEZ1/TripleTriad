@@ -2,19 +2,19 @@
 <?php
 class Carte {
 
-  private $id;
+  private $nomCarte;
   private $valN;
   private $valS;
   private $valO;
   private $valE;
 
 
-  public function getId() {
-       return $this->id;
+  public function getNomCarte() {
+       return $this->nomCarte;
   }
 
-  public function setId($id2) {
-       $this->id = $id2;
+  public function setId($nomCarte2) {
+       $this->id = $nomCarte;
   }
 
   public function getValN() {
@@ -50,10 +50,10 @@ class Carte {
 
 
 
-public function __construct($id = NULL, $N = NULL, $S = NULL, $O = NULL, $E = NULL) {
-  if (!is_null($id) && !is_null($N) && !is_null($S) && !is_null($O) && !is_null($E)) {
+public function __construct($nomCarte = NULL, $N = NULL, $S = NULL, $O = NULL, $E = NULL) {
+  if (!is_null($nomCarte) && !is_null($N) && !is_null($S) && !is_null($O) && !is_null($E)) {
 
-    $this->id= $id;
+    $this->nomCarte= $nomCarte;
     $this->valE = $E;
     $this->valN = $N;
     $this->valS = $S;
@@ -63,7 +63,7 @@ public function __construct($id = NULL, $N = NULL, $S = NULL, $O = NULL, $E = NU
 
   // une methode d'affichage.
   public function afficher() {
-    echo "<p>La carte ".$this->id." de Valeur : N = ".$this->valN." , S = ".$this->valS." , O = ".$this->valO." , E = ".$this->valE.".</p>";
+    echo "<p>La carte ".$this->nomCarte." de Valeur : N = ".$this->valN." , S = ".$this->valS." , O = ".$this->valO." , E = ".$this->valE.".</p>";
   }
 
 
@@ -91,15 +91,15 @@ public function afficher2(){
   }
 
 
-  public static function getCarteById($id) {
+  public static function getCarteByNom($nomCarte) {
 
   try {
-    $sql = "SELECT * from carte WHERE id=:id_tag";
+    $sql = "SELECT * from carte WHERE nomCarte=:nomCarte";
     // Préparation de la requête
     $req_prep = Model::$pdo->prepare($sql);
 
     $values = array(
-        "id_tag" => $id,
+        "nomCarte" => $nomCarte,
         //nomdutag => valeur, ...
     );
     // On donne les valeurs et on exécute la requête
@@ -125,11 +125,11 @@ public function afficher2(){
 public function save(){
   require_once "Model.php";
   try{
-  $sql = "INSERT INTO carte (id,valN,valS,valO,valE) VALUES (:id,:val_N,:val_S,:val_O,:val_E)";
+  $sql = "INSERT INTO carte (nomCarte,valN,valS,valO,valE) VALUES (:nomCarte,:val_N,:val_S,:val_O,:val_E)";
   $req_prep = Model::$pdo->prepare($sql);
 
 $value = array(
-      "id" => $this->id,
+      "nomCarte" => $this->nomCarte,
       "val_N" => $this->valN,
       "val_S" => $this->valS,
       "val_O" => $this->valO,
