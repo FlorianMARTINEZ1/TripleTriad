@@ -11,7 +11,7 @@ table {
 }
 
 tbody {
-  background-color: rgb(176, 190, 197, 0.3);
+  background-color: rgba(176, 190, 197, 0.3);
   /* ancien blue grey*/
   border: 2px solid black;
 }
@@ -50,8 +50,21 @@ img {
 }
 
 .case {
-  background-color: rgb(55, 71, 79, 0.6);
-  border: 2px solid rgb(20, 20, 20, 0.8);
+  background-color: rgba(55, 71, 79, 0.6);
+  border: 2px solid rgba(20, 20, 20, 0.8);
+}
+
+.cards {
+  margin-top: 10%;
+  background-color: rgba(55, 71, 79, 0.6);
+  border: 2px solid rgba(20, 20, 20, 0.8);
+  width: 318px;
+  height: 109px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
 }
 
 .case1 {
