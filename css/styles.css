@@ -23,10 +23,6 @@ tr, td {
   padding: 0;
 }
 
-.invi {
-  visibility: hidden;
-}
-
 img {
   width: 100px;
   height: 100px;
@@ -34,7 +30,7 @@ img {
 }
 
 div {
-  height: 105px;
+  height: 104px;
 }
 
 .plateau {
@@ -54,7 +50,7 @@ div {
 }
 
 .cards {
-  margin-top: 10%;
+  margin-top: 45%;
   width: 318px;
   height: 109px;
   display: grid;
