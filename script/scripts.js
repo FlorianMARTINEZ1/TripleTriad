@@ -1,31 +1,11 @@
-class Joueur {
-  constructor(pseudo) {
-    this.pseudo = pseudo;
-    this.case = [];
-  }
-
-  ajouter(numcase) {
-    this.case.push(numcase);
-  }
-
-  afficher() {
-    for (const ncase of this.case) {
-      console.log(ncase);
-    }
-  }
-
-  toString() {
-    return `${this.pseudo}`;
-  }
-
-}
-
-var j1 = new Joueur('babou');
+//import * as joueur from './Joueur.js';
+include('./Joueur.js');
 
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
+//let j1 = new Joueur('babou');
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);
 }
@@ -41,4 +21,8 @@ function drop(ev) {
   j1.ajouter(ev.target.classList[1]);
   console.log(j1.toString());
   j1.afficher();
+}
+
+function include(fileName){
+  document.write("<script type='text/html' src='"+fileName+"'></script>" );
 }
