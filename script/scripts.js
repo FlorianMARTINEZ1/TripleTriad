@@ -38,7 +38,6 @@ function drop(ev) {
   img.setAttribute('pointer-events', 'none');
   img.removeAttribute('draggable');
   img.removeAttribute('ondragstart');
-  var j1 = new Joueur('babou');
   j1.ajouter(ev.target.classList[1]);
   console.log(j1.toString());
   j1.afficher();
