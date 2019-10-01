@@ -1,11 +1,13 @@
 //import * as joueur from './Joueur.js';
 //include('./Joueur.js');
-import {Joueur} from './Joueur';
+import {Joueur} from './Joueur.js ';
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
-//let j1 = new Joueur('babou');
+let j1 = new Joueur('babou');
+
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);
 }
