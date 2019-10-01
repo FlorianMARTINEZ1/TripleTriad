@@ -1,6 +1,6 @@
 //import * as joueur from './Joueur.js';
-include('./Joueur.js');
-
+//include('./Joueur.js');
+import {Joueur} from './Joueur';
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -23,6 +23,6 @@ function drop(ev) {
   j1.afficher();
 }
 
-function include(fileName){
+/*function include(fileName){
   document.write("<script type='text/html' src='"+fileName+"'></script>" );
-}
+}*/

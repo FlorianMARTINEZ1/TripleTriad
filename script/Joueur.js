@@ -1,4 +1,4 @@
-class Joueur {
+export class Joueur {
     constructor(pseudo) {
       this.pseudo = pseudo;
       this.case = [];
@@ -22,4 +22,4 @@ class Joueur {
     }
 }
 
-export {Joueur};
+//export {Joueur};
