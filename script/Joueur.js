@@ -1,25 +1,26 @@
 export class Joueur {
-    constructor(pseudo) {
-      this.pseudo = pseudo;
-      this.case = [];
-    }
-    test(){
-      console.log("test");
-    }
+  constructor(pseudo) {
+    this.pseudo = pseudo;
+    this.case = [];
+  }
 
-    ajouter(numcase) {
-      this.case.push(numcase);
-    }
+  test() {
+    console.log('test');
+  }
 
-    afficher() {
-      for (const ncase of this.case) {
-        console.log(ncase);
-      }
-    }
+  ajouter(numcase) {
+    this.case.push(numcase);
+  }
 
-    toString() {
-      return `${this.pseudo}`;
+  afficher() {
+    for (const ncase of this.case) {
+      console.log(ncase);
     }
+  }
+
+  toString() {
+    return `${this.pseudo}`;
+  }
 }
 
 //export {Joueur};
