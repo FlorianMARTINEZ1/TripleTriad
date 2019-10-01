@@ -1,10 +1,6 @@
 //import * as joueur from './Joueur.js';
-<<<<<<< HEAD
-//include("./Joueur.js");
-=======
 include('./Joueur.js');
 
->>>>>>> d269b38b2cc46f4aa04b9a6f5bf84c9c503402a2
 function allowDrop(ev) {
   ev.preventDefault();
 }
