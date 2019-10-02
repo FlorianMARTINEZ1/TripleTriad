@@ -1,6 +1,27 @@
-//import * as joueur from './Joueur.js';
-//include('./Joueur.js');
-import {Joueur} from './Joueur.js ';
+class Joueur {
+  constructor(pseudo) {
+    this.pseudo = pseudo;
+    this.case = [];
+  }
+
+  test() {
+    console.log('test');
+  }
+
+  ajouter(numcase) {
+    this.case.push(numcase);
+  }
+
+  afficher() {
+    for (const ncase of this.case) {
+      console.log(ncase);
+    }
+  }
+
+  toString() {
+    return `${this.pseudo}`;
+  }
+}
 
 function allowDrop(ev) {
   ev.preventDefault();
@@ -24,7 +45,3 @@ function drop(ev) {
   console.log(j1.toString());
   j1.afficher();
 }
-
-/*function include(fileName){
-  document.write("<script type='text/html' src='"+fileName+"'></script>" );
-}*/
