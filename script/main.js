@@ -21,13 +21,10 @@ function request(callback)
 
 function readData(sData)
 {
-   var carte = JSON.parse(sData);
-   let carte1 = new Card;
-   for (var i = 0; i < 5; i++) {
-
-   }
-   carte1 = carte[0];
-   alert(carte1);
+   var cartes = JSON.parse(sData);
+  /* let carte1 = new Card(carte[0]['nomCarte'],carte[0]['valN'],carte[0]['valS'],
+   carte[0]['valO'],carte[0]['valE']);*/
+   return cartes;
 }
 
 request(readData);

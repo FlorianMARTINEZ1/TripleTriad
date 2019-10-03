@@ -1,17 +1,17 @@
 //Class Card
 
 class Card {
-  constructor(pseudo,valN,valS,valO,valE,Couleur) {
+  constructor(pseudo,valN,valS,valO,valE) {
     this.pseudo = pseudo;
     this.valN=valN;
     this.valS=valS;
     this.valO=valO;
     this.valE=valE;
-    this.couleur=Couleur;
+
 
   }
 
   toString(){
-    con
+    return "la carte "+this.pseudo;
   }
 }
