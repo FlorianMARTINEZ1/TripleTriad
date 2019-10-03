@@ -4,6 +4,35 @@ function allowDrop(ev) {
 
 let j1 = new Joueur('babou');
 
+
+function request(callback)
+        {
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+                    callback(xhr.responseText);
+                }
+            };
+
+            xhr.open("GET", "php/test.php", true);
+            xhr.send(null);
+        }
+
+function readData(sData)
+{
+   var carte = JSON.parse(sData);
+   let carte1 = new Card;
+   for (var i = 0; i < 5; i++) {
+
+   }
+   carte1 = carte[0];
+   alert(carte1);
+}
+
+request(readData);
+
+
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);
 }

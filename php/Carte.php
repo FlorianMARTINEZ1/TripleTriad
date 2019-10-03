@@ -86,9 +86,12 @@ public function afficher2(){
     $rep = Model::$pdo->query("SELECT * FROM carte");
 
     $rep->setFetchMode(PDO::FETCH_CLASS, 'Carte');
-    $tab_carte = $rep->fetchAll();
 
-    return $tab_carte;
+    echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+
+    /*$tab_carte = $rep->fetchAll();*/
+
+  /*  return $tab_carte;*/
     } catch (PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur

@@ -7,6 +7,11 @@ class Card {
     this.valS=valS;
     this.valO=valO;
     this.valE=valE;
+    this.couleur=Couleur;
 
+  }
+
+  toString(){
+    con
   }
 }
