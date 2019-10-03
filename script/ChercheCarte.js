@@ -26,30 +26,51 @@ function readData(sData)
    for (var i = 0; i < 10; i++) {
      tabId.push(getRandomIntInclusive(0,112));// choisie une carte entre 0 et 112
    }
-
-   let carte1 = new Card(cartes[0]['nomCarte'],cartes[0]['valN'],cartes[0]['valS'],
-   cartes[0]['valO'],cartes[0]['valE']);//  => créer une carte
-   let carte2 = new Card(cartes[1]['nomCarte'],cartes[1]['valN'],cartes[1]['valS'],
-   cartes[1]['valO'],cartes[1]['valE']);//  => créer une carte
-   let carte3 = new Card(cartes[2]['nomCarte'],cartes[2]['valN'],cartes[2]['valS'],
-   cartes[2]['valO'],cartes[2]['valE']);//  => créer une carte
-   let carte4 = new Card(cartes[3]['nomCarte'],cartes[3]['valN'],cartes[3]['valS'],
-   cartes[3]['valO'],cartes[3]['valE']);//  => créer une carte
-   let carte5 = new Card(cartes[4]['nomCarte'],cartes[4]['valN'],cartes[4]['valS'],
-   cartes[4]['valO'],cartes[4]['valE']);//  => créer une carte
-   let carte6 = new Card(cartes[5]['nomCarte'],cartes[5]['valN'],cartes[5]['valS'],
-   cartes[5]['valO'],cartes[5]['valE']);//  => créer une carte
-   let carte7 = new Card(cartes[6]['nomCarte'],cartes[6]['valN'],cartes[6]['valS'],
-   cartes[6]['valO'],cartes[6]['valE']);//  => créer une carte
-   let carte8 = new Card(cartes[7]['nomCarte'],cartes[7]['valN'],cartes[7]['valS'],
-   cartes[7]['valO'],cartes[7]['valE']);//  => créer une carte
-   let carte9 = new Card(cartes[8]['nomCarte'],cartes[8]['valN'],cartes[8]['valS'],
-   cartes[8]['valO'],cartes[8]['valE']);//  => créer une carte
-   let carte10 = new Card(cartes[9]['nomCarte'],cartes[9]['valN'],cartes[9]['valS'],
-   cartes[9]['valO'],cartes[9]['valE']);//  => créer une carte
+   let carte1 = new Card(cartes[tabId[0]]['nomCarte'],cartes[tabId[0]]['valN'],cartes[tabId[0]]['valS'],
+   cartes[tabId[0]]['valO'],cartes[tabId[0]]['valE']);//  => créer une carte
+   let carte2 = new Card(cartes[tabId[1]]['nomCarte'],cartes[tabId[1]]['valN'],cartes[tabId[1]]['valS'],
+   cartes[tabId[1]]['valO'],cartes[tabId[1]]['valE']);//  => créer une carte
+   let carte3 = new Card(cartes[tabId[2]]['nomCarte'],cartes[tabId[2]]['valN'],cartes[tabId[2]]['valS'],
+   cartes[tabId[2]]['valO'],cartes[tabId[2]]['valE']);//  => créer une carte
+   let carte4 = new Card(cartes[tabId[3]]['nomCarte'],cartes[tabId[3]]['valN'],cartes[tabId[3]]['valS'],
+   cartes[tabId[3]]['valO'],cartes[tabId[3]]['valE']);//  => créer une carte
+   let carte5 = new Card(cartes[tabId[4]]['nomCarte'],cartes[tabId[4]]['valN'],cartes[tabId[4]]['valS'],
+   cartes[tabId[4]]['valO'],cartes[tabId[4]]['valE']);//  => créer une carte
+   let carte6 = new Card(cartes[tabId[5]]['nomCarte'],cartes[tabId[5]]['valN'],cartes[tabId[5]]['valS'],
+   cartes[tabId[5]]['valO'],cartes[tabId[5]]['valE']);//  => créer une carte
+   let carte7 = new Card(cartes[tabId[6]]['nomCarte'],cartes[tabId[6]]['valN'],cartes[tabId[6]]['valS'],
+   cartes[tabId[6]]['valO'],cartes[tabId[6]]['valE']);//  => créer une carte
+   let carte8 = new Card(cartes[tabId[7]]['nomCarte'],cartes[tabId[7]]['valN'],cartes[tabId[7]]['valS'],
+   cartes[tabId[7]]['valO'],cartes[tabId[7]]['valE']);//  => créer une carte
+   let carte9 = new Card(cartes[tabId[8]]['nomCarte'],cartes[tabId[8]]['valN'],cartes[tabId[8]]['valS'],
+   cartes[tabId[8]]['valO'],cartes[tabId[8]]['valE']);//  => créer une carte
+   let carte10 = new Card(cartes[tabId[9]]['nomCarte'],cartes[tabId[9]]['valN'],cartes[tabId[9]]['valS'],
+   cartes[tabId[9]]['valO'],cartes[tabId[9]]['valE']);//  => créer une carte
 
    let tabCartes = [carte1,carte2,carte3,carte4,carte5,carte6,carte7,carte8,carte9,carte10];
 
+   //afficher les carte sur le tableau de jeu
+
+   let element1 = document.getElementById("drag1");
+   element1.removeAttribute("src");element1.setAttribute("src","css/cartes/FF8/"+carte1.donneNom()+".bleue.jpg")
+   let element2 = document.getElementById("drag2");
+   element2.removeAttribute("src");element2.setAttribute("src","css/cartes/FF8/"+carte2.donneNom()+".bleue.jpg")
+   let element3 = document.getElementById("drag3");
+   element3.removeAttribute("src");element3.setAttribute("src","css/cartes/FF8/"+carte3.donneNom()+".bleue.jpg")
+   let element4 = document.getElementById("drag4");
+   element4.removeAttribute("src");element4.setAttribute("src","css/cartes/FF8/"+carte4.donneNom()+".bleue.jpg")
+   let element5 = document.getElementById("drag5");
+   element5.removeAttribute("src");element5.setAttribute("src","css/cartes/FF8/"+carte5.donneNom()+".bleue.jpg")
+   let element6 = document.getElementById("drag6");
+   element6.removeAttribute("src");element6.setAttribute("src","css/cartes/FF8/"+carte6.donneNom()+".bleue.jpg")
+   let element7 = document.getElementById("drag7");
+   element7.removeAttribute("src");element7.setAttribute("src","css/cartes/FF8/"+carte7.donneNom()+".bleue.jpg")
+   let element8 = document.getElementById("drag8");
+   element8.removeAttribute("src");element8.setAttribute("src","css/cartes/FF8/"+carte8.donneNom()+".bleue.jpg")
+   let element9 = document.getElementById("drag9");
+   element9.removeAttribute("src");element9.setAttribute("src","css/cartes/FF8/"+carte9.donneNom()+".bleue.jpg")
+   let element10 = document.getElementById("drag10");
+   element10.removeAttribute("src");element10.setAttribute("src","css/cartes/FF8/"+carte10.donneNom()+".bleue.jpg")
 
    return tabCartes; // return un tableau des 10 carte au hasard;
 }
