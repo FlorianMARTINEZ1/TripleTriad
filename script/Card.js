@@ -12,6 +12,6 @@ class Card {
   }
 
   toString(){
-    return "la carte "+this.pseudo;
+    return "la carte "+this.pseudo+" de valeurs N ="+this.valN+", S="+this.valS+", O="this.valO+", E="+this.valE;
   }
 }
