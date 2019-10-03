@@ -62,15 +62,15 @@ function readData(sData)
    let element5 = document.getElementById("drag5");
    element5.removeAttribute("src");element5.setAttribute("src","css/cartes/FF8/"+carte5.donneNom()+".bleue.jpg")
    let element6 = document.getElementById("drag6");
-   element6.removeAttribute("src");element6.setAttribute("src","css/cartes/FF8/"+carte6.donneNom()+".bleue.jpg")
+   element6.removeAttribute("src");element6.setAttribute("src","css/cartes/FF8/"+carte6.donneNom()+".rouge.jpg")
    let element7 = document.getElementById("drag7");
-   element7.removeAttribute("src");element7.setAttribute("src","css/cartes/FF8/"+carte7.donneNom()+".bleue.jpg")
+   element7.removeAttribute("src");element7.setAttribute("src","css/cartes/FF8/"+carte7.donneNom()+".rouge.jpg")
    let element8 = document.getElementById("drag8");
-   element8.removeAttribute("src");element8.setAttribute("src","css/cartes/FF8/"+carte8.donneNom()+".bleue.jpg")
+   element8.removeAttribute("src");element8.setAttribute("src","css/cartes/FF8/"+carte8.donneNom()+".rouge.jpg")
    let element9 = document.getElementById("drag9");
-   element9.removeAttribute("src");element9.setAttribute("src","css/cartes/FF8/"+carte9.donneNom()+".bleue.jpg")
+   element9.removeAttribute("src");element9.setAttribute("src","css/cartes/FF8/"+carte9.donneNom()+".rouge.jpg")
    let element10 = document.getElementById("drag10");
-   element10.removeAttribute("src");element10.setAttribute("src","css/cartes/FF8/"+carte10.donneNom()+".bleue.jpg")
+   element10.removeAttribute("src");element10.setAttribute("src","css/cartes/FF8/"+carte10.donneNom()+".rouge.jpg")
 
    return tabCartes; // return un tableau des 10 carte au hasard;
 }
