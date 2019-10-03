@@ -1,3 +1,8 @@
+// On renvoie un entier aléatoire entre une valeur min (incluse)
+// et une valeur max (incluse).
+// Attention : si on utilisait Math.round(), on aurait une distribution
+// non uniforme !
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -49,7 +54,7 @@ function readData(sData)
 
    let tabCartes = [carte1,carte2,carte3,carte4,carte5,carte6,carte7,carte8,carte9,carte10];
 
-   //afficher les carte sur le tableau de jeu
+   //afficher les cartes sur le tableau de jeu
 
    let element1 = document.getElementById("drag1");
    element1.removeAttribute("src");element1.setAttribute("src","css/cartes/FF8/"+carte1.donneNom()+".bleue.jpg")
