@@ -1,9 +1,9 @@
 //Class GAME
 
 class Game {
-  constructor(id) {
-    j1 = new Joueur("Joueur 1");
-    j2 = new Joueur("Joueur 2");
+  constructor(joueur1, joueur2, id) {
+    let j1 = new Joueur(joueur1);
+    let j2 = new Joueur(joueur2);
     this.listJoueur = [j1, j2];
     this.currentPlayer= getRandomIntInclusive(0,1);
     this.id = id;

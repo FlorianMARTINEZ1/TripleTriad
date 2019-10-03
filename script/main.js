@@ -3,7 +3,7 @@ function allowDrop(ev) {
 }
 
 let j1 = new Joueur('babou');
-
+let g1 = new Game('Rick', 'Morty', 1);
 
 function request(callback)
         {
