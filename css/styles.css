@@ -140,12 +140,18 @@ div {
   display: none;
 }
 
-.formulaire, .form {
+.formulaire, .form, .formdiv {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+}
+
+.formdiv {
+  background-image: radial-gradient(circle, #488392, #223d44);
+  opacity: 0.8;
+  width: 85%;
 }
 
 /* label color */
