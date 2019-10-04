@@ -2,20 +2,20 @@
 class Joueur {
   constructor(pseudo) {
     this.pseudo = pseudo;
-    this.case = [];
+    this.carteJoue = [];
   }
 
   test() {
     console.log('test');
   }
 
-  ajouter(numcase) {
-    this.case.push(numcase);
+  ajouter(carte) {
+    this.carteJoue.push(carte);
   }
 
   afficher() {
-    for (const ncase of this.case) {
-      console.log(ncase);
+    for (const carte of this.carteJoue) {
+      console.log(carte);
     }
   }
 
