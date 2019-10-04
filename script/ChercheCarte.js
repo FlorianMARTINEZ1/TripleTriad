@@ -29,7 +29,7 @@ function readData(sData)
    var tabId = [];
 
    for (var i = 0; i < 10; i++) {
-     tabId.push(getRandomIntInclusive(0,112));// choisie une carte entre 0 et 112
+     tabId.push(getRandomIntInclusive(0,111));// choisie une carte entre 0 et 111
    }
    let carte1 = new Card(cartes[tabId[0]]['nomCarte'],cartes[tabId[0]]['valN'],cartes[tabId[0]]['valS'],
    cartes[tabId[0]]['valO'],cartes[tabId[0]]['valE']);//  => créer une carte
