@@ -2,6 +2,7 @@
 // et une valeur max (incluse).
 // Attention : si on utilisait Math.round(), on aurait une distribution
 // non uniforme !
+let allCards;
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -15,7 +16,7 @@ function request(callback)
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
-                    callback(xhr.responseText); // on récupère les données.
+                    allCards= callback(xhr.responseText); // on récupère les données.
                 }
             };
 
