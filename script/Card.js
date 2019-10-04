@@ -19,5 +19,19 @@ class Card {
     return ""+this.nomCarte;
   }
 
+  donneValN(){
+    return this.valN;
+  }
+
+  donneValE(){
+    return this.valE;
+  }
+
+  donneValS(){
+    return this.valS;
+  }
+  donneValO(){
+    return this.valO;
+  }
 
 }

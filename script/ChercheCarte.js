@@ -77,6 +77,5 @@ function readData(sData)
    let element10 = document.getElementById("drag10");
    element10.setAttribute("src","css/cartes/FF8/"+carte10.donneNom()+".rouge.jpg")
 
-
    return tabCartes; // return un tableau des 10 carte au hasard;
 }
