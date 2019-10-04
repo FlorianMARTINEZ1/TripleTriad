@@ -3,8 +3,9 @@ function allowDrop(ev) {
 }
 
 let g1 = new Game('Rick', 'Morty', 1);
-let toutCartes = request(readData); // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
+tabCartes = request(readData); // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
 /*console.log(toutCartes);*/
+
 
 
 function drag(ev) {
