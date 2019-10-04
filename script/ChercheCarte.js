@@ -58,6 +58,7 @@ function readData(sData)
 
    let element1 = document.getElementById("drag1");
    element1.setAttribute("src","css/cartes/FF8/"+carte1.donneNom()+".bleue.jpg")
+    element1.setAttribute("class",carte1.donneNom())
    let element2 = document.getElementById("drag2");
    element2.setAttribute("src","css/cartes/FF8/"+carte2.donneNom()+".bleue.jpg")
    let element3 = document.getElementById("drag3");
