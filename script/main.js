@@ -18,5 +18,4 @@ function drop(ev) {
   img.setAttribute('pointer-events', 'none');
   img.removeAttribute('draggable');
   img.removeAttribute('ondragstart');
-  console.log(j1.toString());
 }
