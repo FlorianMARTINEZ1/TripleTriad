@@ -2,16 +2,13 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-let g1 = new Game('Rick', 'Morty', 1);
-<<<<<<< HEAD
-tabCartes = request(readData); // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
-/*console.log(toutCartes);*/
-=======
-let toutCartes = alert(request(readData));
- // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
->>>>>>> 88c41eba689063540a597d56ae5bba1713faa53c
 
-/*console.log(toutCartes);*/
+let g1 = new Game('Rick', 'Morty', 1);
+request(readData);
+ // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
+
+
+
 
 
 function drag(ev) {
@@ -26,5 +23,4 @@ function drop(ev) {
   img.setAttribute('pointer-events', 'none');
   img.removeAttribute('draggable');
   img.removeAttribute('ondragstart');
-
 }
