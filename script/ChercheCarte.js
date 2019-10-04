@@ -57,25 +57,26 @@ function readData(sData)
    //afficher les cartes sur le tableau de jeu
 
    let element1 = document.getElementById("drag1");
-   element1.removeAttribute("src");element1.setAttribute("src","css/cartes/FF8/"+carte1.donneNom()+".bleue.jpg")
+   element1.setAttribute("src","css/cartes/FF8/"+carte1.donneNom()+".bleue.jpg")
    let element2 = document.getElementById("drag2");
-   element2.removeAttribute("src");element2.setAttribute("src","css/cartes/FF8/"+carte2.donneNom()+".bleue.jpg")
+   element2.setAttribute("src","css/cartes/FF8/"+carte2.donneNom()+".bleue.jpg")
    let element3 = document.getElementById("drag3");
-   element3.removeAttribute("src");element3.setAttribute("src","css/cartes/FF8/"+carte3.donneNom()+".bleue.jpg")
+   element3.setAttribute("src","css/cartes/FF8/"+carte3.donneNom()+".bleue.jpg")
    let element4 = document.getElementById("drag4");
-   element4.removeAttribute("src");element4.setAttribute("src","css/cartes/FF8/"+carte4.donneNom()+".bleue.jpg")
+   element4.setAttribute("src","css/cartes/FF8/"+carte4.donneNom()+".bleue.jpg")
    let element5 = document.getElementById("drag5");
-   element5.removeAttribute("src");element5.setAttribute("src","css/cartes/FF8/"+carte5.donneNom()+".bleue.jpg")
+   element5.setAttribute("src","css/cartes/FF8/"+carte5.donneNom()+".bleue.jpg")
    let element6 = document.getElementById("drag6");
-   element6.removeAttribute("src");element6.setAttribute("src","css/cartes/FF8/"+carte6.donneNom()+".rouge.jpg")
+   element6.setAttribute("src","css/cartes/FF8/"+carte6.donneNom()+".rouge.jpg")
    let element7 = document.getElementById("drag7");
-   element7.removeAttribute("src");element7.setAttribute("src","css/cartes/FF8/"+carte7.donneNom()+".rouge.jpg")
+   element7.setAttribute("src","css/cartes/FF8/"+carte7.donneNom()+".rouge.jpg")
    let element8 = document.getElementById("drag8");
-   element8.removeAttribute("src");element8.setAttribute("src","css/cartes/FF8/"+carte8.donneNom()+".rouge.jpg")
+   element8.setAttribute("src","css/cartes/FF8/"+carte8.donneNom()+".rouge.jpg")
    let element9 = document.getElementById("drag9");
-   element9.removeAttribute("src");element9.setAttribute("src","css/cartes/FF8/"+carte9.donneNom()+".rouge.jpg")
+   element9.setAttribute("src","css/cartes/FF8/"+carte9.donneNom()+".rouge.jpg")
    let element10 = document.getElementById("drag10");
-   element10.removeAttribute("src");element10.setAttribute("src","css/cartes/FF8/"+carte10.donneNom()+".rouge.jpg")
+   element10.setAttribute("src","css/cartes/FF8/"+carte10.donneNom()+".rouge.jpg")
+
 
    return tabCartes; // return un tableau des 10 carte au hasard;
 }
