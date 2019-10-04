@@ -2,7 +2,6 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-let j1 = new Joueur('babou');
 let g1 = new Game('Rick', 'Morty', 1);
 let toutCartes = request(readData); // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
 
@@ -19,7 +18,5 @@ function drop(ev) {
   img.setAttribute('pointer-events', 'none');
   img.removeAttribute('draggable');
   img.removeAttribute('ondragstart');
-  j1.ajouter(ev.target.classList[1]);
   console.log(j1.toString());
-  j1.afficher();
 }
