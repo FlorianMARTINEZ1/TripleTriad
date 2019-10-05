@@ -37,12 +37,12 @@ function confrontation(carteJoue, caseJoue){
     for(var i=0;i<allCards.length;i++){
       if(allCards[i].donneNom()==carteJoue){
         return allCards[i];
-        
+
       }
     }
   }
   let c = findCard(carteJoue);
- 
+
   caseN = Number(caseJoue[4])-3;
   caseE = Number(caseJoue[4])+1;
   caseS = Number(caseJoue[4])+3;
@@ -51,6 +51,10 @@ function confrontation(carteJoue, caseJoue){
     let N = document.getElementsByClassName('case'+caseN)[0].firstElementChild;
     if(N!==null){
       let cartN = findCard(N.className);
+      if(cartN.donneCouleur() != c.donneCouleur()){
+          N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+"."+c.donneCouleur()+".jpg")
+        }
+
       console.log(cartN);
     }
   }
@@ -58,6 +62,9 @@ function confrontation(carteJoue, caseJoue){
     let S = document.getElementsByClassName('case'+caseS)[0].firstElementChild;
     if(S!==null){
       let cartS = findCard(S.className);
+      if(cartS.donneCouleur() != c.donneCouleur()){
+          S.setAttribute("src","css/cartes/FF8/"+cartS.donneNom()+"."+c.donneCouleur()+".jpg")
+        }
       console.log(cartS);
     }
   }
@@ -65,6 +72,9 @@ function confrontation(carteJoue, caseJoue){
     let E = document.getElementsByClassName('case'+caseE)[0].firstElementChild;
     if(E!==null){
       let cartE = findCard(E.className);
+      if(cartE.donneCouleur() != c.donneCouleur()){
+          E.setAttribute("src","css/cartes/FF8/"+cartE.donneNom()+"."+c.donneCouleur()+".jpg")
+        }
       console.log(cartE);
     }
   }
@@ -72,8 +82,10 @@ function confrontation(carteJoue, caseJoue){
     let O = document.getElementsByClassName('case'+caseO)[0].firstElementChild;
     if(O!==null){
       let cartO = findCard(O.className);
+      if(cartO.donneCouleur() != c.donneCouleur()){
+          O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+"."+c.donneCouleur()+".jpg")
+        }
       console.log(cartO);
     }
   }
 }
-
