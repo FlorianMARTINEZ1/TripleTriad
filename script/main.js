@@ -7,9 +7,15 @@ let g1 = new Game('Rick', 'Morty', 1);
 let j1 = new Joueur("moi");
 request(readData); // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
 
+let g2;
 
-
-
+function initialisation() {
+  var joueurUn = document.getElementById('joueur1');
+  var joueurDeux = document.getElementById('joueur2');
+  g2 = new Game(joueurUn, joueurDeux, 2);
+  document.getElementById('formgame').setAttribute('display', 'none');
+  document.getElementById('plateaujeu').setAttribute('display', 'block');
+}
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);

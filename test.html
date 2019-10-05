@@ -22,7 +22,7 @@
 
 <body>
 
-  <div class=" form">
+  <div id="formgame" class="form">
     <div class="formdiv">
 
     </div>
@@ -30,21 +30,21 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate">
-            <label for="first_name">Joueur 1</label>
+            <input id="joueur1" type="text" class="validate">
+            <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Joueur 2</label>
+            <input id="joueur2" type="text" class="validate">
+            <label for="joueur2">Joueur 2</label>
           </div>
         </div>
         <div class="row center">
-          <a class="waves-effect waves-light ff8 btn " onclick="envoieMessage()">Envoyer</a>
+          <a class="waves-effect waves-light ff8 btn " onclick="initialisation()">Envoyer</a>
         </div>
     </div>
   </div>
 
-  <div class="container jeu">
+  <div id="plateaujeu" class="container jeu">
     <div class="row">
       <div class="col s4 gauche">
         <div class="cards">
