@@ -1,3 +1,5 @@
+
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -18,23 +20,60 @@ function drop(ev) {
   var data = ev.dataTransfer.getData('text');
   var img = ev.target.appendChild(document.getElementById(data));
   ev.target.removeAttribute('ondrop');
+  ev.target.removeAttribute('ondragover');
   img.setAttribute('pointer-events', 'none');
   img.removeAttribute('draggable');
   img.removeAttribute('ondragstart');
-  console.log(allCards);
-  confrontation(img.classList[0]);
-  j1.ajouter(img.classList[0]);
-    j1.afficher();
+  img.removeAttribute('id');
+  confrontation(img.className, ev.target.classList[1]);
+  j1.ajouter(img.className);
 
 }
 
-function confrontation(carteJoue){
-  let c;
-  for(var i=0;i<allCards.length;i++){
-    if(allCards[i].donneNom()==carteJoue){
-      c = allCards[i];
-      break;
+
+
+function confrontation(carteJoue, caseJoue){
+  var findCard = function(carteJoue){
+    for(var i=0;i<allCards.length;i++){
+      if(allCards[i].donneNom()==carteJoue){
+        return allCards[i];
+        
+      }
     }
   }
-  c.donneNom();
+  let c = findCard(carteJoue);
+ 
+  caseN = Number(caseJoue[4])-3;
+  caseE = Number(caseJoue[4])+1;
+  caseS = Number(caseJoue[4])+3;
+  caseO = Number(caseJoue[4])-1;
+  if(caseN>=1&&(caseN<=6)){ // Nord(VPN)
+    let N = document.getElementsByClassName('case'+caseN)[0].firstElementChild;
+    if(N!==null){
+      let cartN = findCard(N.className);
+      console.log(cartN);
+    }
+  }
+  if((caseS>=4)&&(caseS<=9)){ // Sud
+    let S = document.getElementsByClassName('case'+caseS)[0].firstElementChild;
+    if(S!==null){
+      let cartS = findCard(S.className);
+      console.log(cartS);
+    }
+  }
+  if((caseE-1)%3!==0){ // Est
+    let E = document.getElementsByClassName('case'+caseE)[0].firstElementChild;
+    if(E!==null){
+      let cartE = findCard(E.className);
+      console.log(cartE);
+    }
+  }
+  if(caseO%3!==0){ // Ouest
+    let O = document.getElementsByClassName('case'+caseO)[0].firstElementChild;
+    if(O!==null){
+      let cartO = findCard(O.className);
+      console.log(cartO);
+    }
+  }
 }
+
