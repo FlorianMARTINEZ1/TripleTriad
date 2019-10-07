@@ -5,7 +5,7 @@ class Conf
     private static $databases = array(
     // Le nom d'hote est webinfo a l'IUT
     // ou localhost sur votre machine
-    'hostname' => 'localhost',
+    'hostname' => 'webinfo',
     // A l'IUT, vous avez une BDD nommee comme votre login
     // Sur votre machine, vous devrez creer une BDD
     'database' => 'martinezf',
@@ -14,7 +14,7 @@ class Conf
     'login' => 'projet',
     // A l'IUT, c'est votre mdp (INE par defaut)
     // Sur votre machine personelle, vous avez creez ce mdp a l'installation
-    'password' => 'projet'
+    'password' => 'projetFF8'
   );
 
     public static function getLogin()
