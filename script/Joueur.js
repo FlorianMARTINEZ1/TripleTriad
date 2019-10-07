@@ -6,7 +6,11 @@ class Joueur {
   }
 
   test() {
-    console.log('test');
+    console.log(this.pseudo);
+  }
+
+  getName() {
+    return this.pseudo;
   }
 
   ajouter(carte) {
@@ -23,4 +27,5 @@ class Joueur {
     return `${this.pseudo}`;
   }
 }
+
 // FIN CLASS JOUEUR
