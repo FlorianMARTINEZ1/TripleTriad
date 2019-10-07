@@ -50,7 +50,7 @@ div {
 }
 
 .cards {
-  margin-top: 45%;
+  margin-top: 15%;
   width: 318px;
   height: 109px;
   display: grid;
@@ -58,6 +58,15 @@ div {
   grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 3px;
   grid-row-gap: 3px;
+}
+
+h4.nickname {
+  margin-top: 20%;
+  color: red;
+}
+
+.tonTour {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
 }
 
 .cards1 {
@@ -174,4 +183,19 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 /* label color focus */
 input[type=text]:not(.browser-default):focus:not([readonly])+label {
   color: #1f897f;
+}
+
+.input-field>label:not(.label-icon).active {
+  transform: translateY(-14px) scale(0.8);
+  transform-origin: 0 0;
+}
+
+.waves-effect.ff8:hover {
+  background-color: #65a4b3;
+}
+
+.waves-effect.ff8 {
+  /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(72, 131, 146, 1);
 }

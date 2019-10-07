@@ -2,10 +2,11 @@
 
 class Game {
   constructor(joueur1, joueur2, ids) {
-    let j1 = new Joueur(joueur1);
-    let j2 = new Joueur(joueur2);
+    console.log(joueur1);
+    var j1 = new Joueur(joueur1);
+    var j2 = new Joueur(joueur2);
     this.listPlayer = [j1, j2];
-    this.currentPlayer= getRandomIntInclusive(0,1);
+    this.currentPlayer = getRandomIntInclusive(0, 1);
     this.id = ids;
     if(this.currentPlayer==1){
       document.getElementById('drag1').setAttribute('draggable','false');

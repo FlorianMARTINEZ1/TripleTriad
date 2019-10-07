@@ -1,15 +1,33 @@
-
-
 function allowDrop(ev) {
   ev.preventDefault();
 }
-let g1 = new Game('Rick', 'Morty', 1);
-let j1 = new Joueur("moi");
-request(readData); // appelle la fonction request et reçoit toute les 10 cartes de la BD prit au hasard
 
+var g1 = new Game('Rick', 'Morty', 1);
+//var j1 = new Joueur('moi');
 
+request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
 
+var g2;
 
+//Test initialisation partie (Entrer deux pseudo + affichage plateau)
+function initialisation() {
+  var joueurUn = document.getElementById('joueur1').value;
+  var joueurDeux = document.getElementById('joueur2').value;
+  g2 = new Game(joueurUn, joueurDeux, 2);
+  document.getElementById('formgame').style.display = 'none';
+  document.getElementById('plateaujeu').style.display = 'block';
+  document.getElementById('un').innerHTML = g2.getJun();
+  document.getElementById('deux').innerHTML = g2.getDeux();
+
+  //mise en avant premier joueur
+  if (g2.getIdCurrent() == 0) {
+    document.getElementById('un').classList.add('tonTour');
+  } else {
+    document.getElementById('deux').classList.add('tonTour');
+  }
+
+  g2.description();
+}
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);
@@ -30,18 +48,16 @@ function drop(ev) {
   g1.setTurn();
 }
 
-
-
-function confrontation(carteJoue, caseJoue){
-  var findCard = function(carteJoue){
-    for(var i=0;i<allCards.length;i++){
-      if(allCards[i].donneNom()==carteJoue){
+function confrontation(carteJoue, caseJoue) {
+  var findCard = function(carteJoue) {
+    for (var i = 0; i < allCards.length; i++) {
+      if (allCards[i].donneNom() == carteJoue) {
         return allCards[i];
-
       }
     }
-  }
-  let c = findCard(carteJoue);
+  };
+
+  var c = findCard(carteJoue);
 
   caseN = Number(caseJoue[4])-3;
   caseE = Number(caseJoue[4])+1;

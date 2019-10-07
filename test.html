@@ -22,7 +22,7 @@
 
 <body>
 
-  <div class=" form">
+  <div id="formgame" class="form">
     <div class="formdiv">
 
     </div>
@@ -30,20 +30,24 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate">
-            <label for="first_name">Joueur 1</label>
+            <input id="joueur1" type="text" class="validate">
+            <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Joueur 2</label>
+            <input id="joueur2" type="text" class="validate">
+            <label for="joueur2">Joueur 2</label>
           </div>
+        </div>
+        <div class="row center">
+          <a class="waves-effect waves-light ff8 btn " onclick="initialisation()">Envoyer</a>
         </div>
     </div>
   </div>
 
-  <div class="containe jeu">
+  <div id="plateaujeu" class="container jeu">
     <div class="row">
       <div class="col s4 gauche">
+        <h4 id="un" class="center nickname"></h4>
         <div class="cards">
           <div class="case"><img id="drag1" class="jbleu" alt="" draggable="true" ondragstart="drag(event)"></div>
           <div class="case"> <img id="drag2" class="jbleu" alt="" draggable="true" ondragstart="drag(event)"></div>
@@ -73,6 +77,7 @@
 
 
       <div class="col s4 droite">
+        <h4 id="deux" class="center nickname"></h4>
         <div class="cards">
           <div class="case"> <img id="drag6" class="jrouge" alt="" draggable="true" ondragstart="drag(event)"></div>
           <div class="case"> <img id="drag7" class="jrouge" alt="" draggable="true" ondragstart="drag(event)"></div>
@@ -87,6 +92,8 @@
     </div>
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="./script/Card.js"></script>
   <script type="text/javascript" src="./script/ChercheCarte.js"></script>
   <script type="text/javascript" src="./script/Joueur.js"></script>
