@@ -18,17 +18,17 @@ class Card {
   }
 
   donneValN(){
-    return this.valN;
+    return parseInt(this.valN,10);
   }
 
   donneValE(){
-    return this.valE;
+    return parseInt(this.valE,10);
   }
 
   donneValS(){
-    return this.valS;
+    return parseInt(this.valS,10);
   }
   donneValO(){
-    return this.valO;
+    return parseInt(this.valO,10);
   }
 }
