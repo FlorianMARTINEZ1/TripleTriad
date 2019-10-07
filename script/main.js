@@ -54,14 +54,9 @@ function drop(ev) {
  */
 
 function confrontation(carteJoue, caseJoue) {
-<<<<<<< HEAD
+
   var findCard = function (carteJoue) {
-=======
-  /**
-   * Fonction permettant de récupérer l'object de type Carte ayant comme nom donné en paramètre
-   */
-  var findCard = function(carteJoue) {
->>>>>>> 044bcc0de1469a54da0d3bb3e02975ad42600eab
+
     for (var i = 0; i < allCards.length; i++) {
       if (allCards[i].donneNom() == carteJoue) {
         return allCards[i];
@@ -149,7 +144,7 @@ function confrontation(carteJoue, caseJoue) {
             g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartO));
           }
         }
-      }else{ 
+      }else{
         if(g1.listPlayer[0].possede(cartO)){
           if(cartO.donneValE()<c.donneValO()){
             O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".rouge.jpg");
