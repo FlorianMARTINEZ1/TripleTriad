@@ -17,6 +17,10 @@ class Joueur {
     this.carteJoue.push(carte);
   }
 
+  /** 
+   * Vérifie dans la liste de nom de carte du joueur si le nom de la carte donnée en paramètre
+   * est dans cette liste.
+   */
   possede(carte){
     for(var i= 0; i < this.carteJoue.length; i++){
       if(this.carteJoue[i]===carte.donneNom()) return true;
@@ -24,6 +28,10 @@ class Joueur {
     return false
   }
 
+  /**
+   * Récupère le nom de la carte donnée en paramètre depuis la liste du joueur,
+   * la supprime et la retourne.
+   */
   retrieveCard(carte) {
     for(var i= 0; i < this.carteJoue.length; i++){
       if(this.carteJoue[i]==carte.donneNom()) {
