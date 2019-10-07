@@ -20,13 +20,12 @@ function initialisation() {
   document.getElementById('deux').innerHTML = g2.getDeux();
 
   //mise en avant premier joueur
-  if (g2.getIdCurrent() == 0) {
+  if (g2.currentPlayer == 0) {
     document.getElementById('un').classList.add('tonTour');
   } else {
     document.getElementById('deux').classList.add('tonTour');
   }
 
-  g2.description();
 }
 
 function drag(ev) {
@@ -45,6 +44,14 @@ function drop(ev) {
   img.removeAttribute('id');
   g1.listPlayer[g1.currentPlayer].ajouter(img.className);
   confrontation(img.className, ev.target.classList[1]);
+  if (g2.currentPlayer === 0) {
+    document.getElementById('un').classList.remove('tonTour');
+    document.getElementById('deux').classList.add('tonTour');
+  } else {
+    document.getElementById('deux').classList.remove('tonTour');
+    document.getElementById('un').classList.add('tonTour');
+  }
+
   g1.setTurn();
 }
 
@@ -55,7 +62,7 @@ function drop(ev) {
 
 function confrontation(carteJoue, caseJoue) {
 
-  var findCard = function (carteJoue) {
+  var findCard = function(carteJoue) {
 
     for (var i = 0; i < allCards.length; i++) {
       if (allCards[i].donneNom() == carteJoue) {
@@ -66,88 +73,88 @@ function confrontation(carteJoue, caseJoue) {
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
 
-  caseN = Number(caseJoue[4])-3; /** On récupère le numéro des cases */
-  caseE = Number(caseJoue[4])+1;
-  caseS = Number(caseJoue[4])+3;
-  caseO = Number(caseJoue[4])-1;
-  if(caseN>=1&&(caseN<=6)){ // Nord(VPN) Condition permettant de savoir si la carte courante peut avoir une carte au nord
-    let N = document.getElementsByClassName('case'+caseN)[0].firstElementChild; /**On récupère l'image qui contient en classe le nom de la carte */
-    if(N!==null){ // Si la case n'est pas vide
+  caseN = Number(caseJoue[4]) - 3; /** On récupère le numéro des cases */
+  caseE = Number(caseJoue[4]) + 1;
+  caseS = Number(caseJoue[4]) + 3;
+  caseO = Number(caseJoue[4]) - 1;
+  if (caseN >= 1 && (caseN <= 6)) { // Nord(VPN) Condition permettant de savoir si la carte courante peut avoir une carte au nord
+    let N = document.getElementsByClassName('case' + caseN)[0].firstElementChild; /**On récupère l'image qui contient en classe le nom de la carte */
+    if (N !== null) { // Si la case n'est pas vide
       let cartN = findCard(N.className); // cartN : Objet carte, au nord de la carte courante
-      if(g1.currentPlayer==0){ // joueur bleu
-        if(g1.listPlayer[1].possede(cartN)){ // Si l'ennemi possède la carte
-          if(cartN.donneValS()<c.donneValN()){ // Si notre carte gagne, on rentre dans la condition
-            N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".bleue.jpg"); // On change la couleur
+      if (g1.currentPlayer == 0) { // joueur bleu
+        if (g1.listPlayer[1].possede(cartN)) { // Si l'ennemi possède la carte
+          if (cartN.donneValS() < c.donneValN()) { // Si notre carte gagne, on rentre dans la condition
+            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + ".bleue.jpg"); // On change la couleur
             g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartN)); // On déplace la carte de liste (on donne donc la carte à l'autre joueur)
           }
         }
-      }else{ // joueur rouge
-        if(g1.listPlayer[0].possede(cartN)){
-          if(cartN.donneValS()<c.donneValN()){
-            N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".rouge.jpg");
+      } else { // joueur rouge
+        if (g1.listPlayer[0].possede(cartN)) {
+          if (cartN.donneValS() < c.donneValN()) {
+            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + ".rouge.jpg");
             g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartN));
           }
         }
       }
     }
   }
-  if((caseS>=4)&&(caseS<=9)){ // Sud
-    let S = document.getElementsByClassName('case'+caseS)[0].firstElementChild;
-    if(S!==null){
+  if ((caseS >= 4) && (caseS <= 9)) { // Sud
+    let S = document.getElementsByClassName('case' + caseS)[0].firstElementChild;
+    if (S !== null) {
       let cartS = findCard(S.className);
-      if(g1.currentPlayer==0){
-        if(g1.listPlayer[1].possede(cartS)){
-          if(cartS.donneValN()<c.donneValS()){
-            S.setAttribute("src","css/cartes/FF8/"+cartS.donneNom()+".bleue.jpg");
+      if (g1.currentPlayer == 0) {
+        if (g1.listPlayer[1].possede(cartS)) {
+          if (cartS.donneValN() < c.donneValS()) {
+            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + ".bleue.jpg");
             g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartS));
           }
         }
-      }else{
-        if(g1.listPlayer[0].possede(cartS)){
-          if(cartS.donneValN()<c.donneValS()){
-            S.setAttribute("src","css/cartes/FF8/"+cartS.donneNom()+".rouge.jpg");
+      } else {
+        if (g1.listPlayer[0].possede(cartS)) {
+          if (cartS.donneValN() < c.donneValS()) {
+            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + ".rouge.jpg");
             g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartS));
           }
         }
       }
     }
   }
-  if((caseE-1)%3!==0){ // Est
-    let E = document.getElementsByClassName('case'+caseE)[0].firstElementChild;
-    if(E!==null){
+  if ((caseE - 1) % 3 !== 0) { // Est
+    let E = document.getElementsByClassName('case' + caseE)[0].firstElementChild;
+    if (E !== null) {
       let cartE = findCard(E.className);
-      if(g1.currentPlayer==0){
-        if(g1.listPlayer[1].possede(cartE)){
-          if(cartE.donneValO()<c.donneValE()){
-            E.setAttribute("src","css/cartes/FF8/"+cartE.donneNom()+".bleue.jpg");
+      if (g1.currentPlayer == 0) {
+        if (g1.listPlayer[1].possede(cartE)) {
+          if (cartE.donneValO() < c.donneValE()) {
+            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + ".bleue.jpg");
             g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartE));
           }
         }
-      }else{
-        if(g1.listPlayer[0].possede(cartE)){
-          if(cartE.donneValO()<c.donneValE()){
-            E.setAttribute("src","css/cartes/FF8/"+cartE.donneNom()+".rouge.jpg");
+      } else {
+        if (g1.listPlayer[0].possede(cartE)) {
+          if (cartE.donneValO() < c.donneValE()) {
+            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + ".rouge.jpg");
             g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartE));
           }
         }
       }
     }
   }
-  if(caseO%3!==0){ // Ouest
-    let O = document.getElementsByClassName('case'+caseO)[0].firstElementChild;
-    if(O!==null){
+  if (caseO % 3 !== 0) { // Ouest
+    let O = document.getElementsByClassName('case' + caseO)[0].firstElementChild;
+    if (O !== null) {
       let cartO = findCard(O.className);
-      if(g1.currentPlayer==0){
-        if(g1.listPlayer[1].possede(cartO)){
-          if(cartO.donneValE()<c.donneValO()){
-            O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".bleue.jpg");
+      if (g1.currentPlayer == 0) {
+        if (g1.listPlayer[1].possede(cartO)) {
+          if (cartO.donneValE() < c.donneValO()) {
+            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + ".bleue.jpg");
             g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartO));
           }
         }
-      }else{
-        if(g1.listPlayer[0].possede(cartO)){
-          if(cartO.donneValE()<c.donneValO()){
-            O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".rouge.jpg");
+      } else {
+        if (g1.listPlayer[0].possede(cartO)) {
+          if (cartO.donneValE() < c.donneValO()) {
+            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + ".rouge.jpg");
             g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartO));
           }
         }

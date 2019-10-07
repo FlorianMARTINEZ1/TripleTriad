@@ -9,7 +9,7 @@ class Joueur {
     console.log(this.pseudo);
   }
 
-  getName() {
+  getName() {
     return this.pseudo;
   }
 
@@ -17,13 +17,13 @@ class Joueur {
     this.carteJoue.push(carte);
   }
 
-  /** 
+  /**
    * Vérifie dans la liste de nom de carte du joueur si le nom de la carte donnée en paramètre
    * est dans cette liste.
    */
-  possede(carte){
-    for(var i= 0; i < this.carteJoue.length; i++){
-      if(this.carteJoue[i]===carte.donneNom()) return true;
+  possede(carte) {
+    for (var i = 0; i < this.carteJoue.length; i++) {
+      if (this.carteJoue[i] === carte.donneNom()) return true;
     }
     return false
   }
@@ -33,16 +33,16 @@ class Joueur {
    * la supprime et la retourne.
    */
   retrieveCard(carte) {
-    for(var i= 0; i < this.carteJoue.length; i++){
-      if(this.carteJoue[i]==carte.donneNom()) {
+    for (var i = 0; i < this.carteJoue.length; i++) {
+      if (this.carteJoue[i] == carte.donneNom()) {
         let a = this.carteJoue[i];
-        this.carteJoue[i]= null;
+        this.carteJoue[i] = null;
         return a;
       }
     }
   }
 
-  afficher(){
+  afficher() {
     for (const carte of this.carteJoue) {
       console.log(carte);
     }
