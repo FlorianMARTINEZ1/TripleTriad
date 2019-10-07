@@ -11,10 +11,10 @@ class Game {
   }
 
   setTurn() {
-    if (this.currentPlayer === this.listPlayer[0]) {
-      this.currentPlayer = this.listPlayer[1];
+    if (this.currentPlayer === 0) {
+      this.currentPlayer = 1;
     } else {
-      this.currentPlayer = this.listPlayer[0];
+      this.currentPlayer = 0;
     }
   }
 
