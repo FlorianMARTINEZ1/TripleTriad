@@ -40,7 +40,7 @@ function drop(ev) {
   ev.target.removeAttribute('ondrop');
   ev.target.removeAttribute('ondragover');
   img.setAttribute('pointer-events', 'none');
-  img.setAttribute('draggable','false');
+  img.setAttribute('draggable', 'false');
   img.removeAttribute('ondragstart');
   img.removeAttribute('id');
   g1.listPlayer[g1.currentPlayer].ajouter(img.className);
@@ -49,7 +49,7 @@ function drop(ev) {
 }
 
 function confrontation(carteJoue, caseJoue) {
-  var findCard = function(carteJoue) {
+  var findCard = function (carteJoue) {
     for (var i = 0; i < allCards.length; i++) {
       if (allCards[i].donneNom() == carteJoue) {
         return allCards[i];
