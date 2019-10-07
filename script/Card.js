@@ -1,15 +1,12 @@
 //Class Card
 
 class Card {
-  constructor(nomCarte,valN,valS,valO,valE,couleur) {
+  constructor(nomCarte,valN,valS,valO,valE) {
     this.nomCarte = nomCarte;
     this.valN=valN;
     this.valS=valS;
     this.valO=valO;
-    this.valE=valE;
-    this.couleur=couleur;
-
-
+    this.valE=valE
   }
 
   toString(){
@@ -34,8 +31,4 @@ class Card {
   donneValO(){
     return this.valO;
   }
-  donneCouleur(){
-    return this.couleur;
-  }
-
 }

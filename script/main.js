@@ -22,12 +22,12 @@ function drop(ev) {
   ev.target.removeAttribute('ondrop');
   ev.target.removeAttribute('ondragover');
   img.setAttribute('pointer-events', 'none');
-  img.removeAttribute('draggable');
+  img.setAttribute('draggable','false');
   img.removeAttribute('ondragstart');
   img.removeAttribute('id');
+  g1.listPlayer[g1.currentPlayer].ajouter(img.className);
   confrontation(img.className, ev.target.classList[1]);
-  j1.ajouter(img.className);
-
+  g1.setTurn();
 }
 
 
@@ -51,41 +51,84 @@ function confrontation(carteJoue, caseJoue){
     let N = document.getElementsByClassName('case'+caseN)[0].firstElementChild;
     if(N!==null){
       let cartN = findCard(N.className);
-      if(cartN.donneCouleur() != c.donneCouleur()){
-          N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+"."+c.donneCouleur()+".jpg")
+      if(g1.currentPlayer==0){
+        if(g1.listPlayer[1].possede(cartN)){
+          if(cartN.donneValS()<c.donneValN()){
+            N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".bleue.jpg");
+            g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartN));
+          }
         }
-
-      console.log(cartN);
+      }else{
+        if(g1.listPlayer[0].possede(cartN)){
+          if(cartN.donneValS()<c.donneValN()){
+            N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".rouge.jpg");
+            g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartN));
+          }
+        }
+      }
     }
   }
   if((caseS>=4)&&(caseS<=9)){ // Sud
     let S = document.getElementsByClassName('case'+caseS)[0].firstElementChild;
     if(S!==null){
       let cartS = findCard(S.className);
-      if(cartS.donneCouleur() != c.donneCouleur()){
-          S.setAttribute("src","css/cartes/FF8/"+cartS.donneNom()+"."+c.donneCouleur()+".jpg")
+      if(g1.currentPlayer==0){
+        if(g1.listPlayer[1].possede(cartS)){
+          if(cartS.donneValN()<c.donneValS()){
+            S.setAttribute("src","css/cartes/FF8/"+cartS.donneNom()+".bleue.jpg");
+            g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartS));
+          }
         }
-      console.log(cartS);
+      }else{
+        if(g1.listPlayer[0].possede(cartS)){
+          if(cartS.donneValN()<c.donneValS()){
+            S.setAttribute("src","css/cartes/FF8/"+cartS.donneNom()+".rouge.jpg");
+            g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartS));
+          }
+        }
+      }
     }
   }
   if((caseE-1)%3!==0){ // Est
     let E = document.getElementsByClassName('case'+caseE)[0].firstElementChild;
     if(E!==null){
       let cartE = findCard(E.className);
-      if(cartE.donneCouleur() != c.donneCouleur()){
-          E.setAttribute("src","css/cartes/FF8/"+cartE.donneNom()+"."+c.donneCouleur()+".jpg")
+      if(g1.currentPlayer==0){
+        if(g1.listPlayer[1].possede(cartE)){
+          if(cartE.donneValO()<c.donneValE()){
+            E.setAttribute("src","css/cartes/FF8/"+cartE.donneNom()+".bleue.jpg");
+            g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartE));
+          }
         }
-      console.log(cartE);
+      }else{
+        if(g1.listPlayer[0].possede(cartE)){
+          if(cartE.donneValO()<c.donneValE()){
+            E.setAttribute("src","css/cartes/FF8/"+cartE.donneNom()+".rouge.jpg");
+            g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartE));
+          }
+        }
+      }
     }
   }
   if(caseO%3!==0){ // Ouest
     let O = document.getElementsByClassName('case'+caseO)[0].firstElementChild;
     if(O!==null){
       let cartO = findCard(O.className);
-      if(cartO.donneCouleur() != c.donneCouleur()){
-          O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+"."+c.donneCouleur()+".jpg")
+      if(g1.currentPlayer==0){ //bleu
+        if(g1.listPlayer[1].possede(cartO)){
+          if(cartO.donneValE()<c.donneValO()){
+            O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".bleue.jpg");
+            g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartO));
+          }
         }
-      console.log(cartO);
+      }else{  //rouge
+        if(g1.listPlayer[0].possede(cartO)){
+          if(cartO.donneValE()<c.donneValO()){
+            O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".rouge.jpg");
+            g1.listPlayer[1].ajouter(g1.listPlayer[0].retrieveCard(cartO));
+          }
+        }
+      }
     }
   }
 }
