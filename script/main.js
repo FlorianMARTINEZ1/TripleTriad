@@ -48,7 +48,15 @@ function drop(ev) {
   g1.setTurn();
 }
 
+/**
+ * Test en haut, en bas, a droite et à gauche si il y a des cartes
+ * si oui, on compare les valeurs pour ensuite changer la couleur si le joueur gagne
+ */
+
 function confrontation(carteJoue, caseJoue) {
+  /**
+   * Fonction permettant de récupérer l'object de type Carte ayant comme nom donné en paramètre
+   */
   var findCard = function(carteJoue) {
     for (var i = 0; i < allCards.length; i++) {
       if (allCards[i].donneNom() == carteJoue) {
@@ -57,24 +65,24 @@ function confrontation(carteJoue, caseJoue) {
     }
   };
 
-  var c = findCard(carteJoue);
+  var c = findCard(carteJoue); /** c : la carte ayant été jouée */
 
-  caseN = Number(caseJoue[4])-3;
+  caseN = Number(caseJoue[4])-3; /** On récupère le numéro des cases */
   caseE = Number(caseJoue[4])+1;
   caseS = Number(caseJoue[4])+3;
   caseO = Number(caseJoue[4])-1;
-  if(caseN>=1&&(caseN<=6)){ // Nord(VPN)
-    let N = document.getElementsByClassName('case'+caseN)[0].firstElementChild;
-    if(N!==null){
-      let cartN = findCard(N.className);
-      if(g1.currentPlayer==0){
-        if(g1.listPlayer[1].possede(cartN)){
-          if(cartN.donneValS()<c.donneValN()){
-            N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".bleue.jpg");
-            g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartN));
+  if(caseN>=1&&(caseN<=6)){ // Nord(VPN) Condition permettant de savoir si la carte courante peut avoir une carte au nord
+    let N = document.getElementsByClassName('case'+caseN)[0].firstElementChild; /**On récupère l'image qui contient en classe le nom de la carte */
+    if(N!==null){ // Si la case n'est pas vide
+      let cartN = findCard(N.className); // cartN : Objet carte, au nord de la carte courante
+      if(g1.currentPlayer==0){ // joueur bleu
+        if(g1.listPlayer[1].possede(cartN)){ // Si l'ennemi possède la carte
+          if(cartN.donneValS()<c.donneValN()){ // Si notre carte gagne, on rentre dans la condition
+            N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".bleue.jpg"); // On change la couleur
+            g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartN)); // On déplace la carte de liste (on donne donc la carte à l'autre joueur)
           }
         }
-      }else{
+      }else{ // joueur rouge
         if(g1.listPlayer[0].possede(cartN)){
           if(cartN.donneValS()<c.donneValN()){
             N.setAttribute("src","css/cartes/FF8/"+cartN.donneNom()+".rouge.jpg");
@@ -130,14 +138,14 @@ function confrontation(carteJoue, caseJoue) {
     let O = document.getElementsByClassName('case'+caseO)[0].firstElementChild;
     if(O!==null){
       let cartO = findCard(O.className);
-      if(g1.currentPlayer==0){ //bleu
+      if(g1.currentPlayer==0){
         if(g1.listPlayer[1].possede(cartO)){
           if(cartO.donneValE()<c.donneValO()){
             O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".bleue.jpg");
             g1.listPlayer[0].ajouter(g1.listPlayer[1].retrieveCard(cartO));
           }
         }
-      }else{  //rouge
+      }else{ 
         if(g1.listPlayer[0].possede(cartO)){
           if(cartO.donneValE()<c.donneValO()){
             O.setAttribute("src","css/cartes/FF8/"+cartO.donneNom()+".rouge.jpg");
