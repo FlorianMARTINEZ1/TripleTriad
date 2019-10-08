@@ -52,7 +52,7 @@ function drop(ev) {
     document.getElementById('un').classList.add('tonTour');
   }
 
-  g1.setTurn();
+  g2.setTurn();
 }
 
 /**
