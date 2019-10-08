@@ -2,11 +2,7 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-<<<<<<< HEAD
 var g2 = new Game('Rick', 'Morty', 1);
-=======
-//var g2 = new Game('Rick', 'Morty', 1);
->>>>>>> 1ac540ff387f6156d722faea4d75e502ded3e737
 //var j1 = new Joueur('moi');
 
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
@@ -74,6 +70,7 @@ function confrontation(carteJoue, caseJoue) {
   caseE = Number(caseJoue[4]) + 1;
   caseS = Number(caseJoue[4]) + 3;
   caseO = Number(caseJoue[4]) - 1;
+  g2.listPlayer[g2.currentPlayer].score--;
   if (caseN >= 1 && (caseN <= 6)) { // Nord(VPN) Condition permettant de savoir si la carte courante peut avoir une carte au nord
     let N = document.getElementsByClassName('case' + caseN)[0].firstElementChild; /**On récupère l'image qui contient en classe le nom de la carte */
     if (N !== null) { // Si la case n'est pas vide

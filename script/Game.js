@@ -26,11 +26,10 @@ class Game {
 
   setTurn() {
     //changement de couleur du joueur qui joue
-    console.log('avant');
+
     if (this.currentPlayer == 0) {
       document.getElementById('un').classList.remove('tonTour');
       document.getElementById('deux').classList.add('tonTour');
-          console.log('if');
     } else {
       document.getElementById('deux').classList.remove('tonTour');
       document.getElementById('un').classList.add('tonTour');

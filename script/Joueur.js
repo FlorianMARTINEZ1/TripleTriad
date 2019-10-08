@@ -39,9 +39,9 @@ class Joueur {
     for (var i = 0; i < this.carteJoue.length; i++) {
       if (this.carteJoue[i] == carte.donneNom()) {
         let a = this.carteJoue[i];
+        this.score--;
         this.carteJoue.splice(i);
         return a;
-        this.score--;
       }
     }
   }
