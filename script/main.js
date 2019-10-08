@@ -17,7 +17,8 @@ function initialisation() {
   document.getElementById('plateaujeu').style.display = 'block';
   document.getElementById('un').innerHTML = g2.getJun();
   document.getElementById('deux').innerHTML = g2.getDeux();
-
+  document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
+  document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
   //mise en avant premier joueur
   if (g2.currentPlayer == 0) {
     document.getElementById('un').classList.add('tonTour');
@@ -45,7 +46,8 @@ function drop(ev) {
   g2.listPlayer[g2.currentPlayer].ajouter(img.className);
   confrontation(img.className, ev.target.classList[1]);
   g2.setTurn();
-
+  document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
+  document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
 }
 
 /**
