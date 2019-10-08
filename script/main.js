@@ -2,7 +2,11 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
+<<<<<<< HEAD
 var g2 = new Game('Rick', 'Morty', 1);
+=======
+//var g2 = new Game('Rick', 'Morty', 1);
+>>>>>>> 1ac540ff387f6156d722faea4d75e502ded3e737
 //var j1 = new Joueur('moi');
 
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
@@ -32,6 +36,7 @@ function drag(ev) {
 }
 
 function drop(ev) {
+  console.log(g2.currentPlayer);
   ev.preventDefault();
   var data = ev.dataTransfer.getData('text');
   var img = ev.target.appendChild(document.getElementById(data));
@@ -43,14 +48,6 @@ function drop(ev) {
   img.removeAttribute('id');
   g2.listPlayer[g2.currentPlayer].ajouter(img.className);
   confrontation(img.className, ev.target.classList[1]);
-  if (g2.currentPlayer === 0) {
-    document.getElementById('un').classList.remove('tonTour');
-    document.getElementById('deux').classList.add('tonTour');
-  } else {
-    document.getElementById('deux').classList.remove('tonTour');
-    document.getElementById('un').classList.add('tonTour');
-  }
-
   g2.setTurn();
 
 }
