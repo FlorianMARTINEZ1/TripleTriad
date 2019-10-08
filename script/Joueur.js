@@ -3,6 +3,8 @@ class Joueur {
   constructor(pseudo) {
     this.pseudo = pseudo;
     this.carteJoue = [];
+    this.score=5;
+
   }
 
   test() {
@@ -15,6 +17,7 @@ class Joueur {
 
   ajouter(carte) {
     this.carteJoue.push(carte);
+    this.score++;
   }
 
   /**
@@ -25,7 +28,7 @@ class Joueur {
     for (var i = 0; i < this.carteJoue.length; i++) {
       if (this.carteJoue[i] === carte.donneNom()) return true;
     }
-    return false
+    return false;
   }
 
   /**
@@ -36,8 +39,9 @@ class Joueur {
     for (var i = 0; i < this.carteJoue.length; i++) {
       if (this.carteJoue[i] == carte.donneNom()) {
         let a = this.carteJoue[i];
-        this.carteJoue[i] = null;
+        this.carteJoue.splice(i);
         return a;
+        this.score--;
       }
     }
   }
@@ -47,6 +51,7 @@ class Joueur {
       console.log(carte);
     }
   }
+
 
   toString() {
     return `${this.pseudo}`;
