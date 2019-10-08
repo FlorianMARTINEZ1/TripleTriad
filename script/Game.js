@@ -25,6 +25,16 @@ class Game {
   }
 
   setTurn() {
+    //changement de couleur du joueur qui joue
+    console.log('avant');
+    if (this.currentPlayer == 0) {
+      document.getElementById('un').classList.remove('tonTour');
+      document.getElementById('deux').classList.add('tonTour');
+          console.log('if');
+    } else {
+      document.getElementById('deux').classList.remove('tonTour');
+      document.getElementById('un').classList.add('tonTour');
+    }
     this.currentPlayer == 1 ? this.currentPlayer = 0 : this.currentPlayer = 1; // On alterne entre 0 et 1 le joueur courant
     for (var i = 1; i <= 10; i++) {
       if (document.getElementById('drag' + i) !== null) { // Pour toutes les cartes que le joueur à en main on inverse la valeur de draggable
@@ -34,8 +44,8 @@ class Game {
           document.getElementById('drag' + i).setAttribute('draggable', 'false');
         }
       }
-    }
   }
+}
 
   getJun() {
     return this.listPlayer[0].getName();
