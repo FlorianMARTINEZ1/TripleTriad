@@ -3,14 +3,16 @@ function allowDrop(ev) {
 }
 
 var g2 = new Game('j1', 'j2', 1); // permet de simuler une partie comme on a pas
-//récuperer la game dans le fonction initialisation. 
+//récuperer la game dans le fonction initialisation.
 //var j1 = new Joueur('moi');
-
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
 
 
 //Test initialisation partie (Entrer deux pseudo + affichage plateau)
 function initialisation() {
+  var sound = document.getElementById("sound");
+  sound.autoplay = true;
+  sound.load();
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
   var g2 = new Game(joueurUn, joueurDeux, 1);
