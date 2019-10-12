@@ -2,7 +2,7 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-var g2 = new Game('Rick', 'Morty', 1);
+var g2 = new Game('j1', 'j2', 1);
 //var j1 = new Joueur('moi');
 
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
@@ -12,13 +12,15 @@ request(readData); // appelle la fonction request et reçoit toutes les 10 carte
 function initialisation() {
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
-  g2 = new Game(joueurUn, joueurDeux, 2);
+  var g2 = new Game(joueurUn, joueurDeux, 1);
   document.getElementById('formgame').style.display = 'none';
   document.getElementById('plateaujeu').style.display = 'block';
-  document.getElementById('un').innerHTML = g2.getJun();
-  document.getElementById('deux').innerHTML = g2.getDeux();
-  document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
-  document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
+  /*document.getElementById('un').innerHTML = g2.listPlayer[0].getName();*/
+  var listPlayer = g2.getListPlayer();
+  document.getElementById('un').innerHTML = listPlayer[0].getName();
+  document.getElementById('deux').innerHTML =  listPlayer[1].getName();
+  document.getElementById('score-un').innerHTML = listPlayer[0].getScore();
+  document.getElementById('score-deux').innerHTML = listPlayer[1].getScore();
   //mise en avant premier joueur
   if (g2.currentPlayer == 0) {
     document.getElementById('un').classList.add('tonTour');

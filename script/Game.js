@@ -2,7 +2,7 @@
 
 class Game {
   constructor(joueur1, joueur2, ids) {
-    console.log(joueur1);
+  /*  console.log(joueur1);*/
     var j1 = new Joueur(joueur1);
     var j2 = new Joueur(joueur2);
     this.listPlayer = [j1, j2];
@@ -24,6 +24,10 @@ class Game {
 
   }
 
+  getListPlayer() {
+    return this.listPlayer;
+  }
+
   setTurn() {
     //changement de couleur du joueur qui joue
 
@@ -43,14 +47,14 @@ class Game {
           document.getElementById('drag' + i).setAttribute('draggable', 'false');
         }
       }
+    }
   }
-}
 
-  getJun() {
+  /*getUn(){
     return this.listPlayer[0].getName();
   }
 
-  getDeux() {
+  getDeux(){
     return this.listPlayer[1].getName();
-  }
+  }*/
 }
