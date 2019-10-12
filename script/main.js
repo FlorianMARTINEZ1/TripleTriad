@@ -49,6 +49,9 @@ function initialisation() {
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);
+  var sound = document.getElementById("soundcartepose");
+  sound.autoplay = true;
+  sound.load();
 }
 
 function drop(ev) {
@@ -67,6 +70,9 @@ function drop(ev) {
   g2.setTurn();
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
+  var sound = document.getElementById("soundcarte");
+  sound.autoplay = true;
+  sound.load();
 }
 
 /**
