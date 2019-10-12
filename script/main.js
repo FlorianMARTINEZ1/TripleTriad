@@ -2,7 +2,8 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-var g2 = new Game('j1', 'j2', 1);
+var g2 = new Game('j1', 'j2', 1); // permet de simuler une partie comme on a pas
+//récuperer la game dans le fonction initialisation. 
 //var j1 = new Joueur('moi');
 
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
