@@ -10,6 +10,12 @@ table {
   justify-content: center;
 }
 
+#boutonSon{
+  right: 0px;
+  top : 0px;
+  position: fixed;
+}
+
 tbody {
   background-color: rgba(176, 190, 197, 0.3);
   /* ancien blue grey*/

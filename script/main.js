@@ -2,6 +2,19 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
+function stopMusic() {
+  var sound = document.getElementById("sound");
+  if(sound.muted == true){
+    sound.muted=false;
+    sound.autoplay=true;
+  }
+  else{
+    sound.muted = true;
+
+  }
+
+}
+
 var g2 = new Game('j1', 'j2', 1); // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 //var j1 = new Joueur('moi');
@@ -13,6 +26,7 @@ function initialisation() {
   var sound = document.getElementById("sound");
   sound.autoplay = true;
   sound.load();
+  sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
   var g2 = new Game(joueurUn, joueurDeux, 1);
