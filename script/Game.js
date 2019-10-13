@@ -10,36 +10,20 @@ class Game {
     this.id = ids;
     this.dureeGame = 0 ;
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
-<<<<<<< HEAD
       //carte rouge true
-=======
-      document.getElementById('drag1').setAttribute('draggable', 'false');
-      document.getElementById('drag2').setAttribute('draggable', 'false');
-      document.getElementById('drag3').setAttribute('draggable', 'false');
-      document.getElementById('drag4').setAttribute('draggable', 'false');
-      document.getElementById('drag5').setAttribute('draggable', 'false');
->>>>>>> 1a19dd50a4663d5856c318b5850ac366998fe7bd
       document.getElementById('drag6').setAttribute('draggable', 'true');
       document.getElementById('drag7').setAttribute('draggable', 'true');
       document.getElementById('drag8').setAttribute('draggable', 'true');
       document.getElementById('drag9').setAttribute('draggable', 'true');
       document.getElementById('drag10').setAttribute('draggable', 'true');
-<<<<<<< HEAD
-
-    } else { // sinon on désactive le rouge
-      //carte bleu true
-=======
       document.getElementById('deux').classList.add('tonTour');
 
     } else { // sinon on désactive le rouge
->>>>>>> 1a19dd50a4663d5856c318b5850ac366998fe7bd
       document.getElementById('drag1').setAttribute('draggable', 'true');
       document.getElementById('drag2').setAttribute('draggable', 'true');
       document.getElementById('drag3').setAttribute('draggable', 'true');
       document.getElementById('drag4').setAttribute('draggable', 'true');
       document.getElementById('drag5').setAttribute('draggable', 'true');
-<<<<<<< HEAD
-=======
       document.getElementById('drag6').setAttribute('draggable', 'false');
       document.getElementById('drag7').setAttribute('draggable', 'false');
       document.getElementById('drag8').setAttribute('draggable', 'false');
@@ -89,7 +73,6 @@ class Game {
         document.getElementById("gagnant").innerHTML = "bravo aux 2 joueur pour cette égalité ! ";
       }
 
->>>>>>> 1a19dd50a4663d5856c318b5850ac366998fe7bd
     }
     else{
 
@@ -124,7 +107,6 @@ class Game {
       if (document.getElementById('drag' + i) !== null) {
         document.getElementById('drag' + i).setAttribute('draggable', 'false');
       }
-<<<<<<< HEAD
       if (document.getElementById('drag' + (i+5)) !== null) {
         document.getElementById('drag' + (i+5)).setAttribute('draggable', 'true');
       }
@@ -157,9 +139,6 @@ class Game {
 
   getJun() {
     return this.listPlayer[0].getName();
-=======
-    }
->>>>>>> 1a19dd50a4663d5856c318b5850ac366998fe7bd
   }
 
 }
