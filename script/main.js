@@ -14,10 +14,11 @@ function stopMusic() {
   }
 
 }
-
+var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
+document.getElementById("choix").innerHTML = choixjoueur;
 var g2 = new Game('j1', 'j2', 1); // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
-//var j1 = new Joueur('moi');
+
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
 
 
@@ -29,22 +30,15 @@ function initialisation() {
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
-  var g2 = new Game(joueurUn, joueurDeux, 1);
+  var g1 = new Game(joueurUn, joueurDeux, 1);
   document.getElementById('formgame').style.display = 'none';
   document.getElementById('plateaujeu').style.display = 'block';
   /*document.getElementById('un').innerHTML = g2.listPlayer[0].getName();*/
-  var listPlayer = g2.getListPlayer();
+  var listPlayer = g1.getListPlayer();
   document.getElementById('un').innerHTML = listPlayer[0].getName();
   document.getElementById('deux').innerHTML =  listPlayer[1].getName();
   document.getElementById('score-un').innerHTML = listPlayer[0].getScore();
   document.getElementById('score-deux').innerHTML = listPlayer[1].getScore();
-  //mise en avant premier joueur
-  if (g2.currentPlayer == 0) {
-    document.getElementById('un').classList.add('tonTour');
-  } else {
-    document.getElementById('deux').classList.add('tonTour');
-  }
-
 }
 
 function drag(ev) {
@@ -73,6 +67,7 @@ function drop(ev) {
   var sound = document.getElementById("soundcarte");
   sound.autoplay = true;
   sound.load();
+  g2.endGame();
 }
 
 /**
