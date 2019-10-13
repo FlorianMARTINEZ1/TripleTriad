@@ -13,9 +13,9 @@ class Model
 
         try {
             self::$pdo = new PDO(
-                "mysql:host=localhost;dbname=martinezf",
-                'root',
-                'root',
+                "mysql:host=$hostname;dbname=$database_name",
+                "$login",
+                "$password",
                 array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
           );
         } catch (PDOException $e) {

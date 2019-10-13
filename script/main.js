@@ -2,34 +2,50 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-var g2 = new Game('Rick', 'Morty', 1);
-//var j1 = new Joueur('moi');
+function stopMusic() {
+  var sound = document.getElementById("sound");
+  if(sound.muted == true){
+    sound.muted=false;
+    sound.autoplay=true;
+  }
+  else{
+    sound.muted = true;
+
+  }
+
+}
+var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
+document.getElementById("choix").innerHTML = choixjoueur;
+var g2 = new Game('j1', 'j2', 1); // permet de simuler une partie comme on a pas
+//récuperer la game dans le fonction initialisation.
 
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
 
 
 //Test initialisation partie (Entrer deux pseudo + affichage plateau)
 function initialisation() {
+  var sound = document.getElementById("sound");
+  sound.autoplay = true;
+  sound.load();
+  sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
-  g2 = new Game(joueurUn, joueurDeux, 2);
+  var g1 = new Game(joueurUn, joueurDeux, 1);
   document.getElementById('formgame').style.display = 'none';
   document.getElementById('plateaujeu').style.display = 'block';
-  document.getElementById('un').innerHTML = g2.getJun();
-  document.getElementById('deux').innerHTML = g2.getDeux();
-  document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
-  document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
-  //mise en avant premier joueur
-  if (g2.currentPlayer == 0) {
-    document.getElementById('un').classList.add('tonTour');
-  } else {
-    document.getElementById('deux').classList.add('tonTour');
-  }
-
+  /*document.getElementById('un').innerHTML = g2.listPlayer[0].getName();*/
+  var listPlayer = g1.getListPlayer();
+  document.getElementById('un').innerHTML = listPlayer[0].getName();
+  document.getElementById('deux').innerHTML =  listPlayer[1].getName();
+  document.getElementById('score-un').innerHTML = listPlayer[0].getScore();
+  document.getElementById('score-deux').innerHTML = listPlayer[1].getScore();
 }
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.id);
+  var sound = document.getElementById("soundcartepose");
+  sound.autoplay = true;
+  sound.load();
 }
 
 function drop(ev) {
@@ -48,6 +64,10 @@ function drop(ev) {
   g2.setTurn();
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
+  var sound = document.getElementById("soundcarte");
+  sound.autoplay = true;
+  sound.load();
+  g2.endGame();
 }
 
 /**

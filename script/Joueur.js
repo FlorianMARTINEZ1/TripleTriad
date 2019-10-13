@@ -11,6 +11,10 @@ class Joueur {
     console.log(this.pseudo);
   }
 
+  getScore() {
+    return this.score;
+  }
+
   getName() {
     return this.pseudo;
   }
