@@ -1,7 +1,7 @@
 //Class GAME
 
 class Game {
-  constructor(joueur1, joueur2, ids) {
+  constructor(joueur1, joueur2,ids) {
     var j1 = new Joueur(joueur1);
     var j2 = new Joueur(joueur2);
     this.listPlayer = [j1, j2];
@@ -11,6 +11,11 @@ class Game {
     this.dureeGame = 0 ;
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
       //carte rouge true
+      document.getElementById('drag1').setAttribute('draggable', 'false');
+      document.getElementById('drag2').setAttribute('draggable', 'false');
+      document.getElementById('drag3').setAttribute('draggable', 'false');
+      document.getElementById('drag4').setAttribute('draggable', 'false');
+      document.getElementById('drag5').setAttribute('draggable', 'false');
       document.getElementById('drag6').setAttribute('draggable', 'true');
       document.getElementById('drag7').setAttribute('draggable', 'true');
       document.getElementById('drag8').setAttribute('draggable', 'true');
@@ -34,10 +39,6 @@ class Game {
 
   }
 
-  copie() {
-    return this;
-  }
-
   getListPlayer() {
     return this.listPlayer;
   }
@@ -52,25 +53,26 @@ class Game {
       sound.muted=true;
       var joueurUn = document.getElementById('joueur1').value;
       var joueurDeux = document.getElementById('joueur2').value;
+      console.log(this.listPlayer[0].getName());
       if(this.listPlayer[0].getScore() > this.listPlayer[1].getScore()){
         if(this.listPlayer[0].getName()=="j1"){
-            document.getElementById("gagnant").innerHTML = "bravo aux joueur "+joueurUn;
+            document.getElementById("gagnant").innerHTML = "bravo au joueur "+joueurUn;
         }
         else{
-            document.getElementById("gagnant").innerHTML = "bravo aux joueur "+joueurDeux;
+            document.getElementById("gagnant").innerHTML = "bravo au joueur "+joueurDeux;
         }
 
       }
       else if(this.listPlayer[0].getScore() < this.listPlayer[1].getScore()){
         if(this.listPlayer[1].getName()=="j1"){
-            document.getElementById("gagnant").innerHTML = "bravo aux joueur "+joueurUn;
+            document.getElementById("gagnant").innerHTML = "bravo au joueur "+joueurUn;
         }
         else{
-            document.getElementById("gagnant").innerHTML = "bravo aux joueur "+joueurDeux;
+            document.getElementById("gagnant").innerHTML = "bravo au joueur "+joueurDeux;
         }
       }
       else{
-        document.getElementById("gagnant").innerHTML = "bravo aux 2 joueur pour cette égalité ! ";
+        document.getElementById("gagnant").innerHTML = "bravo aux 2 joueurs pour cette égalité ! ";
       }
 
     }
@@ -137,8 +139,5 @@ class Game {
     }
   }
 
-  getJun() {
-    return this.listPlayer[0].getName();
-  }
 
 }
