@@ -25,11 +25,14 @@ function request(callback) {
 
 function readData(sData) {
   var cartes = JSON.parse(sData);
-  var tabId = [];
-  /*let valeurJ1=0;
+  
+  let valeurJ1=0;
   let valeurJ2=0;
   
-  do{*/
+  do{
+    var tabId = [];
+    valeurJ1=0;
+    valeurJ2=0;
     for (var i = 0; i < 10; i++) {
       tabId.push(getRandomIntInclusive(0, 111)); // choisie une carte entre 0 et 111
     }
@@ -55,9 +58,8 @@ function readData(sData) {
       cartes[tabId[9]]['valO'], cartes[tabId[9]]['valE'], "rouge"); //  => créer une carte
 
     var tabCartes = [carte1, carte2, carte3, carte4, carte5, carte6, carte7, carte8, carte9, carte10];
-
     
-    /*for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 10; i++) {
       if(i<5){
         valeurJ1= valeurJ1 + tabCartes[i].donneValE() +tabCartes[i].donneValS() +tabCartes[i].donneValO() +tabCartes[i].donneValN();
       }else{
@@ -67,7 +69,7 @@ function readData(sData) {
   }while(Math.abs(valeurJ2-valeurJ1)>5);
 
   console.log(valeurJ1);
-  console.log(valeurJ2);*/
+  console.log(valeurJ2);
 
   //afficher les cartes sur le tableau de jeu
 
