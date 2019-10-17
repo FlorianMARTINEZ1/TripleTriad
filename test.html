@@ -42,11 +42,11 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
-            <input id="joueur1" type="text" class="validate" maxlength="12">
+            <input id="joueur1" type="text" class="validate" maxlength="12" minlength="1">
             <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
-            <input id="joueur2" type="text" class="validate" maxlength="12">
+            <input id="joueur2" type="text" class="validate" maxlength="12" minlength="1">
             <label for="joueur2">Joueur 2</label>
           </div>
         </div>
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div id="plateaujeu" class="container jeu">
+  <div id="plateaujeu" class="container jeu" style="opacity:1;">
     <div class="row">
       <div class="col s4 gauche">
         <h4 id="un" class="center nickname"></h4>
@@ -119,8 +119,32 @@
   <div id="boutonSon">
     <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i class="material-icons">volume_off</i></a>
   </div>
-  <div id="choix" style="display:none;">
+  <div id="menuIcon">
+    <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
+  </div>
+  <div id="menu" class="card" style="display:none;">
+      <div>
+          <h3>Regle du jeu </h2>
+          <p>
+            Vous pouvez y accéder <a href="">ici</a>.
+          </p>
+      </div>
+      <div>
+          <h3>Quitter le jeu</h2>
+          <p>
+            cliquez <a href="">ici</a>.
+          </p>
+      </div>
+      <div>
+          <h3>Autre paramètre</h2>
+          <p>
+              blablabla
+          </p>
+      </div>
+  </div>
 
+
+  <div id="choix" style="display:none;">
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

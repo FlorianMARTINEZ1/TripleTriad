@@ -16,6 +16,20 @@ table {
   position: fixed;
 }
 
+#menuIcon{
+  position: fixed;
+  right: 53px;
+  top : 0px;
+}
+
+#menu{
+  position: fixed;
+  width: 75%;
+  height: 75%;
+  margin-left: 12.5%;
+  text-align: center;
+}
+
 #ntmfin{
   background-color:white;
   height: 50vh;

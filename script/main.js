@@ -2,6 +2,23 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
+function afficheMenu() {
+  let menu =  document.getElementById("menu");
+  let plateau = document.getElementById('plateaujeu');
+  if(plateau.style.opacity == 0.4 ){
+    menu.removeAttribute("display");
+    menu.setAttribute("style", "display:none;");
+    document.getElementById('plateaujeu').style.opacity = '1';
+  }
+  else{
+    menu.removeAttribute("display");
+    menu.setAttribute("style", "display:fixed;");
+    document.getElementById('plateaujeu').style.opacity = '0.4';
+
+  }
+}
+
+
 function stopMusic() {
   var sound = document.getElementById("sound");
   if(sound.muted == true){
