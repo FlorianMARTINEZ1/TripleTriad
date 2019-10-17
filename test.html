@@ -42,11 +42,11 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
-            <input id="joueur1" type="text" value="joueur 1" class="validate" maxlength="12" minlength="1">
+            <input id="joueur1" type="text" value="joueur 1" class="validate" maxlength="12" minlength="1" required>
             <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
-            <input id="joueur2" type="text" value="joueur 2" class="validate" maxlength="12" minlength="1">
+            <input id="joueur2" type="text" value="joueur 2" class="validate" maxlength="12" minlength="1" required>
             <label for="joueur2">Joueur 2</label>
           </div>
         </div>
@@ -113,11 +113,11 @@
       Bravo !
     </p>
     <p>
-       Si vous voulez rejouer cliquez <a href="http://webinfo.iutmontp.univ-montp2.fr/~martinezf/TripleTriad/test.html">ici</a>.
+      <button id="refresh" onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
     </p>
   </div>
   <div id="boutonSon">
-    <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i class="material-icons">volume_off</i></a>
+    <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i id="volume" class="material-icons">volume_off</i></a>
   </div>
   <div id="menuIcon">
     <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
@@ -136,9 +136,9 @@
           </p>
       </div>
       <div>
-          <h3>Autre paramètre</h2>
+          <h3>Relancé une partie ? </h2>
           <p>
-              blablabla
+              <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
           </p>
       </div>
   </div>

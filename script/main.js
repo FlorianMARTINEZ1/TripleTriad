@@ -27,13 +27,16 @@ function afficheMenu() {
 
 
 function stopMusic() {
+  let bouton= document.getElementById("volume");
   var sound = document.getElementById("sound");
   if(sound.muted == true){
     sound.muted=false;
     sound.autoplay=true;
+    bouton.innerHTML = "volume_off";
   }
   else{
     sound.muted = true;
+    bouton.innerHTML = "volume_up";
 
   }
 
@@ -94,7 +97,6 @@ function drop(ev) {
   img.setAttribute('draggable', 'false');
   img.removeAttribute('ondragstart');
   img.removeAttribute('id');
-  g2.listPlayer[g2.currentPlayer].ajouter(img.className);
   confrontation(img.className, ev.target.classList[1]);
   g2.setTurn();
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
@@ -113,7 +115,7 @@ function drop(ev) {
  var findCard = function(carteJoue) {
 
    for (var i = 0; i < allCards.length; i++) {
-     if (allCards[i].donneNom() == carteJoue) {
+     if (allCards[i].donneID() === Number(carteJoue)) {
        return allCards[i];
      }
    }
@@ -124,7 +126,7 @@ function confrontation(carteJoue, caseJoue) {
 
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
-
+  g2.listPlayer[g2.currentPlayer].ajouter(c);
   caseN = Number(caseJoue[4]) - 3; /** On récupère le numéro des cases */
   caseE = Number(caseJoue[4]) + 1;
   caseS = Number(caseJoue[4]) + 3;
@@ -137,15 +139,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) { // joueur bleu
         if (g2.listPlayer[1].possede(cartN)) { // Si l'ennemi possède la carte
           if (cartN.donneValS() < c.donneValN()) { // Si notre carte gagne, on rentre dans la condition
-            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + ".bleue.jpg"); // On change la couleur
+            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + "."+cartN.donneCouleurInv()+".jpg"); // On change la couleur
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartN)); // On déplace la carte de liste (on donne donc la carte à l'autre joueur)
+            cartN.setCouleurInv();
           }
         }
       } else { // joueur rouge
         if (g2.listPlayer[0].possede(cartN)) {
           if (cartN.donneValS() < c.donneValN()) {
-            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + ".rouge.jpg");
+            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + "."+cartN.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartN));
+            cartN.setCouleurInv();
           }
         }
       }
@@ -158,15 +162,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartS)) {
           if (cartS.donneValN() < c.donneValS()) {
-            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + ".bleue.jpg");
+            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + "."+cartS.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartS));
+            cartS.setCouleurInv();
           }
         }
       } else {
         if (g2.listPlayer[0].possede(cartS)) {
           if (cartS.donneValN() < c.donneValS()) {
-            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + ".rouge.jpg");
+            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + "."+cartS.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartS));
+            cartS.setCouleurInv();
           }
         }
       }
@@ -179,15 +185,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartE)) {
           if (cartE.donneValO() < c.donneValE()) {
-            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + ".bleue.jpg");
+            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + "."+cartE.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartE));
+            cartE.setCouleurInv();
           }
         }
       } else {
         if (g2.listPlayer[0].possede(cartE)) {
           if (cartE.donneValO() < c.donneValE()) {
-            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + ".rouge.jpg");
+            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + "."+cartE.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartE));
+            cartE.setCouleurInv();
           }
         }
       }
@@ -200,15 +208,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartO)) {
           if (cartO.donneValE() < c.donneValO()) {
-            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + ".bleue.jpg");
+            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + "."+cartO.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartO));
+            cartO.setCouleurInv();
           }
         }
       } else {
         if (g2.listPlayer[0].possede(cartO)) {
           if (cartO.donneValE() < c.donneValO()) {
-            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + ".rouge.jpg");
+            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + "."+cartO.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartO));
+            cartO.setCouleurInv();
           }
         }
       }
