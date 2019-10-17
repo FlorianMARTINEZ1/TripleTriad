@@ -32,11 +32,11 @@ function stopMusic() {
   if(sound.muted == true){
     sound.muted=false;
     sound.autoplay=true;
-    bouton.innerHTML = "volume_up";
+    bouton.innerHTML = "volume_off";
   }
   else{
     sound.muted = true;
-    bouton.innerHTML = "volume_off";
+    bouton.innerHTML = "volume_up";
 
   }
 
@@ -172,7 +172,7 @@ function confrontation(carteJoue, caseJoue) {
           if (cartS.donneValN() < c.donneValS()) {
             S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + "."+cartS.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartS));
-            cartS.setCouleurInv();         
+            cartS.setCouleurInv();
           }
         }
       }
@@ -187,7 +187,7 @@ function confrontation(carteJoue, caseJoue) {
           if (cartE.donneValO() < c.donneValE()) {
             E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + "."+cartE.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartE));
-            cartE.setCouleurInv();            
+            cartE.setCouleurInv();
           }
         }
       } else {
