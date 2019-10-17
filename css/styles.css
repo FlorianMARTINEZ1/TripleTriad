@@ -4,65 +4,42 @@ html {
   background-size: cover;
 }
 
-table {
-  margin: 0px auto;
-  margin-top: 10%;
-  justify-content: center;
-}
-
-#boutonSon{
+#boutonSon {
   right: 0px;
-  top : 0px;
+  top: 0px;
   position: fixed;
 }
 
-#menuIcon{
+#menuIcon {
   position: fixed;
   right: 53px;
-  top : 0px;
+  top: 0px;
 }
 
-#menu{
+#menu {
   position: fixed;
   width: 0%;
   height: 0%;
   opacity: 0;
   margin-left: 12.5%;
   text-align: center;
-
-  transition-property : width, height,opacity;
-
+  transition-property: width, height, opacity;
 }
 
-#menu.ma-transition{
-  width : 75%;
-  height : 75%;
+#menu.ma-transition {
+  width: 75%;
+  height: 75%;
   opacity: 1;
 }
 
-#ntmfin{
-  background-color:white;
+#ntmfin {
+  background-color: white;
   height: 50vh;
   width: 50vw;
   margin-left: 25vw;
   text-align: center;
   padding-top: 5vh;
   margin-top: 15vh;
-
-
-}
-
-tbody {
-  background-color: rgba(176, 190, 197, 0.3);
-  /* ancien blue grey*/
-  border: 2px solid black;
-}
-
-tr, td {
-  border: 1px solid black;
-  width: 120px;
-  height: 110px;
-  padding: 0;
 }
 
 img {
@@ -118,8 +95,6 @@ h4.score {
 .tonTour {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
   opacity: 1;
-
-
 }
 
 .cards1 {

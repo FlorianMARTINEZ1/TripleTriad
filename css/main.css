@@ -1,0 +1,24 @@
+html {
+  background-image: url(./img/ff8.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.card {
+  background-color: #223d44;
+  opacity: 0.8;
+  color: white;
+}
+
+div.invi {
+  visibility: hidden;
+}
+
+@font-face {
+  font-family: finalf;
+  src: url(./final_fantasy/finalf.ttf);
+}
+
+h3 {
+  font-family: finalf;
+}
