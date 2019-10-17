@@ -1,7 +1,8 @@
 //Class Card
 
 class Card {
-  constructor(nomCarte, valN, valS, valO, valE, couleur) {
+  constructor(id,nomCarte, valN, valS, valO, valE, couleur) {
+    this.id = id;
     this.nomCarte = nomCarte;
     this.valN = valN;
     this.valS = valS;
@@ -12,6 +13,10 @@ class Card {
 
   toString() {
     return "la carte " + this.nomCarte + " de valeurs N =" + this.valN + ", S=" + this.valS + ", O=" + this.valO + ", E=" + this.valE + ", de couleur " + this.couleur + ".";
+  }
+
+  donneID(){
+    return this.id;
   }
 
   donneNom() {

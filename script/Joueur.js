@@ -30,7 +30,7 @@ class Joueur {
    */
   possede(carte) {
     for (var i = 0; i < this.carteJoue.length; i++) {
-      if (this.carteJoue[i] === carte.donneNom()) return true;
+      if (this.carteJoue[i] === carte) return true;
     }
     return false;
   }
@@ -41,7 +41,7 @@ class Joueur {
    */
   retrieveCard(carte) {
     for (var i = 0; i < this.carteJoue.length; i++) {
-      if (this.carteJoue[i] == carte.donneNom()) {
+      if (this.carteJoue[i] == carte) {
         let a = this.carteJoue[i];
         this.score--;
         this.carteJoue.splice(i);

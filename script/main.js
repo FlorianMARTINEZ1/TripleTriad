@@ -97,7 +97,6 @@ function drop(ev) {
   img.setAttribute('draggable', 'false');
   img.removeAttribute('ondragstart');
   img.removeAttribute('id');
-  g2.listPlayer[g2.currentPlayer].ajouter(img.className);
   confrontation(img.className, ev.target.classList[1]);
   g2.setTurn();
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
@@ -127,7 +126,7 @@ function confrontation(carteJoue, caseJoue) {
 
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
-
+  g2.listPlayer[g2.currentPlayer].ajouter(c);
   caseN = Number(caseJoue[4]) - 3; /** On récupère le numéro des cases */
   caseE = Number(caseJoue[4]) + 1;
   caseS = Number(caseJoue[4]) + 3;
