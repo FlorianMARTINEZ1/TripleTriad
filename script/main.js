@@ -1,5 +1,6 @@
 function allowDrop(ev) {
   ev.preventDefault();
+
 }
 
 function afficheMenu() {
@@ -67,15 +68,24 @@ function initialisation() {
 }
 
 function drag(ev) {
-  ev.dataTransfer.setData('text', ev.target.id);
-  var sound = document.getElementById("soundcartepose");
-  sound.autoplay = true;
-  sound.load();
+   ev.dataTransfer.setData('text', ev.target.draggable);
+   var data = ev.dataTransfer.getData('text');
+   if(data=="true"){
+     ev.dataTransfer.setData('text', ev.target.id);
+     var sound = document.getElementById("soundcartepose");
+     sound.autoplay = true;
+     sound.load();
+   }
+   else{
+       ev.preventDefault()
+       throw new Error("Va te faire sale tricheur");
+   }
+
 }
 
 function drop(ev) {
-  console.log(g2.currentPlayer);
   ev.preventDefault();
+  console.log(g2.currentPlayer);
   var data = ev.dataTransfer.getData('text');
   var img = ev.target.appendChild(document.getElementById(data));
   ev.target.removeAttribute('ondrop');
@@ -93,23 +103,25 @@ function drop(ev) {
   sound.autoplay = true;
   sound.load();
   g2.endGame();
+
 }
 
 /**
  * Test en haut, en bas, a droite et à gauche si il y a des cartes
  * si oui, on compare les valeurs pour ensuite changer la couleur si le joueur gagne
  */
+ var findCard = function(carteJoue) {
+
+   for (var i = 0; i < allCards.length; i++) {
+     if (allCards[i].donneNom() == carteJoue) {
+       return allCards[i];
+     }
+   }
+ }
+
 
 function confrontation(carteJoue, caseJoue) {
 
-  var findCard = function(carteJoue) {
-
-    for (var i = 0; i < allCards.length; i++) {
-      if (allCards[i].donneNom() == carteJoue) {
-        return allCards[i];
-      }
-    }
-  };
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
 
