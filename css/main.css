@@ -22,3 +22,11 @@ div.invi {
 h3 {
   font-family: finalf;
 }
+
+div.regle {
+  background-color: #111f22;
+}
+
+.p-regle {
+  text-align: justify;
+}
