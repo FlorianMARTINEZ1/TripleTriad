@@ -27,13 +27,16 @@ function afficheMenu() {
 
 
 function stopMusic() {
+  let bouton= document.getElementById("volume");
   var sound = document.getElementById("sound");
   if(sound.muted == true){
     sound.muted=false;
     sound.autoplay=true;
+    bouton.innerHTML = "volume_up";
   }
   else{
     sound.muted = true;
+    bouton.innerHTML = "volume_off";
 
   }
 
