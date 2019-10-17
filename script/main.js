@@ -115,7 +115,7 @@ function drop(ev) {
  var findCard = function(carteJoue) {
 
    for (var i = 0; i < allCards.length; i++) {
-     if (allCards[i].donneNom() == carteJoue) {
+     if (allCards[i].donneID() === Number(carteJoue)) {
        return allCards[i];
      }
    }

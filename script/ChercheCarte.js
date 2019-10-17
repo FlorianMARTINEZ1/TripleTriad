@@ -73,34 +73,34 @@ function readData(sData) {
 
   var element1 = document.getElementById("drag1");
   element1.setAttribute("src", "css/cartes/FF8/" + carte1.donneNom() + ".bleue.jpg")
-  element1.setAttribute("class", carte1.donneNom())
+  element1.setAttribute("class", carte1.donneID());
   var element2 = document.getElementById("drag2");
   element2.setAttribute("src", "css/cartes/FF8/" + carte2.donneNom() + ".bleue.jpg")
-  element2.setAttribute("class", carte2.donneNom())
+  element2.setAttribute("class", carte2.donneID());
   var element3 = document.getElementById("drag3");
   element3.setAttribute("src", "css/cartes/FF8/" + carte3.donneNom() + ".bleue.jpg")
-  element3.setAttribute("class", carte3.donneNom())
+  element3.setAttribute("class", carte3.donneID());
   var element4 = document.getElementById("drag4");
   element4.setAttribute("src", "css/cartes/FF8/" + carte4.donneNom() + ".bleue.jpg")
-  element4.setAttribute("class", carte4.donneNom())
+  element4.setAttribute("class", carte4.donneID());
   var element5 = document.getElementById("drag5");
   element5.setAttribute("src", "css/cartes/FF8/" + carte5.donneNom() + ".bleue.jpg")
-  element5.setAttribute("class", carte5.donneNom())
+  element5.setAttribute("class", carte5.donneID());
   var element6 = document.getElementById("drag6");
   element6.setAttribute("src", "css/cartes/FF8/" + carte6.donneNom() + ".rouge.jpg")
-  element6.setAttribute("class", carte6.donneNom())
+  element6.setAttribute("class", carte6.donneID());
   var element7 = document.getElementById("drag7");
   element7.setAttribute("src", "css/cartes/FF8/" + carte7.donneNom() + ".rouge.jpg")
-  element7.setAttribute("class", carte7.donneNom())
+  element7.setAttribute("class", carte7.donneID());
   var element8 = document.getElementById("drag8");
   element8.setAttribute("src", "css/cartes/FF8/" + carte8.donneNom() + ".rouge.jpg")
-  element8.setAttribute("class", carte8.donneNom())
+  element8.setAttribute("class", carte8.donneID());
   var element9 = document.getElementById("drag9");
   element9.setAttribute("src", "css/cartes/FF8/" + carte9.donneNom() + ".rouge.jpg")
-  element9.setAttribute("class", carte9.donneNom())
+  element9.setAttribute("class", carte9.donneID());
   var element10 = document.getElementById("drag10");
   element10.setAttribute("src", "css/cartes/FF8/" + carte10.donneNom() + ".rouge.jpg")
-  element10.setAttribute("class", carte10.donneNom())
+  element10.setAttribute("class", carte10.donneID());
 
   return tabCartes; // return un tableau des 10 carte au hasard;
 }
