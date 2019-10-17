@@ -1,12 +1,13 @@
 //Class Card
 
 class Card {
-  constructor(nomCarte, valN, valS, valO, valE) {
+  constructor(nomCarte, valN, valS, valO, valE, couleur) {
     this.nomCarte = nomCarte;
     this.valN = valN;
     this.valS = valS;
     this.valO = valO;
     this.valE = valE
+    this.couleur = couleur;
   }
 
   toString() {
@@ -30,5 +31,19 @@ class Card {
   }
   donneValO() {
     return parseInt(this.valO, 10);
+  }
+
+  donneCouleur(){
+    return this.couleur;
+  }
+
+  donneCouleurInv(){
+    if(this.couleur=="bleue") return "rouge";
+    else return "bleue";
+  }
+
+  setCouleurInv(){
+    if(this.couleur=="bleue") this.couleur="rouge";
+    else this.couleur="bleue";
   }
 }

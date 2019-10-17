@@ -140,15 +140,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) { // joueur bleu
         if (g2.listPlayer[1].possede(cartN)) { // Si l'ennemi possède la carte
           if (cartN.donneValS() < c.donneValN()) { // Si notre carte gagne, on rentre dans la condition
-            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + ".bleue.jpg"); // On change la couleur
+            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + "."+cartN.donneCouleurInv()+".jpg"); // On change la couleur
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartN)); // On déplace la carte de liste (on donne donc la carte à l'autre joueur)
+            cartN.setCouleurInv();
           }
         }
       } else { // joueur rouge
         if (g2.listPlayer[0].possede(cartN)) {
           if (cartN.donneValS() < c.donneValN()) {
-            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + ".rouge.jpg");
+            N.setAttribute("src", "css/cartes/FF8/" + cartN.donneNom() + "."+cartN.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartN));
+            cartN.setCouleurInv();
           }
         }
       }
@@ -161,15 +163,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartS)) {
           if (cartS.donneValN() < c.donneValS()) {
-            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + ".bleue.jpg");
+            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + "."+cartS.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartS));
+            cartS.setCouleurInv();
           }
         }
       } else {
         if (g2.listPlayer[0].possede(cartS)) {
           if (cartS.donneValN() < c.donneValS()) {
-            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + ".rouge.jpg");
+            S.setAttribute("src", "css/cartes/FF8/" + cartS.donneNom() + "."+cartS.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartS));
+            cartS.setCouleurInv();         
           }
         }
       }
@@ -182,15 +186,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartE)) {
           if (cartE.donneValO() < c.donneValE()) {
-            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + ".bleue.jpg");
+            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + "."+cartE.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartE));
+            cartE.setCouleurInv();            
           }
         }
       } else {
         if (g2.listPlayer[0].possede(cartE)) {
           if (cartE.donneValO() < c.donneValE()) {
-            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + ".rouge.jpg");
+            E.setAttribute("src", "css/cartes/FF8/" + cartE.donneNom() + "."+cartE.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartE));
+            cartE.setCouleurInv();
           }
         }
       }
@@ -203,15 +209,17 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartO)) {
           if (cartO.donneValE() < c.donneValO()) {
-            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + ".bleue.jpg");
+            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + "."+cartO.donneCouleurInv()+".jpg");
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartO));
+            cartO.setCouleurInv();
           }
         }
       } else {
         if (g2.listPlayer[0].possede(cartO)) {
           if (cartO.donneValE() < c.donneValO()) {
-            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + ".rouge.jpg");
+            O.setAttribute("src", "css/cartes/FF8/" + cartO.donneNom() + "."+cartO.donneCouleurInv()+".jpg");
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartO));
+            cartO.setCouleurInv();
           }
         }
       }
