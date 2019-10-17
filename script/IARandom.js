@@ -32,6 +32,7 @@ class IARandom extends Joueur {
     confrontation(img.className, cardPlayed);
     cards.remove(cardPlayed);
     g2.setTurn();
+    g2.endGame();
   }
 
 
