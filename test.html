@@ -22,16 +22,16 @@
 
 <body>
   <audio id="sound" preload="auto" loop>
-  <source src="css/sound.mp3" type="audio/mpeg">
-  <source src="css/sound.ogg" type="audio/ogg">
+    <source src="css/sound.mp3" type="audio/mpeg">
+    <source src="css/sound.ogg" type="audio/ogg">
   </audio>
-  <audio id="soundcartepose" preload="auto" >
-  <source src="css/carte.mp3" type="audio/mpeg">
-  <source src="css/carte.ogg" type="audio/ogg">
+  <audio id="soundcartepose" preload="auto">
+    <source src="css/carte.mp3" type="audio/mpeg">
+    <source src="css/carte.ogg" type="audio/ogg">
   </audio>
-  <audio id="soundcarte" preload="auto" >
-  <source src="css/carteposé.mp3" type="audio/mpeg">
-  <source src="css/carteposé.ogg" type="audio/ogg">
+  <audio id="soundcarte" preload="auto">
+    <source src="css/carteposé.mp3" type="audio/mpeg">
+    <source src="css/carteposé.ogg" type="audio/ogg">
   </audio>
 
   <div id="formgame" class="form">
@@ -107,14 +107,18 @@
     </div>
   </div>
 
-  <div id="ntmfin" class="card" style="display: none;">
-    <h4>FIN DU JEU</h4>
-    <p id="gagnant">
-      Bravo !
-    </p>
-    <p>
-      <button id="refresh" onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
-    </p>
+  <div id="fingame" class="card" style="display: none;">
+    <div id="vide">
+    </div>
+    <div>
+      <h4>FIN DU JEU</h4>
+      <p id="gagnant">
+        Bravo !
+      </p>
+      <p>
+        <button id="refresh" onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
+      </p>
+    </div>
   </div>
   <div id="boutonSon">
     <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i id="volume" class="material-icons">volume_off</i></a>
@@ -123,24 +127,24 @@
     <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
   </div>
   <div id="menu" class="card">
-      <div>
-          <h3>Regle du jeu </h2>
-          <p>
-            Vous pouvez y accéder <a href="">ici</a>.
-          </p>
-      </div>
-      <div>
-          <h3>Quitter le jeu</h2>
-          <p>
-            cliquez <a href="">ici</a>.
-          </p>
-      </div>
-      <div>
-          <h3>Relancé une partie ? </h2>
-          <p>
-              <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
-          </p>
-      </div>
+    <div>
+      <h3>Regle du jeu </h2>
+        <p>
+          Vous pouvez y accéder <a href="">ici</a>.
+        </p>
+    </div>
+    <div>
+      <h3>Quitter le jeu</h2>
+        <p>
+          cliquez <a href="">ici</a>.
+        </p>
+    </div>
+    <div>
+      <h3>Relancé une partie ? </h2>
+        <p>
+          <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
+        </p>
+    </div>
   </div>
 
 
