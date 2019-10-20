@@ -46,7 +46,21 @@
             <label for="joueur1">Joueur</label>
           </div>
           <div class="input-field col s6">
-            <input id="joueur2" type="text" value="IAFaible" class="validate" maxlength="12" minlength="1" readonly>
+            <input id="joueur2" type="text"
+            <?php
+            if($_GET['type']=="faible"){
+              echo 'value="IAFaible"';
+            }
+            else if($_GET['type']=="moyen"){
+              echo 'value="IAMoyen"';
+            }
+            else{
+              echo 'value="IAForte"';
+            }
+
+
+            ?>
+             class="validate" maxlength="12" minlength="1" readonly>
             <label for="IA"></label>
           </div>
         </div>
@@ -156,6 +170,17 @@
   <script type="text/javascript" src="./script/Card.js"></script>
   <script type="text/javascript" src="./script/ChercheCarte.js"></script>
   <script type="text/javascript" src="./script/Joueur.js"></script>
+  <?php
+  if($_GET['type']=="faible"){
+    echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
+  }
+  else if($_GET['type']=="moyen"){
+    echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
+  }
+  else{
+    echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+  }
+  ?>
   <script type="text/javascript" src="./script/Game.js"></script>
   <script type="text/javascript" src="./script/main.js"></script>
 
