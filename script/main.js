@@ -73,6 +73,7 @@ function drag(ev) {
   var data = ev.dataTransfer.getData('text');
   if (data == "true") {
     ev.dataTransfer.setData('text', ev.target.id);
+    var sound = document.getElementById("sound");
     if (sound.muted == false) {
       var sound = document.getElementById("soundcartepose");
       sound.autoplay = true;
@@ -100,6 +101,7 @@ function drop(ev) {
   g2.setTurn();
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
+  var sound = document.getElementById("sound");
   if (sound.muted == false) {
     var sound = document.getElementById("soundcarte");
     sound.autoplay = true;
