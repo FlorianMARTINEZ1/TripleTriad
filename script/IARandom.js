@@ -31,6 +31,8 @@ class IARandom extends Joueur {
     var droptarget = document.getElementById('case' + casesVides[x]); //récupère la case
     var lienImage = card.getAttribute(src); //on choppe le lien de l'image.
     droptarget.appendChild(lienImage);
+    droptarget.removeAttribute('ondrop');
+    droptarget.removeAttribute('ondragover');
     confrontation(img.className, cardPlayed);
     cards.remove(cardPlayed);
     g2.setTurn();
