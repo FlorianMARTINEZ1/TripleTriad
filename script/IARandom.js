@@ -28,7 +28,7 @@ class IARandom extends Joueur {
     var x = getRandomIntInclusive(0, casesVides.length - 1); //aléatoire pour sélectionner une case
     var y = getRandomIntInclusive(0, cards.length - 1); //aléatoire pour sélectionner une carte
     var card = document.getElementById('drag' + cards[y].donneID()); // récupère la carte.
-    var droptarget = document.getElementById('case' + casesVides[x]); //récupère la case
+    var droptarget = casesVides[x]; //récupère la case
     var lienImage = card.getAttribute(src); //on choppe le lien de l'image.
     droptarget.appendChild(lienImage);
     droptarget.removeAttribute('ondrop');
