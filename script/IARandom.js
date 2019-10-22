@@ -2,39 +2,38 @@ class IARandom extends Joueur {
   constructor(game) {
     super("IA Random");
     this.game = game;
-    this.index = game.getIndexPlayer(this);
+    this.index = 1;
     this.cards = [];
-    cards.push(allCards[index * 5]);
-    cards.push(allCards[index * 5 + 1]);
-    cards.push(allCards[index * 5 + 2]);
-    cards.push(allCards[index * 5 + 3]);
-    cards.push(allCards[index * 5 + 4]);
+    var i;
+    for (i = 1; i < 6; i++) {
+      this.cards.push(index*5+i);
+    }
     this.casesVides = [];
   }
 
   setCasesVides() {
-    casesVides = [];
+    this.casesVides = [];
     var i;
-    for (i = 0; i < 9; i++) {
-      let N = document.getElementsByClassName('case' + i)[0].firstElementChild;
+    for (i = 1; i < 11; i++) {
+      let N = document.getElementsByClassName('case' + i).firstElementChild;
       if (N === null) {
-        casesVides.push(i)
+        this.casesVides.push(i)
       }
     }
 
   }
   play() {
-    setCasesVides(); //Regarder les cases vides et les récuperer dans la variable casesVides
-    var x = getRandomIntInclusive(0, casesVides.length - 1); //aléatoire pour sélectionner une case
-    var y = getRandomIntInclusive(0, cards.length - 1); //aléatoire pour sélectionner une carte
-    var card = document.getElementById('drag' + cards[y].donneID()); // récupère la carte.
-    var droptarget = casesVides[x]; //récupère la case
-    var lienImage = card.getAttribute(src); //on choppe le lien de l'image.
-    droptarget.appendChild(lienImage);
-    droptarget.removeAttribute('ondrop');
-    droptarget.removeAttribute('ondragover');
-    confrontation(img.className, cardPlayed);
-    cards.remove(cardPlayed);
+    this.setCasesVides(); //Regarder les cases vides et les récuperer dans la variable casesVides
+    var x = getRandomIntInclusive(0, this.casesVides.length - 1); //aléatoire pour sélectionner une case
+    var y = getRandomIntInclusive(0, this.cards.length - 1); //aléatoire pour sélectionner une carte
+    // récupère la carte.
+    //récupère la case
+    //var lienImage = card.getAttribute(src); //on choppe le lien de l'image.
+    document.getElementsByClassName('case'+casesVides[x])[0].appendChild(document.getElementById('drag3'));
+    document.getElementById('drag3').removeAttribute('ondrop');
+    document.getElementById('drag3').removeAttribute('ondragover');
+    confrontation(document.getElementById('drag3'), cardPlayed);
+    this.cards.remove(cardPlayed);
     g2.setTurn();
     g2.endGame();
   }

@@ -3,7 +3,8 @@
 class Game {
   constructor(joueur1, joueur2, ids) {
     var j1 = new Joueur(joueur1);
-    var j2 = new Joueur(joueur2);
+    //var j2 = new Joueur(joueur2);
+    var j2 = new IARandom(this);
     this.listPlayer = [j1, j2];
     /*this.currentPlayer = getRandomIntInclusive(0, 1);*/
     this.currentPlayer = document.getElementById("choix").innerHTML;
@@ -84,6 +85,7 @@ class Game {
     if (this.currentPlayer == 0) {
       document.getElementById('un').classList.remove('tonTour');
       document.getElementById('deux').classList.add('tonTour');
+      this.listPlayer[1].play();
     } else {
       document.getElementById('deux').classList.remove('tonTour');
       document.getElementById('un').classList.add('tonTour');
@@ -133,14 +135,6 @@ class Game {
   setFalse(drag) {
     if (drag !== null) {
       drag.setAttrivute('draggable', 'false');
-    }
-  }
-
-  getIndexPlayer(player) {
-    if (listPlayer[0] = player) {
-      return 0;
-    } else {
-      return 1;
     }
   }
 
