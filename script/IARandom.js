@@ -6,7 +6,7 @@ class IARandom extends Joueur {
     this.cards = [];
     var i;
     for (i = 1; i < 6; i++) {
-      this.cards.push(index*5+i);
+      this.cards.push(this.index * 5 + i);
     }
     this.casesVides = [];
   }
@@ -29,7 +29,7 @@ class IARandom extends Joueur {
     // récupère la carte.
     //récupère la case
     //var lienImage = card.getAttribute(src); //on choppe le lien de l'image.
-    document.getElementsByClassName('case'+casesVides[x])[0].appendChild(document.getElementById('drag3'));
+    document.getElementsByClassName('case' + casesVides[x])[0].appendChild(document.getElementById('drag3'));
     document.getElementById('drag3').removeAttribute('ondrop');
     document.getElementById('drag3').removeAttribute('ondragover');
     confrontation(document.getElementById('drag3'), cardPlayed);
