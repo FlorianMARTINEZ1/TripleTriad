@@ -34,7 +34,6 @@ class IARandom extends Joueur {
     document.getElementById('drag3').removeAttribute('ondragover');
     confrontation(document.getElementById('drag' + this.cards[y]), document.getElementsByClassName('case' + this.casesVides[x]));
     this.cards.splice[y];
-    this.cards.remove(cardPlayed);
     g2.setTurn();
     g2.endGame();
   }
