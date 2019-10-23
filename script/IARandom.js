@@ -29,10 +29,11 @@ class IARandom extends Joueur {
     // récupère la carte.
     //récupère la case
     //var lienImage = card.getAttribute(src); //on choppe le lien de l'image.
-    document.getElementsByClassName('case' + casesVides[x])[0].appendChild(document.getElementById('drag3'));
+    var img = document.getElementsByClassName('case' + this.casesVides[x])[0].appendChild(document.getElementById('drag' + this.cards[y]));
     document.getElementById('drag3').removeAttribute('ondrop');
     document.getElementById('drag3').removeAttribute('ondragover');
-    confrontation(document.getElementById('drag3'), cardPlayed);
+    confrontation(document.getElementById('drag' + this.cards[y]), document.getElementsByClassName('case' + this.casesVides[x]));
+    this.cards.splice[y];
     this.cards.remove(cardPlayed);
     g2.setTurn();
     g2.endGame();
