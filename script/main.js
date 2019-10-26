@@ -41,7 +41,8 @@ function stopMusic() {
 }
 var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
 document.getElementById("choix").innerHTML = choixjoueur;
-var g2 = new Game('j1', 'j2', 1); // permet de simuler une partie comme on a pas
+var g2 = new Game('j1', 'j2', 1);
+// permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
@@ -50,8 +51,8 @@ request(readData); // appelle la fonction request et reçoit toutes les 10 carte
 //Test initialisation partie (Entrer deux pseudo + affichage plateau)
 function initialisation() {
   var sound = document.getElementById("sound");
-  sound.autoplay = true;
-  sound.load();
+  /*sound.autoplay = true;
+  sound.load();*/
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
@@ -66,6 +67,12 @@ function initialisation() {
   document.getElementById('deux').innerHTML = /* listPlayer[1].getName()*/ joueurDeux;
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
+
+  if(choixjoueur == 1 ){
+    g2.getListPlayer()[1].play();
+    console.log("ddddddd");
+  }
+  console.log("dedezd");
 }
 
 function drag(ev) {
@@ -182,6 +189,7 @@ function confrontation(carteJoue, caseJoue) {
     }
   }
   if ((caseE - 1) % 3 !== 0) { // Est
+    console.log('case' + caseE);
     let E = document.getElementsByClassName('case' + caseE)[0].firstElementChild;
     if (E !== null) {
       let cartE = findCard(E.className);

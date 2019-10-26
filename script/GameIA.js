@@ -85,7 +85,6 @@ class Game {
     if (this.currentPlayer == 0) {
       document.getElementById('un').classList.remove('tonTour');
       document.getElementById('deux').classList.add('tonTour');
-      this.listPlayer[1].play();
     } else {
       document.getElementById('deux').classList.remove('tonTour');
       document.getElementById('un').classList.add('tonTour');
@@ -123,6 +122,13 @@ class Game {
         }
       }
       this.currentPlayer = 0;
+    }
+
+    if(this.currentPlayer == 1 && this.dureeGame < 9 ){
+      this.listPlayer[1].play();
+    }
+    else{
+      this.endGame();
     }
   }
 

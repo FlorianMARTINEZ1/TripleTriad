@@ -82,10 +82,11 @@ class Game {
   setTurn() {
     //changement de couleur du joueur qui joue
     this.dureeGame++;
+    console.log("Temps du jeu : "+dureeGame);
     if (this.currentPlayer == 0) {
       document.getElementById('un').classList.remove('tonTour');
       document.getElementById('deux').classList.add('tonTour');
-      
+
     } else {
       document.getElementById('deux').classList.remove('tonTour');
       document.getElementById('un').classList.add('tonTour');
