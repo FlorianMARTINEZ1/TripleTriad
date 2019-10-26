@@ -150,11 +150,11 @@
     <div>
       <h3>Quitter le jeu</h2>
         <p>
-          cliquez <a href="">ici</a>.
+          cliquez <a href="./index.html">ici</a>.
         </p>
     </div>
     <div>
-      <h3>Relancé une partie ? </h2>
+      <h3>Relancer une partie ? </h2>
         <p>
           <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
         </p>

@@ -29,17 +29,17 @@ html {
 
 #menu {
   position: fixed;
-  width: 0%;
-  height: 0%;
+  width: 75%;
+  height: 75%;
   opacity: 0;
+  top:0%;
   margin-left: 12.5%;
   text-align: center;
-  transition-property: width, height, opacity;
+  transition-property:  opacity,top;
 }
 
 #menu.ma-transition {
-  width: 75%;
-  height: 75%;
+  top:10%;
   opacity: 1;
 }
 
