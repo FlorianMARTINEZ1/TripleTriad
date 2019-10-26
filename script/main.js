@@ -70,9 +70,9 @@ function initialisation() {
 
   if(choixjoueur == 1 ){
     g2.getListPlayer()[1].play();
-    console.log("ddddddd");
+
   }
-  console.log("dedezd");
+
 }
 
 function drag(ev) {
