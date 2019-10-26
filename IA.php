@@ -181,7 +181,7 @@
     echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
   }
   ?>
-  <script type="text/javascript" src="./script/Game.js"></script>
+  <script type="text/javascript" src="./script/GameIA.js"></script>
   <script type="text/javascript" src="./script/main.js"></script>
 
 </body>
