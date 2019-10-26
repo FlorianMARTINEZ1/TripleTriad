@@ -29,8 +29,8 @@ html {
 
 #menu {
   position: fixed;
-  width: 75%;
-  height: 75%;
+  width: 0%;
+  height: 0%;
   opacity: 0;
   top:0%;
   margin-left: 12.5%;
@@ -40,6 +40,8 @@ html {
 
 #menu.ma-transition {
   top:10%;
+  width: 75%;
+  height: 75%;
   opacity: 1;
 }
 
