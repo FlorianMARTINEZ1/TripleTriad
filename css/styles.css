@@ -30,6 +30,7 @@ html {
 #menu {
   position: fixed;
   width: 0%;
+  visibility: hidden;
   height: 0%;
   opacity: 0;
   top:0%;
@@ -41,6 +42,7 @@ html {
 #menu.ma-transition {
   top:10%;
   width: 75%;
+  visibility: visible;
   height: 75%;
   opacity: 1;
 }
