@@ -10,6 +10,8 @@ class IA extends Joueur {
       this.cards.push(this.index * 5 + i);
     }
     this.casesVides = [];
+    this.casesNonVides = [];
+    this.casesVisees = [];
   }
 
   setCasesVides() {
@@ -42,6 +44,59 @@ class IA extends Joueur {
       }
     }
 
+  }
+
+  setCasesNonVidesAvecCarteBleu() {
+    this.casesNonVides = [];
+    for (var i = 1; i <= 9; i++) {
+      var c = document.getElementsByClassName('case' + i)[0].firstChild;
+      if (c != null && findCard(c.className).donneCouleur() === "bleue") {
+        this.casesNonVides.push(i);
+      }
+    }
+  }
+
+  setCasesVisees() {
+    this.casesVisees = [];
+
+    if (this.casesNonVides.length != 0) {
+      for (var i = 0; i < this.casesNonVides.length; i++) {
+        if (this.casesNonVides[i] === 8 || this.casesNonVides[i] === 5 || this.casesNonVides[i] === 2) {
+          var w = this.casesNonVides[i] + 3;
+          var x = this.casesNonVides[i] - 3;
+          var y = this.casesNonVides[i] + 1;
+          var z = this.casesNonVides[i] - 1;
+
+        } else if (this.casesNonVides[i] === 7 || this.casesNonVides[i] === 4 || this.casesNonVides[i] === 1) {
+          var w = this.casesNonVides[i] + 3;
+          var x = this.casesNonVides[i] - 3;
+          var y = this.casesNonVides[i] + 1;
+          var z = 0;
+        } else {
+          var w = this.casesNonVides[i] + 3;
+          var x = this.casesNonVides[i] - 3;
+          var y = 10
+          var z = this.casesNonVides[i] - 1;
+        }
+
+
+        if (w < 10 && this.casesVides.indexOf(w) != -1) {
+          this.casesVisees.push(w);
+        }
+
+        if (x > 0 && this.casesVides.indexOf(x) != -1) {
+          this.casesVisees.push(x);
+        }
+
+        if (y < 10 && this.casesVides.indexOf(y) != -1) {
+          this.casesVisees.push(y);
+        }
+
+        if (z > 0 && this.casesVides.indexOf(z) != -1) {
+          this.casesVisees.push(z);
+        }
+      }
+    }
   }
 
   play(idDragCard, idCase) {
