@@ -14,8 +14,8 @@ class IARandom extends IA {
   play() {
     this.setCasesVides(); //Regarde les cases vides et les récupere dans la variable casesVides
     this.setNumDragCardOfDeckIA(); // Regarde les case ou il ya une carte dans le deck de l'IA
-    var idCase = getRandomIntInclusive(1, this.tailleTab); //aléatoire pour sélectionner une case
-    var idDragCard = getRandomIntInclusive(1, this.tailleCar); //aléatoire pour sélectionner une carte
+    var idCase = getRandomIntInclusive(0, this.casesVides.length - 1); //aléatoire pour sélectionner une case
+    var idDragCard = getRandomIntInclusive(0, this.cards.length - 1); //aléatoire pour sélectionner une carte
     super.play(idDragCard, idCase);
   }
 

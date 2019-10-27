@@ -4,7 +4,8 @@ class Game {
   constructor(joueur1, joueur2, ids) {
     var j1 = new Joueur(joueur1);
     //var j2 = new Joueur(joueur2);
-    var j2 = new IARandom(this);
+    //var j2 = new IARandom(this);
+    var j2 = new IAMoyen(this);
     this.listPlayer = [j1, j2];
     /*this.currentPlayer = getRandomIntInclusive(0, 1);*/
     this.currentPlayer = document.getElementById("choix").innerHTML;
@@ -124,11 +125,10 @@ class Game {
       this.currentPlayer = 0;
     }
 
-    if(this.currentPlayer == 1 && this.dureeGame < 9 ){ // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
+    if (this.currentPlayer == 1 && this.dureeGame < 9) { // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
       this.listPlayer[1].play();
-    }
-    else{
-      this.endGame(); // sinon on test si la partie est fini 
+    } else {
+      this.endGame(); // sinon on test si la partie est fini
     }
   }
 

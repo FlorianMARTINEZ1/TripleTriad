@@ -5,8 +5,6 @@ class IA extends Joueur {
     this.index = 1;
     this.cards = []; // tableau des cartes cas l'IA : contient le num du drag
     this.casesVides = []; // tableau des cases vides du plateau : contiene le num de la case
-    this.tailleTab = 9; // taille du plateau
-    this.tailleCar = 5; // taille du deck de l'IA
     var i;
     for (i = 1; i < 6; i++) {
       this.cards.push(this.index * 5 + i);
@@ -15,44 +13,32 @@ class IA extends Joueur {
   }
 
   setCasesVides() {
-    this.tailleTab = 0; // met la taille à 0
     var i;
-    var j = 1;
+    this.casesVides = []
     let N;
     for (i = 1; i <= 9; i++) { // pour toutes les cases du plateau
       N = document.getElementsByClassName('case' + i)[0]; // on récupère la case
-      if (N.childElementCount > 0) { // s'il a un enfant ( donc une carte dans une case) on fait rien
-      } else { // sinon on le met dans le tableau des case vide
-        this.casesVides[j] = i; // on met l'index de la case
-        j++; //on augmente les index du tableau
-        this.tailleTab++; // on augmente la taille du tableau
-      }
+      if (!N.childElementCount > 0) // sinon on le met dans le tableau des case vide
+        this.casesVides.push(i); // on met l'index de la case
     }
-
   }
 
 
+
   setNumDragCardOfDeckIA() {
-    this.tailleCar = 0; // met la taille à 0
+    this.cards = [];
     var i;
-    var j = 1;
     let N;
     for (i = 1; i < 4; i++) { // pour la première ranger de carte ( les 3 en haut)
       N = document.querySelector(".droite .case:nth-child(" + i + ")"); // on prend les case de nos cartes une après l'autre
-
       if (N.childElementCount > 0) { // si elle a un enfant , (donc une carte pas encore joué) on la met dans le tableau
-        this.cards[j] = this.index * 5 + i; // on met le drag de la carte dans le tableau (de 6 à 8)
-        j++; // on augmente l'index du tableau
-        this.tailleCar++; // on augmente la taille du tableau
+        this.cards.push(this.index * 5 + i); // on met le drag de la carte dans le tableau (de 6 à 8)
       }
     }
     for (i = 1; i < 3; i++) { // pour la deuxème ranger de carte ( les 2 en bas)
       N = document.querySelector(".droite div.last.cards1 .case:nth-child(" + i + ")"); // on prend les case de nos cartes une après l'autre
-
       if (N.childElementCount > 0) { // pareil que pour les 3 première cases
-        this.cards[j] = this.index * 5 + i + 3;
-        j++;
-        this.tailleCar++;
+        this.cards.push(this.index * 5 + i + 3);
       }
     }
 
@@ -72,7 +58,6 @@ class IA extends Joueur {
     casee.removeAttribute('ondrop');
     casee.removeAttribute('ondragover');
     confrontation(newimg.className, 'case' + this.casesVides[idCase]);
-    this.cards.splice[idDragCard];
     g2.setTurn();
     g2.endGame();
   }
