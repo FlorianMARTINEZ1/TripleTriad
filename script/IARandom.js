@@ -31,7 +31,7 @@ class IARandom extends Joueur {
 
   }
 
-  setCasesPleineCard() {
+  setNumDragCardOfDeckIA() {
     this.tailleCar=0; // met la taille à 0
     var i;var j =1;
     let N;
@@ -57,7 +57,7 @@ class IARandom extends Joueur {
   }
   play() {
     this.setCasesVides(); //Regarde les cases vides et les récupere dans la variable casesVides
-    this.setCasesPleineCard(); // Regarde les case ou il ya une carte dans le deck de l'IA
+    this.setNumDragCardOfDeckIA(); // Regarde les case ou il ya une carte dans le deck de l'IA
     var x = getRandomIntInclusive(1, this.tailleTab ); //aléatoire pour sélectionner une case
     var y = getRandomIntInclusive(1, this.tailleCar ); //aléatoire pour sélectionner une carte
     // récupère la carte.
