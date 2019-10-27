@@ -68,7 +68,7 @@ function initialisation() {
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
 
-  if(choixjoueur == 1 ){
+  if (choixjoueur == 1) {
     g2.getListPlayer()[1].play();
 
   }
@@ -82,9 +82,9 @@ function drag(ev) {
     ev.dataTransfer.setData('text', ev.target.id);
     var sound = document.getElementById("sound");
     if (sound.muted == false) {
-      var sound = document.getElementById("soundcartepose");
+      /*var sound = document.getElementById("soundcartepose");
       sound.autoplay = true;
-      sound.load();
+      /*sound.load();*/
     }
   } else {
     ev.preventDefault()
@@ -110,9 +110,9 @@ function drop(ev) {
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
   var sound = document.getElementById("sound");
   if (sound.muted == false) {
-    var sound = document.getElementById("soundcarte");
+    /*var sound = document.getElementById("soundcarte");
     sound.autoplay = true;
-    sound.load();
+    /*sound.load();*/
   }
   g2.endGame();
 

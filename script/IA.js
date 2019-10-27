@@ -46,7 +46,7 @@ class IA extends Joueur {
 
   }
 
-  setCasesNonVidesAvecCarteBleu() {
+  setCasesNonVidesAvecCarteBleue() {
     this.casesNonVides = [];
     for (var i = 1; i <= 9; i++) {
       var c = document.getElementsByClassName('case' + i)[0].firstChild;
@@ -56,44 +56,60 @@ class IA extends Joueur {
     }
   }
 
+
+
+  getCasesAutour(position) {
+    var casesAutour = [];
+    if (position === 8 || position === 5 || position === 2) {
+      var w = position + 3;
+      var x = position - 3;
+      var y = position + 1;
+      var z = position - 1;
+
+    } else if (position === 7 || position === 4 || position === 1) {
+      var w = position + 3;
+      var x = position - 3;
+      var y = position + 1;
+      var z = 0;
+    } else {
+      var w = position + 3;
+      var x = position - 3;
+      var y = 10
+      var z = position - 1;
+    }
+
+
+    if (w < 10) {
+      casesAutour.push(w);
+    }
+
+    if (x > 0) {
+      casesAutour.push(x);
+    }
+
+    if (y < 10) {
+      casesAutour.push(y);
+    }
+
+    if (z > 0) {
+      casesAutour.push(z);
+    }
+    return casesAutour;
+  }
+
   setCasesVisees() {
     this.casesVisees = [];
-
+    console.log(this.casesNonVides);
     if (this.casesNonVides.length != 0) {
       for (var i = 0; i < this.casesNonVides.length; i++) {
-        if (this.casesNonVides[i] === 8 || this.casesNonVides[i] === 5 || this.casesNonVides[i] === 2) {
-          var w = this.casesNonVides[i] + 3;
-          var x = this.casesNonVides[i] - 3;
-          var y = this.casesNonVides[i] + 1;
-          var z = this.casesNonVides[i] - 1;
+        let casesAutour = this.getCasesAutour(this.casesNonVides[i]);
+        console.log(this.casesNonVides[i]);
+        console.log(casesAutour);
+        for (var j = 0; j < casesAutour.length; j++) {
+          if (this.casesVides.indexOf(casesAutour[j]) != -1) {
+            this.casesVisees.push(casesAutour[j]);
+          }
 
-        } else if (this.casesNonVides[i] === 7 || this.casesNonVides[i] === 4 || this.casesNonVides[i] === 1) {
-          var w = this.casesNonVides[i] + 3;
-          var x = this.casesNonVides[i] - 3;
-          var y = this.casesNonVides[i] + 1;
-          var z = 0;
-        } else {
-          var w = this.casesNonVides[i] + 3;
-          var x = this.casesNonVides[i] - 3;
-          var y = 10
-          var z = this.casesNonVides[i] - 1;
-        }
-
-
-        if (w < 10 && this.casesVides.indexOf(w) != -1) {
-          this.casesVisees.push(w);
-        }
-
-        if (x > 0 && this.casesVides.indexOf(x) != -1) {
-          this.casesVisees.push(x);
-        }
-
-        if (y < 10 && this.casesVides.indexOf(y) != -1) {
-          this.casesVisees.push(y);
-        }
-
-        if (z > 0 && this.casesVides.indexOf(z) != -1) {
-          this.casesVisees.push(z);
         }
       }
     }
