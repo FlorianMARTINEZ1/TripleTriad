@@ -124,11 +124,11 @@ class Game {
       this.currentPlayer = 0;
     }
 
-    if(this.currentPlayer == 1 && this.dureeGame < 9 ){
+    if(this.currentPlayer == 1 && this.dureeGame < 9 ){ // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
       this.listPlayer[1].play();
     }
     else{
-      this.endGame();
+      this.endGame(); // sinon on test si la partie est fini 
     }
   }
 
