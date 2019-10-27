@@ -26,12 +26,6 @@ class IAMoyen extends IA {
     this.setNumDragCardOfDeckIA(); // Regarde les case ou il ya une carte dans le deck de l'IA
     this.setCasesNonVidesAvecCarteBleu();
     this.setCasesVisees();
-    console.log(this.casesNonVides)
-    console.log(this.casesVisees);
-    console.log(this.casesVisees.length != 0);
-
-
-
     if (this.casesVisees.length != 0) {
       var idCase = this.casesVides.indexOf(this.casesVisees[getRandomIntInclusive(0, this.casesVisees.length - 1)]); //aléatoire pour sélectionner une case
       var idDragCard = getRandomIntInclusive(0, this.cards.length - 1); //aléatoire pour sélectionner une carte
