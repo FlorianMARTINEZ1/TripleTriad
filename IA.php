@@ -170,6 +170,7 @@
   <script type="text/javascript" src="./script/Card.js"></script>
   <script type="text/javascript" src="./script/ChercheCarte.js"></script>
   <script type="text/javascript" src="./script/Joueur.js"></script>
+  <script type="text/javascript" src="./script/IA.js"></script>
   <?php
   if($_GET['type']=="faible"){
     echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
