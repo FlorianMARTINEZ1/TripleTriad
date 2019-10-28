@@ -48,14 +48,12 @@
           <div class="input-field col s6">
             <input id="joueur2" type="text"
             <?php
-            if($_GET['type']=="faible"){
-              echo 'value="IAFaible"';
-            }
-            else if($_GET['type']=="moyen"){
-              echo 'value="IAMoyen"';
-            }
-            else{
-              echo 'value="IAForte"';
+            if ($_GET['type']=="faible") {
+                echo 'value="IAFaible"';
+            } elseif ($_GET['type']=="moyen") {
+                echo 'value="IAMoyen"';
+            } else {
+                echo 'value="IAForte"';
             }
 
 
@@ -124,14 +122,14 @@
   <div id="fingame" class="card" style="display: none;">
     <div id="vide">
     </div>
-    <div>
-      <h4>FIN DU JEU</h4>
+    <div class="partiefini center">
+      <h4>Fin de la partie</h4>
       <p id="gagnant">
         Bravo !
       </p>
-      <p>
-        <button id="refresh" onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
-      </p>
+      <div class="row center">
+        <button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>
+      </div>
     </div>
   </div>
   <div id="boutonSon">
@@ -172,14 +170,12 @@
   <script type="text/javascript" src="./script/Joueur.js"></script>
   <script type="text/javascript" src="./script/IA.js"></script>
   <?php
-  if($_GET['type']=="faible"){
-    echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
-  }
-  else if($_GET['type']=="moyen"){
-    echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
-  }
-  else{
-    echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+  if ($_GET['type']=="faible") {
+      echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
+  } elseif ($_GET['type']=="moyen") {
+      echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
+  } else {
+      echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
   }
   ?>
   <script type="text/javascript" src="./script/GameIA.js"></script>

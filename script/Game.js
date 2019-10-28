@@ -49,8 +49,8 @@ class Game {
   endGame() { // regarde si la partie est finie
 
     if (this.dureeGame == 9) {
-      document.getElementById("fingame").removeAttribute("display");
-      document.getElementById("fingame").setAttribute("style", "display:fixed;");
+      document.getElementById("finpartie").removeAttribute("display");
+      document.getElementById("finpartie").setAttribute("style", "display:block;");
       document.getElementById('plateaujeu').style.display = 'none';
       var sound = document.getElementById("sound");
       sound.muted = true;
