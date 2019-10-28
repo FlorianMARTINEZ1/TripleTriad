@@ -69,7 +69,7 @@ class IAForte extends IA {
     }
     console.log(cardReturned);
     if (cardReturned == 0 || cardReturned == -1) {
-      return getRandomIntInclusive(1, 9);
+      return this.casesVides[getRandomIntInclusive(0, this.casesVides.length - 1)];
     }
     return position;
   }
@@ -117,8 +117,11 @@ class IAForte extends IA {
     var idDragCard = this.cards.indexOf(idCard);
     var idCase = this.getMeilleurPos(idCard);
     var idCaseAPlacer = this.casesVides.indexOf(idCase);
+    console.log(this.casesVisees);
     console.log(this.cards);
     console.log(this.casesVides);
+    console.log(idCard);
+    console.log(idCase);
     console.log(idDragCard);
     console.log(idCaseAPlacer);
     super.play(idDragCard, idCaseAPlacer);
