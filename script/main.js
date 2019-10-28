@@ -68,7 +68,7 @@ function initialisation() {
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
 
-  if (choixjoueur == 1) {
+  if (choixjoueur == 1 && (g2.getListPlayer()[1] instanceof IA)) {
     g2.getListPlayer()[1].play();
 
   }
