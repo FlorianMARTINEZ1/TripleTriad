@@ -6,14 +6,20 @@ html {
 }
 
 @font-face {
-    font-family: 'finalf';
-    src: url('final_fantasy.finalf.eot'); /* IE9 Compat Modes */
-    src: url('final_fantasy.finalf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('final_fantasy.finalf.woff2') format('woff2'), /* Super Modern Browsers */
-         url('final_fantasy.finalf.woff') format('woff'), /* Pretty Modern Browsers */
-         url('final_fantasy.finalf.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('final_fantasy.finalf.svg#svgfinalf') format('svg'); /* Legacy iOS */
-  }
+  font-family: 'finalf';
+  src: url('final_fantasy.finalf.eot');
+  /* IE9 Compat Modes */
+  src: url('final_fantasy.finalf.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('final_fantasy.finalf.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('final_fantasy.finalf.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('final_fantasy.finalf.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('final_fantasy.finalf.svg#svgfinalf') format('svg');
+  /* Legacy iOS */
+}
 
 #boutonSon {
   right: 0px;
@@ -33,10 +39,10 @@ html {
   visibility: hidden;
   height: 0%;
   opacity: 0;
-  top:0%;
+  top: 0%;
   margin-left: 12.5%;
   text-align: center;
-  transition-property:  opacity,top;
+  transition-property: opacity, top;
 }
 img{
   transition-property: width,margin-left;
@@ -46,7 +52,7 @@ img{
 
 
 #menu.ma-transition {
-  top:10%;
+  top: 10%;
   width: 75%;
   visibility: visible;
   height: 75%;
