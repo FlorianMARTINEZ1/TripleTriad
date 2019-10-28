@@ -38,6 +38,12 @@ html {
   text-align: center;
   transition-property:  opacity,top;
 }
+img{
+  transition-property: width,margin-left;
+  transition-duration: 0.5s;
+  margin-left: 0px;
+}
+
 
 #menu.ma-transition {
   top:10%;
