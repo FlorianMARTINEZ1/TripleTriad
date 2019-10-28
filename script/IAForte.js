@@ -111,19 +111,19 @@ class IAForte extends IA {
     this.setNumDragCardOfDeckIA(); // Regarde les case ou il ya une carte dans le deck de l'IA
     this.setCasesNonVidesAvecCarteBleue();
     this.setCasesVisees();
-    console.log(this.casesNonVides);
-    console.log(this.casesVisees);
+    /*console.log(this.casesNonVides);
+    console.log(this.casesVisees);*/
     var idCard = this.getMeilleurCarte();
     var idDragCard = this.cards.indexOf(idCard);
     var idCase = this.getMeilleurPos(idCard);
     var idCaseAPlacer = this.casesVides.indexOf(idCase);
-    console.log(this.casesVisees);
+    /*console.log(this.casesVisees);
     console.log(this.cards);
     console.log(this.casesVides);
     console.log(idCard);
     console.log(idCase);
     console.log(idDragCard);
-    console.log(idCaseAPlacer);
+    console.log(idCaseAPlacer);*/
     super.play(idDragCard, idCaseAPlacer);
 
 
