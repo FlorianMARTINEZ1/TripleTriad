@@ -14,7 +14,7 @@ class IAMoyen extends IA {
   }
 
   setCasesNonVidesAvecCarteBleu() {
-    super.setCasesNonVidesAvecCarteBleu();
+    super.setCasesNonVidesAvecCarteBleue();
   }
 
   setCasesVisees() {

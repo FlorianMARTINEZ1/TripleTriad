@@ -3,12 +3,18 @@
 class Game {
   constructor(joueur1, joueur2, ids) {
     var j1 = new Joueur(joueur1);
-    //var j2 = new Joueur(joueur2);
-    //var j2 = new IARandom(this);
-    //var j2 = new IAMoyen(this);
-    var j2 = new IAForte(this);
+    var j2;
+    var joueurDeux = document.getElementById('joueur2').value; // cherche quel IA Joue
+    if(joueurDeux == "IAForte"){
+      j2 = new IAForte(this);
+    }
+    else if(joueurDeux == "IAMoyen"){
+      j2 = new IAMoyen(this);
+    }
+    else if(joueurDeux == "IAFaible"){
+      j2 = new IARandom(this);
+    }
     this.listPlayer = [j1, j2];
-    /*this.currentPlayer = getRandomIntInclusive(0, 1);*/
     this.currentPlayer = document.getElementById("choix").innerHTML;
     this.id = ids;
     this.dureeGame = 0;
