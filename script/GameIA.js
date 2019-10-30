@@ -61,9 +61,16 @@ class Game {
     this.endGame();
   }
 
-  endGame() { // regarde si la partie est finie
+  endGame(){
+    if (this.dureeGame == 9) {
+        setTimeout(function(){g2.endGamePrint()},3000);
+    }
+  }
+
+  endGamePrint() { // regarde si la partie est finie
 
     if (this.dureeGame == 9) {
+
       document.getElementById("fingame").removeAttribute("display");
       document.getElementById("fingame").setAttribute("style", "display:fixed;");
       document.getElementById('plateaujeu').style.display = 'none';
