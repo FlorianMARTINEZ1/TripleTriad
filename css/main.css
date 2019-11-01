@@ -19,7 +19,8 @@ html {
 }
 
 div.backgr {
-  position: absolute;
+  position: fixed;
+  margin-top :4%;
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,14 +30,19 @@ div.backgr {
   opacity: 0.8;
 }
 
+nav{
+  background-color: #223d44;
+}
+
 div.principale {
-  position: absolute;
+  position: fixed;
+  margin-top:4%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 600px;
   width: 1024px;
-  margin: 0;
+/*  margin: 0;*/
   background-color: transparent;
   box-shadow: none;
 }

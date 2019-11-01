@@ -23,14 +23,30 @@ html {
 
 #boutonSon {
   right: 0px;
-  top: 0px;
+  top: 65px;
   position: fixed;
+}
+header{
+  margin-bottom: 50%;
+  z-index: 100;
 }
 
 #menuIcon {
   position: fixed;
   right: 53px;
-  top: 0px;
+  top: 65px;
+}
+
+a{
+  transition-property: background-color;
+}
+#menuIcon a, #boutonSon a{
+  background-color: #223d44;
+}
+
+
+#menuIcon a:hover, #boutonSon a:hover,#nav li a:hover{
+  background-color: rgba(72, 131, 146, 1);
 }
 
 #menu {
@@ -219,6 +235,12 @@ h4.score {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 3;
+}
+nav, nav.brand-logo, #nav{
+  background-color: #223d44;
+}
+header{
+  margin-bottom: 0%;
 }
 
 /*Formulaire*/
