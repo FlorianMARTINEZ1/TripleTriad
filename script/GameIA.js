@@ -146,12 +146,8 @@ class Game {
       this.currentPlayer = 0;
     }
 
-    if (this.currentPlayer == 1 && this.dureeGame < 8) { // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
+    if (this.currentPlayer == 1 && this.dureeGame < 9) { // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
       setTimeout(function(){g2.playIA()},700); // joué après 0.7 sec
-    }
-    else if(this.dureeGame == 8 ){
-      setTimeout(function(){g2.playIA()},2000); // dernier tour, joue après 2 sec
-
     }
     else{
       this.endGame(); // sinon on test si la partie est fini
