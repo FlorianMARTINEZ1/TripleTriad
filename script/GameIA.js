@@ -25,11 +25,11 @@ class Game {
       document.getElementById('drag3').setAttribute('draggable', 'false');
       document.getElementById('drag4').setAttribute('draggable', 'false');
       document.getElementById('drag5').setAttribute('draggable', 'false');
-      document.getElementById('drag6').setAttribute('draggable', 'true');
-      document.getElementById('drag7').setAttribute('draggable', 'true');
-      document.getElementById('drag8').setAttribute('draggable', 'true');
-      document.getElementById('drag9').setAttribute('draggable', 'true');
-      document.getElementById('drag10').setAttribute('draggable', 'true');
+      document.getElementById('drag6').setAttribute('draggable', 'false');
+      document.getElementById('drag7').setAttribute('draggable', 'false');
+      document.getElementById('drag8').setAttribute('draggable', 'false');
+      document.getElementById('drag9').setAttribute('draggable', 'false');
+      document.getElementById('drag10').setAttribute('draggable', 'false');
       document.getElementById('deux').classList.add('tonTour');
 
     } else { // sinon on désactive le rouge
@@ -129,9 +129,9 @@ class Game {
         if (document.getElementById('drag' + i) !== null) {
           document.getElementById('drag' + i).setAttribute('draggable', 'false');
         }
-        if (document.getElementById('drag' + (i + 5)) !== null) {
+        /*if (document.getElementById('drag' + (i + 5)) !== null) {
           document.getElementById('drag' + (i + 5)).setAttribute('draggable', 'true');
-        }
+        }*/
       }
       this.currentPlayer = 1;
     } else {
@@ -139,9 +139,9 @@ class Game {
         if (document.getElementById('drag' + i) !== null) {
           document.getElementById('drag' + i).setAttribute('draggable', 'true');
         }
-        if (document.getElementById('drag' + (i + 5))) {
+        /*if (document.getElementById('drag' + (i + 5))) {
           document.getElementById('drag' + (i + 5)).setAttribute('draggable', 'false');
-        }
+        }*/
       }
       this.currentPlayer = 0;
     }
