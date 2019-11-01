@@ -26,7 +26,7 @@
 				<div class="nav-wrapper container darken-4">
 			        <a data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-			        <a href="#" class="brand-logo">Triple Triad</a>
+			        <a href="./" class="brand-logo">Triple Triad</a>
 
 			        <ul id="nav-mobile" class="right hide-on-med-and-down">
 
