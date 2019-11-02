@@ -52,7 +52,6 @@ class ModelJoueur extends Model{
             "login" => $login,
             "mdp" => $mot_de_passe_chiffre,
         );
-
         // On donne les valeurs et on exécute la requête
         $req_prep->execute($values);
         // On récupère les résultats comme précédemment

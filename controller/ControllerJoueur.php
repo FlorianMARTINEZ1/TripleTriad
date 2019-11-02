@@ -8,8 +8,8 @@ class ControllerJoueur {
 
     public static function readAll() {
 
-       /* $tab_c = ModelJoueur::getAllUtilisateurs(); */    //appel au modèle pour gerer la BD
-        $tab_c = ModelJoueur::selectAll();
+
+        $tab_j = ModelJoueur::selectAll();
         $controller='joueur';
         $view='list';
         $pagetitle='Liste des joueurs';
@@ -20,26 +20,28 @@ class ControllerJoueur {
     }
 
     public static function connect(){
+      $controller='joueur';
+      $view='connect';
+      $pagetitle='connect';
 
-      require File::build_path(array('view','joueur','connect.php'));
+      require File::build_path(array('view','viewJoueur.php'));
     }
 
     public static function connected(){
       $login = $_GET["login"];
       $mdp = $_GET["password"];
       $mdpchiffrer = Security::chiffrer($mdp);
-      $c = ModelJoueur::select($login);
-
+      $j = ModelJoueur::select($login);
       if(ModelJoueur::checkPassword($login,$mdpchiffrer)){
-        $c = ModelJoueur::select($login);
+        $j = ModelJoueur::select($login);
         $_SESSION['login']=$login;
-        if($c->get("admin")==0){
+        if($j->get("admin")==0){
           $_SESSION['admin'] = false;
         }
         else{
           $_SESSION['admin'] = true;
         }
-        /*$c = ModelJoueur::select($login);*/
+        /*$j = ModelJoueur::select($login);*/
         require File::build_path(array('view','joueur','detail.php'));
       }
       else{
@@ -47,7 +49,7 @@ class ControllerJoueur {
         $view='error';
         $pagetitle='error';
 
-        require File::build_path(array('view','joueur','error.php'));
+        require File::build_path(array('view','viewJoueur.php'));
       }
 
 
@@ -68,8 +70,8 @@ class ControllerJoueur {
 
       $log = $_GET['login']; // prend l'immatriculation dans l'URL
       /*$v = ModelJoueur::getjoueurByImmat($ima); */
-      $c = ModelJoueur::select($log);
-      if ($c==false){
+      $j = ModelJoueur::select($log);
+      if ($j==false){
 
         $controller='joueur';
         $view='error';
@@ -101,11 +103,11 @@ class ControllerJoueur {
 
 
           ModelJoueur::delete($log);
-          $tab_c = ModelJoueur::selectAll();
+          $tab_j = ModelJoueur::selectAll();
           require File::build_path(array('view','joueur','deleted.php'));
       }
       else{
-         ControllerUtilisateur::connect();
+         ControllerJoueur::connect();
       }
 
 
@@ -119,8 +121,8 @@ class ControllerJoueur {
     public static function update(){
       $login = $_GET['login'];
       if(Session::is_user($login) || Session::is_admin()){
-          $c = ModelJoueur::select($login);
-          if ($c==false){
+          $j = ModelJoueur::select($login);
+          if ($j==false){
 
             $controller='joueur';
             $view='error';
@@ -140,7 +142,7 @@ class ControllerJoueur {
 
       }
       else{
-        ControllerUtilisateur::connect();
+        ControllerJoueur::connect();
       }
 
 
@@ -160,7 +162,7 @@ class ControllerJoueur {
 
           $mdp = Security::chiffrer($mdp);
 
-          $c = new ModelJoueur($prenom,$nom,$login,$mdp,$admin);
+          $j = new ModelJoueur($prenom,$nom,$login,$mdp,$admin);
           /*$v->update();*/
           $data = array(
             'login' => $login,
@@ -168,15 +170,18 @@ class ControllerJoueur {
             'prenom' => $prenom,
             'mdp' => $mdp,
             'admin' => $admin
-
-
           );
-          $c->update($data);
-          $tab_c = ModelJoueur::selectAll();
-          require File::build_path(array('view','joueur','updated.php'));
+          $j->update($data);
+          $tab_j = ModelJoueur::selectAll();
+
+          $controller='joueur';
+          $view='updated';
+          $pagetitle='update joueur';
+
+          require File::build_path(array('view','viewJoueur'));
       }
       else{
-        ControllerUtilisateur::connect();
+        ControllerJoueur::connect();
       }
 
     }
@@ -185,8 +190,7 @@ class ControllerJoueur {
 
     public static function created(){
       $login = $_GET['login'];
-      if(Session::is_user($login) || Session::is_admin() ){
-          if($_GET["email"] == filter_var($_GET["email"], FILTER_VALIDATE_EMAIL)){
+    /*  if(Session::is_user($login) || Session::is_admin() ){*/
               $nom = $_GET['nom'];
               $prenom = $_GET['prenom'];
               $mdp = $_GET["password"];
@@ -204,34 +208,30 @@ class ControllerJoueur {
                 'prenom' => $prenom,
                 'mdp' => $mdp,
                 'admin' => $admin
-
-
               );
 
-              $c = new ModelJoueur($login,$nom,$prenom,$mdp,$admin);
-              $c->save($data);
-              $tab_c = ModelJoueur::selectAll();
+              $j = new ModelJoueur($login,$nom,$prenom,$mdp,$admin);
+              $j->save($data);
+              $controller='joueur';
+              $view='created';
+              $pagetitle='create joueur';
               /*ControllerVoiture::readAll();*/
-              require File::build_path(array('view','joueur','created.php'));
-        }
-        else{
-          ControllerUtilisateur::error();
-        }
-      }
+              require File::build_path(array('view','viewJoueur.php'));
+    /*  }
       else{
-         ControllerUtilisateur::connect();
-      }
+         ControllerJoueur::connect();
+      }*/
     }
 
     public static function create(){
 
         $controller='joueur';
-        $view='udpate';
+        $view='update';
         $pagetitle='formulaire joueur';
         $action='create';
-        $u = new ModelJoueur("","","");
+        $j = new ModelJoueur("","","");
 
-        require File::build_path(array('view','joueur','update.php'));
+        require File::build_path(array('view','viewJoueur.php'));
     }
 
 

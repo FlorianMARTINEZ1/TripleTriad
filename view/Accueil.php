@@ -31,21 +31,33 @@
 
 			        <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                 <li><a href="">Règles</a></li>
-                <li><a href="">Inscription</a></li>
-                <li><a href="">Connexion</a></li>
-                <li><a href="">Mon Compte</a></li>
+                <li><a href="">Règles</a></li>
                 <li><a href="">Report Bug/Contact</a></li>
+                <?php
+                  if (!isset($_SESSION['login'])) {
+                        echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                        echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+                      }
+                  else{
+                    echo "<li><a href=\"\">Mon Compte</a></li>";
+                    echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+                  }?>
 
 			        </ul>
     		  	</div>
 			</nav>
       <ul id="sidenav" class="sidenav">
         <li><a href="">Règles</a></li>
-       <li><a href="">Inscription</a></li>
-       <li><a href="">Connexion</a></li>
-       <li><a href="">Mon Compte</a></li>
-       <li><a href="">Report Bug/Contact</a></li>
+        <li><a href="">Report Bug/Contact</a></li>
+        <?php
+          if (!isset($_SESSION['login'])) {
+                echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+              }
+          else{
+            echo "<li><a href=\"\">Mon Compte</a></li>";
+            echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+          }?>
        </ul>
   </header>
   <div class="container">

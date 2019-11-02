@@ -1,7 +1,6 @@
 <?php
 require_once 'lib/File.php';
 
-require_once File::build_path(array('lib','Security.php'));
 
 class ControllerGame {
     protected static $object = 'game';

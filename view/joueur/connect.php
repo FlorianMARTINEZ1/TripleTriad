@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html>
-   
-   
-    <body>
 
-      <form method="get" action="./index.php">
+  <form class="col s12" id="backform" method="get" action="./index.php">
   <fieldset>
-    <legend>Mon formulaire :</legend>
-    <p>
-      <label for="login">Login</label> :
-      <input type="text" required name="login" id="login" />
-   </p>
-   <p>
-    <p>
-     <label for="password">Mot de passe :</label>
-      <input type="text" name="password" id="password" required>
-    </p>
- 
+    <legend>Connexion</legend>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="login" type="text" class="validate" name="login" required />
+        <label for="login">Login</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate" name=password required>
+        <label for="password">Mots de passe</label>
+      </div>
+    </div>
     <input type='hidden' name='action' value="connected">
     <input type="hidden" name="controller" value="utilisateur">
-   
-      <input type="submit" value="Envoyer" />
-    </p>
-  </fieldset> 
+
+    <div class="row center">
+      <input class="waves-effect waves-light ff8 btn " type="submit" value="Envoyer" />
+    </div>
+  </fieldset>
 </form>
-
-    </body>
-</html> 
-
