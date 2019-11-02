@@ -26,7 +26,8 @@ html {
   top: 65px;
   position: fixed;
 }
-header{
+
+header {
   margin-bottom: 50%;
   z-index: 100;
 }
@@ -37,15 +38,15 @@ header{
   top: 65px;
 }
 
-a{
+a {
   transition-property: background-color;
 }
-#menuIcon a, #boutonSon a{
+
+#menuIcon a, #boutonSon a {
   background-color: #223d44;
 }
 
-
-#menuIcon a:hover, #boutonSon a:hover,#nav li a:hover{
+#menuIcon a:hover, #boutonSon a:hover, #nav li a:hover {
   background-color: rgba(72, 131, 146, 1);
 }
 
@@ -94,7 +95,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 #fingame {
@@ -237,10 +238,12 @@ h4.score {
   grid-row-start: 3;
   grid-row-end: 3;
 }
-nav, nav.brand-logo, #nav{
+
+nav, nav.brand-logo, #nav {
   background-color: #223d44;
 }
-header{
+
+header {
   margin-bottom: 0%;
 }
 
