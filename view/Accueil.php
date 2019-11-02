@@ -31,21 +31,33 @@
 
 			        <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                 <li><a href="">Règles</a></li>
-                <li><a href="">Inscription</a></li>
-                <li><a href="">Connexion</a></li>
-                <li><a href="">Mon Compte</a></li>
+                <li><a href="">Règles</a></li>
                 <li><a href="">Report Bug/Contact</a></li>
+                <?php
+                  if (!isset($_SESSION['login'])) {
+                        echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                        echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+                      }
+                  else{
+                    echo "<li><a href=\"./index.php?action=read&controller=joueur\">Mon Compte</a></li>";
+                    echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+                  }?>
 
 			        </ul>
     		  	</div>
 			</nav>
       <ul id="sidenav" class="sidenav">
         <li><a href="">Règles</a></li>
-       <li><a href="">Inscription</a></li>
-       <li><a href="">Connexion</a></li>
-       <li><a href="">Mon Compte</a></li>
-       <li><a href="">Report Bug/Contact</a></li>
+        <li><a href="">Report Bug/Contact</a></li>
+        <?php
+          if (!isset($_SESSION['login'])) {
+                echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+              }
+          else{
+            echo "<li><a href=\"./index.php?action=read&controller=joueur\">Mon Compte</a></li>";
+            echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+          }?>
        </ul>
   </header>
   <div class="container">
@@ -66,7 +78,7 @@
           <div class="row">
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./2Joueurs.html">
+                <a class="modal-trigger white-text" href="./?action=equilibre">
                   <div class="card-content center">
                     <div>Equilibré</div>
                   </div>
@@ -76,7 +88,7 @@
 
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./2Joueurs.html">
+                <a class="modal-trigger white-text" href="./?action=aleatoire">
                   <div class="card-content center">
                     <div>Aléatoire</div>
                   </div>
@@ -86,7 +98,7 @@
 
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./IA.php?type=faible">
+                <a class="modal-trigger white-text" href="./?action=IAfaible">
                   <div class="card-content center">
                     <div>IAFaible</div>
                   </div>
@@ -96,7 +108,7 @@
 
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./IA.php?type=moyen">
+                <a class="modal-trigger white-text" href="./?action=IAmoyen">
                   <div class="card-content center">
                     <div>IAMoyen</div>
                   </div>
@@ -106,7 +118,7 @@
 
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./IA.php?type=forte">
+                <a class="modal-trigger white-text" href="./?action=IAforte">
                   <div class="card-content center">
                     <div>IAForte</div>
                   </div>
@@ -115,7 +127,7 @@
             </div>
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./EnLigne.html">
+                <a class="modal-trigger white-text" href="./?action=EnLigne">
                   <div class="card-content center">
                     <div>Multijoueur</div>
                   </div>

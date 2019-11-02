@@ -21,13 +21,14 @@ html {
   /* Legacy iOS */
 }
 
+
+
 #boutonSon {
   right: 0px;
   top: 65px;
   position: fixed;
 }
-
-header {
+header{
   margin-bottom: 50%;
   z-index: 100;
 }
@@ -38,33 +39,50 @@ header {
   top: 65px;
 }
 
-<<<<<<< HEAD
-a {
-=======
 #form{
-  opacity: 1;
+/*  opacity: 1;
   width: 50%;
   margin-left:25%;
-  margin-top:7%;
+  margin-top:2%;*/
 }
 #backform{
   background-color: white;
+   width: 50%;
+  margin-left:25%;
+    margin-top:2%;
+}
+article div.card-panel{
+  height: 50vh;
+  margin-top:5%;
+  text-align: center;
 }
 
 legend{
   text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+h5{
+  text-align: center;
+
+  background-color: white;
+  transition-property: width,height;
+}
+
+.afficheh5{
+  width: 100%;
+  height: 100%;
 }
 
 a{
->>>>>>> 5b6caed651f3b3c9f1cc0cd9ff3a341a64c3c777
   transition-property: background-color;
 }
-
-#menuIcon a, #boutonSon a {
+#menuIcon a, #boutonSon a{
   background-color: #223d44;
 }
 
-#menuIcon a:hover, #boutonSon a:hover, #nav li a:hover {
+
+#menuIcon a:hover, #boutonSon a:hover,#nav li a:hover{
   background-color: rgba(72, 131, 146, 1);
 }
 
@@ -113,7 +131,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 #fingame {
@@ -256,12 +274,10 @@ h4.score {
   grid-row-start: 3;
   grid-row-end: 3;
 }
-
-nav, nav.brand-logo, #nav {
+nav, nav.brand-logo, #nav{
   background-color: #223d44;
 }
-
-header {
+header{
   margin-bottom: 0%;
 }
 
@@ -289,11 +305,6 @@ header {
   color: #000 !important;
 }
 
-/* underline  color */
-input[type="text"]:not(.browser-default) {
-  border-bottom: 1px solid #000 !important;
-  box-shadow: 0 1px 0 0 #000 !important;
-}
 
 /*underline color focus */
 input[type=text]:not(.browser-default):focus:not([readonly]) {

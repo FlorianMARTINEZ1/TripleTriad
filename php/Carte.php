@@ -1,5 +1,7 @@
 
 <?php
+require_once '../lib/File.php';
+
 class Carte {
 
   private $nomCarte;
@@ -81,8 +83,9 @@ public function afficher2(){
 
 }
   public static function getAllCarte(){
-    require_once "Model.php";
+
   try {
+    require_once File::build_path(array('model','Model.php'));
     $rep = Model::$pdo->query("SELECT * FROM carte");
 
     $rep->setFetchMode(PDO::FETCH_CLASS, 'Carte');
