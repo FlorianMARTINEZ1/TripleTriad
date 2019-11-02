@@ -38,25 +38,22 @@ header {
   top: 65px;
 }
 
-<<<<<<< HEAD
-a {
-=======
-#form{
+#form {
   opacity: 1;
   width: 50%;
-  margin-left:25%;
-  margin-top:7%;
+  margin-left: 25%;
+  margin-top: 7%;
 }
-#backform{
+
+#backform {
   background-color: white;
 }
 
-legend{
+legend {
   text-align: center;
 }
 
-a{
->>>>>>> 5b6caed651f3b3c9f1cc0cd9ff3a341a64c3c777
+a {
   transition-property: background-color;
 }
 
