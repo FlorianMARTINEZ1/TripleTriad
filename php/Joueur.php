@@ -1,5 +1,6 @@
 
 <?php
+require_once '../lib/File.php';
 class Joueur {
 
   private $id;
@@ -37,7 +38,7 @@ public function playTurn(){
 
   $case = $_GET["case"];
   $this->Game->setCardInBoard($this->Deck[$input],$case);
-  
+
 
   $this->deck[$input]=NULL;
 
@@ -78,7 +79,7 @@ public function afficher2(){
 
 }
   public static function getAllJoueur(){
-    require_once "Model.php";
+    require_once File::build_path(array('model','Model.php'));
   try {
     $rep = Model::$pdo->query("SELECT * FROM joueur");
 

@@ -1,6 +1,8 @@
 
 <?php
+require_once '../lib/File.php';
 class Game {
+
 
   private $id;
   private $listOfJoueur;
