@@ -39,7 +39,7 @@
                         echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
                       }
                   else{
-                    echo "<li><a href=\"\">Mon Compte</a></li>";
+                    echo "<li><a href=\"./index.php?action=read&controller=joueur\">Mon Compte</a></li>";
                     echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
                   }?>
 
@@ -55,7 +55,7 @@
                 echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
               }
           else{
-            echo "<li><a href=\"\">Mon Compte</a></li>";
+            echo "<li><a href=\"./index.php?action=read&controller=joueur\">Mon Compte</a></li>";
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }?>
        </ul>

@@ -1,9 +1,13 @@
 
-  
-    
+
+
         <?php
 
-        	echo '<h1> ERROR </h1> ';
-            echo '<p> L\'utilisateur n\'a pas été trouvé dans la base de donnée </p>';
+        	echo '<article>
+
+
+          <div class="card-panel"><h3> ERROR 404 </h3>
+          <p> L\'utilisateur n\'a pas été trouvé dans la base de donnée </p></div>
+          </article>';
+        ;
         ?>
-   

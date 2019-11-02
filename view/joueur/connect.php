@@ -15,7 +15,7 @@
       </div>
     </div>
     <input type='hidden' name='action' value="connected">
-    <input type="hidden" name="controller" value="utilisateur">
+    <input type="hidden" name="controller" value="joueur">
 
     <div class="row center">
       <input class="waves-effect waves-light ff8 btn " type="submit" value="Envoyer" />

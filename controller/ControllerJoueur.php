@@ -41,8 +41,12 @@ class ControllerJoueur {
         else{
           $_SESSION['admin'] = true;
         }
-        /*$j = ModelJoueur::select($login);*/
-        require File::build_path(array('view','joueur','detail.php'));
+
+        $controller='joueur';
+        $view='detail';
+        $pagetitle='affiche detaille joueur';
+
+        require File::build_path(array('view','viewJoueur.php'));
       }
       else{
         $controller='joueur';
@@ -61,35 +65,34 @@ class ControllerJoueur {
       session_destroy();
       setcookie(session_name(),'',time()-1);
 
-      require File::build_path(array('view','view.php'));
+      require File::build_path(array('view','Accueil.php'));
     }
 
 
 
     public static function read(){
 
-      $log = $_GET['login']; // prend l'immatriculation dans l'URL
-      /*$v = ModelJoueur::getjoueurByImmat($ima); */
-      $j = ModelJoueur::select($log);
-      if ($j==false){
+      $log = $_SESSION['login'];
+      if(Session::is_user($log)){
+          $controller='joueur';
+          $view='detail';
+          $pagetitle='detail utlisateur';
+          $j = ModelJoueur::select($log);
+          if ($j==false){
 
-        $controller='joueur';
-        $view='error';
-        $pagetitle='error';
+            $controller='joueur';
+            $view='error';
+            $pagetitle='error';
 
-        require File::build_path(array('view','joueur','error.php'));
+            require File::build_path(array('view','viewJoueur.php'));
+          }
+          else{
+            require File::build_path(array('view','viewJoueur.php'));
+          }
       }
       else{
-
-        $controller='joueur';
-        $view='detail';
-        $pagetitle='affiche detaille joueur';
-
-
-      require File::build_path(array('view','joueur','detail.php')); // redirige vers la vue
-    }
-
-
+         ControllerJoueur::connect();
+      }
 
     }
 

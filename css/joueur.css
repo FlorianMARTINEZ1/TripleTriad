@@ -51,6 +51,11 @@ header{
   margin-left:25%;
     margin-top:2%;
 }
+article div.card-panel{
+  height: 50vh;
+  margin-top:5%;
+  text-align: center;
+}
 
 legend{
   text-align: center;
