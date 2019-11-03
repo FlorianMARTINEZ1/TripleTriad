@@ -61,9 +61,16 @@
       </div>
       <?php
         if(Session::is_admin()){
-          echo  '<input type="checkbox" id="admin" name="admin"
+        /*  echo  '<input type="checkbox" id="admin" name="admin"
            >
-           <label for="admin"> élévé en administrateur </label>';
+           <label for="admin"> élévé en administrateur </label>';*/
+
+           echo ' <p>
+            <label>
+              <input type="checkbox" name="admin" />
+                <span>Mettre en administrateur</span>
+            </label>
+            </p>';
         }
       ?>
       <input type="hidden" <?php
