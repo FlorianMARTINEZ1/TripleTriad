@@ -20,5 +20,13 @@
     <div class="row center">
       <input class="waves-effect waves-light ff8 btn " type="submit" value="Envoyer" />
     </div>
+    <?php
+    if(isset($msg)){
+      echo '<p style="text-align:center;">';
+      echo $msg;
+      echo '</p>';
+    }
+
+    ?>
   </fieldset>
 </form>

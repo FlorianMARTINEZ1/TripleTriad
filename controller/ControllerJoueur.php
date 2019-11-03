@@ -49,11 +49,17 @@ class ControllerJoueur {
         require File::build_path(array('view','viewJoueur.php'));
       }
       else{
-        $controller='joueur';
+        /*$controller='joueur';
         $view='error';
         $pagetitle='error';
 
+        require File::build_path(array('view','viewJoueur.php'));*/
+        $msg = "Erreur, l'identifiant ou le mot de passe est incorrect";
+        $controller='joueur';
+        $view='connect';
+        $pagetitle='connect';
         require File::build_path(array('view','viewJoueur.php'));
+
       }
 
 
