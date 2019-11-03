@@ -7,7 +7,11 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
-            <input id="joueur1" type="text" value="joueur 1" class="validate" maxlength="12" minlength="1" required>
+            <input id="joueur1" type="text" <?php
+            if(isset($_SESSION['login'])) {
+               echo 'value="'.$_SESSION['login'].'"';}
+             else { echo 'value="joueur1"';}
+           ?> class="validate" maxlength="12" minlength="1" required>
             <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
