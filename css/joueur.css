@@ -21,7 +21,10 @@ html {
   /* Legacy iOS */
 }
 
-
+#delete{
+  position: relative;
+  top: 30px;
+}
 
 #boutonSon {
   right: 0px;

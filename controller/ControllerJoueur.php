@@ -72,7 +72,7 @@ class ControllerJoueur {
 
     public static function read(){
 
-      $log = $_SESSION['login'];
+      $log = $_GET['login'];
       if(Session::is_user($log)){
           $controller='joueur';
           $view='detail';
@@ -101,13 +101,10 @@ class ControllerJoueur {
       $log = $_GET['login'];
       if(Session::is_user($log)){
           $controller='joueur';
-          $view='delete';
+          $view='deleted';
           $pagetitle='suppr utlisateur';
-
-
           ModelJoueur::delete($log);
-          $tab_j = ModelJoueur::selectAll();
-          require File::build_path(array('view','joueur','deleted.php'));
+          require File::build_path(array('view','viewJoueur.php'));
       }
       else{
          ControllerJoueur::connect();
@@ -117,8 +114,10 @@ class ControllerJoueur {
     }
 
     public static function error(){
-
-      require File::build_path(array("view","joueur","error.php"));
+      $controller='joueur';
+      $view='error';
+      $pagetitle='error';
+      require File::build_path(array("view","viewJoueur.php"));
 
     }
     public static function update(){
@@ -131,7 +130,7 @@ class ControllerJoueur {
             $view='error';
             $pagetitle='error';
 
-            require File::build_path(array('view','joueur','error.php'));
+            require File::build_path(array("view","viewJoueur.php"));
           }
           else{
 
@@ -140,7 +139,7 @@ class ControllerJoueur {
           $view='update';
           $pagetitle='update joueur';
 
-          require File::build_path(array('view','joueur','update.php'));
+          require File::build_path(array("view","viewJoueur.php"));
         }
 
       }
@@ -175,13 +174,12 @@ class ControllerJoueur {
             'admin' => $admin
           );
           $j->update($data);
-          $tab_j = ModelJoueur::selectAll();
 
           $controller='joueur';
           $view='updated';
           $pagetitle='update joueur';
 
-          require File::build_path(array('view','viewJoueur'));
+          require File::build_path(array('view','viewJoueur.php'));
       }
       else{
         ControllerJoueur::connect();
