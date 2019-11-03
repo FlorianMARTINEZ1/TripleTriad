@@ -41,7 +41,7 @@
                       }
                   else{
                     $log=$_SESSION['login'];
-                    echo "<li><a href=\"./index.php?action=read&controller=joueur&login=log\">Mon Compte</a></li>";
+                    echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
                     echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
                   }?>
 
@@ -59,7 +59,7 @@
               }
           else{
             $log=$_SESSION['login'];
-            echo "<li><a href=\"./index.php?action=read&controller=joueur&login=log\">Mon Compte</a></li>";
+            echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }?>
        </ul>
