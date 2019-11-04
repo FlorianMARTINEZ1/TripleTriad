@@ -103,6 +103,10 @@ class IAForte extends IA {
     return idCard;
   }
 
+  ajouter(carte) {
+      super.ajouter(carte);
+  }
+
 
 
 

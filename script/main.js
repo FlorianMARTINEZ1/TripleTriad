@@ -265,4 +265,6 @@ function confrontation(carteJoue, caseJoue) {
   }
   console.log(g2.listPlayer[0].score);
   console.log(g2.listPlayer[1].score);
+  document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
+  document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
 }

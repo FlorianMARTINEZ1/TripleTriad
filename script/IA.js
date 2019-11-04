@@ -115,6 +115,10 @@ class IA extends Joueur {
     }
   }
 
+  ajouter(carte) {
+      super.ajouter(carte);
+  }
+
   play(idDragCard, idCase) {
     var newimg = document.getElementById('drag' + this.cards[idDragCard]);
     var img = document.getElementsByClassName('case' + this.casesVides[idCase])[0].appendChild(newimg);
@@ -129,6 +133,8 @@ class IA extends Joueur {
     casee.removeAttribute('ondrop');
     casee.removeAttribute('ondragover');
     confrontation(newimg.className, 'case' + this.casesVides[idCase]);
+    document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
+    document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
     g2.setTurn();
     g2.endGame();
   }

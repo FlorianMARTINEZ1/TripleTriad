@@ -11,6 +11,10 @@ class IARandom extends IA {
     super.setNumDragCardOfDeckIA();
   }
 
+  ajouter(carte) {
+      super.ajouter(carte);
+  }
+
   play() {
     this.setCasesVides(); //Regarde les cases vides et les récupere dans la variable casesVides
     this.setNumDragCardOfDeckIA(); // Regarde les case ou il ya une carte dans le deck de l'IA
