@@ -21,7 +21,7 @@ html {
   /* Legacy iOS */
 }
 
-#delete{
+#delete {
   position: relative;
   top: 30px;
 }
@@ -31,7 +31,8 @@ html {
   top: 65px;
   position: fixed;
 }
-header{
+
+header {
   margin-bottom: 50%;
   z-index: 100;
 }
@@ -42,50 +43,52 @@ header{
   top: 65px;
 }
 
-#form{
-/*  opacity: 1;
+#form {
+  /*  opacity: 1;
   width: 50%;
   margin-left:25%;
   margin-top:2%;*/
 }
-#backform{
+
+#backform {
   background-color: white;
-   width: 50%;
-  margin-left:25%;
-    margin-top:2%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 2%;
 }
-article div.card-panel{
+
+article div.card-panel {
   height: 50vh;
-  margin-top:5%;
+  margin-top: 5%;
   text-align: center;
 }
 
-legend{
+legend {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
 }
-h5{
-  text-align: center;
 
+h5 {
+  text-align: center;
   background-color: white;
-  transition-property: width,height;
+  transition-property: width, height;
 }
 
-.afficheh5{
+.afficheh5 {
   width: 100%;
   height: 100%;
 }
 
-a{
+a {
   transition-property: background-color;
 }
-#menuIcon a, #boutonSon a{
+
+#menuIcon a, #boutonSon a {
   background-color: #223d44;
 }
 
-
-#menuIcon a:hover, #boutonSon a:hover,#nav li a:hover{
+#menuIcon a:hover, #boutonSon a:hover, #nav li a:hover {
   background-color: rgba(72, 131, 146, 1);
 }
 
@@ -277,10 +280,12 @@ h4.score {
   grid-row-start: 3;
   grid-row-end: 3;
 }
-nav, nav.brand-logo, #nav{
-  background-color: #223d44;
+
+nav, nav.brand-logo, #nav {
+  background-color: rgba(34, 61, 68, 0.4);
 }
-header{
+
+header {
   margin-bottom: 0%;
 }
 
@@ -307,7 +312,6 @@ header{
 .input-field label {
   color: #000 !important;
 }
-
 
 /*underline color focus */
 input[type=text]:not(.browser-default):focus:not([readonly]) {
