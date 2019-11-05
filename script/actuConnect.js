@@ -29,7 +29,6 @@ function readData(sData) {
       }
       else{
         p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté !';
-        p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="">'+donnes[i]['login']+'</a> est connecté !';
       }
     }
     else{

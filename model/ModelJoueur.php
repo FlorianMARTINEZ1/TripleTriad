@@ -10,6 +10,7 @@ class ModelJoueur extends Model{
     private $prenom;
     private $mdp;
     private $admin;
+    private $joue;
     protected static $object = 'joueur';
     protected static $primary='login';
 
