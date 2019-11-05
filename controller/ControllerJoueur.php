@@ -6,15 +6,16 @@ require_once File::build_path(array('lib','Security.php'));
 class ControllerJoueur {
     protected static $object = 'joueur';
 
-    public static function readAll() {
+    public static function readAllPlayerConnected() {
 
 
-        $tab_j = ModelJoueur::selectAll();
+        $tab_j = ModelJoueur::checkJoueursConnected();
+        /*$tab_j = ModelJoueur::selectAll();*/
         $controller='joueur';
-        $view='list';
+        $view='userList';
         $pagetitle='Liste des joueurs';
 
-        require File::build_path(array('view','view.php')); //"redirige" vers la vue
+        require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
 
 
     }
@@ -33,6 +34,7 @@ class ControllerJoueur {
       $mdpchiffrer = Security::chiffrer($mdp);
       $j = ModelJoueur::select($login);
       if(ModelJoueur::checkPassword($login,$mdpchiffrer)){
+        ModelJoueur::JoueurConnecter($login,"1");
         $j = ModelJoueur::select($login);
         $_SESSION['login']=$login;
         if($j->get("admin")==0){
@@ -67,6 +69,8 @@ class ControllerJoueur {
     }
 
     public static function deconnect(){
+      $login = $_SESSION['login'];
+      ModelJoueur::JoueurConnecter($login,"0");
       session_unset();     // unset $_SESSION variable for the run-time
       session_destroy();
       setcookie(session_name(),'',time()-1);

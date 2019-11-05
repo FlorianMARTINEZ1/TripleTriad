@@ -147,7 +147,7 @@ class Game {
     }
 
     if (this.currentPlayer == 1 && this.dureeGame < 9) { // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
-      setTimeout(function(){g2.playIA()},700); // joué après 0.7 sec
+      setTimeout(function(){g2.playIA()},1500); // joué après 0.7 sec
     }
     else{
       this.endGame(); // sinon on test si la partie est fini

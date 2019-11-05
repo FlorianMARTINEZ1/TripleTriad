@@ -74,6 +74,80 @@ class ModelJoueur extends Model{
 
     }
 
+    public static function JoueurConnecter($login,$val){
+       try {
+
+
+       $sql = "UPDATE joueur SET connecte=:val WHERE login=:login";
+       // Préparation de la requête
+       $req_prep = Model::$pdo->prepare($sql);
+
+       $values = array(
+           "login" => $login,
+           "val" => $val
+       );
+       // On donne les valeurs et on exécute la requête
+       $req_prep->execute($values);
+       } catch (PDOException $e) {
+           if (Conf::getDebug()) {
+               echo $e->getMessage(); // affiche un message d'erreur
+           } else {
+               echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+           }
+           die();
+       }
+
+   }
+
+    public static function checkJoueursConnected(){
+       try {
+
+
+       $sql = "SELECT * from joueur WHERE connecte=1;";
+       // Préparation de la requête
+
+       $rep = Model::$pdo->query($sql);
+
+       $rep->setFetchMode(PDO::FETCH_CLASS, "ModelJoueur");
+       $tab = $rep->fetchAll();
+
+       return $tab;
+       } catch (PDOException $e) {
+           if (Conf::getDebug()) {
+               echo $e->getMessage(); // affiche un message d'erreur
+           } else {
+               echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+           }
+           die();
+       }
+
+   }
+
+   public static function checkJoueursConnectedJSON(){
+      try {
+
+
+      $sql = "SELECT * from joueur WHERE connecte=1;";
+      // Préparation de la requête
+
+      $rep = Model::$pdo->query($sql);
+
+      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelJoueur");
+      echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+
+      } catch (PDOException $e) {
+          if (Conf::getDebug()) {
+              echo $e->getMessage(); // affiche un message d'erreur
+          } else {
+              echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+          }
+          die();
+      }
+
+  }
+
+
+
 
     // une methode d'affichage.
     public function afficher() {
