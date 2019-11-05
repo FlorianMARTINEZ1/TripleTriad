@@ -66,7 +66,7 @@ function readData(sData) {
         valeurJ2= valeurJ2 + tabCartes[i].donneValE() +tabCartes[i].donneValS() +tabCartes[i].donneValO() +tabCartes[i].donneValN();
       }
     }
-  }while(Math.abs(valeurJ2-valeurJ1)>5);
+  }while(Math.abs(valeurJ2-valeurJ1)>equilibre);
 
   console.log(valeurJ1);
   console.log(valeurJ2);

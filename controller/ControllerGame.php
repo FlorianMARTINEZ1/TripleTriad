@@ -14,6 +14,7 @@ class ControllerGame {
       $view='Local';
       $pagetitle='Local';
       $type="sans IA";
+      $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
 
     }
@@ -23,6 +24,7 @@ class ControllerGame {
       $view='Local';
       $pagetitle='Local';
       $type="sans IA";
+      $_SESSION["equilibre"] = 100;
       require File::build_path(array('view','view.php'));
 
     }
@@ -31,6 +33,7 @@ class ControllerGame {
       $view='IA';
       $pagetitle='IA';
       $type="faible";
+      $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
 
     }
@@ -39,6 +42,7 @@ class ControllerGame {
       $view='IA';
       $pagetitle='IA';
       $type="moyen";
+      $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
 
 
@@ -48,6 +52,7 @@ class ControllerGame {
       $view='IA';
       $pagetitle='IA';
       $type="forte";
+      $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
 
     }
@@ -57,6 +62,7 @@ class ControllerGame {
       $view='Enligne';
       $pagetitle='Enligne';
       $type="sans IA";
+      $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
     }
 }
