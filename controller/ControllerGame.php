@@ -58,11 +58,25 @@ class ControllerGame {
     }
 
     public static function EnLigne() {
+      require_once File::build_path(array('Model','ModelJoueur.php'));
+      require_once File::build_path(array('Model','ModelGame.php'));
+      $login = $_SESSION['login'];
+      $j = ModelJoueur::select($login);
+      $id = $j->get("joue");
+      $AutreJoueur = 0;
+      $game = ModelGame::select($id);
+      if($game->get("challenged")==$login){
+        $AutreJoueur = $game->get("challenger");
+      }
+      else{
+        $AutreJoueur = $game->get("challenged");
+      }
       $controller='game';
       $view='Enligne';
       $pagetitle='Enligne';
       $type="sans IA";
       $_SESSION["equilibre"] = 5;
+
       require File::build_path(array('view','view.php'));
     }
 }

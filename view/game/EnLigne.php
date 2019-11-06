@@ -9,13 +9,15 @@
           <div class="input-field col s6">
             <input id="joueur1" type="text" <?php
             if(isset($_SESSION['login'])) {
-               echo 'value="'.$_SESSION['login'].'"';}
+               echo 'value="'.$_SESSION['login'].'" readonly';}
              else { echo 'value="joueur1"';}
            ?> class="validate" maxlength="12" minlength="1" required>
             <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
-            <input id="joueur2" type="text" value="joueur 2" class="validate" maxlength="12" minlength="1" required>
+            <?php
+           echo '<input id="joueur2" type="text" readonly value="'.$AutreJoueur.'" class="validate" maxlength="12" minlength="1" required>';
+            ?>
             <label for="joueur2">Joueur 2</label>
           </div>
         </div>

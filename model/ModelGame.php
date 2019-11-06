@@ -39,6 +39,7 @@ class ModelGame extends Model{
         }
     }
 
+
     public static function accepter($id){
       try{
         $sql = "UPDATE game SET game.etat='accepte' WHERE game.id=:id ;";
