@@ -50,11 +50,31 @@ header {
   margin-top:2%;*/
 }
 
+fieldset {
+  z-index: 2;
+}
+
 #backform {
-  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: none;
   width: 50%;
-  margin-left: 25%;
-  margin-top: 2%;
+}
+
+div#bckgrnd {
+  z-index: 0;
+  position: absolute;
+  width: 55%;
+  height: 500px;
+  text-align: center;
+  background-color: #223d44;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 article div.card-panel {
