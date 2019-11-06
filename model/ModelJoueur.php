@@ -129,7 +129,7 @@ class ModelJoueur extends Model{
       try {
 
 
-      $sql = "SELECT * from joueur WHERE connecte=1;";
+      $sql = "SELECT * from joueur LEFT JOIN game ON joueur.joue=game.id WHERE connecte=1;";
       // Préparation de la requête
 
       $rep = Model::$pdo->query($sql);

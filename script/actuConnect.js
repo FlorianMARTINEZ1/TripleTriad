@@ -1,8 +1,6 @@
 var donnée;
 
-
-
- function  request(callback){
+function  request(callback){
   var xhr = new XMLHttpRequest(); // créer une requête HTTP
 
   xhr.onreadystatechange = function () {
@@ -28,6 +26,42 @@ function  challenge(callback){
  xhr.send(null);
 }
 
+function  accepte(callback){
+ var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+ xhr.onreadystatechange = function () {
+   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+     donnée = callback(xhr.responseText); // on récupère les données.
+   }
+ };
+ xhr.open("GET", "api/accepte.php?id="+idGame, true); // on les cherche dans le fichier php/test.php
+ xhr.send(null);
+}
+
+function attente(callback){
+  var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+      donnée = callback(xhr.responseText); // on récupère les données.
+    }
+  };
+  xhr.open("GET", "api/accepte.php?id="+idGame, true); // on les cherche dans le fichier php/test.php
+  xhr.send(null);
+}
+
+function  refuser(callback){
+ var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+ xhr.onreadystatechange = function () {
+   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+     donnée = callback(xhr.responseText); // on récupère les données.
+   }
+ };
+ xhr.open("GET", "api/refuse.php?id="+idGame, true); // on les cherche dans le fichier php/test.php
+ xhr.send(null);
+}
+
 function readData(sData) {
   var donnes = JSON.parse(sData);
   let p = document.getElementsByTagName("p");
@@ -37,8 +71,15 @@ function readData(sData) {
   let i = 0;
   while(parseInt(""+i)<Total){
     if(donnes[i] && p[i]){
-      if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
+      if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+        p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refusé ?</a>';
+        idGame=donnes[i]['joue'];
+      }
+      else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
         p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+      }
+      else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+        p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
       }
       else if(donnes[i]['joue']){
         p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté !';
@@ -49,8 +90,15 @@ function readData(sData) {
     }
     else{
       var newP = document.createElement("p");
-      if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
+      if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refusé ?</a>';
+          idGame=donnes[i]['joue'];
+      }
+      else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
         p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+      }
+      else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+        p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
       }
 
       else if(donnes[i]['joue']){
@@ -82,7 +130,34 @@ function readData(sData) {
 
 
 }
+var idGame;
 var nom;
+
+function accepter(){
+  accepte(DataAccepte);
+}
+
+function relocation(sData){
+  if(sData == "ff"){
+    var donnes = JSON.parse(sData);
+    if(donnes[0]["etat"] == "accepte"){
+      window.location ="./?action=EnLigne";
+  }
+ }
+}
+
+function DataAccepte(sData){
+  alert("demande accepté");
+  window.location = './?action=EnLigne';
+}
+
+function refuse(){
+  refuser(DataRefuse);
+}
+
+function DataRefuse(sData){
+  alert("demande refusé");
+}
 
 function Data(sData){
   var game = sData;
@@ -99,8 +174,11 @@ for(var i=0;i<elements.length;i++){
   };
 }
 
+request(readData);
 
-
+setInterval(function() {
+  attente(relocation);
+},500);
 
 setInterval(function () {
   request(readData);

@@ -39,6 +39,65 @@ class ModelGame extends Model{
         }
     }
 
+    public static function accepter($id){
+      try{
+        $sql = "UPDATE game SET game.etat='accepte' WHERE game.id=:id ;";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $values = array(
+            "id" => $id
+        );
+        // On donne les valeurs et on exécute la requête
+        $req_prep->execute($values);
+
+      }catch(PDOException $e){
+        if (Conf::getDebug()) {
+            echo $e->getMessage(); // affiche un message d'erreur
+        } else {
+            echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+        }
+        die();
+      }
+
+
+    }
+
+    public static function refuse($id){
+      try{
+        $sql = "DELETE FROM game WHERE game.id=:id ;";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $values = array(
+            "id" => $id
+        );
+        // On donne les valeurs et on exécute la requête
+        $req_prep->execute($values);
+
+      }catch(PDOException $e){
+        if (Conf::getDebug()) {
+            echo $e->getMessage(); // affiche un message d'erreur
+        } else {
+            echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+        }
+        die();
+      }
+
+
+    }
+
+    public static function attenteConfirmation($id){
+      $sql = 'SELECT * from game WHERE id = \''.$id.'\';';
+      // Préparation de la requête
+
+      $rep = Model::$pdo->query($sql);
+
+      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+      echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+
+    }
+
 
     public static function challenge($challenged,$challenger){
         require_once "ModelJoueur.php";
@@ -70,6 +129,8 @@ class ModelGame extends Model{
         $rep = Model::$pdo->query($sql);
 
         $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+        $tab = $rep->fetchAll();
+        echo "bonjour"
         echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
 
         if($value == false){
