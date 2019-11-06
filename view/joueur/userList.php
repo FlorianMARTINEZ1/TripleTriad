@@ -23,5 +23,6 @@
         if(isset($_SESSION['login'])){
           echo " <input id=\"session\" type='hidden' name='action' value=\"".$_SESSION['login']."\">";
         }
+        echo " <input id=\"idGame\" type='hidden' name='idGame' value=\"0\">";
         echo '<script type="text/javascript" src="./script/actuConnect.js"></script>';
         ?>

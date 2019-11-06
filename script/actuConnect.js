@@ -1,4 +1,6 @@
 var donnée;
+var idGame = document.getElementById("idGame").value;
+var nom;
 
 function  request(callback){
   var xhr = new XMLHttpRequest(); // créer une requête HTTP
@@ -46,7 +48,7 @@ function attente(callback){
       donnée = callback(xhr.responseText); // on récupère les données.
     }
   };
-  xhr.open("GET", "api/accepte.php?id="+idGame, true); // on les cherche dans le fichier php/test.php
+  xhr.open("GET", "api/attenteConfirmation.php?id="+document.getElementById("idGame").value, true); // on les cherche dans le fichier php/test.php
   xhr.send(null);
 }
 
@@ -74,9 +76,12 @@ function readData(sData) {
       if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
         p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refusé ?</a>';
         idGame=donnes[i]['joue'];
+        document.getElementById("idGame").value=donnes[i]['joue'];
       }
       else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
         p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+        idGame=donnes[i]['joue'];
+        document.getElementById("idGame").value=donnes[i]['joue'];
       }
       else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
         p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
@@ -130,18 +135,19 @@ function readData(sData) {
 
 
 }
-var idGame;
-var nom;
+
 
 function accepter(){
   accepte(DataAccepte);
 }
 
 function relocation(sData){
-  if(sData == "ff"){
+  if(sData.length!=0){
     var donnes = JSON.parse(sData);
-    if(donnes[0]["etat"] == "accepte"){
-      window.location ="./?action=EnLigne";
+    if(donnes.length != 0){
+      if(donnes[0]["etat"] == "accepte"){
+        window.location ="./?action=EnLigne";
+    }
   }
  }
 }
@@ -175,11 +181,13 @@ for(var i=0;i<elements.length;i++){
 }
 
 request(readData);
-
+/*
 setInterval(function() {
   attente(relocation);
-},500);
+},500);*/
 
 setInterval(function () {
   request(readData);
+  attente(relocation);
+
 }, 2000);

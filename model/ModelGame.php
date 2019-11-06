@@ -130,7 +130,6 @@ class ModelGame extends Model{
 
         $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
         $tab = $rep->fetchAll();
-        echo "bonjour"
         echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
 
         if($value == false){
