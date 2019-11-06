@@ -57,13 +57,13 @@ class Game {
   playIA() {
     this.listPlayer[1].play();
   }
-  setFin() {
-    this.endGame();
-  }
 
   endGame(){
     if (this.dureeGame == 9) {
-        setTimeout(function(){g2.endGamePrint()},3000);
+      console.trace();
+      console.log("test");
+      function end(){g2.endGamePrint()}
+        setTimeout(end,3000);
     }
   }
 
@@ -82,24 +82,42 @@ class Game {
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
         if (this.listPlayer[0].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
+          this.addHistorique(1);
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
+          this.addHistorique(2);
         }
 
       } else if (this.listPlayer[0].getScore() < this.listPlayer[1].getScore()) {
         if (this.listPlayer[1].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
+          this.addHistorique(1);
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
+          this.addHistorique(2);
         }
       } else {
         document.getElementById("gagnant").innerHTML = "bravo aux 2 joueurs pour cette égalité ! ";
+        this.addHistorique(0);
       }
 
     } else {
 
     }
   }
+
+  addHistorique(etat) {
+    var xhr = new XMLHttpRequest();
+  
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+      }
+    };
+  
+    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore(), true);
+    xhr.send();
+  }
+  
 
   setTurn() {
     //changement de couleur du joueur qui joue
@@ -148,9 +166,6 @@ class Game {
 
     if (this.currentPlayer == 1 && this.dureeGame < 9) { // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
       setTimeout(function(){g2.playIA()},1500); // joué après 0.7 sec
-    }
-    else{
-      this.endGame(); // sinon on test si la partie est fini
     }
   }
 
