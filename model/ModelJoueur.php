@@ -29,13 +29,14 @@ class ModelJoueur extends Model{
     }
 
     // un constructeur
-    public function __construct($login = NULL, $nom = NULL, $prenom = NULL,$mdp = NULL,$admin = NULL) {
-        if (!is_null($login) && !is_null($nom) && !is_null($prenom) && !is_null($mdp) &&!is_null($admin)) {
+    public function __construct($login = NULL, $nom = NULL, $prenom = NULL,$mdp = NULL,$admin = NULL,$joue = NULL) {
+        if (!is_null($login) && !is_null($nom) && !is_null($prenom) && !is_null($mdp) &&!is_null($admin) &&!is_null($joue)) {
             $this->login = $login;
             $this->nom = $nom;
             $this->prenom = $prenom;
             $this->mdp=$mdp;
             $this->admin=$admin;
+            $this->joue=$joue;
         }
     }
 

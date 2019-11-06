@@ -218,7 +218,8 @@ class ControllerJoueur {
                 'nom' => $nom,
                 'prenom' => $prenom,
                 'mdp' => $mdp,
-                'admin' => $admin
+                'admin' => $admin,
+                'connecte' => 0
               );
 
               $j = new ModelJoueur($login,$nom,$prenom,$mdp,$admin);

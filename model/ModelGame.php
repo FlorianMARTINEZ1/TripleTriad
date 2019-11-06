@@ -57,16 +57,26 @@ class ModelGame extends Model{
         $data = array('challenger' => $joueurChallenger->get("login"),
                       'challenged' => $joueurChallenged->get("login"),
                       'etat' => 'demande',
-                      'plateau' => 'ça va se faire'
+                      'plateau' => 'ca va se faire'
         );
 
         $value = parent::save($data);
+
+        $joueur = ModelJoueur::select($challenger);
+
+        $sql = 'SELECT * from game WHERE id = \''.$joueur->get("joue").'\';';
+        // Préparation de la requête
+
+        $rep = Model::$pdo->query($sql);
+
+        $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+        echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
 
         if($value == false){
           throw new Exception('<br />Une erreur c\'est produite durant la sauvegardes');
         }
         else{
-          echo "Tout c'est bien passé ! ";
+          /*echo "Tout c'est bien passé ! ";*/
         }
 
 
