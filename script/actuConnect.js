@@ -19,7 +19,7 @@ function readData(sData) {
   var donnes = JSON.parse(sData);
   let p = document.getElementsByTagName("p");
   let papa = document.getElementsByClassName("card-panel")[0];
-  let CountChild = papa.childElementCount;
+  let CountChild = papa.childElementCount - 1;
   let Total = donnes.length;
   let i = 0;
   while(parseInt(""+i)<Total){
@@ -55,10 +55,11 @@ function readData(sData) {
 
 
 }
-function actu(){
-  setInterval(function(){ actualiser() },2000);
-}
+
+setInterval(function(){ actualiser() },2000);
+
 
 function actualiser() {
+  console.log("relance");
   request(readData);
 }

@@ -4,9 +4,9 @@
         height: 50%;
         text-align: center;
         margin-top: 5%;">';
-        echo '<p>
+        echo '<span>
         Les joueurs qui ne joue pas sont afficher en <strong style="color:green;">vert</strong> et ceux qui joue sont afficher en <strong style="color:red;">rouge</strong>
-        </p>';
+        </span>';
         foreach ($tab_j as $j){
           if($j->get("joue")==NULL){
             echo '<p> Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='.rawurlencode($j->get("login")).'">' .htmlspecialchars($j->get('login')). '</a> est connecté ! </p>';
@@ -16,10 +16,6 @@
           }
         }
         echo '</div>
-        <div class="row center">
-          <input class="waves-effect waves-light ff8 btn "value="Envoyer" onclick="actu()" />
-        </div>
-
         </arcticle>';
         echo '<script type="text/javascript" src="./script/actuConnect.js"></script>';
         ?>

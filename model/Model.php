@@ -137,7 +137,7 @@
 
 
     }
-    public function update($data){
+    public static function update($data){
     	$table_name = static::$object;
   		$primary_key = static::$primary;
 
@@ -181,7 +181,7 @@
 
 
 	}
-	public function save($data){
+	public static function save($data){
 
 
 
@@ -190,7 +190,8 @@
   	$class_name = 'Model'.ucfirst($table_name);
     $primary_key = static::$primary;
   	$values = array();
-  	$sql = "INSERT INTO $table_name (";
+    $sql = "INSERT INTO $table_name ";
+    $sql = $sql."(";
 
   	foreach ($data as $key => $value) {
   		$values[$key] = $value;
@@ -207,6 +208,7 @@
   	$req_prep = Model::$pdo->prepare($sql);
 
   	$req_prep->execute($values);
+    return true;
  	 } catch (PDOException $e) {
             if (Conf::getDebug()) {
                 return false;
