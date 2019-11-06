@@ -60,8 +60,6 @@ class Game {
 
   endGame(){
     if (this.dureeGame == 9) {
-      console.trace();
-      console.log("test");
       function end(){g2.endGamePrint()}
         setTimeout(end,3000);
     }
