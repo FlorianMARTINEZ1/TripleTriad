@@ -124,7 +124,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="./script/Card.js"></script>
   <script type="text/javascript"> var equilibre = <?php echo $_SESSION["equilibre"]?>; </script>
-  <script type="text/javascript" src="./script/ChercheCarte.js"></script>
+  <?php
+  if($view == "Enligne"){
+    echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
+  }
+  else{
+    echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
+  }
+
+  ?>
   <script type="text/javascript" src="./script/Joueur.js"></script>
   <?php
   if($view == 'IA'){

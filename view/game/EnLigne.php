@@ -77,3 +77,6 @@
   <div id="choix" style="display:none;">
     <?php echo $commence ?>
   </div>
+  <div id="id" style="display:none;">
+    <?php echo $id ?>
+  </div>

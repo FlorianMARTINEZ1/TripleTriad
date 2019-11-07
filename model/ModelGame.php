@@ -39,15 +39,108 @@ class ModelGame extends Model{
         }
     }
 
+    public static function convertCards($id){
+        require_once File::build_path(array('model','ModelCard.php'));
+        $sql = 'SELECT * FROM game where id = \''.$id.'\'';
+        // Préparation de la requête
+        $rep = Model::$pdo->query($sql);
+        $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+        $tab = $rep->fetchAll();
+        $plateau = $tab[0]->get('plateau');
+        $tabCart = str_split($plateau, 3);
+        for($i=0;$i<10;$i++){
+          $tabCart[$i] = intval($tabCart[$i]);
+        }
 
-    public static function accepter($id){
-      try{
-        $sql = "UPDATE game SET game.etat='accepte' WHERE game.id=:id ;";
+        $sql = 'SELECT * from carte WHERE id IN (:id1,:id2,:id3,:id4,:id5,:id6,:id7,:id8,:id9,:id10);';
         // Préparation de la requête
         $req_prep = Model::$pdo->prepare($sql);
 
         $values = array(
+            "id1" => $tabCart[0],
+            "id2" => $tabCart[1],
+            "id3" => $tabCart[2],
+            "id4" => $tabCart[3],
+            "id5" => $tabCart[4],
+            "id6" => $tabCart[5],
+            "id7" => $tabCart[6],
+            "id8" => $tabCart[7],
+            "id9" => $tabCart[8],
+            "id10" => $tabCart[9],
+        );
+
+        $req_prep->execute($values);
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelCard");
+        echo json_encode($req_prep->fetchAll(PDO::FETCH_ASSOC));
+
+    }
+
+
+    public static function selectDixCarte(){
+      require_once File::build_path(array('model','ModelCard.php'));
+      $sql = 'SELECT SQL_NO_CACHE * FROM carte ORDER BY RAND( ) LIMIT 10';
+      // Préparation de la requête
+
+      $rep = Model::$pdo->query($sql);
+
+      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelCard");
+
+      $tab = $rep->fetchAll(); // contient les 10 cartes
+      $tabid;
+      $plateau="";
+      for($i=0;$i<10;$i++){
+        if($tab[$i]->get("id")<10){
+            $plateau=$plateau."00".$tab[$i]->get("id");
+        }
+        else if($tab[$i]->get("id")<100){
+            $plateau=$plateau."0".$tab[$i]->get("id");
+        }
+        else {
+        $plateau=$plateau.$tab[$i]->get("id");
+        }
+      }
+      return $plateau;
+    }
+
+    public static function envoie($id,$case,$carte){
+      try{
+        $sql = "UPDATE game SET game.casejoue=:casej , game.idcartejoue=:carte WHERE game.id=:id ;";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $values = array(
+            "casej" => $case,
+            "carte" => $carte,
             "id" => $id
+        );
+        // On donne les valeurs et on exécute la requête
+        $req_prep->execute($values);
+
+      }catch(PDOException $e){
+        if (Conf::getDebug()) {
+            echo $e->getMessage(); // affiche un message d'erreur
+        } else {
+            echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+        }
+        die();
+      }
+
+    }
+
+
+    public static function accepter($id){
+      try{
+        $plateau = ModelGame::selectDixCarte();
+
+
+        $sql = "UPDATE game SET etat=:etat, plateau =:plateau  WHERE game.id=:id ;";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $values = array(
+            "id" => $id,
+            "plateau" => $plateau,
+            "etat" => 'accepte'
         );
         // On donne les valeurs et on exécute la requête
         $req_prep->execute($values);

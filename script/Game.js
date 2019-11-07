@@ -1,13 +1,14 @@
 //Class GAME
 
 class Game {
-  constructor(joueur1, joueur2, ids,etat) {
+  constructor(joueur1, joueur2, ids,etat,choixjoueur) {
     var j1 = new Joueur(joueur1);
     //var j2 = new Joueur(joueur2);
     var j2 = new Joueur(joueur2);
     this.listPlayer = [j1, j2];
+
     /*this.currentPlayer = getRandomIntInclusive(0, 1);*/
-    this.currentPlayer = document.getElementById("choix").innerHTML;
+    this.currentPlayer =parseInt(choixjoueur);
     this.id = ids;
     this.type = etat;
     this.dureeGame = 0;

@@ -16,7 +16,7 @@
             echo '<p> si vous voulez la modifier cliquez <a href="./index.php?action=update&controller=joueur&login='.htmlspecialchars($j->get('login')).'">ici</a> . </p>';
       	    }
       	    else{
-      	    	echo "<p> Vous devez être connecté en tant que cet joueur pour modifier cet joueur </p>";
+      	    	echo "<p> Vous devez être connecté en tant que ce joueur pour modifier ce joueur </p>";
       	    }
         echo '</div></arcticle>'
 

@@ -1,3 +1,9 @@
+var caseEnvoie = 10;
+var idCarteJoue = 0;
+var donnée = 0;
+var idG = document.getElementById("id").innerHTML;
+var idG = parseInt(idG);
+
 setTimeout(function(){
   initialisation();
 },5000);
@@ -6,6 +12,44 @@ function allowDrop(ev) {
   ev.preventDefault();
 
 }
+
+setInterval(function () {
+  requete(lireDonnee);
+}, 800);
+
+function  requete(callback){
+  var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+      donnée = callback(xhr.responseText); // on récupère les données.
+    }
+  };
+
+  xhr.open("GET", "api/miseAJourJeu.php?id="+idG, true); // on les cherche dans le fichier php/test.php
+  xhr.send(null);
+}
+
+
+function lireDonnee(sData) {
+  var donnes = JSON.parse(sData);
+  if(donnes[0]['casejoue'] != null && g2.currentPlayer==1){
+    console.log("en attent de réponse, le joueur en face a joué");
+    console.log(donnes[0]['casejoue']);
+    console.log(donnes[0]['idcartejoue']);
+
+
+  }
+  else if(donnes[0]['casejoue'] != null){
+    console.log("en attente de réponse");
+
+  }
+  else{
+    console.log("en attente de jeu");
+  }
+}
+
+
 
 function afficheMenu() {
   let menu = document.getElementById("menu");
@@ -44,7 +88,7 @@ function stopMusic() {
 
 }
 var choixjoueur = document.getElementById("choix").innerHTML;
-var g2 = new Game('j1', 'j2', 1,'multi');
+var g2 = new Game('j1', 'j2', 1,'multi',choixjoueur);
 // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 
@@ -59,15 +103,10 @@ function initialisation() {
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
-  /*var listePlayer = [joueurUn,joueur2];*/
-  /*  g2.setListPlayer(listePlayer);*/
-  /*var g1 = new Game(joueurUn, joueurDeux, 1);*/
   document.getElementById('formgame').style.display = 'none';
   document.getElementById('plateaujeu').style.display = 'block';
-  /*document.getElementById('un').innerHTML = g2.listPlayer[0].getName();*/
-  /*  var listPlayer = g1.getListPlayer();*/
-  document.getElementById('un').innerHTML = /*listPlayer[0].getName()*/ joueurUn;
-  document.getElementById('deux').innerHTML = /* listPlayer[1].getName()*/ joueurDeux;
+  document.getElementById('un').innerHTML =  joueurUn;
+  document.getElementById('deux').innerHTML =  joueurDeux;
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
 
@@ -102,8 +141,12 @@ function drop(ev) {
   img.setAttribute('draggable', 'false');
   img.removeAttribute('ondragstart');
   img.removeAttribute('id');
+  caseEnvoie = ev.target.classList[1];
+  idCarteJoue = img.className;
+  envoieDonner(1);
   confrontation(img.className, ev.target.classList[1]);
   g2.setTurn();
+  g2.currentPlayer=0;
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
   var sound = document.getElementById("sound");
@@ -114,6 +157,19 @@ function drop(ev) {
   }
   g2.endGame();
 
+}
+
+function envoieDonner(etat) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+    }
+  };
+  let casejouer = caseEnvoie.substr(4);
+  casejouer = parseInt(casejouer);
+  xhr.open("GET", "api/envoieDonner.php?case="+casejouer+"&carte="+idCarteJoue+"&id="+idG,true);
+  xhr.send();
 }
 
 /**
@@ -138,7 +194,7 @@ function confrontation(carteJoue, caseJoue) {
 
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
-  g2.listPlayer[g2.currentPlayer].ajouter(c);
+  g2.listPlayer[""+g2.currentPlayer].ajouter(c);
   caseN = Number(caseJoue[4]) - 3; /** On récupère le numéro des cases */
   caseE = Number(caseJoue[4]) + 1;
   caseS = Number(caseJoue[4]) + 3;
