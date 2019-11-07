@@ -14,11 +14,14 @@ if (function_exists($functionName)) {
 /** Ajoute la partie a l'historique */
 function addToHistorique()
 {
-    $arr = array(
-        "nomJ1" => $_GET["nomJ1"], "nomJ2" => $_GET["nomJ2"], "scoreJ1" => $_GET["scoreJ1"], "scoreJ2" => $_GET["scoreJ2"]
-    );
-    ModelHistorique::save($arr);
-    echo "test";
+    if(($_GET["action"]!= "aleatoire") && $_GET["action"]!="equilibre")
+    {
+        $arr = array(
+            "nomJ1" => $_GET["nomJ1"], "nomJ2" => $_GET["nomJ2"], "scoreJ1" => $_GET["scoreJ1"], "scoreJ2" => $_GET["scoreJ2"]
+        );
+        ModelHistorique::save($arr);
+        echo "test";
+    }
 }
 
 /** Ajoute le deck s'il n'existe pas */
