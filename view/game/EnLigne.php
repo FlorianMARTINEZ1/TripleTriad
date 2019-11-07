@@ -21,9 +21,6 @@
             <label for="joueur2">Joueur 2</label>
           </div>
         </div>
-        <div class="row center">
-          <a class="waves-effect waves-light ff8 btn " onclick="initialisation()">Envoyer</a>
-        </div>
       </form>
     </div>
   </div>
@@ -76,4 +73,7 @@
       </div>
 
     </div>
+  </div>
+  <div id="choix" style="display:none;">
+    <?php echo $commence ?>
   </div>

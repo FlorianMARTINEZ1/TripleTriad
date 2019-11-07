@@ -74,7 +74,7 @@ function readData(sData) {
   while(parseInt(""+i)<Total){
     if(donnes[i] && p[i]){
       if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refusé ?</a>';
+        p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
         idGame=donnes[i]['joue'];
         document.getElementById("idGame").value=donnes[i]['joue'];
       }
@@ -96,7 +96,7 @@ function readData(sData) {
     else{
       var newP = document.createElement("p");
       if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refusé ?</a>';
+          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
           idGame=donnes[i]['joue'];
       }
       else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){

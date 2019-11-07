@@ -89,3 +89,5 @@
 
     </div>
   </div>
+  <div id="choix" style="display:none;">
+  </div>

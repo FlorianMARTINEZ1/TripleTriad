@@ -120,9 +120,6 @@
     </div>
   </div>
 
-  <div id="choix" style="display:none;">
-  </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="./script/Card.js"></script>
@@ -147,8 +144,14 @@
   if($view == 'IA'){
     echo '<script type="text/javascript" src="./script/GameIA.js"></script>';
   }
-  ?>
-  <script type="text/javascript" src="./script/main.js"></script>
+
+  if($view == "Enligne"){
+    echo '<script type="text/javascript" src="./script/multi.js"></script>';
+  }
+  else{
+    echo '<script type="text/javascript" src="./script/main.js"></script>';
+  }
+   ?>
 
 </body>
 

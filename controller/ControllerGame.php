@@ -64,12 +64,15 @@ class ControllerGame {
       $j = ModelJoueur::select($login);
       $id = $j->get("joue");
       $AutreJoueur = 0;
+      $commence = 0;
       $game = ModelGame::select($id);
       if($game->get("challenged")==$login){
         $AutreJoueur = $game->get("challenger");
+        $commence = 0;
       }
       else{
         $AutreJoueur = $game->get("challenged");
+        $commence = 1;
       }
       $controller='game';
       $view='Enligne';

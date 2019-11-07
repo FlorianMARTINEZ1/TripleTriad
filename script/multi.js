@@ -1,3 +1,7 @@
+setTimeout(function(){
+  initialisation();
+},5000);
+
 function allowDrop(ev) {
   ev.preventDefault();
 
@@ -39,9 +43,8 @@ function stopMusic() {
   }
 
 }
-var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
-document.getElementById("choix").innerHTML = choixjoueur;
-var g2 = new Game('j1', 'j2', 1,'solo');
+var choixjoueur = document.getElementById("choix").innerHTML;
+var g2 = new Game('j1', 'j2', 1,'multi');
 // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 
@@ -67,11 +70,6 @@ function initialisation() {
   document.getElementById('deux').innerHTML = /* listPlayer[1].getName()*/ joueurDeux;
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
-
-  if (choixjoueur == 1 && (g2.getListPlayer()[1] instanceof IA)) {
-    g2.getListPlayer()[1].play();
-
-  }
 
 }
 
