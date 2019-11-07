@@ -74,7 +74,13 @@ function lireDonnee(sData) {
   }
   else if(donnes[0]['casejoue'] != null){
     console.log("en attente de réponse, currentPlayer ="+g2.currentPlayer);
-    g2.ajoue = g2.currentPlayer-1;
+    if(temps==4){
+        g2.ajoue = g2.currentPlayer-1;
+        temps = 0;
+    }
+    else{
+      temps = temps + 1 ;
+    }
 
 
   }
@@ -83,7 +89,7 @@ function lireDonnee(sData) {
   }
 }
 
-
+var temps = 0;
 
 function afficheMenu() {
   let menu = document.getElementById("menu");

@@ -41,12 +41,10 @@ class Joueur {
    */
   retrieveCard(carte) {
     for (var i = 0; i < this.carteJoue.length; i++) {
-      console.log(""+this.carteJoue);
       if (this.carteJoue[i] === carte) {
         let a = this.carteJoue[i];
         this.score--;
         this.carteJoue.splice(i,1);
-        console.log(""+this.carteJoue);
         return a;
       }
     }
