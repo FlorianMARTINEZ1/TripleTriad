@@ -39,6 +39,28 @@ class ModelGame extends Model{
         }
     }
 
+    public static function removeTour($id){
+      try{
+        $sql = "UPDATE game SET game.casejoue=NULL , game.idcartejoue=NULL WHERE game.id=:id ;";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $values = array(
+            "id" => $id
+        );
+        // On donne les valeurs et on exécute la requête
+        $req_prep->execute($values);
+
+      }catch(PDOException $e){
+        if (Conf::getDebug()) {
+            echo $e->getMessage(); // affiche un message d'erreur
+        } else {
+            echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+        }
+        die();
+      }
+    }
+
     public static function convertCards($id){
         require_once File::build_path(array('model','ModelCard.php'));
         $sql = 'SELECT * FROM game where id = \''.$id.'\'';

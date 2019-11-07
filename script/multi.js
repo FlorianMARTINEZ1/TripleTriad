@@ -29,23 +29,57 @@ function  requete(callback){
   xhr.open("GET", "api/miseAJourJeu.php?id="+idG, true); // on les cherche dans le fichier php/test.php
   xhr.send(null);
 }
+function removeCaseCard(etat) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+    }
+  };
+  xhr.open("GET", "api/removeTour.php?id="+idG, true);
+  xhr.send();
+}
 
 
 function lireDonnee(sData) {
   var donnes = JSON.parse(sData);
-  if(donnes[0]['casejoue'] != null && g2.currentPlayer==1){
+  if(donnes[0]['casejoue'] != null && g2.currentPlayer==1 && g2.ajoue!=1){
     console.log("en attent de réponse, le joueur en face a joué");
-    console.log(donnes[0]['casejoue']);
-    console.log(donnes[0]['idcartejoue']);
-
-
+    let jouecase = "case"+donnes[0]['casejoue'];
+    let img = donnes[0]['idcartejoue'];
+    removeCaseCard(1);
+    var newimg = document.getElementsByClassName(img)[0];
+    var immage = document.getElementsByClassName(jouecase)[0].appendChild(newimg);
+    newimg.removeAttribute('ondrop');
+    newimg.removeAttribute('ondragover');
+    newimg.setAttribute('pointer-events', 'none');
+    newimg.setAttribute('draggable', 'false');
+    newimg.removeAttribute('ondragstart');
+    newimg.removeAttribute('id');
+    var casee = document.getElementsByClassName(jouecase)[0];
+    casee.removeAttribute('ondrop');
+    casee.removeAttribute('ondragover');
+    confrontation(img,jouecase);
+    g2.setTurn();
+    /*g2.currentPlayer==0;*/
+    document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
+    document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
+    var sound = document.getElementById("sound");
+    if (sound.muted == false) {
+      /*var sound = document.getElementById("soundcarte");
+      sound.autoplay = true;
+      /*sound.load();*/
+    }
+    g2.endGame();
   }
   else if(donnes[0]['casejoue'] != null){
-    console.log("en attente de réponse");
+    console.log("en attente de réponse, currentPlayer ="+g2.currentPlayer);
+    g2.ajoue = g2.currentPlayer-1;
+
 
   }
   else{
-    console.log("en attente de jeu");
+    console.log("en attente de jeu, currentPlayer ="+g2.currentPlayer);
   }
 }
 
@@ -146,7 +180,7 @@ function drop(ev) {
   envoieDonner(1);
   confrontation(img.className, ev.target.classList[1]);
   g2.setTurn();
-  g2.currentPlayer=0;
+  g2.ajoue = g2.currentPlayer;
   document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
   var sound = document.getElementById("sound");

@@ -10,6 +10,7 @@ class Game {
     /*this.currentPlayer = getRandomIntInclusive(0, 1);*/
     this.currentPlayer =parseInt(choixjoueur);
     this.id = ids;
+    this.ajoue = 0;
     this.type = etat;
     this.dureeGame = 0;
     if (this.currentPlayer == 1 && this.type=="multi") { // si c'est au rouge de jouer, on désactive le bleu

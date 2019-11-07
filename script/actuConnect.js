@@ -181,10 +181,6 @@ for(var i=0;i<elements.length;i++){
 }
 
 request(readData);
-/*
-setInterval(function() {
-  attente(relocation);
-},500);*/
 
 setInterval(function () {
   request(readData);
