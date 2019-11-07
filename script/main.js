@@ -41,7 +41,7 @@ function stopMusic() {
 }
 var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
 document.getElementById("choix").innerHTML = choixjoueur;
-var g2 = new Game('j1', 'j2', 1,'solo');
+var g2 = new Game('j1', 'j2', 1,'solo',choixjoueur);
 // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 
@@ -140,7 +140,7 @@ function confrontation(carteJoue, caseJoue) {
 
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
-  g2.listPlayer[g2.currentPlayer].ajouter(c);
+  g2.listPlayer[""+g2.currentPlayer].ajouter(c);
   caseN = Number(caseJoue[4]) - 3; /** On récupère le numéro des cases */
   caseE = Number(caseJoue[4]) + 1;
   caseS = Number(caseJoue[4]) + 3;

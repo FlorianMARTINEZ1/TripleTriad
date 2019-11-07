@@ -76,4 +76,5 @@
     </div>
   </div>
   <div id="choix" style="display:none;">
+    <?php echo rand(0, 1); ?>
   </div>
