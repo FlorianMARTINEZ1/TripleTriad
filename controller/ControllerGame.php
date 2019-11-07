@@ -58,8 +58,8 @@ class ControllerGame {
     }
 
     public static function EnLigne() {
-      require_once File::build_path(array('Model','ModelJoueur.php'));
-      require_once File::build_path(array('Model','ModelGame.php'));
+      require_once File::build_path(array('model','ModelJoueur.php'));
+      require_once File::build_path(array('model','ModelGame.php'));
       $login = $_SESSION['login'];
       $j = ModelJoueur::select($login);
       $id = $j->get("joue");

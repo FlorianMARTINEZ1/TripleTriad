@@ -48,7 +48,7 @@ function attente(callback){
       donnée = callback(xhr.responseText); // on récupère les données.
     }
   };
-  xhr.open("GET", "api/attenteConfirmation.php?id="+document.getElementById("idGame").value, true); // on les cherche dans le fichier php/test.php
+  xhr.open("GET", "api/AttenteConfirmation.php?id="+document.getElementById("idGame").value, true); // on les cherche dans le fichier php/test.php
   xhr.send(null);
 }
 

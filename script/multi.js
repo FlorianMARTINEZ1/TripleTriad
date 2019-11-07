@@ -26,7 +26,7 @@ function  requete(callback){
     }
   };
 
-  xhr.open("GET", "api/miseAJourJeu.php?id="+idG, true); // on les cherche dans le fichier php/test.php
+  xhr.open("GET", "api/miseAjourJeu.php?id="+idG, true); // on les cherche dans le fichier php/test.php
   xhr.send(null);
 }
 function removeCaseCard(etat) {
