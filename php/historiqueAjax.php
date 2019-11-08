@@ -18,10 +18,9 @@ function addToHistorique()
     {
 
         $arr = array(
-            "nomJ1" => $_GET["nomJ1"], "nomJ2" => $_GET["nomJ2"], "scoreJ1" => $_GET["scoreJ1"], "scoreJ2" => $_GET["scoreJ2"]
+            "nomJ1" => $_GET["nomJ1"], "nomJ2" => $_GET["nomJ2"], "scoreJ1" => $_GET["scoreJ1"], "scoreJ2" => $_GET["scoreJ2"], "deckJ1" => $_GET["deckJ1"], "deckJ2" => $_GET["deckJ2"]
         );
         ModelHistorique::save($arr);
-        echo "test";
     }
 }
 
@@ -32,6 +31,14 @@ function addNewDeck()
         "idC1" => $_GET["idC1"], "idC2" => $_GET["idC2"], "idC3" => $_GET["idC3"], "idC4" => $_GET["idC4"], "idC5" => $_GET["idC5"]
     );
     ModelDecks::save($arr);
+}
+
+function getDeck()
+{
+    $arr = array(
+        "idC1" => $_GET["idC1"], "idC2" => $_GET["idC2"], "idC3" => $_GET["idC3"], "idC4" => $_GET["idC4"], "idC5" => $_GET["idC5"]
+    );
+    ModelDecks::getIdDeck($arr);
 }
 
 ?>

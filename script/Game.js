@@ -13,6 +13,8 @@ class Game {
     this.ajoue = 0;
     this.type = etat;
     this.dureeGame = 0;
+    this.idDeck1 = this.getDeck(0);
+    this.idDeck2 = this.getDeck(5);
     if (this.currentPlayer == 1 && this.type=="multi") { // si c'est au rouge de jouer, on désactive le bleu
       document.getElementById('drag1').setAttribute('draggable', 'false');
       document.getElementById('drag2').setAttribute('draggable', 'false');
@@ -84,23 +86,23 @@ class Game {
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
         if (this.listPlayer[0].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
-          this.addHistorique(1);
+          this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
-          this.addHistorique(2);
+          this.addHistorique();
         }
 
       } else if (this.listPlayer[0].getScore() < this.listPlayer[1].getScore()) {
         if (this.listPlayer[1].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
-          this.addHistorique(1);
+          this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
-          this.addHistorique(2);
+          this.addHistorique();
         }
       } else {
         document.getElementById("gagnant").innerHTML = "bravo aux 2 joueurs pour cette égalité ! ";
-        this.addHistorique(0);
+        this.addHistorique();
       }
 
     } else {
@@ -108,7 +110,7 @@ class Game {
     }
   }
 
-  addHistorique(etat) {
+  getDeck(increment) {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -116,7 +118,19 @@ class Game {
       }
     };
 
-    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&action=solo", true);
+    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+allCards[0+increment]+"&idC2="+allCards[1+increment]+"&idC3="+allCards[2+increment]+"&idC4="+allCards[3+increment]+"&idC5="+allCards[4+increment], true);
+    xhr.send();
+  }
+
+  addHistorique() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+      }
+    };
+
+    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2+"&action=solo", true);
     xhr.send();
   }
   
