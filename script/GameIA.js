@@ -18,6 +18,7 @@ class Game {
     this.currentPlayer = document.getElementById("choix").innerHTML;
     this.id = ids;
     this.dureeGame = 0;
+    
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
       //carte rouge true
       document.getElementById('drag1').setAttribute('draggable', 'false');

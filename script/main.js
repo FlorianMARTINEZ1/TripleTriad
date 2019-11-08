@@ -64,6 +64,8 @@ function initialisation() {
   document.getElementById('deux').innerHTML = joueurDeux;
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
+  addDeck(0);
+  addDeck(5);
 
   if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
@@ -71,6 +73,20 @@ function initialisation() {
   }
 
 }
+
+function addDeck(increment)
+  {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+      if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
+      {
+
+      }
+    };
+    xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
+    xhr.send();
+  }
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.draggable);
