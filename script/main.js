@@ -41,7 +41,7 @@ function stopMusic() {
 }
 var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
 document.getElementById("choix").innerHTML = choixjoueur;
-var g2 = new Game('j1', 'j2', 1,'solo',choixjoueur);
+var g2 = new Game('j1', 'j2', 1, 'solo', choixjoueur);
 // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 
@@ -81,58 +81,59 @@ function initialisation() {
 function getDeck(increment, callback) {
   var xhr = new XMLHttpRequest();
 
-  xhr.onreadystatechange = function () {
+  xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-       id = callback(xhr.responseText);
-       if(increment === 0) {
-         g2.idDeck1 = id;
-         console.log(g2.idDeck1);
-       }else
-       {
-         g2.idDeck2 = id;
-         console.log(g2.idDeck2);
-       }
+      id = callback(xhr.responseText);
+      if (increment === 0) {
+        g2.idDeck1 = id;
+        console.log(g2.idDeck1);
+      } else {
+        g2.idDeck2 = id;
+        console.log(g2.idDeck2);
+      }
 
     }
   };
 
-  let tabID =[];
-  for (let i = 0; i <= 4 ; i++) {
-    tabID.push(allCards[i+increment].donneID());
+  let tabID = [];
+  for (let i = 0; i <= 4; i++) {
+    tabID.push(allCards[i + increment].donneID());
 
   }
-  tabID.sort(function(a, b){return a - b});
+  tabID.sort(function(a, b) {
+    return a - b
+  });
   console.log(tabID);
 
-  xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+tabID[0]+"&idC2="+tabID[1]+"&idC3="+tabID[2]+"&idC4="+tabID[3]+"&idC5="+tabID[4], true);
+  xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4], true);
   xhr.send();
 }
-function readDeck(sData){
+
+function readDeck(sData) {
   return sData;
 }
 
 
-function addDeck(increment)
-  {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function()
-    {
-      if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
-      {
-
-      }
-    };
-    let tabID =[];
-    for (let i = 0; i < 5 ; i++) {
-      tabID.push(allCards[i+increment].donneID());
+function addDeck(increment) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
 
     }
-    tabID.sort(function(a, b){return a - b});
+  };
+  let tabID = [];
+  for (let i = 0; i < 5; i++) {
+    tabID.push(allCards[i + increment].donneID());
 
-    //xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
-    xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+tabID[0]+"&idC2="+tabID[1]+"&idC3="+tabID[2]+"&idC4="+tabID[3]+"&idC5="+tabID[4]);
-    xhr.send();
   }
+  tabID.sort(function(a, b) {
+    return a - b
+  });
+
+  //xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
+  xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4]);
+  xhr.send();
+}
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.draggable);
@@ -173,8 +174,7 @@ function drop(ev) {
     sound.autoplay = true;
     /*sound.load();*/
   }
-  if( g2.dureeGame>=8)
-  {
+  if (g2.dureeGame >= 8) {
     g2.idDeck1 = 0;
     getDeck(0, readDeck);
     g2.idDeck2 = 0;
@@ -196,17 +196,18 @@ var findCard = function(carteJoue) {
     }
   }
 }
-function action(C,Cart,couleur){
-    C.setAttribute("src", "css/cartes/FF8/" + Cart.donneNom() + "." + couleur + ".jpg"); // On change la couleur
-    C.style.width="100px";
-    C.style.marginLeft="0px";
+
+function action(C, Cart, couleur) {
+  C.setAttribute("src", "css/cartes/FF8/" + Cart.donneNom() + "." + couleur + ".jpg"); // On change la couleur
+  C.style.width = "100px";
+  C.style.marginLeft = "0px";
 }
 
 function confrontation(carteJoue, caseJoue) {
 
 
   var c = findCard(carteJoue); /** c : la carte ayant été jouée */
-  g2.listPlayer[""+g2.currentPlayer].ajouter(c);
+  g2.listPlayer["" + g2.currentPlayer].ajouter(c);
   caseN = Number(caseJoue[4]) - 3; /** On récupère le numéro des cases */
   caseE = Number(caseJoue[4]) + 1;
   caseS = Number(caseJoue[4]) + 3;
@@ -219,10 +220,12 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) { // joueur bleu
         if (g2.listPlayer[1].possede(cartN)) { // Si l'ennemi possède la carte
           if (cartN.donneValS() < c.donneValN()) { // Si notre carte gagne, on rentre dans la condition
-            N.style.width="0px";
-            N.style.marginLeft="50px";
+            N.style.width = "0px";
+            N.style.marginLeft = "50px";
             let coul = cartN.donneCouleurInv();
-            setTimeout(function(){action(N,cartN,coul)},300);
+            setTimeout(function() {
+              action(N, cartN, coul)
+            }, 300);
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartN)); // On déplace la carte de liste (on donne donc la carte à l'autre joueur)
             cartN.setCouleurInv();
           }
@@ -230,10 +233,12 @@ function confrontation(carteJoue, caseJoue) {
       } else { // joueur rouge
         if (g2.listPlayer[0].possede(cartN)) {
           if (cartN.donneValS() < c.donneValN()) {
-            N.style.width="0px";
-            N.style.marginLeft="50px";
+            N.style.width = "0px";
+            N.style.marginLeft = "50px";
             let coul = cartN.donneCouleurInv();
-            setTimeout(function(){action(N,cartN,coul)},300);
+            setTimeout(function() {
+              action(N, cartN, coul)
+            }, 300);
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartN));
             cartN.setCouleurInv();
           }
@@ -248,10 +253,12 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartS)) {
           if (cartS.donneValN() < c.donneValS()) {
-            S.style.width="0px";
-            S.style.marginLeft="50px";
+            S.style.width = "0px";
+            S.style.marginLeft = "50px";
             let coul = cartS.donneCouleurInv();
-            setTimeout(function(){action(S,cartS,coul)},300);
+            setTimeout(function() {
+              action(S, cartS, coul)
+            }, 300);
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartS));
             cartS.setCouleurInv();
           }
@@ -259,10 +266,12 @@ function confrontation(carteJoue, caseJoue) {
       } else {
         if (g2.listPlayer[0].possede(cartS)) {
           if (cartS.donneValN() < c.donneValS()) {
-            S.style.width="0px";
-            S.style.marginLeft="50px";
+            S.style.width = "0px";
+            S.style.marginLeft = "50px";
             let coul = cartS.donneCouleurInv();
-            setTimeout(function(){action(S,cartS,coul)},300);
+            setTimeout(function() {
+              action(S, cartS, coul)
+            }, 300);
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartS));
             cartS.setCouleurInv();
           }
@@ -278,10 +287,12 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartE)) {
           if (cartE.donneValO() < c.donneValE()) {
-            E.style.width="0px";
-            E.style.marginLeft="50px";
+            E.style.width = "0px";
+            E.style.marginLeft = "50px";
             let coul = cartE.donneCouleurInv();
-            setTimeout(function(){action(E,cartE,coul)},300);
+            setTimeout(function() {
+              action(E, cartE, coul)
+            }, 300);
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartE));
             cartE.setCouleurInv();
           }
@@ -289,10 +300,12 @@ function confrontation(carteJoue, caseJoue) {
       } else {
         if (g2.listPlayer[0].possede(cartE)) {
           if (cartE.donneValO() < c.donneValE()) {
-            E.style.width="0px";
-            E.style.marginLeft="50px";
+            E.style.width = "0px";
+            E.style.marginLeft = "50px";
             let coul = cartE.donneCouleurInv();
-            setTimeout(function(){action(E,cartE,coul)},300);
+            setTimeout(function() {
+              action(E, cartE, coul)
+            }, 300);
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartE));
             cartE.setCouleurInv();
           }
@@ -307,10 +320,12 @@ function confrontation(carteJoue, caseJoue) {
       if (g2.currentPlayer == 0) {
         if (g2.listPlayer[1].possede(cartO)) {
           if (cartO.donneValE() < c.donneValO()) {
-            O.style.width="0px";
-            O.style.marginLeft="50px";
+            O.style.width = "0px";
+            O.style.marginLeft = "50px";
             let coul = cartO.donneCouleurInv();
-            setTimeout(function(){action(O,cartO,coul)},300);
+            setTimeout(function() {
+              action(O, cartO, coul)
+            }, 300);
             g2.listPlayer[0].ajouter(g2.listPlayer[1].retrieveCard(cartO));
             cartO.setCouleurInv();
           }
@@ -318,10 +333,12 @@ function confrontation(carteJoue, caseJoue) {
       } else {
         if (g2.listPlayer[0].possede(cartO)) {
           if (cartO.donneValE() < c.donneValO()) {
-            O.style.width="0px";
-            O.style.marginLeft="50px";
+            O.style.width = "0px";
+            O.style.marginLeft = "50px";
             let coul = cartO.donneCouleurInv();
-            setTimeout(function(){action(O,cartO,coul)},300);
+            setTimeout(function() {
+              action(O, cartO, coul)
+            }, 300);
             g2.listPlayer[1].ajouter(g2.listPlayer[0].retrieveCard(cartO));
             cartO.setCouleurInv();
           }

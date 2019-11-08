@@ -2,26 +2,25 @@
 
 class Game {
   constructor(joueur1, joueur2, ids) {
-    var j1 = new Joueur(joueur1);
     var j2;
+    var j1 = new Joueur(joueur1);
     var joueurDeux = document.getElementById('joueur2').value; // cherche quel IA Joue
-    if(joueurDeux == "IAForte"){
+    if (joueurDeux == "IAForte") {
       j2 = new IAForte(this);
-    }
-    else if(joueurDeux == "IAMoyen"){
+    } else if (joueurDeux == "IAMoyen") {
       j2 = new IAMoyen(this);
-    }
-    else if(joueurDeux == "IAFaible"){
+    } else if (joueurDeux == "IAFaible") {
       j2 = new IARandom(this);
     }
     this.listPlayer = [j1, j2];
     this.currentPlayer = document.getElementById("choix").innerHTML;
+    j2.setIndex();
     this.id = ids;
     this.dureeGame = 0;
 
     this.idDeck1 = 0;
     this.idDeck2 = 0;
-    
+
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
       //carte rouge true
       document.getElementById('drag1').setAttribute('draggable', 'false');
@@ -58,14 +57,19 @@ class Game {
     return this.listPlayer;
   }
 
-  playIA() {
+  playIA1() {
     this.listPlayer[1].play();
   }
+  playIA0() {
+    this.listPlayer[0].play();
+  }
 
-  endGame(){
+  endGame() {
     if (this.dureeGame == 9) {
-      function end(){g2.endGamePrint()}
-        setTimeout(end,3000);
+      function end() {
+        g2.endGamePrint()
+      }
+      setTimeout(end, 3000);
     }
   }
 
@@ -112,15 +116,14 @@ class Game {
   addHistorique() {
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-      }
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {}
     };
 
-    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2, true);
+    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1=" + document.getElementById('joueur1').value + "&nomJ2=" + document.getElementById('joueur2').value + "&scoreJ1=" + this.listPlayer[0].getScore() + "&scoreJ2=" + this.listPlayer[1].getScore() + "&deckJ1=" + this.idDeck1 + "&deckJ2=" + this.idDeck2, true);
     xhr.send();
   }
-  
+
 
   setTurn() {
     //changement de couleur du joueur qui joue
@@ -168,7 +171,9 @@ class Game {
     }
 
     if (this.currentPlayer == 1 && this.dureeGame < 9) { // Si le joueur est L'IA et que la partie n'est pas fini , l'IA joue
-      setTimeout(function(){g2.playIA()},1500); // joué après 0.7 sec
+      setTimeout(function() {
+        g2.playIA1()
+      }, 1500); // joué après 0.7 sec
     }
   }
 

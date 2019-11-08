@@ -25,20 +25,30 @@ class IA extends Joueur {
     }
   }
 
+  setIndex() {
+    this.index = this.game.getListPlayer().indexOf(this);
+  }
+
 
 
   setNumDragCardOfDeckIA() {
     this.cards = [];
     var i;
     let N;
+    let cote;
+    if (this.index == 1) {
+      cote = ".droite";
+    } else {
+      cote = ".gauche"
+    }
     for (i = 1; i < 4; i++) { // pour la première ranger de carte ( les 3 en haut)
-      N = document.querySelector(".droite .case:nth-child(" + i + ")"); // on prend les case de nos cartes une après l'autre
+      N = document.querySelector(cote + " .case:nth-child(" + i + ")"); // on prend les case de nos cartes une après l'autre
       if (N.childElementCount > 0) { // si elle a un enfant , (donc une carte pas encore joué) on la met dans le tableau
         this.cards.push(this.index * 5 + i); // on met le drag de la carte dans le tableau (de 6 à 8)
       }
     }
     for (i = 1; i < 3; i++) { // pour la deuxème ranger de carte ( les 2 en bas)
-      N = document.querySelector(".droite div.last.cards1 .case:nth-child(" + i + ")"); // on prend les case de nos cartes une après l'autre
+      N = document.querySelector(cote + " div.last.cards1 .case:nth-child(" + i + ")"); // on prend les case de nos cartes une après l'autre
       if (N.childElementCount > 0) { // pareil que pour les 3 première cases
         this.cards.push(this.index * 5 + i + 3);
       }
@@ -46,11 +56,11 @@ class IA extends Joueur {
 
   }
 
-  setCasesNonVidesAvecCarteBleue() {
+  setCasesNonVidesAvecCarteAdverse() {
     this.casesNonVides = [];
     for (var i = 1; i <= 9; i++) {
       var c = document.getElementsByClassName('case' + i)[0].firstChild;
-      if (c != null && findCard(c.className).donneCouleur() === "bleue") {
+      if (c != null && findCard(c.className).donneCouleur() === "bleue" && this.index == 1 || c != null && findCard(c.className).donneCouleur() === "rouge" && this.index == 2) {
         this.casesNonVides.push(i);
       }
     }
@@ -99,12 +109,9 @@ class IA extends Joueur {
 
   setCasesVisees() {
     this.casesVisees = [];
-    console.log(this.casesNonVides);
     if (this.casesNonVides.length != 0) {
       for (var i = 0; i < this.casesNonVides.length; i++) {
         let casesAutour = this.getCasesAutour(this.casesNonVides[i]);
-        console.log(this.casesNonVides[i]);
-        console.log(casesAutour);
         for (var j = 0; j < casesAutour.length; j++) {
           if (this.casesVides.indexOf(casesAutour[j]) != -1) {
             this.casesVisees.push(casesAutour[j]);
@@ -116,14 +123,14 @@ class IA extends Joueur {
   }
 
   ajouter(carte) {
-      super.ajouter(carte);
+    super.ajouter(carte);
   }
 
   play(idDragCard, idCase) {
     var newimg = document.getElementById('drag' + this.cards[idDragCard]);
     let idC = newimg.className;
     let CarteRetourne = findCard(idC);
-    newimg.setAttribute("src","css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
+    newimg.setAttribute("src", "css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
     var img = document.getElementsByClassName('case' + this.casesVides[idCase])[0].appendChild(newimg);
     this.carteJoue.push(newimg);
     newimg.removeAttribute('ondrop');

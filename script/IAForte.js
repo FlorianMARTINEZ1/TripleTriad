@@ -13,8 +13,8 @@ class IAForte extends IA {
     super.setNumDragCardOfDeckIA();
   }
 
-  setCasesNonVidesAvecCarteBleue() {
-    super.setCasesNonVidesAvecCarteBleue();
+  setCasesNonVidesAvecCarteAdverse() {
+    super.setCasesNonVidesAvecCarteAdverse();
   }
 
   setCasesVisees() {
@@ -104,7 +104,7 @@ class IAForte extends IA {
   }
 
   ajouter(carte) {
-      super.ajouter(carte);
+    super.ajouter(carte);
   }
 
 
@@ -113,7 +113,7 @@ class IAForte extends IA {
   play() {
     this.setCasesVides(); //Regarde les cases vides et les récupere dans la variable casesVides
     this.setNumDragCardOfDeckIA(); // Regarde les case ou il ya une carte dans le deck de l'IA
-    this.setCasesNonVidesAvecCarteBleue();
+    this.setCasesNonVidesAvecCarteAdverse();
     this.setCasesVisees();
     /*console.log(this.casesNonVides);
     console.log(this.casesVisees);*/

@@ -3,7 +3,7 @@ class Joueur {
   constructor(pseudo) {
     this.pseudo = pseudo;
     this.carteJoue = [];
-    this.score=5;
+    this.score = 5;
 
   }
 
@@ -23,6 +23,8 @@ class Joueur {
     this.carteJoue.push(carte);
     this.score++;
   }
+
+  setIndex() {}
 
   /**
    * Vérifie dans la liste de nom de carte du joueur si le nom de la carte donnée en paramètre
@@ -44,7 +46,7 @@ class Joueur {
       if (this.carteJoue[i] === carte) {
         let a = this.carteJoue[i];
         this.score--;
-        this.carteJoue.splice(i,1);
+        this.carteJoue.splice(i, 1);
         return a;
       }
     }
