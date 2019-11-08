@@ -52,6 +52,7 @@ header {
 
 fieldset {
   z-index: 2;
+  color: white;
 }
 
 #backform {
@@ -64,6 +65,11 @@ fieldset {
   width: 50%;
 }
 
+div.input-field label {
+  color: black !important;
+  font-weight: bold;
+}
+
 div#bckgrnd {
   z-index: 0;
   position: absolute;
@@ -71,6 +77,19 @@ div#bckgrnd {
   height: 500px;
   text-align: center;
   background-color: #223d44;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div#bckgrndins {
+  z-index: 0;
+  position: absolute;
+  width: 55%;
+  height: 650px;
+  text-align: center;
+  background-color: #3c6b77;
   opacity: 0.8;
   top: 50%;
   left: 50%;

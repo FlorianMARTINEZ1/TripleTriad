@@ -1,5 +1,7 @@
 
+<div id="bckgrndins">
 
+</div>
 <div id="form" class="row">
 
     <form class="col s12" id="backform" method="get" action="./index.php">
