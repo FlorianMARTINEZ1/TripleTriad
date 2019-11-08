@@ -156,6 +156,7 @@
         echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
     } elseif ($typeIA0=="forte" || $typeIA1=="forte"){
         echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+    }
   }
 
   if($view == 'IA'){
