@@ -125,9 +125,9 @@
   <script type="text/javascript" src="./script/Card.js"></script>
   <script type="text/javascript"> var equilibre = <?php echo $_SESSION["equilibre"]?>; </script>
   <?php
-  if($view == "EnLigne") { echo '<script type="text/javascript"> var multi = true;</script> '}
-  else{ echo '<script type="text/javascript"> var multi = false;</script> '} 
-  
+  if($view == "EnLigne") { echo '<script type="text/javascript"> var multi = true;</script> ';}
+  else{ echo '<script type="text/javascript"> var multi = false;</script> ';}
+
   if($view == "Enligne"){
     echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
   }
@@ -153,9 +153,11 @@
   } elseif ($type=="2IA") {
     if ($typeIA0=="faible" || $typeIA1=="faible" ) {
         echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
-    } elseif ($typeIA0=="moyen" || $typeIA1=="moyen") {
+    }
+    if ($typeIA0=="moyen" || $typeIA1=="moyen") {
         echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
-    } elseif ($typeIA0=="forte" || $typeIA1=="forte"){
+    }
+    if ($typeIA0=="forte" || $typeIA1=="forte"){
         echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
     }
   }
