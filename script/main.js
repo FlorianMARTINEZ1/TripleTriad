@@ -69,9 +69,9 @@ function initialisation() {
 
 
 
-  /*if (choixjoueur == 1 && document.getElementById("IA")) {
+  if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
-  }*/
+  }
   if (choixjoueur == 1 && document.getElementById("IA0")) {
     g2.getListPlayer()[1].play();
   } else if (document.getElementById("IA0")) {
