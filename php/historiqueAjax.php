@@ -38,7 +38,7 @@ function getDeck()
     $arr = array(
         "idC1" => $_GET["idC1"], "idC2" => $_GET["idC2"], "idC3" => $_GET["idC3"], "idC4" => $_GET["idC4"], "idC5" => $_GET["idC5"]
     );
-    ModelDecks::getIdDeck($arr);
+    echo ModelDecks::getIdDeck($arr);
 }
 
 ?>

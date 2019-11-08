@@ -18,9 +18,9 @@ class Game {
     this.currentPlayer = document.getElementById("choix").innerHTML;
     this.id = ids;
     this.dureeGame = 0;
-/*
-    this.idDeck1 = this.getDeck(0);
-    this.idDeck2 = this.getDeck(5);*/
+
+    this.idDeck1 = 0;
+    this.idDeck2 = 0;
     
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
       //carte rouge true
@@ -84,23 +84,23 @@ class Game {
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
         if (this.listPlayer[0].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
-          this.addHistorique(1);
+          this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
-          this.addHistorique(2);
+          this.addHistorique();
         }
 
       } else if (this.listPlayer[0].getScore() < this.listPlayer[1].getScore()) {
         if (this.listPlayer[1].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
-          this.addHistorique(1);
+          this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
-          this.addHistorique(2);
+          this.addHistorique();
         }
       } else {
         document.getElementById("gagnant").innerHTML = "bravo aux 2 joueurs pour cette égalité ! ";
-        this.addHistorique(0);
+        this.addHistorique();
       }
 
     } else {
@@ -108,19 +108,8 @@ class Game {
     }
   }
 
- /* getDeck(increment) {
-    var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-      }
-    };
-
-    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+document.getElementById('drag'+(1+increment)).className+"&idC2="+document.getElementById('drag'+(2+increment)).className+"&idC3="+document.getElementById('drag'+(3+increment)).className+"&idC4="+document.getElementById('drag4'+(4+increment)).className+"&idC5="+document.getElementById('drag'+(5+increment)).className, true);
-    xhr.send();
-  }*/
-
-  /*addHistorique() {
+  addHistorique() {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -130,7 +119,7 @@ class Game {
 
     xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2, true);
     xhr.send();
-  }*/
+  }
   
 
   setTurn() {

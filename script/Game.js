@@ -13,8 +13,8 @@ class Game {
     this.ajoue = 0;
     this.type = etat;
     this.dureeGame = 0;
-    /*this.idDeck1 = this.getDeck(0);
-    this.idDeck2 = this.getDeck(5);*/
+    this.idDeck1 = 0;
+    this.idDeck2 = 0;
     if (this.currentPlayer == 1 && this.type=="multi") { // si c'est au rouge de jouer, on désactive le bleu
       document.getElementById('drag1').setAttribute('draggable', 'false');
       document.getElementById('drag2').setAttribute('draggable', 'false');
@@ -110,19 +110,6 @@ class Game {
     }
   }
 
-  /*getDeck(increment) {
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-      }
-    };
-
-    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+document.getElementById('drag'+(1+increment)).className+"&idC2="+document.getElementById('drag'+(2+increment)).className+"&idC3="+document.getElementById('drag'+(3+increment)).className+"&idC4="+document.getElementById('drag4'+(4+increment)).className+"&idC5="+document.getElementById('drag'+(5+increment)).className, true);
-    xhr.send();
-  }
-
-
   addHistorique() {
     var xhr = new XMLHttpRequest();
 
@@ -134,7 +121,6 @@ class Game {
     xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2+"&action=solo", true);
     xhr.send();
   }
-  */
   supprimeGame(etat) {
     var xhr = new XMLHttpRequest();
 

@@ -67,13 +67,49 @@ function initialisation() {
   addDeck(0);
   addDeck(5);
 
+  g2.idDeck1 = 0;
+  getDeck(0, readDeck);
+  g2.idDeck2 = 0;
+  getDeck(5, readDeck);
+
   if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
 
   }
 
+
+
 }
 
+function getDeck(increment, callback) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+       id = callback(xhr.responseText);
+       if(increment === 0) {
+         g2.idDeck1 = id;
+       }else
+       {
+         g2.idDeck2 = id;
+       }
+
+    }
+  };
+
+  let tabID =[];
+  for (let i = 1; i <= 5 ; i++) {
+    tabID.push(document.getElementById(('drag'+(i+increment))).className);
+
+  }
+  tabID.sort(function(a, b){return a - b});
+
+  xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+tabID[0]+"&idC2="+tabID[1]+"&idC3="+tabID[2]+"&idC4="+tabID[3]+"&idC5="+tabID[4], true);
+  xhr.send();
+}
+function readDeck(sData){
+  return sData;
+}
 
 
 function addDeck(increment)

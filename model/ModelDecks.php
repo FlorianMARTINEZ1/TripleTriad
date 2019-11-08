@@ -40,21 +40,22 @@ class ModelDecks extends Model{
         }
     }
 
-    public function getIdDeck($arr)
+    public static function getIdDeck($arr)
     {
         $sql = "SELECT id from Decks WHERE idC1=:idC1 AND idC2=:idC2 AND idC3=:idC3 AND idC4=:idC4 AND idC5=:idC5";
         // Préparation de la requête
         $req_prep = Model::$pdo->prepare($sql);
 
         $values = array(
-            "idC1" => $arr[0],
-            "idC2" => $arr[1],
-            "idC3" => $arr[2],
-            "idC4" => $arr[3],
-            "idC5" => $arr[4],
+            "idC1" => $arr["idC1"],
+            "idC2" => $arr["idC2"],
+            "idC3" => $arr["idC3"],
+            "idC4" => $arr["idC4"],
+            "idC5" => $arr["idC5"],
 
             //nomdutag => valeur, ...
         );
+
         // On donne les valeurs et on exécute la requête
         $req_prep->execute($values);
 
@@ -64,7 +65,7 @@ class ModelDecks extends Model{
         // Attention, si il n'y a pas de résultats, on renvoie false
         if (empty($tab_carte))
             return false;
-        return $tab_carte[0];
+        return $tab_carte[0]["id"];
     }
 
 
