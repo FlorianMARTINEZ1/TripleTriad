@@ -3,6 +3,7 @@
 // Attention : si on utilisait Math.round(), on aurait une distribution
 // non uniforme !
 var allCards;
+var tabCartes;
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -25,10 +26,10 @@ function request(callback) {
 
 function readData(sData) {
   var cartes = JSON.parse(sData);
-  
+
   let valeurJ1=0;
   let valeurJ2=0;
-  
+
   do{
     var tabId = [];
     valeurJ1=0;
@@ -57,8 +58,8 @@ function readData(sData) {
     var carte10 = new Card(parseInt(cartes[tabId[9]]['id']),cartes[tabId[9]]['nomCarte'], cartes[tabId[9]]['valN'], cartes[tabId[9]]['valS'],
       cartes[tabId[9]]['valO'], cartes[tabId[9]]['valE'], "rouge"); //  => créer une carte
 
-    var tabCartes = [carte1, carte2, carte3, carte4, carte5, carte6, carte7, carte8, carte9, carte10];
-    
+    tabCartes = [carte1, carte2, carte3, carte4, carte5, carte6, carte7, carte8, carte9, carte10];
+
     for (var i = 0; i < 10; i++) {
       if(i<5){
         valeurJ1= valeurJ1 + tabCartes[i].donneValE() +tabCartes[i].donneValS() +tabCartes[i].donneValO() +tabCartes[i].donneValN();
@@ -72,8 +73,25 @@ function readData(sData) {
   console.log(valeurJ2);
 
   //afficher les cartes sur le tableau de jeu
-
-  var element1 = document.getElementById("drag1");
+  var tabElement = [10];
+  for(let i=0;i<10;i++){
+      if(i<5){
+        tabElement[i] = document.getElementById("drag"+(i+1));
+        tabElement[i].setAttribute("src","css/cartes/FF8/" + tabCartes[i].donneNom() + ".bleue.jpg");
+        tabElement[i].setAttribute("class", tabCartes[i].donneID());
+      }
+      else if(document.getElementById("IA")){
+        tabElement[i] = document.getElementById("drag"+(i+1));
+        tabElement[i].setAttribute("src","css/cartes/FF8/DosDeCarte.jpg");
+        tabElement[i].setAttribute("class", tabCartes[i].donneID());
+      }
+      else{
+        tabElement[i] = document.getElementById("drag"+(i+1));
+        tabElement[i].setAttribute("src","css/cartes/FF8/"+tabCartes[i].donneNom() +".rouge.jpg");
+        tabElement[i].setAttribute("class", tabCartes[i].donneID());
+      }
+    }
+  /*var element1 = document.getElementById("drag1");
   element1.setAttribute("src", "css/cartes/FF8/" + carte1.donneNom() + ".bleue.jpg")
   element1.setAttribute("class", carte1.donneID());
   var element2 = document.getElementById("drag2");
@@ -102,7 +120,7 @@ function readData(sData) {
   element9.setAttribute("class", carte9.donneID());
   var element10 = document.getElementById("drag10");
   element10.setAttribute("src", "css/cartes/FF8/" + carte10.donneNom() + ".rouge.jpg")
-  element10.setAttribute("class", carte10.donneID());
+  element10.setAttribute("class", carte10.donneID());*/
 
   return tabCartes; // return un tableau des 10 carte au hasard;
 }

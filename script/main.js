@@ -56,19 +56,16 @@ function initialisation() {
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
-  /*var listePlayer = [joueurUn,joueur2];*/
-  /*  g2.setListPlayer(listePlayer);*/
-  /*var g1 = new Game(joueurUn, joueurDeux, 1);*/
+
   document.getElementById('formgame').style.display = 'none';
   document.getElementById('plateaujeu').style.display = 'block';
-  /*document.getElementById('un').innerHTML = g2.listPlayer[0].getName();*/
-  /*  var listPlayer = g1.getListPlayer();*/
-  document.getElementById('un').innerHTML = /*listPlayer[0].getName()*/ joueurUn;
-  document.getElementById('deux').innerHTML = /* listPlayer[1].getName()*/ joueurDeux;
+
+  document.getElementById('un').innerHTML = joueurUn;
+  document.getElementById('deux').innerHTML = joueurDeux;
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
 
-  if (choixjoueur == 1 && (g2.getListPlayer()[1] instanceof IA)) {
+  if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
 
   }

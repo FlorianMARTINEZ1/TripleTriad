@@ -121,6 +121,9 @@ class IA extends Joueur {
 
   play(idDragCard, idCase) {
     var newimg = document.getElementById('drag' + this.cards[idDragCard]);
+    let idC = newimg.className;
+    let CarteRetourne = findCard(idC);
+    newimg.setAttribute("src","css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
     var img = document.getElementsByClassName('case' + this.casesVides[idCase])[0].appendChild(newimg);
     this.carteJoue.push(newimg);
     newimg.removeAttribute('ondrop');

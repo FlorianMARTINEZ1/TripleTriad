@@ -49,6 +49,9 @@ function lireDonnee(sData) {
     let img = donnes[0]['idcartejoue'];
     removeCaseCard(1);
     var newimg = document.getElementsByClassName(img)[0];
+    let idC = newimg.className;
+    let CarteRetourne = findCard(idC);
+    newimg.setAttribute("src","css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
     var immage = document.getElementsByClassName(jouecase)[0].appendChild(newimg);
     newimg.removeAttribute('ondrop');
     newimg.removeAttribute('ondragover');

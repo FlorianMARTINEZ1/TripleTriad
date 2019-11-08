@@ -91,3 +91,7 @@
   </div>
   <div id="choix" style="display:none;">
   </div>
+  <div id="IA" style ="display:none;"> oui
+  </div>
+
+  </div>
