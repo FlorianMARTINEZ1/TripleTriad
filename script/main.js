@@ -84,7 +84,15 @@ function addDeck(increment)
 
       }
     };
-    xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
+    let tabID =[];
+    for (let i = 0; i < 5 ; i++) {
+      tabID.push(allCards[i+increment].donneID());
+
+    }
+    tabID.sort(function(a, b){return a - b});
+
+    //xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
+    xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+tabID[0]+"&idC2="+tabID[1]+"&idC3="+tabID[2]+"&idC4="+tabID[3]+"&idC5="+tabID[4]);
     xhr.send();
   }
 
