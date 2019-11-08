@@ -15,6 +15,7 @@ class ControllerGame {
       $pagetitle='Local';
       $type="sans IA";
       $_SESSION["equilibre"] = 5;
+      $_SESSION["multi"] = false;
       require File::build_path(array('view','view.php'));
 
     }
@@ -25,6 +26,7 @@ class ControllerGame {
       $pagetitle='Local';
       $type="sans IA";
       $_SESSION["equilibre"] = 100;
+      $_SESSION["multi"] = false;
       require File::build_path(array('view','view.php'));
 
     }
