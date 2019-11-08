@@ -123,10 +123,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="./script/Card.js"></script>
-  <script type="text/javascript"> var equilibre = <?php echo $_SESSION["equilibre"]?>; 
-  if($view == "EnLigne") {<?php echo "var multi = true;"?>}
-  else{<?php echo "var multi = false;"?>} </script>
+  <script type="text/javascript"> var equilibre = <?php echo $_SESSION["equilibre"]?>; </script>
   <?php
+  if($view == "EnLigne") { echo '<script type="text/javascript"> var multi = true;</script> '}
+  else{ echo '<script type="text/javascript"> var multi = false;</script> '} 
+  
   if($view == "Enligne"){
     echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
   }
