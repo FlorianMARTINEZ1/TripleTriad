@@ -67,10 +67,7 @@ function initialisation() {
   addDeck(0);
   addDeck(5);
 
-  g2.idDeck1 = 0;
-  getDeck(0, readDeck);
-  g2.idDeck2 = 0;
-  getDeck(5, readDeck);
+
 
   if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
@@ -89,20 +86,23 @@ function getDeck(increment, callback) {
        id = callback(xhr.responseText);
        if(increment === 0) {
          g2.idDeck1 = id;
+         console.log(g2.idDeck1);
        }else
        {
          g2.idDeck2 = id;
+         console.log(g2.idDeck2);
        }
 
     }
   };
 
   let tabID =[];
-  for (let i = 1; i <= 5 ; i++) {
-    tabID.push(document.getElementById(('drag'+(i+increment))).className);
+  for (let i = 0; i <= 4 ; i++) {
+    tabID.push(allCards[i+increment].donneID());
 
   }
   tabID.sort(function(a, b){return a - b});
+  console.log(tabID);
 
   xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+tabID[0]+"&idC2="+tabID[1]+"&idC3="+tabID[2]+"&idC4="+tabID[3]+"&idC5="+tabID[4], true);
   xhr.send();
@@ -172,6 +172,13 @@ function drop(ev) {
     /*var sound = document.getElementById("soundcarte");
     sound.autoplay = true;
     /*sound.load();*/
+  }
+  if( g2.dureeGame>=8)
+  {
+    g2.idDeck1 = 0;
+    getDeck(0, readDeck);
+    g2.idDeck2 = 0;
+    getDeck(5, readDeck);
   }
   g2.endGame();
 

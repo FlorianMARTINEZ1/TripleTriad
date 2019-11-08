@@ -42,30 +42,39 @@ class ModelDecks extends Model{
 
     public static function getIdDeck($arr)
     {
-        $sql = "SELECT id from Decks WHERE idC1=:idC1 AND idC2=:idC2 AND idC3=:idC3 AND idC4=:idC4 AND idC5=:idC5";
-        // Préparation de la requête
-        $req_prep = Model::$pdo->prepare($sql);
+        try {
+            $sql = "SELECT id from Decks WHERE idC1=:idC1 AND idC2=:idC2 AND idC3=:idC3 AND idC4=:idC4 AND idC5=:idC5";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
 
-        $values = array(
-            "idC1" => $arr["idC1"],
-            "idC2" => $arr["idC2"],
-            "idC3" => $arr["idC3"],
-            "idC4" => $arr["idC4"],
-            "idC5" => $arr["idC5"],
+            $values = array(
+                "idC1" => $arr["idC1"],
+                "idC2" => $arr["idC2"],
+                "idC3" => $arr["idC3"],
+                "idC4" => $arr["idC4"],
+                "idC5" => $arr["idC5"],
 
-            //nomdutag => valeur, ...
-        );
+                //nomdutag => valeur, ...
+            );
 
-        // On donne les valeurs et on exécute la requête
-        $req_prep->execute($values);
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute($values);
 
-        // On récupère les résultats comme précédemment
-        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Decks');
-        $tab_carte = $req_prep->fetchAll();
-        // Attention, si il n'y a pas de résultats, on renvoie false
-        if (empty($tab_carte))
-            return false;
-        return $tab_carte[0]["id"];
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Decks');
+            $tab_carte = $req_prep->fetchAll();
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            if (empty($tab_carte))
+                return print_r($values);
+            return $tab_carte[0]["id"];
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
     }
 
 
