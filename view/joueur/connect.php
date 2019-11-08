@@ -4,15 +4,14 @@
     <div id="bckgrnd"></div>
     <form class="col s12" id="backform" method="get" action="./index.php">
     <fieldset>
-      <legend>Connexion</legend>
       <div id="log-mdp" class="row">
         <div class="input-field col s5">
-          <input id="login" type="text" class="label-co validate" name="login" required />
+          <input id="login" type="text" class="validate" name="login" required />
           <label for="login">Login</label>
         </div>
         <div class="col s2"></div>
         <div  class="input-field col s5">
-          <input id="password" type="password" class="label-co validate" name=password required>
+          <input id="password" type="password" class="validate" name=password required>
           <label for="password">Mots de passe</label>
         </div>
       </div>

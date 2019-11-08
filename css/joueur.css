@@ -34,7 +34,6 @@ html {
 
 header {
   margin-bottom: 50%;
-  z-index: 100;
 }
 
 #menuIcon {
@@ -62,7 +61,7 @@ fieldset {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: none;
+  background-color: transparent;
   width: 50%;
 }
 
@@ -71,11 +70,15 @@ div.input-field label {
   font-weight: bold;
 }
 
+legend {
+  color: black;
+}
+
 div#bckgrnd {
   z-index: 0;
   position: absolute;
   width: 55%;
-  height: 360px;
+  height: 280px;
   text-align: center;
   background-color: #3c6b77;
   opacity: 0.4;
@@ -86,14 +89,8 @@ div#bckgrnd {
 }
 
 div#log-mdp {
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 0;
-}
-
-#login.label-co, #password.label-co {
-  background-color: #3c6b77;
-  opacity: 0.3;
-  border-radius: 20px 20px;
 }
 
 #backform label {
@@ -102,8 +99,7 @@ div#log-mdp {
 }
 
 div#btn-co {
-  margin-bottom: 10px;
-  height: 80px;
+  height: 60px;
 }
 
 div#bckgrndins {
@@ -113,11 +109,11 @@ div#bckgrndins {
   height: 650px;
   text-align: center;
   background-color: #3c6b77;
-  opacity: 0.8;
+  opacity: 0.4;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 8%;
+  border-radius: 80px;
 }
 
 article div.card-panel {
@@ -346,7 +342,6 @@ h4.score {
 
 nav, nav.brand-logo, #nav {
   background-color: rgba(34, 61, 68, 0.4);
-  z-index: 3;
 }
 
 header {

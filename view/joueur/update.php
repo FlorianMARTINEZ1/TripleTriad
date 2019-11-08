@@ -1,7 +1,5 @@
 <div id="form" class="row">
-  <div id="bckgrndins">
-
-  </div>
+  <div id="bckgrndins"></div>
     <form class="col s12" id="backform" method="get" action="./index.php">
     <fieldset>
       <?php
