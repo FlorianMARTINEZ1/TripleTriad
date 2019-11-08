@@ -14,14 +14,10 @@ if (function_exists($functionName)) {
 /** Ajoute la partie a l'historique */
 function addToHistorique()
 {
-    if(($_GET["action"]!= "solo"))
-    {
-
-        $arr = array(
-            "nomJ1" => $_GET["nomJ1"], "nomJ2" => $_GET["nomJ2"], "scoreJ1" => $_GET["scoreJ1"], "scoreJ2" => $_GET["scoreJ2"], "deckJ1" => $_GET["deckJ1"], "deckJ2" => $_GET["deckJ2"]
-        );
-        ModelHistorique::save($arr);
-    }
+    $arr = array(
+        "nomJ1" => $_GET["nomJ1"], "nomJ2" => $_GET["nomJ2"], "scoreJ1" => $_GET["scoreJ1"], "scoreJ2" => $_GET["scoreJ2"], "deckJ1" => $_GET["deckJ1"], "deckJ2" => $_GET["deckJ2"]
+    );
+    ModelHistorique::save($arr);
 }
 
 /** Ajoute le deck s'il n'existe pas */
