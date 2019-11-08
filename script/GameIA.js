@@ -18,9 +18,9 @@ class Game {
     this.currentPlayer = document.getElementById("choix").innerHTML;
     this.id = ids;
     this.dureeGame = 0;
-
+/*
     this.idDeck1 = this.getDeck(0);
-    this.idDeck2 = this.getDeck(5);
+    this.idDeck2 = this.getDeck(5);*/
     
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
       //carte rouge true
@@ -108,7 +108,7 @@ class Game {
     }
   }
 
-  getDeck(increment) {
+ /* getDeck(increment) {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -116,11 +116,11 @@ class Game {
       }
     };
 
-    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+allCards[0+increment]+"&idC2="+allCards[1+increment]+"&idC3="+allCards[2+increment]+"&idC4="+allCards[3+increment]+"&idC5="+allCards[4+increment], true);
+    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+document.getElementById('drag'+(1+increment)).className+"&idC2="+document.getElementById('drag'+(2+increment)).className+"&idC3="+document.getElementById('drag'+(3+increment)).className+"&idC4="+document.getElementById('drag4'+(4+increment)).className+"&idC5="+document.getElementById('drag'+(5+increment)).className, true);
     xhr.send();
-  }
+  }*/
 
-  addHistorique() {
+  /*addHistorique() {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -130,7 +130,7 @@ class Game {
 
     xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2, true);
     xhr.send();
-  }
+  }*/
   
 
   setTurn() {
