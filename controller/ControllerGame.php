@@ -36,6 +36,7 @@ class ControllerGame {
       $pagetitle='IA';
       $type="faible";
       $_SESSION["equilibre"] = 5;
+      $_SESSION["multi"] = "false";
       require File::build_path(array('view','view.php'));
 
     }
@@ -45,6 +46,7 @@ class ControllerGame {
       $pagetitle='IA';
       $type="moyen";
       $_SESSION["equilibre"] = 5;
+      $_SESSION["multi"] = "false";
       require File::build_path(array('view','view.php'));
 
 
@@ -55,6 +57,7 @@ class ControllerGame {
       $pagetitle='IA';
       $type="forte";
       $_SESSION["equilibre"] = 5;
+      $_SESSION["multi"] = "false";
       require File::build_path(array('view','view.php'));
 
     }
