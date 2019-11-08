@@ -322,6 +322,7 @@ h4.score {
 
 nav, nav.brand-logo, #nav {
   background-color: rgba(34, 61, 68, 0.4);
+  z-index: 3;
 }
 
 header {
