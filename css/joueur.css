@@ -53,6 +53,7 @@ header {
 fieldset {
   z-index: 2;
   color: white;
+  border: none;
 }
 
 #backform {
@@ -74,13 +75,35 @@ div#bckgrnd {
   z-index: 0;
   position: absolute;
   width: 55%;
-  height: 500px;
+  height: 360px;
   text-align: center;
-  background-color: #223d44;
-  opacity: 0.8;
+  background-color: #3c6b77;
+  opacity: 0.4;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 35px;
+}
+
+div#log-mdp {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#login.label-co, #password.label-co {
+  background-color: #3c6b77;
+  opacity: 0.3;
+  border-radius: 20px 20px;
+}
+
+#backform label {
+  display: block;
+  text-align: center;
+}
+
+div#btn-co {
+  margin-bottom: 10px;
+  height: 80px;
 }
 
 div#bckgrndins {
@@ -94,6 +117,7 @@ div#bckgrndins {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 8%;
 }
 
 article div.card-panel {
