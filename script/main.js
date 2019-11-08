@@ -71,9 +71,6 @@ function initialisation() {
 
   if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
-  }
-  if (choixjoueur == 1 && document.getElementById("IA0")) {
-    g2.getListPlayer()[1].play();
   } else if (document.getElementById("IA0")) {
     g2.getListPlayer()[0].play();
   }
@@ -143,7 +140,7 @@ function drop(ev) {
     sound.autoplay = true;
     /*sound.load();*/
   }
-  
+
   g2.endGame();
 
 }
