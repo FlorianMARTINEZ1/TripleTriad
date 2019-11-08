@@ -135,7 +135,7 @@
   ?>
   <script type="text/javascript" src="./script/Joueur.js"></script>
   <?php
-  if($view == 'IA'){
+  if($view == 'IA'||$view== 'IAvsIA'){
     echo '<script type="text/javascript" src="./script/IA.js"></script>';
   }
   else{
@@ -147,10 +147,20 @@
       echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
   } elseif ($type=="forte"){
       echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+  } elseif ($type=="2IA") {
+    if ($typeIA0=="faible" || $typeIA1=="faible" ) {
+        echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
+    } elseif ($typeIA0=="moyen" || $typeIA1=="moyen") {
+        echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
+    } elseif ($typeIA0=="forte" || $typeIA1=="forte"){
+        echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
   }
 
   if($view == 'IA'){
     echo '<script type="text/javascript" src="./script/GameIA.js"></script>';
+  }
+  if($view == 'IAvsIA'){
+    echo '<script type="text/javascript" src="./script/GameIAvsIA.js"></script>';
   }
 
   if($view == "Enligne"){

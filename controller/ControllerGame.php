@@ -56,6 +56,18 @@ class ControllerGame {
       require File::build_path(array('view','view.php'));
 
     }
+    public static function IAvsIA() {
+      $controller='game';
+      $view='IAvsIA';
+      $pagetitle='IAvsIA';
+      $typeIA0="forte";
+      $type="2IA";
+      $typeIA1="faible";
+      $_SESSION["equilibre"] = 5;
+      require File::build_path(array('view','view.php'));
+
+    }
+
 
     public static function EnLigne() {
       require_once File::build_path(array('model','ModelJoueur.php'));
