@@ -60,7 +60,7 @@ class IA extends Joueur {
     this.casesNonVides = [];
     for (var i = 1; i <= 9; i++) {
       var c = document.getElementsByClassName('case' + i)[0].firstChild;
-      if (c != null && findCard(c.className).donneCouleur() === "bleue" && this.index == 1 || c != null && findCard(c.className).donneCouleur() === "rouge" && this.index == 2) {
+      if (c != null && findCard(c.className).donneCouleur() === "bleue" && this.index == 1 || c != null && findCard(c.className).donneCouleur() === "rouge" && this.index == 0) {
         this.casesNonVides.push(i);
       }
     }
@@ -130,7 +130,12 @@ class IA extends Joueur {
     var newimg = document.getElementById('drag' + this.cards[idDragCard]);
     let idC = newimg.className;
     let CarteRetourne = findCard(idC);
-    newimg.setAttribute("src", "css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
+    if (this.index == 0) {
+      newimg.setAttribute("src", "css/cartes/FF8/" + CarteRetourne.donneNom() + ".bleue.jpg");
+    } else {
+      newimg.setAttribute("src", "css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
+    }
+
     var img = document.getElementsByClassName('case' + this.casesVides[idCase])[0].appendChild(newimg);
     this.carteJoue.push(newimg);
     newimg.removeAttribute('ondrop');
