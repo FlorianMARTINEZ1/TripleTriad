@@ -18,7 +18,7 @@
                 }
               ?>
            class="validate" maxlength="12" minlength="1" required>
-            <label for="IA"></label>
+            <label for="IA0"></label>
           </div>
           <div class="input-field col s6">
             <input id="joueur2" type="text"
@@ -95,6 +95,8 @@
     </div>
   </div>
   <div id="choix" style="display:none;">
+  </div>
+  <div id="IA0" style ="display:none;"> oui
   </div>
   <div id="IA" style ="display:none;"> oui
   </div>
