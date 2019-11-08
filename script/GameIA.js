@@ -18,6 +18,9 @@ class Game {
     this.currentPlayer = document.getElementById("choix").innerHTML;
     this.id = ids;
     this.dureeGame = 0;
+
+    this.idDeck1 = this.getDeck(0);
+    this.idDeck2 = this.getDeck(5);
     
     if (this.currentPlayer == 1) { // si c'est au rouge de jouer, on désactive le bleu
       //carte rouge true
@@ -105,15 +108,27 @@ class Game {
     }
   }
 
-  addHistorique(etat) {
+  getDeck(increment) {
     var xhr = new XMLHttpRequest();
-  
+
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
       }
     };
-  
-    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore(), true);
+
+    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1="+allCards[0+increment]+"&idC2="+allCards[1+increment]+"&idC3="+allCards[2+increment]+"&idC4="+allCards[3+increment]+"&idC5="+allCards[4+increment], true);
+    xhr.send();
+  }
+
+  addHistorique() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+      }
+    };
+
+    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2, true);
     xhr.send();
   }
   
