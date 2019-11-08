@@ -111,15 +111,17 @@ class Game {
   }
 
   addHistorique() {
-    var xhr = new XMLHttpRequest();
+    if(multi==true){
+      var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-      }
-    };
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+        }
+      };
 
-    xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2+"&action=solo", true);
-    xhr.send();
+      xhr.open("GET", "php/historiqueAjax.php?func=addToHistorique&nomJ1="+document.getElementById('joueur1').value+"&nomJ2="+document.getElementById('joueur2').value+"&scoreJ1="+this.listPlayer[0].getScore()+"&scoreJ2="+this.listPlayer[1].getScore()+"&deckJ1="+this.idDeck1+"&deckJ2="+this.idDeck2, true);
+      xhr.send();
+    }
   }
   supprimeGame(etat) {
     var xhr = new XMLHttpRequest();

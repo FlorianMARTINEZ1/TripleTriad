@@ -79,6 +79,7 @@ class ControllerGame {
       $pagetitle='Enligne';
       $type="sans IA";
       $_SESSION["equilibre"] = 5;
+      $_SESSION["multi"] = true;
 
       require File::build_path(array('view','view.php'));
     }
