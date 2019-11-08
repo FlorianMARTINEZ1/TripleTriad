@@ -72,6 +72,11 @@ class Game {
   endGame() { // regarde si la partie est finie
 
     if (this.dureeGame == 9) {
+      this.idDeck1 = 0;
+      this.getDeck(0, this.readDeck);
+      this.idDeck2 = 0;
+      this.getDeck(5, this.readDeck);
+      
       document.getElementById("fingame").removeAttribute("display");
       document.getElementById("fingame").setAttribute("style", "display:fixed;");
       document.getElementById('plateaujeu').style.display = 'none';
@@ -109,6 +114,42 @@ class Game {
 
     }
   }
+
+  getDeck(increment, callback) {
+    var xhr = new XMLHttpRequest();
+  
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+        var id = callback(xhr.responseText);
+        if (increment === 0) {
+          g2.idDeck1 = id;
+          console.log(g2.idDeck1);
+        } else {
+          g2.idDeck2 = id;
+          console.log(g2.idDeck2);
+        }
+  
+      }
+    };
+  
+    let tabID = [];
+    for (let i = 0; i <= 4; i++) {
+      tabID.push(allCards[i + increment].donneID());
+  
+    }
+    tabID.sort(function(a, b) {
+      return a - b
+    });
+    console.log(tabID);
+  
+    xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4], true);
+    xhr.send();
+  }
+  
+  readDeck(sData) {
+    return sData;
+  }
+  
 
   addHistorique() {
     if(multi==true){

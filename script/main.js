@@ -78,42 +78,6 @@ function initialisation() {
 
 }
 
-function getDeck(increment, callback) {
-  var xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-      id = callback(xhr.responseText);
-      if (increment === 0) {
-        g2.idDeck1 = id;
-        console.log(g2.idDeck1);
-      } else {
-        g2.idDeck2 = id;
-        console.log(g2.idDeck2);
-      }
-
-    }
-  };
-
-  let tabID = [];
-  for (let i = 0; i <= 4; i++) {
-    tabID.push(allCards[i + increment].donneID());
-
-  }
-  tabID.sort(function(a, b) {
-    return a - b
-  });
-  console.log(tabID);
-
-  xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4], true);
-  xhr.send();
-}
-
-function readDeck(sData) {
-  return sData;
-}
-
-
 function addDeck(increment) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -134,6 +98,7 @@ function addDeck(increment) {
   xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4]);
   xhr.send();
 }
+
 
 function drag(ev) {
   ev.dataTransfer.setData('text', ev.target.draggable);
@@ -174,12 +139,7 @@ function drop(ev) {
     sound.autoplay = true;
     /*sound.load();*/
   }
-  if (g2.dureeGame >= 8) {
-    g2.idDeck1 = 0;
-    getDeck(0, readDeck);
-    g2.idDeck2 = 0;
-    getDeck(5, readDeck);
-  }
+  
   g2.endGame();
 
 }
