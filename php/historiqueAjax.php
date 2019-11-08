@@ -14,7 +14,7 @@ if (function_exists($functionName)) {
 /** Ajoute la partie a l'historique */
 function addToHistorique()
 {
-    if(($_GET["action"]!= "solo")
+    if(($_GET["action"]!= "solo"))
     {
 
         $arr = array(
