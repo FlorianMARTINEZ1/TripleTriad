@@ -149,7 +149,9 @@
 
 
 <footer>
-
+  <div id="loginSession" style="display:none;"><?php if(isset($_SESSION['login'])){echo $_SESSION['login'];}else{echo "";}?>
+  </div>
+      <script type="text/javascript" src="./script/footer.js"></script>
 </footer>
 
 
