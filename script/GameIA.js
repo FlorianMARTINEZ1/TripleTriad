@@ -70,6 +70,7 @@ class Game {
       this.getDeck(0, this.readDeck);
       this.idDeck2 = 0;
       this.getDeck(5, this.readDeck);
+
       function end() {
         g2.endGamePrint()
       }
@@ -117,7 +118,7 @@ class Game {
   }
   getDeck(increment, callback) {
     var xhr = new XMLHttpRequest();
-  
+
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
         var id = callback(xhr.responseText);
@@ -128,24 +129,24 @@ class Game {
           g2.idDeck2 = id;
           console.log(g2.idDeck2);
         }
-  
+
       }
     };
-  
+
     let tabID = [];
     for (let i = 0; i <= 4; i++) {
       tabID.push(allCards[i + increment].donneID());
-  
+
     }
     tabID.sort(function(a, b) {
       return a - b
     });
     console.log(tabID);
-  
+
     xhr.open("GET", "php/historiqueAjax.php?func=getDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4], true);
     xhr.send();
   }
-  
+
   readDeck(sData) {
     return sData;
   }
@@ -226,6 +227,9 @@ class Game {
     if (drag !== null) {
       drag.setAttrivute('draggable', 'false');
     }
+  }
+  getCurrentPlayer() {
+    return this.currentPlayer;
   }
 
 

@@ -234,6 +234,9 @@ class Game {
       drag.setAttrivute('draggable', 'false');
     }
   }
+  getCurrentPlayer() {
+    return this.currentPlayer;
+  }
 
 
 }
