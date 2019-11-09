@@ -63,6 +63,7 @@ class ControllerGame {
       $typeIA0="forte";
       $type="2IA";
       $typeIA1="faible";
+      $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
 
     }
