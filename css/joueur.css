@@ -20,6 +20,9 @@ html {
     url('final_fantasy.finalf.svg#svgfinalf') format('svg');
   /* Legacy iOS */
 }
+.btn{
+  height: auto;
+}
 
 #delete {
   position: relative;

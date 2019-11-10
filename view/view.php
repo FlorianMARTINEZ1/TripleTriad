@@ -180,11 +180,18 @@
 
 </body>
 <footer>
+<<<<<<< HEAD
   <?php if (isset($_SESSION['login'])) {
        echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
    } else {
    }?>
     <script type="text/javascript" src="./script/footer.js"></script>
+=======
+  <?php if(isset($_SESSION['login'])){
+    echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
+  }else{
+  }?>
+>>>>>>> 2b5e081a4e703dd18d3f8f78eeed7b222f775407
 </footer>
 
 

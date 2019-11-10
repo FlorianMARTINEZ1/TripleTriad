@@ -15,7 +15,7 @@ function allowDrop(ev) {
 
 setInterval(function () {
   requete(lireDonnee);
-}, 800);
+}, 200);
 
 function  requete(callback){
   var xhr = new XMLHttpRequest(); // créer une requête HTTP

@@ -34,7 +34,6 @@
 
                 <li><a href="">Règles</a></li>
                 <li><a href="">Report Bug/Contact</a></li>
-                <li><a href="./index.php?action=readAllPlayerConnected&controller=joueur">Joueurs Connectés</a> </li>
                 <?php
                   if (!isset($_SESSION['login'])) {
                         echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
@@ -52,7 +51,6 @@
       <ul id="sidenav" class="sidenav">
         <li><a href="">Règles</a></li>
         <li><a href="">Report Bug/Contact</a></li>
-        <li><a href="./index.php?action=readAllPlayerConnected&controller=joueur">Joueurs Connectés</a> </li>
         <?php
 
           if (!isset($_SESSION['login'])) {
@@ -78,11 +76,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <footer>
-  <?php if(isset($_SESSION['login'])){
-    echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
-  }else{
-  }?>
-    <script type="text/javascript" src="./script/footer.js"></script>
+
 </footer>
 
 

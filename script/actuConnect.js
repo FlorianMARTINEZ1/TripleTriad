@@ -67,8 +67,8 @@ function  refuser(callback){
 function readData(sData) {
   var donnes = JSON.parse(sData);
   let p = document.getElementsByTagName("p");
-  let papa = document.getElementsByClassName("card-panel")[0];
-  let CountChild = papa.childElementCount - 1;
+  let papa = document.getElementsByClassName("card-panel")[1];
+  let CountChild = papa.childElementCount;
   let Total = donnes.length;
   let i = 0;
   while(parseInt(""+i)<Total){
@@ -80,6 +80,11 @@ function readData(sData) {
       }
       else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
         p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+        if(p[i-1]){
+          if(p[i].innerHTML == p[i-1].innerHTML){
+            papa.removeChild(p[i]);
+          }
+        }
         idGame=donnes[i]['joue'];
         document.getElementById("idGame").value=donnes[i]['joue'];
       }
@@ -96,14 +101,14 @@ function readData(sData) {
     else{
       var newP = document.createElement("p");
       if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
+            newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
           idGame=donnes[i]['joue'];
       }
       else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+        newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
       }
       else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
+          newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
       }
 
       else if(donnes[i]['joue']){
@@ -117,10 +122,12 @@ function readData(sData) {
     }
     i=parseInt(""+i)+1;
   }
+  console.log("total "+Total);
+  console.log("CountChild "+CountChild);
   if(Total<CountChild){
     let nbr = CountChild - Total;
     while(nbr != 0 ){
-        papa.removeChild(papa.firstChild);
+        papa.removeChild(papa.lastChild);
         nbr--;
     }
   }
