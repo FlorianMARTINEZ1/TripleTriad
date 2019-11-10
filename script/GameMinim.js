@@ -121,10 +121,61 @@ class GameMinim {
         besti = i;
       }
     }
-    return besti;
+    return this.childs[besti];
   }
 
-  miseAJour(casesVides) {
-
+  miseAJour() {
+    var tabCartepuisCase = [];
+    var carteJoue;
+    for (var i = 1; i <= 5; i++) {
+      if (document.getElementById('drag' + i)) {
+        tabCartepuisCase.push(i);
+      }
+    }
+    if (tabCartepuisCase.length < this.deckJ1.length) {
+      for (var i = 0; i < this.deckJ1.length; i++) {
+        if (tabCartepuisCase.indexOf(this.deckJ1[i]) == -1) {
+          carteJoue = this.deckJ1[i];
+        }
+      }
+    } else {
+      tabCartepuisCase = [];
+      for (var i = 6; i <= 10; i++) {
+        if (document.getElementById('drag' + i)) {
+          tabCartepuisCase.push(i);
+        }
+      }
+      for (var i = 0; i < this.deckJ2.length; i++) {
+        if (tabCartepuisCase.indexOf(this.deckJ2[i]) == -1) {
+          carteJoue = this.deckJ2[i];
+        }
+      }
+    }
+    var idCaseJoue;
+    tabCartepuisCase = [];
+    for (var i = 1; i <= 9; i++) {
+      if (document.querySelector("[ondrop].case" + i)) {
+        tabCartepuisCase.push(i);
+      }
+    }
+    for (var i = 0; i < this.terrainLibre.length; i++) {
+      if (tabCartepuisCase.indexOf(this.terrainLibre[i]) == -1) {
+        idCaseJoue = this.terrainLibre[i];
+      }
+    }
+    for (var child in this.childs) {
+      if (child.getIdCaseJoue() == idCaseJoue && child.getIdeCarteJoue() == idCarteJoue) {
+        return child;
+      }
+    }
   }
+
+  getIdCaseJoue() {
+    return this.idCaseJoue;
+  }
+
+  getIdeCarteJoue() {
+    return this.idCarteJoue;
+  }
+
 }

@@ -35,10 +35,13 @@ class IAExperte extends IA {
   }
 
   mettreAJourGame() {
-    this.setCasesVides();
-    this.gameMinim = this.gameMinim.miseAJour(this.casesVides);
+    this.gameMinim = this.gameMinim.miseAJour();
   }
 
-
+  play() {
+    mettreAJourGame();
+    this.gameMinim = this.gameMinim.bestChild();
+    super.play(this.gameMinim.getIdeCarteJoue(), this.gameMinim.getIdCaseJoue());
+  }
 
 }
