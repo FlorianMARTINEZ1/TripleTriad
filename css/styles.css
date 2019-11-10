@@ -277,6 +277,7 @@ header {
 
 .formdiv {
   background-image: radial-gradient(circle, #488392, #223d44);
+  border-radius: 20px;
   opacity: 0.8;
   width: 85%;
 }
