@@ -33,7 +33,6 @@
 
                 <li><a href="">Règles</a></li>
                 <li><a href="">Report Bug/Contact</a></li>
-                <li><a href="./index.php?action=readAllPlayerConnected&controller=joueur">Joueurs Connectés</a> </li>
                 <?php
                   if (!isset($_SESSION['login'])) {
                         echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
@@ -51,7 +50,6 @@
       <ul id="sidenav" class="sidenav">
         <li><a href="">Règles</a></li>
         <li><a href="">Report Bug/Contact</a></li>
-        <li><a href="./index.php?action=readAllPlayerConnected&controller=joueur">Joueurs Connectés</a> </li>
         <?php
           if (!isset($_SESSION['login'])) {
                 echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
@@ -131,7 +129,7 @@
             </div>
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
-                <a class="modal-trigger white-text" href="./?action=EnLigne">
+                <a class="modal-trigger white-text" href="./index.php?action=enAttente&controller=joueur">
                   <div class="card-content center">
                     <div>Multijoueur</div>
                   </div>
@@ -151,7 +149,6 @@
 <footer>
   <div id="loginSession" style="display:none;"><?php if(isset($_SESSION['login'])){echo $_SESSION['login'];}else{echo "";}?>
   </div>
-      <script type="text/javascript" src="./script/footer.js"></script>
 </footer>
 
 

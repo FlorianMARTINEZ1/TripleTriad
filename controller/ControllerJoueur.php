@@ -15,8 +15,23 @@ class ControllerJoueur {
         $view='userList';
         $pagetitle='Liste des joueurs';
 
+
         require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
 
+
+    }
+
+    public static function enAttente() {
+      if(isset($_SESSION['login'])){
+        $controller ='joueur';
+        $view = 'ChoixModeMulti';
+        $pagetitle="Choix";
+        $type="recherche";
+        require File::build_path(array('view','viewJoueur.php'));
+      }
+      else{
+        ControllerJoueur::connect();
+      }
 
     }
 
@@ -34,7 +49,7 @@ class ControllerJoueur {
       $mdpchiffrer = Security::chiffrer($mdp);
       $j = ModelJoueur::select($login);
       if(ModelJoueur::checkPassword($login,$mdpchiffrer)){
-        ModelJoueur::JoueurConnecter($login,"1");
+        /*ModelJoueur::JoueurConnecter($login,"1");*/
         $j = ModelJoueur::select($login);
         $_SESSION['login']=$login;
         if($j->get("admin")==0){

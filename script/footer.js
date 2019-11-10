@@ -1,4 +1,4 @@
-/*function deconnecte(etat) {
+function deconnecte(etat) {
   var xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function () {
@@ -25,28 +25,19 @@ function connecte(etat) {
 }
 
 connecte(1);
-/*
-window.unload = function(){
+//*window.unload =deconnecte(1);*/
 
-  return deconnecte(0);
-
-}*/
-
-  /*  function session(){
-        if(document.getElementById("loginSession")){
-        window.location="./index.php?action=deconnect&controller=joueur"; //page de déconnexion
-      }
-    }
-    setTimeout("session()",10000); //ça fait bien 5min??? c'est pour le test
-
-/*
 window.onbeforeunload = function()
 {
     // Un petit script
     // ...
+    deconnecte(1);
+    if(document.getElementById("footer")){
 
-    return deconnecte(0);
+    }else{
+    return "vous allez être rediriger";
+   }
 
     // Pour proposer de ne pas quitter la page
 
-}*/
+}

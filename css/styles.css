@@ -21,6 +21,11 @@ html {
   /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'mikado';
+  src: url('./mikado/MikadoBold_DEMO.otf');
+}
+
 #boutonSon {
   right: 0px;
   top: 65px;
@@ -65,7 +70,25 @@ a {
   background-color: rgba(72, 131, 146, 1);
 }
 
-#menu {
+/*---Menu-Setting--*/
+#backgrndmenu {
+  position: fixed;
+  width: 0%;
+  visibility: hidden;
+  height: 0%;
+  opacity: 0;
+  top: 0%;
+  margin-left: 12.5%;
+  background-color: #223d44;
+  transition-property: opacity, top;
+  z-index: 1;
+}
+
+.listmenu {
+  z-index: 2;
+}
+
+#menu .listmenu {
   position: fixed;
   width: 0%;
   visibility: hidden;
@@ -74,22 +97,31 @@ a {
   top: 0%;
   margin-left: 12.5%;
   text-align: center;
-  background-color: #223d44;
+  background-color: transparent;
   transition-property: opacity, top;
+}
+
+#backgrndmenu.appear {
+  top: 10%;
+  width: 75%;
+  visibility: visible;
+  height: 75%;
+  opacity: 0.9;
+  border-radius: 40px;
+}
+
+#menu.ma-transition .listmenu {
+  top: 20%;
+  width: 75%;
+  visibility: visible;
+  height: 75%;
+  opacity: 1;
 }
 
 img {
   transition-property: width, margin-left;
   transition-duration: 0.5s;
   margin-left: 0px;
-}
-
-#menu.ma-transition {
-  top: 10%;
-  width: 75%;
-  visibility: visible;
-  height: 75%;
-  opacity: 1;
 }
 
 #vide {
@@ -135,6 +167,7 @@ div {
 }
 
 .plateau {
+  margin-top: 100px;
   width: 318px;
   height: 333px;
   /*plateau 3*3 */
@@ -164,10 +197,12 @@ div {
 h4.nickname {
   margin-top: 20%;
   border-radius: 50px;
-  color: red;
+  color: #488392;
+  font-family: 'mikado';
 }
 
 h4.score {
+  font-family: 'mikado';
   color: cyan;
   border-bottom: solid;
   width: 20%;
@@ -175,7 +210,7 @@ h4.score {
 }
 
 .tonTour {
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  text-shadow: 0 0 10px #111f22, 0 0 20px #111f22, 0 0 30px #111f22, 0 0 40px #bbd6dd, 0 0 70px #bbd6dd, 0 0 80px #bbd6dd, 0 0 100px #bbd6dd, 0 0 150px #bbd6dd;
   opacity: 1;
 }
 
@@ -277,6 +312,7 @@ header {
 
 .formdiv {
   background-image: radial-gradient(circle, #488392, #223d44);
+  border-radius: 20px;
   opacity: 0.8;
   width: 85%;
 }

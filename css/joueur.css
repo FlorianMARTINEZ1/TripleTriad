@@ -20,6 +20,9 @@ html {
     url('final_fantasy.finalf.svg#svgfinalf') format('svg');
   /* Legacy iOS */
 }
+.btn{
+  height: auto;
+}
 
 #delete {
   position: relative;
@@ -220,126 +223,6 @@ div {
   height: 104px;
 }
 
-.plateau {
-  width: 318px;
-  height: 333px;
-  /*plateau 3*3 */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 4px;
-  grid-row-gap: 1px;
-}
-
-.case {
-  background-color: rgba(55, 71, 79, 0.6);
-  border: 2px solid rgba(20, 20, 20, 0.8);
-}
-
-.cards {
-  margin-top: 15%;
-  width: 318px;
-  height: 109px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
-}
-
-h4.nickname {
-  margin-top: 20%;
-  border-radius: 50px;
-  color: red;
-}
-
-h4.score {
-  color: cyan;
-  border-bottom: solid;
-  width: 20%;
-  margin-left: 40%;
-}
-
-.tonTour {
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  opacity: 1;
-}
-
-.cards1 {
-  margin-top: 5%;
-  margin-left: 18%;
-  width: 211px;
-  height: 109px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
-}
-
-.case1 {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 1;
-  grid-row-end: 1;
-}
-
-.case2 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 1;
-}
-
-.case3 {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 1;
-}
-
-.case4 {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 2;
-  grid-row-end: 2;
-}
-
-.case5 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 2;
-}
-
-.case6 {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 2;
-}
-
-.case7 {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 3;
-  grid-row-end: 3;
-}
-
-.case8 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 3;
-}
-
-.case9 {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 3;
-}
-
 nav, nav.brand-logo, #nav {
   background-color: rgba(34, 61, 68, 0.4);
 }
@@ -359,12 +242,6 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-}
-
-.formdiv {
-  background-image: radial-gradient(circle, #488392, #223d44);
-  opacity: 0.8;
-  width: 85%;
 }
 
 /* label color */

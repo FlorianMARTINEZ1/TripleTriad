@@ -36,13 +36,12 @@
                 <li><a href="">Report Bug/Contact</a></li>
                 <?php
                   if (!isset($_SESSION['login'])) {
-                        echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
-                        echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
-                      }
-                  else{
-                    $log=$_SESSION['login'];
-                    echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
-                    echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+                      echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                      echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+                  } else {
+                      $log=$_SESSION['login'];
+                      echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
+                      echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
                   }?>
 
 			        </ul>
@@ -53,13 +52,12 @@
         <li><a href="">Report Bug/Contact</a></li>
         <?php
           if (!isset($_SESSION['login'])) {
-                echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
-                echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
-              }
-          else{
-            $log=$_SESSION['login'];
-            echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
-            echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+              echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+              echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+          } else {
+              $log=$_SESSION['login'];
+              echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
+              echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }?>
        </ul>
   </header>
@@ -99,24 +97,27 @@
   <div id="menuIcon">
     <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
   </div>
-  <div id="menu" class="card">
-    <div>
-      <h3>Regle du jeu </h2>
-        <p>
-          Vous pouvez y accéder <a href="">ici</a>.
-        </p>
-    </div>
-    <div>
-      <h3>Quitter le jeu</h2>
-        <p>
-          cliquez <a href="./index.html">ici</a>.
-        </p>
-    </div>
-    <div>
-      <h3>Relancer une partie ? </h2>
-        <p>
-          <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
-        </p>
+  <div id="menu" class="">
+    <div id="backgrndmenu" class="card"></div>
+    <div class="listmenu">
+      <div>
+        <h3>Regle du jeu </h2>
+          <p>
+            Vous pouvez y accéder <a href="">ici</a>.
+          </p>
+      </div>
+      <div>
+        <h3>Quitter le jeu</h2>
+          <p>
+            cliquez <a href="./index.html">ici</a>.
+          </p>
+      </div>
+      <div>
+        <h3>Relancer une partie ? </h2>
+          <p>
+            <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
+          </p>
+      </div>
     </div>
   </div>
 
@@ -125,65 +126,72 @@
   <script type="text/javascript" src="./script/Card.js"></script>
   <script type="text/javascript"> var equilibre = <?php echo $_SESSION["equilibre"]?>; </script>
   <?php
-  if($view == "EnLigne") { echo '<script type="text/javascript"> var multi = true;</script> ';}
-  else{ echo '<script type="text/javascript"> var multi = false;</script> ';}
-
-  if($view == "Enligne"){
-    echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
+  if ($view == "EnLigne") {
+      echo '<script type="text/javascript"> var multi = true;</script> ';
+  } else {
+      echo '<script type="text/javascript"> var multi = false;</script> ';
   }
-  else{
-    echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
+
+  if ($view == "Enligne") {
+      echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
+  } else {
+      echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
   }
 
   ?>
   <script type="text/javascript" src="./script/Joueur.js"></script>
   <?php
-  if($view == 'IA'||$view== 'IAvsIA'){
-    echo '<script type="text/javascript" src="./script/IA.js"></script>';
-  }
-  else{
-    echo '<script type="text/javascript" src="./script/Game.js"></script>';
+  if ($view == 'IA'||$view== 'IAvsIA') {
+      echo '<script type="text/javascript" src="./script/IA.js"></script>';
+  } else {
+      echo '<script type="text/javascript" src="./script/Game.js"></script>';
   }
   if ($type=="faible") {
       echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
   } elseif ($type=="moyen") {
       echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
-  } elseif ($type=="forte"){
+  } elseif ($type=="forte") {
       echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
   } elseif ($type=="2IA") {
-    if ($typeIA0=="faible" || $typeIA1=="faible" ) {
-        echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
-    }
-    if ($typeIA0=="moyen" || $typeIA1=="moyen") {
-        echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
-    }
-    if ($typeIA0=="forte" || $typeIA1=="forte"){
-        echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
-    }
+      if ($typeIA0=="faible" || $typeIA1=="faible") {
+          echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
+      }
+      if ($typeIA0=="moyen" || $typeIA1=="moyen") {
+          echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
+      }
+      if ($typeIA0=="forte" || $typeIA1=="forte") {
+          echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+      }
   }
 
-  if($view == 'IA'){
-    echo '<script type="text/javascript" src="./script/GameIA.js"></script>';
+  if ($view == 'IA') {
+      echo '<script type="text/javascript" src="./script/GameIA.js"></script>';
   }
-  if($view == 'IAvsIA'){
-    echo '<script type="text/javascript" src="./script/GameIAvsIA.js"></script>';
+  if ($view == 'IAvsIA') {
+      echo '<script type="text/javascript" src="./script/GameIAvsIA.js"></script>';
   }
 
-  if($view == "Enligne"){
-    echo '<script type="text/javascript" src="./script/multi.js"></script>';
-  }
-  else{
-    echo '<script type="text/javascript" src="./script/main.js"></script>';
+  if ($view == "Enligne") {
+      echo '<script type="text/javascript" src="./script/multi.js"></script>';
+  } else {
+      echo '<script type="text/javascript" src="./script/main.js"></script>';
   }
    ?>
 
 </body>
 <footer>
+<<<<<<< HEAD
+  <?php if (isset($_SESSION['login'])) {
+       echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
+   } else {
+   }?>
+    <script type="text/javascript" src="./script/footer.js"></script>
+=======
   <?php if(isset($_SESSION['login'])){
     echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
   }else{
   }?>
-    <script type="text/javascript" src="./script/footer.js"></script>
+>>>>>>> 2b5e081a4e703dd18d3f8f78eeed7b222f775407
 </footer>
 
 
