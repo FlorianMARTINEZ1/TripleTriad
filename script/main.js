@@ -5,19 +5,24 @@ function allowDrop(ev) {
 
 function afficheMenu() {
   let menu = document.getElementById("menu");
+  let bckgrnd = document.getElementById("backgrndmenu");
   let plateau = document.getElementById('plateaujeu');
   if (plateau.style.opacity == 0.4) {
     if (menu.classList.contains("ma-transition")) {
       menu.classList.remove("ma-transition")
+      bckgrnd.classList.remove("appear")
     } else {
       menu.classList.add("ma-transition")
+      bckgrnd.classList.add("appear")
     }
     plateau.style.opacity = '1';
   } else {
     if (menu.classList.contains("ma-transition")) {
       menu.classList.remove("ma-transition")
+      bckgrnd.classList.remove("appear")
     } else {
       menu.classList.add("ma-transition")
+      bckgrnd.classList.add("appear")
     }
     plateau.style.opacity = '0.4';
 
