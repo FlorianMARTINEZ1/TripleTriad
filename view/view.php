@@ -183,7 +183,6 @@
     echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
   }else{
   }?>
-    <script type="text/javascript" src="./script/footer.js"></script>
 </footer>
 
 
