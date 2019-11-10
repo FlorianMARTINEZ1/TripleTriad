@@ -8,9 +8,11 @@
         <div class="row center">
           <div class="input-field col s6">
             <input id="joueur1" type="text" <?php
-            if(isset($_SESSION['login'])) {
-               echo 'value="'.$_SESSION['login'].'"';}
-             else { echo 'value="joueur1"';}
+            if (isset($_SESSION['login'])) {
+                echo 'value="'.$_SESSION['login'].'"';
+            } else {
+                 echo 'value="joueur1"';
+             }
            ?>
            class="validate" maxlength="12" minlength="1" required>
             <label for="joueur1">Joueur</label>
@@ -58,7 +60,6 @@
 
 
       <div class="col s4">
-        <h3 class="center">Plateau de jeu</h3>
         <div class="plateau">
           <div class="case case1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
           <div class="case case2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>

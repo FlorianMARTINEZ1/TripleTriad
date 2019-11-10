@@ -10,11 +10,11 @@
             <input id="joueur1" type="text"
               <?php
                 if ($typeIA0=="faible") {
-                  echo 'value="IAFaible"';
+                    echo 'value="IAFaible"';
                 } elseif ($typeIA0=="moyen") {
-                  echo 'value="IAMoyen"';
+                    echo 'value="IAMoyen"';
                 } else {
-                  echo 'value="IAForte"';
+                    echo 'value="IAForte"';
                 }
               ?>
            class="validate" maxlength="12" minlength="1" required>
@@ -63,7 +63,6 @@
 
 
       <div class="col s4">
-        <h3 class="center">Plateau de jeu</h3>
         <div class="plateau">
           <div class="case case1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
           <div class="case case2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
