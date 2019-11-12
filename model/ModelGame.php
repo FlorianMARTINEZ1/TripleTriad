@@ -11,7 +11,7 @@ class ModelGame extends Model{
     private $challenged;
     private $etat;
     private $plateau;
-    protected static $object = 'game';
+    protected static $object ='game';
     protected static $primary='id';
 
     // Getter générique (pas expliqué en TD)
