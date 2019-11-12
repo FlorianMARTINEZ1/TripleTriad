@@ -42,4 +42,17 @@
      </div>
    </div>
 
+   <div>
+     <h4  id="h4">Temps d'attente ...</h4>
+   </div>
+
+   <div>
+     <h5>Joueurs dans la file d'attente : 0.</h5>
+   </div>
+
+   <div>
+      <a class="waves-effect waves-light ff8 btn" href="./index.php?action=quitteFile&controller=joueur" >Quitter la file</a>
+   </div>
+
  </div>
+<script type="text/javascript" src="./script/EnAttente.js"></script>

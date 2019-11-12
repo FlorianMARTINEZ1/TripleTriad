@@ -39,6 +39,7 @@ class ModelGame extends Model{
         }
     }
 
+
     public static function removeTour($id){
       try{
         $sql = "UPDATE game SET game.casejoue=NULL , game.idcartejoue=NULL WHERE game.id=:id ;";

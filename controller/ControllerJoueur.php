@@ -21,14 +21,26 @@ class ControllerJoueur {
 
     }
 
+    public static function quitteFile(){
+      require_once File::build_path(array('controller','ControllerGame.php'));
+      $login = $_SESSION['login'];
+      ModelJoueur::metEnFileDAttente($login,0);
+      ControllerGame::Accueil();
+    }
+
     public static function rechercheJoueur() {
+      if(isset($_SESSION['login'])){
+        $login = $_SESSION['login'];
+        ModelJoueur::metEnFileDAttente($login,1);
+        $controller='joueur';
+        $view='EnAttente';
+        $pagetitle='Liste des joueurs';
 
-      $controller='joueur';
-      $view='EnAttente';
-      $pagetitle='Liste des joueurs';
-
-
-      require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
+        require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
+      }
+      else{
+          ControllerJoueur::connect();
+      }
 
 
     }

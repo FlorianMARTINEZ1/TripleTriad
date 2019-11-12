@@ -22,11 +22,17 @@ html {
 }
 
 .preloader-background{
-  height: 90vh;
+  height: 136vh;
+  width: 100vw;
+  position: fixed;
   text-align: center;
-  opacity: 0.8;
+  opacity: 1;
   background-color : white;
-  padding-top: 10%;
+  padding-top: 24%;
+  margin-top: -33vh;
+}
+.preloader-background {
+
 }
 
 
