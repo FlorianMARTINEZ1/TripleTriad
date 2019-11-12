@@ -21,6 +21,18 @@ class ControllerJoueur {
 
     }
 
+    public static function rechercheJoueur() {
+
+      $controller='joueur';
+      $view='EnAttente';
+      $pagetitle='Liste des joueurs';
+
+
+      require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
+
+
+    }
+
     public static function enAttente() {
       if(isset($_SESSION['login'])){
         $controller ='joueur';

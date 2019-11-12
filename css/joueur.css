@@ -20,6 +20,17 @@ html {
     url('final_fantasy.finalf.svg#svgfinalf') format('svg');
   /* Legacy iOS */
 }
+
+.preloader-background{
+  height: 90vh;
+  text-align: center;
+  opacity: 0.8;
+  background-color : white;
+  padding-top: 10%;
+}
+
+
+
 .btn{
   height: auto;
 }
