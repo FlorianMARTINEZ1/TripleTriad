@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Triple Triad form</title>
+  <title><?php echo $pagetitle." | TripleTriad" ;?></title>
 
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

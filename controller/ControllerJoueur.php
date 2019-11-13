@@ -34,7 +34,7 @@ class ControllerJoueur {
         ModelJoueur::metEnFileDAttente($login,1);
         $controller='joueur';
         $view='EnAttente';
-        $pagetitle='Liste des joueurs';
+        $pagetitle='File D\'attente';
 
         require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
       }
@@ -49,7 +49,7 @@ class ControllerJoueur {
       if(isset($_SESSION['login'])){
         $controller ='joueur';
         $view = 'ChoixModeMulti';
-        $pagetitle="Choix";
+        $pagetitle="Choix du mode";
         $type="recherche";
         require File::build_path(array('view','viewJoueur.php'));
       }
@@ -62,7 +62,7 @@ class ControllerJoueur {
     public static function connect(){
       $controller='joueur';
       $view='connect';
-      $pagetitle='connect';
+      $pagetitle='connection';
 
       require File::build_path(array('view','viewJoueur.php'));
     }
@@ -85,7 +85,7 @@ class ControllerJoueur {
 
         $controller='joueur';
         $view='detail';
-        $pagetitle='affiche detaille joueur';
+        $pagetitle='Mon compte';
 
         require File::build_path(array('view','viewJoueur.php'));
       }
@@ -98,7 +98,7 @@ class ControllerJoueur {
         $msg = "Erreur, l'identifiant ou le mot de passe est incorrect";
         $controller='joueur';
         $view='connect';
-        $pagetitle='connect';
+        $pagetitle='connection';
         require File::build_path(array('view','viewJoueur.php'));
 
       }
@@ -125,13 +125,13 @@ class ControllerJoueur {
       if(Session::is_user($log)){
           $controller='joueur';
           $view='detail';
-          $pagetitle='detail utlisateur';
+          $pagetitle='Mon compte';
           $j = ModelJoueur::select($log);
           if ($j==false){
 
             $controller='joueur';
             $view='error';
-            $pagetitle='error';
+            $pagetitle='ERROR';
 
             require File::build_path(array('view','viewJoueur.php'));
           }
@@ -151,7 +151,7 @@ class ControllerJoueur {
       if(Session::is_user($log)){
           $controller='joueur';
           $view='deleted';
-          $pagetitle='suppr utlisateur';
+          $pagetitle='Compte supprimé';
           ModelJoueur::delete($log);
           require File::build_path(array('view','viewJoueur.php'));
       }
@@ -165,7 +165,7 @@ class ControllerJoueur {
     public static function error(){
       $controller='joueur';
       $view='error';
-      $pagetitle='error';
+      $pagetitle='ERROR';
       require File::build_path(array("view","viewJoueur.php"));
 
     }
@@ -177,7 +177,7 @@ class ControllerJoueur {
 
             $controller='joueur';
             $view='error';
-            $pagetitle='error';
+            $pagetitle='ERROR';
 
             require File::build_path(array("view","viewJoueur.php"));
           }
@@ -186,7 +186,7 @@ class ControllerJoueur {
           $action ='udpate';
           $controller='joueur';
           $view='update';
-          $pagetitle='update joueur';
+          $pagetitle='Modification du compte';
 
           require File::build_path(array("view","viewJoueur.php"));
         }
@@ -226,7 +226,7 @@ class ControllerJoueur {
 
           $controller='joueur';
           $view='updated';
-          $pagetitle='update joueur';
+          $pagetitle='Compte modifiér';
 
           require File::build_path(array('view','viewJoueur.php'));
       }
@@ -265,7 +265,7 @@ class ControllerJoueur {
               $j->save($data);
               $controller='joueur';
               $view='created';
-              $pagetitle='create joueur';
+              $pagetitle='Compte créé';
               /*ControllerVoiture::readAll();*/
               require File::build_path(array('view','viewJoueur.php'));
     /*  }
@@ -278,7 +278,7 @@ class ControllerJoueur {
 
         $controller='joueur';
         $view='update';
-        $pagetitle='formulaire joueur';
+        $pagetitle='Creation du compte';
         $action='create';
         $j = new ModelJoueur("","","");
 
