@@ -12,7 +12,7 @@ class ControllerGame {
     public static function equilibre() {
       $controller='game';
       $view='Local';
-      $pagetitle='Local';
+      $pagetitle='Partie équilibrée';
       $type="sans IA";
       $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
@@ -22,7 +22,7 @@ class ControllerGame {
     public static function aleatoire() {
       $controller='game';
       $view='Local';
-      $pagetitle='Local';
+      $pagetitle='Partie aléatoire';
       $type="sans IA";
       $_SESSION["equilibre"] = 100;
       require File::build_path(array('view','view.php'));
@@ -31,7 +31,7 @@ class ControllerGame {
     public static function IAfaible() {
       $controller='game';
       $view='IA';
-      $pagetitle='IA';
+      $pagetitle='IA faible';
       $type="faible";
       $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
@@ -40,7 +40,7 @@ class ControllerGame {
     public static function IAmoyen() {
       $controller='game';
       $view='IA';
-      $pagetitle='IA';
+      $pagetitle='IA moyenne';
       $type="moyen";
       $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
@@ -50,7 +50,7 @@ class ControllerGame {
     public static function IAforte() {
       $controller='game';
       $view='IA';
-      $pagetitle='IA';
+      $pagetitle='IA forte';
       $type="forte";
       $_SESSION["equilibre"] = 5;
       require File::build_path(array('view','view.php'));
@@ -88,7 +88,7 @@ class ControllerGame {
       }
       $controller='game';
       $view='Enligne';
-      $pagetitle='Enligne';
+      $pagetitle='Partie en ligne';
       $type="sans IA";
       $_SESSION["equilibre"] = 5;
 

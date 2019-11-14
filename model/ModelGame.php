@@ -11,7 +11,7 @@ class ModelGame extends Model{
     private $challenged;
     private $etat;
     private $plateau;
-    protected static $object = 'game';
+    protected static $object ='game';
     protected static $primary='id';
 
     // Getter générique (pas expliqué en TD)
@@ -38,6 +38,7 @@ class ModelGame extends Model{
             $this->plateau=$plateau;
         }
     }
+
 
     public static function removeTour($id){
       try{

@@ -86,7 +86,7 @@ class Game {
       var joueurDeux = document.getElementById('joueur2').value;
       console.log(this.listPlayer[0].getName());
       if(document.getElementById("id")){
-        supprimeGame(1);
+        this.supprimeGame(1);
       }
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
         if (this.listPlayer[0].getName() == "j1") {
@@ -164,6 +164,7 @@ class Game {
       xhr.send();
     }
   }
+
   supprimeGame(etat) {
     var xhr = new XMLHttpRequest();
 
