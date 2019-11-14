@@ -1,4 +1,5 @@
 html {
+  height: 100%;
   background-image: url(./img/ff8.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,7 +21,7 @@ html {
 
 div.backgr {
   position: fixed;
-  margin-top :4%;
+  margin-top: 4%;
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -30,19 +31,19 @@ div.backgr {
   opacity: 0.8;
 }
 
-nav{
+nav {
   background-color: rgba(34, 61, 68, 0.4);
 }
 
 div.principale {
   position: fixed;
-  margin-top:4%;
+  margin-top: 4%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 600px;
   width: 1024px;
-/*  margin: 0;*/
+  /*  margin: 0;*/
   background-color: transparent;
   box-shadow: none;
 }
