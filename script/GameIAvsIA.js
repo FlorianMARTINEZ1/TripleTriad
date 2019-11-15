@@ -93,7 +93,7 @@ class Game {
       var joueurDeux = document.getElementById('joueur2').value;
       console.log(this.listPlayer[0].getName());
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
-        if (this.listPlayer[0].getName() == "j1") {
+        if (this.listPlayer[0].getName() == "IA0") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
           this.addHistorique();
         } else {
@@ -102,7 +102,7 @@ class Game {
         }
 
       } else if (this.listPlayer[0].getScore() < this.listPlayer[1].getScore()) {
-        if (this.listPlayer[1].getName() == "j1") {
+        if (this.listPlayer[1].getName() == "IA0") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
           this.addHistorique();
         } else {

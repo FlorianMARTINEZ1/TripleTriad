@@ -152,6 +152,9 @@
       echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
   } elseif ($type=="forte") {
       echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+  } elseif ($type=="experte") {
+      echo '<script type="text/javascript" src="./script/GameMinim.js"></script>';
+      echo '<script type="text/javascript" src="./script/IAExperte.js"></script>';
   } elseif ($type=="2IA") {
       if ($typeIA0=="faible" || $typeIA1=="faible") {
           echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
@@ -161,6 +164,10 @@
       }
       if ($typeIA0=="forte" || $typeIA1=="forte") {
           echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+      }
+      if($typeIA0=="experte" || $typeIA1=="experte"){
+        echo '<script type="text/javascript" src="./script/GameMinim.js"></script>';
+        echo '<script type="text/javascript" src="./script/IAExperte.js"></script>';
       }
   }
 

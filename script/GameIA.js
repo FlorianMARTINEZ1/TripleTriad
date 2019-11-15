@@ -11,6 +11,8 @@ class Game {
       j2 = new IAMoyen(this);
     } else if (joueurDeux == "IAFaible") {
       j2 = new IARandom(this);
+    } else if (joueurDeux == "IAExperte") {
+      j2 = new IAExperte(this);
     }
     this.listPlayer = [j1, j2];
     this.currentPlayer = document.getElementById("choix").innerHTML;

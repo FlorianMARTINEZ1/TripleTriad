@@ -13,8 +13,10 @@
                     echo 'value="IAFaible"';
                 } elseif ($typeIA0=="moyen") {
                     echo 'value="IAMoyen"';
-                } else {
+                }  elseif ($typeIA0=="forte") {
                     echo 'value="IAForte"';
+                } else {
+                  echo 'value="IAExperte"';
                 }
               ?>
            class="validate" maxlength="12" minlength="1" required>
@@ -27,8 +29,10 @@
                           echo 'value="IAFaible"';
                       } elseif ($typeIA1=="moyen") {
                           echo 'value="IAMoyen"';
-                      } else {
+                      }  elseif ($typeIA1=="forte") {
                           echo 'value="IAForte"';
+                      } else {
+                        echo 'value="IAExperte"';
                       }
 
 

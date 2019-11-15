@@ -24,8 +24,10 @@
                           echo 'value="IAFaible"';
                       } elseif ($type=="moyen") {
                           echo 'value="IAMoyen"';
-                      } else {
+                      } elseif ($type=="forte") {
                           echo 'value="IAForte"';
+                      } else {
+                        echo 'value="IAExperte"';
                       }
 
 

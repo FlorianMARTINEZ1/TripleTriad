@@ -56,6 +56,15 @@ class ControllerGame {
       require File::build_path(array('view','view.php'));
 
     }
+    public static function IAforte() {
+      $controller='game';
+      $view='IA';
+      $pagetitle='IA Experte';
+      $type="experte";
+      $_SESSION["equilibre"] = 5;
+      require File::build_path(array('view','view.php'));
+
+    }
     public static function IAvsIA() {
       $controller='game';
       $view='IAvsIA';
