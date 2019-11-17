@@ -2,11 +2,11 @@
 
   <main>
     <div id="bckgrnd"></div>
-    <form class="col s12" id="backform" method="get" action="./index.php">
+    <form class="col s12" id="backform" <?php if(Conf::getDebug()==false){echo 'method="post"';}else{echo 'method="get"';}?> action="./index.php">
     <fieldset>
       <div id="log-mdp" class="row">
         <div class="input-field col s5">
-          <input id="login" type="text" class="validate" name="login" required />
+          <input id="login" type="text" class="validate" name="login" <?php if(isset($login)){echo 'value="'.$login.'"';} ?> required />
           <label for="login">Login</label>
         </div>
         <div class="col s2"></div>

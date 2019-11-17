@@ -9,7 +9,7 @@
           <div class="input-field col s6">
             <input id="joueur1" type="text" <?php
             if (isset($_SESSION['login'])) {
-                echo 'value="'.$_SESSION['login'].'"';
+                echo 'value="'.$_SESSION['login'].'" readonly';
             } else {
                  echo 'value="joueur1"';
              }

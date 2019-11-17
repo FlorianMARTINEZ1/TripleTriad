@@ -1,6 +1,6 @@
 <div id="form" class="row">
   <div id="bckgrndins"></div>
-    <form class="col s12" id="backform" method="get" action="./index.php">
+    <form class="col s12" id="backform" <?php if(Conf::getDebug()==false){echo 'method="post"';}else{echo 'method="get"';}?> action="./index.php">
     <fieldset>
       <?php
       if($action == "create"){
@@ -53,16 +53,18 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
+          <input id="email" type="email" class="validate" name=email required>
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
           <input id="password" type="password" class="validate" name=password required>
           <label for="password">Mots de passe</label>
         </div>
       </div>
       <?php
         if(Session::is_admin()){
-        /*  echo  '<input type="checkbox" id="admin" name="admin"
-           >
-           <label for="admin"> élévé en administrateur </label>';*/
-
            echo ' <p>
             <label>
               <input type="checkbox" name="admin" />

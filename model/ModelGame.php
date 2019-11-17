@@ -215,6 +215,52 @@ class ModelGame extends Model{
 
     }
 
+    public static function createGame($log,$code,$autre){
+      require_once "ModelJoueur.php";
+      try{
+      $joueurChallenger = ModelJoueur::select($log);
+
+      if($joueurChallenger == false){
+        throw new Exception('<br />Un des 2 joueurs n\' est pas inscrit');
+      }
+
+      if($joueurChallenger->get("joue") !=NULL){
+        throw new Exception('<br />Un des 2 joueurs est déjà en recherche, ou entrain de joué');
+      }
+
+      $data = array('challenger' => $joueurChallenger->get("login"),
+                    'challenged' => $autre,
+                    'etat' => 'demande',
+                    'code' => $code,
+                    'plateau' => 'ca va se faire'
+      );
+
+      $value = parent::save($data);
+
+      $joueur = ModelJoueur::select($challenger);
+
+      $sql = 'SELECT * from game WHERE id = \''.$joueur->get("joue").'\';';
+      // Préparation de la requête
+
+      $rep = Model::$pdo->query($sql);
+
+      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+      $tab = $rep->fetchAll();
+      echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+
+      if($value == false){
+        throw new Exception('<br />Une erreur c\'est produite durant la sauvegardes');
+      }
+      else{
+        /*echo "Tout c'est bien passé ! ";*/
+      }
+    }
+    catch(Exception $e){
+      echo $e->getMessage();
+    }
+
+    }
+
 
     public static function challenge($challenged,$challenger){
         require_once "ModelJoueur.php";

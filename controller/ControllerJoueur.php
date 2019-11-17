@@ -21,6 +21,45 @@ class ControllerJoueur {
 
     }
 
+    public static function validate(){;
+     $login = myGet('login');
+     $nonce = myGet("nonce");
+     $c = ModelJoueur::select($login);
+     if($c == false) {
+         return false;
+         ControllerJoueur::error();
+     }
+     else{
+       if($nonce == $c->get("nonce")){
+         $data = array(
+           "login" => $login,
+           "nonce" => null
+         );
+         $c->update($data);
+         $validation = " votre email a bien été validé";
+         ControllerJoueur::connect();
+       }
+       else{
+         ControllerJoueur::error();
+       }
+     }
+
+
+
+   }
+
+
+    public static function ChoixHerbergement(){
+
+      $controller='joueur';
+      $view='ChoixModePartie';
+      $pagetitle='Choix partie';
+
+
+      require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
+
+    }
+
     public static function quitteFile(){
       require_once File::build_path(array('controller','ControllerGame.php'));
       $login = $_SESSION['login'];
@@ -68,11 +107,11 @@ class ControllerJoueur {
     }
 
     public static function connected(){
-      $login = $_GET["login"];
-      $mdp = $_GET["password"];
+      $login =  myGet("login");
+      $mdp =  myGet("password");
       $mdpchiffrer = Security::chiffrer($mdp);
       $j = ModelJoueur::select($login);
-      if(ModelJoueur::checkPassword($login,$mdpchiffrer)){
+      if(ModelJoueur::checkPassword($login,$mdpchiffrer)  && $j->get("nonce")==null){
         /*ModelJoueur::JoueurConnecter($login,"1");*/
         $j = ModelJoueur::select($login);
         $_SESSION['login']=$login;
@@ -90,11 +129,6 @@ class ControllerJoueur {
         require File::build_path(array('view','viewJoueur.php'));
       }
       else{
-        /*$controller='joueur';
-        $view='error';
-        $pagetitle='error';
-
-        require File::build_path(array('view','viewJoueur.php'));*/
         $msg = "Erreur, l'identifiant ou le mot de passe est incorrect";
         $controller='joueur';
         $view='connect';
@@ -121,7 +155,7 @@ class ControllerJoueur {
 
     public static function read(){
 
-      $log = $_GET['login'];
+      $log =  myGet('login');
       if(Session::is_user($log)){
           $controller='joueur';
           $view='detail';
@@ -147,7 +181,7 @@ class ControllerJoueur {
 
     public static function delete(){
 
-      $log = $_GET['login'];
+      $log =  myGet('login');
       if(Session::is_user($log)){
           $controller='joueur';
           $view='deleted';
@@ -170,7 +204,7 @@ class ControllerJoueur {
 
     }
     public static function update(){
-      $login = $_GET['login'];
+      $login =  myGet('login');
       if(Session::is_user($login) || Session::is_admin()){
           $j = ModelJoueur::select($login);
           if ($j==false){
@@ -201,19 +235,20 @@ class ControllerJoueur {
 
      public static function updated(){
 
-      $login = $_GET['login'];
+      $login =  myGet('login');
       if(Session::is_user($login) || Session::is_admin() ){
-          $nom = $_GET['nom'];
-          $prenom = $_GET['prenom'];
-          $mdp = $_GET["password"];
+          $nom =  myGet('nom');
+          $prenom =  myGet('prenom');
+          $mdp =  myGet("password");
+          $mail = myGet("email");
           $admin=0;
-          if(!empty($_GET['admin'])){
+          if(!empty( myGet('admin'))){
             $admin = 1;
           }
 
           $mdp = Security::chiffrer($mdp);
 
-          $j = new ModelJoueur($prenom,$nom,$login,$mdp,$admin);
+          $j = new ModelJoueur($prenom,$nom,$login,$mdp,$admin,$mail,0);
           /*$v->update();*/
           $data = array(
             'login' => $login,
@@ -239,39 +274,56 @@ class ControllerJoueur {
 
 
     public static function created(){
-      $login = $_GET['login'];
-    /*  if(Session::is_user($login) || Session::is_admin() ){*/
-              $nom = $_GET['nom'];
-              $prenom = $_GET['prenom'];
-              $mdp = $_GET["password"];
-              $admin=0;
-               if(!empty($_GET['admin'])){
-                 $admin = 1;
-               }
+      $login =  myGet('login');
+      if(myGet("email") == filter_var(myGet("email"), FILTER_VALIDATE_EMAIL) && ModelJoueur::select($login)==false){
+            $nom =  myGet('nom');
+            $prenom =  myGet('prenom');
+            $mdp =  myGet("password");
+            $mail= myGet("email");
+            $nonce = Security::generateRandomHex();
+            $admin=0;
+             if(!empty( myGet('admin'))){
+               $admin = 1;
+             }
 
-              $mdp = Security::chiffrer($mdp);
+            $mdp = Security::chiffrer($mdp);
 
 
-              $data = array(
-                'login' => $login,
-                'nom' => $nom,
-                'prenom' => $prenom,
-                'mdp' => $mdp,
-                'admin' => $admin,
-                'connecte' => 0
-              );
+            $data = array(
+              'login' => $login,
+              'nom' => $nom,
+              'prenom' => $prenom,
+              'mdp' => $mdp,
+              'admin' => $admin,
+              'mail' => $mail,
+              'nonce' => $nonce,
+              'connecte' => 0
+            );
+            $message='
+                   <html>
+                     <body>
+                       <div align="center">
+                         <u>Nom de l\'expéditeur :</u>'.$nom.'<br />
+                         <u>Prenom de l\'expéditeur :</u>'.$prenom.'<br />
+                         <u>Mail de l\'expéditeur :</u>'.$mail.'<br />
+                         <br />
+                         <a href="http://webinfo.iutmontp.univ-montp2.fr/~martinezf/TripleTriad/index.php?login='.$login.'&nonce='.$nonce.'&action=validate&controller=utilisateur">Cliquez ici pour valider votre email </a>
+                         <br />
+                       </div>
+                     </body>
+                   </html>
+                   ';
 
-              $j = new ModelJoueur($login,$nom,$prenom,$mdp,$admin);
-              $j->save($data);
-              $controller='joueur';
-              $view='created';
-              $pagetitle='Compte créé';
-              /*ControllerVoiture::readAll();*/
-              require File::build_path(array('view','viewJoueur.php'));
-    /*  }
-      else{
-         ControllerJoueur::connect();
-      }*/
+            mail($mail, 'Valider votre email', $message);
+
+            $j = new ModelJoueur($login,$nom,$prenom,$mdp,$admin,myGet("email"),0);
+            $j->save($data);
+            $controller='joueur';
+            $view='created';
+            $pagetitle='Compte créé';
+            require File::build_path(array('view','viewJoueur.php'));
+      }
+      ControllerJoueur::create();
     }
 
     public static function create(){

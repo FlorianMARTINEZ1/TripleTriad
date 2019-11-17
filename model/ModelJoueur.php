@@ -9,6 +9,8 @@ class ModelJoueur extends Model{
     private $nom;
     private $prenom;
     private $mdp;
+    private $mail;
+    private $nonce;
     private $admin;
     private $joue;
     protected static $object = 'joueur';
@@ -29,14 +31,16 @@ class ModelJoueur extends Model{
     }
 
     // un constructeur
-    public function __construct($login = NULL, $nom = NULL, $prenom = NULL,$mdp = NULL,$admin = NULL,$joue = NULL) {
-        if (!is_null($login) && !is_null($nom) && !is_null($prenom) && !is_null($mdp) &&!is_null($admin) &&!is_null($joue)) {
+    public function __construct($login = NULL, $nom = NULL, $prenom = NULL,$mdp = NULL,$admin = NULL,$joue = NULL,$mail = NULL,$nonce = NULL) {
+        if (!is_null($login) && !is_null($nom) && !is_null($prenom) && !is_null($mdp) &&!is_null($admin) &&!is_null($joue) &&!is_null($mail) &&!is_null($nonce)) {
             $this->login = $login;
             $this->nom = $nom;
             $this->prenom = $prenom;
             $this->mdp=$mdp;
             $this->admin=$admin;
             $this->joue=$joue;
+            $this->mail=$mail;
+            $this->nonce=$nonce;
         }
     }
 
@@ -133,7 +137,7 @@ class ModelJoueur extends Model{
 
    public static function NbrJoueurDansFileDAttente(){
       try {
-        $sql = " SELECT COUNT(*) as nb FROM `joueur` WHERE enFileDattente = 1";
+        $sql = " SELECT login,joue FROM `joueur` WHERE enFileDattente = 1";
         $rep = Model::$pdo->query($sql);
 
         $rep->setFetchMode(PDO::FETCH_CLASS, "ModelJoueur");
