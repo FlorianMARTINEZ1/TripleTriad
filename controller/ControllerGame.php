@@ -56,7 +56,7 @@ class ControllerGame {
       require File::build_path(array('view','view.php'));
 
     }
-    public static function IAforte() {
+    public static function IAexperte() {
       $controller='game';
       $view='IA';
       $pagetitle='IA Experte';

@@ -1,6 +1,6 @@
 class IAExperte extends IA {
   constructor(game) {
-    super.constructor(game, "IAExperte");
+    super(game, "IAExperte");
     this.gameMinim;
   }
 
@@ -20,18 +20,18 @@ class IAExperte extends IA {
         }
       }
     }*/
-    var terrainP = [1, 2, 3, 4, 5, 7, 8, 9];
+    var terrainP = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     /*for (let i = 1; i <= 9; i++) {
       if (document.querySelector("[ondrop].case" + i)) {
         terrainP.push(i);
       }
     }*/
-    var dureeP = 9; //- terrainP.length;
+    var dureeP = 4; //- terrainP.length;
     var currentPlay = this.game.getCurrentPlayer();
     var idCarteJoue = -1;
     var idCaseJoue = -1;
-    var couleurg = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    this.gameMinim = new GameMinim(deck1, deck2, terrainP, dureeP, currentPlay, idCard, idCase, couleurg);
+    var couleurg = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    this.gameMinim = new GameMinim(deck1, deck2, terrainP, dureeP, currentPlay, idCarteJoue, idCaseJoue, couleurg);
   }
 
   mettreAJourGame() {
@@ -39,9 +39,11 @@ class IAExperte extends IA {
   }
 
   play() {
-    mettreAJourGame();
+    this.setCasesVides();
+    this.mettreAJourGame();
     this.gameMinim = this.gameMinim.bestChild();
-    super.play(this.gameMinim.getIdeCarteJoue(), this.gameMinim.getIdCaseJoue());
+    console.log(this.gameMinim.getIdCarteJoue() + ", " + this.gameMinim.getIdCaseJoue());
+    super.play(this.gameMinim.getIdCarteJoue(), this.gameMinim.getIdCaseJoue());
   }
 
 }

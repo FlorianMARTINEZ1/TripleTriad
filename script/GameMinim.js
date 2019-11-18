@@ -10,16 +10,31 @@ class GameMinim {
     this.idCaseJoue = idCase;
     this.colorGrid = colorg;
     this.childs = [];
-    if (duree > 1) {
+    if (this.duree > 1) {
       this.generateChilds();
     }
   }
+  getIdCaseJoue() {
+    return this.idCaseJoue;
+  }
+
+  getIdCarteJoue() {
+    return this.idCarteJoue;
+  }
+  genListWithout(index, list) {
+    return list.slice(0, index).concat(list.slice(index + 1));
+
+  }
 
   generateChilds() {
-    for (let x in this.terrainLibre) {
+    console.log('Please work');
+    for (var i = 0; i < this.terrainLibre.length; i++) {
+
+      var x = this.terrainLibre[i];
+      var newTerrain = this.genListWithout(i, this.terrainLibre);
       if (this.currentP == 0) {
-        for (let y in this.deckJ1) {
-          this.childs.push(new GameMinim(this.deckJ1.splice(this.deckJ1.indexOf(y), 1), this.deckJ2, this.terrainLibre.splice(this.terrainLibre.indexOf(x), 1), this.duree--, 1, x, y, this.colorGrid));
+        for (var j = 0; j < this.deckJ1.length; j++) {
+          this.childs.push(new GameMinim(this.genListWithout(j, this.deckJ1), this.deckJ2, newTerrain, this.duree - 1, 1, x, this.deckJ1[j], this.colorGrid.slice()));
           //On met dans Childs une new GameMinim constitué de :
           /*
           deckJ1 - la carte jouée
@@ -33,12 +48,12 @@ class GameMinim {
           */
         }
       } else {
-        for (let y in this.deckJ2) {
-          this.childs.push(new GameMinim(this.deckJ1, this.deckJ2.splice(this.deckJ2.indexOf(y), 1), this.terrainLibre.splice(this.terrainLibre.indexOf(x), 1), this.duree--, 0, x, y, this.colorGrid));
+        for (var j = 0; j < this.deckJ2.length; j++) {
+          this.childs.push(new GameMinim(this.deckJ1, this.genListWithout(j, this.deckJ2), newTerrain, this.duree - 1, 0, x, this.deckJ2[j], this.colorGrid.slice()));
           //On met dans Childs une new GameMinim constitué de :
           /*
-          deckJ1 - la carte jouée
-          deckJ2
+          deckJ1
+          deckJ2 - la carte jouée
           terrainLibre - case jouée
           duree -1
           l'autre joueur qui doit jouer
@@ -52,6 +67,7 @@ class GameMinim {
 
   updateColorGrid() {
     if (this.idCarteJoue != -1) {
+      console.log("Je fonctionne ?" + this.idCarteJoue);
       this.colorGrid[this.idCaseJoue - 1] = (this.currentP == 1 ? 0 : 1) + 1;
       if (this.idCaseJoue === 8 || this.idCaseJoue === 5 || this.idCaseJoue === 2) {
         var w = this.idCaseJoue + 3;
@@ -71,22 +87,23 @@ class GameMinim {
         var z = this.idCaseJoue - 1;
       }
       var cj = findCard(document.getElementsByClassName('case' + this.idCaseJoue)[0]);
-      if (!(w > 10 || w < 1) && findCard(document.getElementsByClassName('case' + w)[0]).donneValN() < cj.donneValS()) {
+      if (!(w > 10 || w < 1) && findCard(document.getElementsByClassName('case' + w)[0]) && findCard(document.getElementsByClassName('case' + w)[0]).donneValN() < cj.donneValS()) {
         this.colorGrid[w - 1] = (this.currentP == 1 ? 0 : 1) + 1;
       }
-      if (!(x > 10 || x < 1) && findCard(document.getElementsByClassName('case' + x)[0]).donneValS() < cj.donneValN()) {
+      if (!(x > 10 || x < 1) && findCard(document.getElementsByClassName('case' + x)[0]) && findCard(document.getElementsByClassName('case' + x)[0]).donneValS() < cj.donneValN()) {
         this.colorGrid[x - 1] = (this.currentP == 1 ? 0 : 1) + 1;
       }
-      if (!(y > 10 || y < 1) && findCard(document.getElementsByClassName('case' + y)[0]).donneValO() < cj.donneValE()) {
+      if (!(y > 10 || y < 1) && findCard(document.getElementsByClassName('case' + y)[0]) && findCard(document.getElementsByClassName('case' + y)[0]).donneValO() < cj.donneValE()) {
         this.colorGrid[y - 1] = (this.currentP == 1 ? 0 : 1) + 1;
       }
-      if (!(z > 10 || z < 1) && findCard(document.getElementsByClassName('case' + z)[0]).donneValE() < cj.donneValO()) {
+      if (!(z > 10 || z < 1) && findCard(document.getElementsByClassName('case' + z)[0]) && findCard(document.getElementsByClassName('case' + z)[0]).donneValE() < cj.donneValO()) {
         this.colorGrid[z - 1] = (this.currentP == 1 ? 0 : 1) + 1;
       }
     }
   }
 
   calcScore(indexPlayer) {
+    this.updateColorGrid();
     var score = 0;
     for (var i = 0; i < this.colorGrid.length; i++) {
       if (this.colorGrid[i] == indexPlayer - 1) {
@@ -101,10 +118,11 @@ class GameMinim {
   }
 
   calcMoyChild(indexPlayer) {
+    this.updateColorGrid();
     if (!this.haveChild()) {
       return this.calcScore(indexPlayer);
     }
-    var sum;
+    var sum = 0;
     for (var i = 0; i < this.childs.length; i++) {
       sum += this.childs[i].calcMoyChild(indexPlayer);
     }
@@ -125,6 +143,9 @@ class GameMinim {
   }
 
   miseAJour() {
+    if (this.idCarteJoue == -1) {
+      return this;
+    }
     var tabCartepuisCase = [];
     var carteJoue;
     for (var i = 1; i <= 5; i++) {
@@ -163,19 +184,14 @@ class GameMinim {
         idCaseJoue = this.terrainLibre[i];
       }
     }
-    for (var child in this.childs) {
-      if (child.getIdCaseJoue() == idCaseJoue && child.getIdeCarteJoue() == idCarteJoue) {
-        return child;
+
+    for (var i = 0; i < this.childs.length; i++) {
+      if (this.childs[i].getIdCaseJoue() == idCaseJoue && this.childs[i].getIdCarteJoue() == idCarteJoue) {
+        return this.childs[i];
       }
     }
   }
 
-  getIdCaseJoue() {
-    return this.idCaseJoue;
-  }
 
-  getIdeCarteJoue() {
-    return this.idCarteJoue;
-  }
 
 }
