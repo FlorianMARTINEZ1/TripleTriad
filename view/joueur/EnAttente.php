@@ -1,5 +1,5 @@
 
-<div  class="preloader-background">
+<div id="back" class="preloader-background transitionloader">
     <div class="preloader-wrapper big active">
      <div class="spinner-layer spinner-blue">
        <div class="circle-clipper left">
@@ -47,12 +47,24 @@
    </div>
 
    <div>
-     <h5>Joueurs dans la file d'attente : 0.</h5>
+     <h5 id="h5">Joueurs dans la file d'attente : 0.</h5>
    </div>
 
-   <div>
-      <a class="waves-effect waves-light ff8 btn" href="./index.php?action=quitteFile&controller=joueur" >Quitter la file</a>
-   </div>
+
 
  </div>
+ <div id="button">
+    <a class="waves-effect waves-light ff8 btn" href="./index.php?action=quitteFile&controller=joueur" >Quitter la file</a>
+ </div>
+ <div id="joueurActu" style="display:none;"><?php echo $login ?></div>
+ <div id="papa" style="display:none;">
+
+ </div>
+
+
+
+
+
+
+
 <script type="text/javascript" src="./script/EnAttente.js"></script>

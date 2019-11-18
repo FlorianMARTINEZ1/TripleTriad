@@ -22,20 +22,33 @@ html {
 }
 
 .preloader-background{
-  height: 136vh;
-  width: 100vw;
-  position: fixed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
   text-align: center;
-  opacity: 1;
+  opacity: 0.7;
   background-color : white;
   padding-top: 24%;
   margin-top: -33vh;
-}
-.preloader-background {
-
+  transition : background-color 5s, opacity 5s !important;
 }
 
+.transitionloader{
+ background-color : #3c6b77 ;
+ opacity: 1;
+}
 
+#button{
+    text-align: center;
+    height: 100%;
+    margin-top: 31%;
+}
+
+
+
+#h5{
+  background-color: transparent;
+}
 
 .btn{
   height: auto;

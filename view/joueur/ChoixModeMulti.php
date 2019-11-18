@@ -10,7 +10,7 @@
             <a class="waves-effect waves-light ff8 btn " href="./index.php?action=rechercheJoueur&controller=joueur">Recherche aléatoire</a>
           </div>
           <div class="input-field col s6">
-            <a class="waves-effect waves-light ff8 btn " href="./index.php?action=readAllPlayerConnected&controller=joueur">Choix de l'adversaire</a>
+            <a class="waves-effect waves-light ff8 btn " href="./index.php?action=ChoixHerbergement&controller=joueur">Choix de l'adversaire</a>
           </div>
         </div>
       </form>

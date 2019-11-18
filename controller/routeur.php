@@ -5,22 +5,34 @@ require_once 'ControllerJoueur.php';
 require_once 'ControllerGame.php';
 // On recupère l'action passée dans l'URL
 
+function myGet($nomvar){
+	 if(isset($_GET[$nomvar])){
+		 return $_GET[$nomvar];
+	 }
+	 else if(isset($_POST[$nomvar])){
+		 return $_POST[$nomvar];
+	 }
+	 else {
+		 return null;
+	 }
+}
+
 $controller_default = "game";
 
-if(!isset($_GET['action'])){
+if(is_null(myGet('action'))){
 	$action = "accueil";
 }
 else{
-  $action = $_GET['action'];
+  $action = myget('action');
 }
 
 
 
-if(!isset($_GET['controller'])){
+if(is_null(myGet('controller'))){
 	$controller = $controller_default;
 }
 else{
-	 $controller = $_GET['controller'];
+	 $controller =  myGet('controller');
 }
 
 $controller_class='Controller'.ucfirst($controller);
