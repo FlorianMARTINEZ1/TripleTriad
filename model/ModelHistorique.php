@@ -61,7 +61,7 @@ class ModelHistorique extends Model{
             $tab = $req_prep->fetchAll();
             // Attention, si il n'y a pas de résultats, on renvoie false
             if (empty($tab))
-                return "vide";
+                return false;
             return $tab;
         } catch (PDOException $e) {
             if (Conf::getDebug()) {

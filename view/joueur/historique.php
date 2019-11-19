@@ -1,8 +1,8 @@
 <?php
 
     echo '<article><div="card-container"> <div class="card-panel" style="width:70%;margin:5% auto;background-color: rgba(72, 131, 146, 0.5);"><h3> Historique : </h3>';
-    if(!empty($tabHistorique)){
-    foreach($tabHistorique as $value)
+    if($tabHistorique!=false){
+        foreach($tabHistorique as $value)
         {
             if($value['nomJ1'] == $_SESSION['login'])
                 {
