@@ -1,6 +1,7 @@
 <?php
 require_once 'lib/File.php';
 require_once File::build_path(array('model','ModelJoueur.php')); // chargement du modèle
+require_once File::build_path(array('model','ModelHistorique.php')); // chargement du modèle
 require_once File::build_path(array('lib','Security.php'));
 
 class ControllerJoueur {
@@ -335,6 +336,16 @@ class ControllerJoueur {
         $j = new ModelJoueur("","","");
 
         require File::build_path(array('view','viewJoueur.php'));
+    }
+
+    public static function historique()
+    {
+      $controller = 'joueur';
+      $view = 'historique';
+      $pagetitle='Historique';
+      $tabHistorique = ModelHistorique::getHistoriqueJoueur($_SESSION['login']);
+      require File::build_path(array('view','viewJoueur.php'));
+
     }
 
 

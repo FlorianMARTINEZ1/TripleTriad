@@ -17,7 +17,9 @@
       	    }
       	    else{
       	    	echo "<p> Vous devez être connecté en tant que ce joueur pour modifier ce joueur </p>";
-      	    }
+              }
+            echo '<p> Pour consulter votre historique cliquez <a href="./index.php?action=historique&controller=joueur&login='.htmlspecialchars($j->get('login')).'">ici</a> </p';
+
         echo '</div></arcticle>'
 
         ?>

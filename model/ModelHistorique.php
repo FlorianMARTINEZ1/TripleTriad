@@ -42,6 +42,36 @@ class ModelHistorique extends Model{
         }
     }
 
+    public static function getHistoriqueJoueur($j)
+    {
+        try {
+            $sql = "SELECT * from Historique WHERE nomJ1=:nomj OR nomJ2=:nomj";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+
+            $values = array(
+                "nomj" => $j
+            );
+
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute($values);
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab = $req_prep->fetchAll();
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            if (empty($tab))
+                return "vide";
+            return $tab;
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
 
 }
 ?>
