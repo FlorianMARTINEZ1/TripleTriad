@@ -1,6 +1,8 @@
 <?php
 
   echo "<h5>Le joueur  ".htmlspecialchars(myget('login'))." a bien été créée !</h5>";
+  echo "<h5> Aller regarder votre adresse mail pour valider votre compte ! </h5>";
+
   require File::build_path(array("view","joueur","connect.php"));
   echo "<script>let e = document.getElementsByTagName(\"h5\").classList.add(\"afficheh5\");
   e.style.display=\"block\";</script>";

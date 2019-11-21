@@ -37,7 +37,7 @@ class ControllerJoueur {
            "nonce" => null
          );
          $c->update($data);
-         $validation = " votre email a bien été validé";
+         echo "<script> alert('votre email a bien été validé') </script>";
          ControllerJoueur::connect();
        }
        else{
@@ -308,7 +308,7 @@ class ControllerJoueur {
                          <u>Prenom de l\'expéditeur :</u>'.$prenom.'<br />
                          <u>Mail de l\'expéditeur :</u>'.$mail.'<br />
                          <br />
-                         <a href="http://webinfo.iutmontp.univ-montp2.fr/~martinezf/TripleTriad/index.php?login='.$login.'&nonce='.$nonce.'&action=validate&controller=utilisateur">Cliquez ici pour valider votre email </a>
+                         <a href="http://webinfo.iutmontp.univ-montp2.fr/~ginestes/TripleTriad/index.php?login='.$login.'&nonce='.$nonce.'&action=validate&controller=joueur">Cliquez ici pour valider votre email </a>
                          <br />
                        </div>
                      </body>
