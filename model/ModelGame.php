@@ -11,6 +11,7 @@ class ModelGame extends Model{
     private $challenged;
     private $etat;
     private $plateau;
+    private $code;
     protected static $object ='game';
     protected static $primary='id';
 
@@ -39,6 +40,39 @@ class ModelGame extends Model{
         }
     }
 
+    public static function selectWithCode($code){
+
+  	try {
+
+  	$table_name = static::$object;
+  	$class_name = 'Model'.ucfirst($table_name);
+
+    $sql = "SELECT * from $table_name WHERE code=:code";
+    // Préparation de la requête
+    $req_prep = Model::$pdo->prepare($sql);
+
+    $values = array(
+        "code" => $code,
+        //nomdutag => valeur, ...
+    );
+    // On donne les valeurs et on exécute la requête
+    $req_prep->execute($values);
+    // On récupère les résultats comme précédemment
+    $req_prep->setFetchMode(PDO::FETCH_CLASS, $class_name);
+    $tab = $req_prep->fetchAll();
+    // Attention, si il n'y a pas de résultats, on renvoie false
+    if (empty($tab))
+        return false;
+    return $tab[0];
+    } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+  	}
 
     public static function removeTour($id){
       try{
@@ -206,6 +240,17 @@ class ModelGame extends Model{
 
     public static function attenteConfirmation($id){
       $sql = 'SELECT * from game WHERE id = \''.$id.'\';';
+      // Préparation de la requête
+
+      $rep = Model::$pdo->query($sql);
+
+      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+      echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+
+    }
+
+    public static function attenteConfirmationAvecCode($code){
+      $sql = 'SELECT * from game WHERE code = \''.$code.'\';';
       // Préparation de la requête
 
       $rep = Model::$pdo->query($sql);

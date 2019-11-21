@@ -1,3 +1,5 @@
+var donnée;
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -15,6 +17,32 @@ function createGame(etat) {
   let code = document.getElementById("code").innerHTML;
   xhr.open("GET", "api/createGame.php?log="+log+"&code="+code, true);
   xhr.send();
+}
+
+function joinGame(callback) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+      donnée = callback(xhr.responseText);
+    }
+  };
+  let log = document.getElementById("footer").innerHTML;
+  let code = document.getElementById("code").value;
+  xhr.open("GET", "api/joinGame.php?log="+log+"&code="+code, true);
+  xhr.send();
+}
+
+function attente(callback){
+  var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+      donnée = callback(xhr.responseText); // on récupère les données.
+    }
+  };
+  xhr.open("GET", "api/AttenteConfirmation.php?code="+document.getElementById("code").innerHTML, true); // on les cherche dans le fichier php/test.php
+  xhr.send(null);
 }
 
 
@@ -40,6 +68,34 @@ function afficherPanneau(){
 
 }
 
+function relocation(sData){
+  if(sData.length!=0){
+    var donnes = JSON.parse(sData);
+    if(donnes.length != 0){
+      if(donnes[0]["etat"] == "accepte"){
+        window.location ="./?action=EnLigne&controller=game";
+    }
+  }
+ }
+}
+
+function envoyer(){
+  joinGame(join);
+}
+
+function join(Data){
+  var donnes = JSON.parse(Data);
+  alert(donnes);
+  alert(donnes[0]);
+  setTimeout(function(){
+    window.location ="./?action=EnLigne";
+  },2000);
+
+}
+
+setInterval(function () {
+  attente(relocation);
+}, 2000);
 
 function afficherRejoindre(){
   let panneau = document.getElementById("marquer");
