@@ -45,7 +45,6 @@ function attente(callback){
   xhr.send(null);
 }
 
-
 function afficherPanneau(){
   let panneau = document.getElementById("panneau");
   if(panneau.style.display == "block"){
@@ -65,7 +64,6 @@ function afficherPanneau(){
         createGame(1);
     },1000);
   }
-
 }
 
 function relocation(sData){
@@ -98,7 +96,6 @@ function join(Data){
       },500);
     }
   }
-
 }
 
 setInterval(function () {
