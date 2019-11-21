@@ -1,6 +1,7 @@
 var sec = 0;
 var min = 0;
 var nbr = 0;
+var challenger="";
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -46,6 +47,17 @@ function  accepte(callback){
  xhr.send(null);
 }
 
+function quitteFile(etat){
+ var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+ xhr.onreadystatechange = function () {
+   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+   }
+ };
+ xhr.open("GET", "./index.php?action=quitteFile&controller=joueur", true); // on les cherche dans le fichier php/test.php
+ xhr.send(null);
+}
+
 
 function  getJoueurInFileDattente(callback){
   var xhr = new XMLHttpRequest(); // créer une requête HTTP
@@ -72,7 +84,11 @@ function  challenge(callback){
  let chall = document.querySelector("#papa");
  let nbrchild = chall.childElementCount;
  let tabChild = chall.children;
- xhr.open("GET", "api/challenge.php?loginChallenger="+tabChild[getRandomIntInclusive(0,nbrchild-1)].innerHTML+"&loginChallenged="+log, true); // on les cherche dans le fichier php/test.php
+ let choix = getRandomIntInclusive(0,nbrchild-1)
+ if(tabChild[choix]){
+   challenger = tabChild[choix].innerHTML;
+ }
+ xhr.open("GET", "api/challenge.php?loginChallenger="+challenger+"&loginChallenged="+log, true); // on les cherche dans le fichier php/test.php
  xhr.send(null);
 }
 
@@ -99,6 +115,7 @@ function DataAccepte(sData){
     if(donnes[0]["challenger"]==document.getElementById("joueurActu").innerHTML || donnes[0]["challenged"]==document.getElementById("joueurActu").innerHTML){
         // si le joueur fait partie de la game accepté
         alert("Partie trouvé ! ");
+        quitteFile(1);
         window.location = './?action=EnLigne';
     }
   }
