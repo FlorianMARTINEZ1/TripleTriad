@@ -44,10 +44,7 @@ class ModelGame extends Model{
 
   	try {
 
-  	$table_name = static::$object;
-  	$class_name = 'Model'.ucfirst($table_name);
-
-    $sql = "SELECT * from $table_name WHERE code=:code";
+    $sql = "SELECT * from game WHERE code=:code";
     // Préparation de la requête
     $req_prep = Model::$pdo->prepare($sql);
 
@@ -55,12 +52,17 @@ class ModelGame extends Model{
         "code" => $code,
         //nomdutag => valeur, ...
     );
-    // On donne les valeurs et on exécute la requête
     $req_prep->execute($values);
-    // On récupère les résultats comme précédemment
-    $req_prep->setFetchMode(PDO::FETCH_CLASS, $class_name);
+    $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+    echo json_encode($req_prep->fetchAll(PDO::FETCH_ASSOC));
+    // on envoie les données de la game en JSON
+
+    $req_prep = Model::$pdo->prepare($sql);
+    $req_prep->execute($values);
+    $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
     $tab = $req_prep->fetchAll();
-    // Attention, si il n'y a pas de résultats, on renvoie false
+    //Si la game existe on l'envoie pour continuer la fonction
+    
     if (empty($tab))
         return false;
     return $tab[0];

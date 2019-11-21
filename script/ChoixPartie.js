@@ -28,7 +28,7 @@ function joinGame(callback) {
     }
   };
   let log = document.getElementById("footer").innerHTML;
-  let code = document.getElementById("code").value;
+  let code = document.getElementById("codeRentrer").value;
   xhr.open("GET", "api/joinGame.php?log="+log+"&code="+code, true);
   xhr.send();
 }
@@ -85,11 +85,19 @@ function envoyer(){
 
 function join(Data){
   var donnes = JSON.parse(Data);
-  alert(donnes);
-  alert(donnes[0]);
-  setTimeout(function(){
-    window.location ="./?action=EnLigne";
-  },2000);
+  if(donnes == ""){
+    alert("Aucune partie n'a ce code");
+  }
+  else{
+    if(donnes[0]["etat"] == "accepte"){
+      alert("Cette partie a déjà été rejointe");
+    }
+    else{
+      setTimeout(function(){
+        window.location ="./?action=EnLigne&controller=game";
+      },500);
+    }
+  }
 
 }
 

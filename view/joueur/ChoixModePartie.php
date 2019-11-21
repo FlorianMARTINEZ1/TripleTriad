@@ -35,17 +35,17 @@
 
     </div>
     <div class="row formulaire">
-      <form class="col s12">
+      <div class="col s12">
         <div class="row center">
           <div class="input-field col s6">
-            <input id="code" type="text" class="validate" name="code" required />
-            <label for="code">code</label>
+            <input id="codeRentrer" type="text" class="validate" name="codeRentrer" value="0" required />
+            <label for="codeRentrer">code</label>
           </div>
           <div class="input-field col s6">
             <a class="waves-effect waves-light ff8 btn" onclick="envoyer()" href="#">Envoyer</a>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 
