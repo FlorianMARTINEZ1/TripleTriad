@@ -13,6 +13,11 @@
             <a class="waves-effect waves-light ff8 btn " href="./index.php?action=ChoixHerbergement&controller=joueur">Choix de l'adversaire</a>
           </div>
         </div>
+        <div class ="row center">
+          <div class="input-field col s6" style="position:relative;right:-25%;">
+            <a class="waves-effect waves-light ff8 btn " href="./index.php?action=readAllPlayerConnected&controller=joueur">Ancien mode de recherche</a>
+          </div>
+        </div>
       </form>
     </div>
   </div>
