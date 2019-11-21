@@ -62,7 +62,7 @@ class ModelGame extends Model{
     $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
     $tab = $req_prep->fetchAll();
     //Si la game existe on l'envoie pour continuer la fonction
-    
+
     if (empty($tab))
         return false;
     return $tab[0];

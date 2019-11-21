@@ -1,6 +1,13 @@
 var sec = 0;
 var min = 0;
 var nbr = 0;
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 setInterval(function(){
     getJoueurInFileDattente(lectureDonnee);
     ++sec;
@@ -27,6 +34,18 @@ setInterval(function(){
   element.classList.add("transitionloader");}
 },5000);
 
+function  accepte(callback){
+ var xhr = new XMLHttpRequest(); // créer une requête HTTP
+
+ xhr.onreadystatechange = function () {
+   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
+     donnée = callback(xhr.responseText); // on récupère les données.
+   }
+ };
+ xhr.open("GET", "api/accepte.php?log="+document.getElementById("joueurActu").innerHTML, true); // on les cherche dans le fichier php/test.php
+ xhr.send(null);
+}
+
 
 function  getJoueurInFileDattente(callback){
   var xhr = new XMLHttpRequest(); // créer une requête HTTP
@@ -49,15 +68,46 @@ function  challenge(callback){
      donnée = callback(xhr.responseText); // on récupère les données.
    }
  };
- xhr.open("GET", "api/challenge.php?loginChallenger=loginChallenged=", true); // on les cherche dans le fichier php/test.php
+ let log = document.getElementById("joueurActu").innerHTML;
+ let chall = document.querySelector("#papa");
+ let nbrchild = chall.childElementCount;
+ let tabChild = chall.children;
+ xhr.open("GET", "api/challenge.php?loginChallenger="+tabChild[getRandomIntInclusive(0,nbrchild-1)].innerHTML+"&loginChallenged="+log, true); // on les cherche dans le fichier php/test.php
  xhr.send(null);
 }
 
 function Data(sData){
   var game = sData;
-  /*alert("demande envoyé");*/
-
+  if(typeof game === "string"){
+    if(game.length == 66){
+      console.log("demande envoyé et/ou game déjà prise");
+      accepte(DataAccepte);
+    }
+    else if(game.length == 4){
+      console.log("demande envoyé à un joueur");
+    }
+    else{
+      console.log("erreur");
+    }
+  }
 }
+
+function DataAccepte(sData){
+  var donnes = JSON.parse(sData);
+  if(donnes[0]){
+    // si la partie existe
+    if(donnes[0]["challenger"]==document.getElementById("joueurActu").innerHTML || donnes[0]["challenged"]==document.getElementById("joueurActu").innerHTML){
+        // si le joueur fait partie de la game accepté
+        alert("Partie trouvé ! ");
+        window.location = './?action=EnLigne';
+    }
+  }
+}
+
+
+setInterval(function(){
+  challenge(Data);
+},3000);
 
 
 
@@ -71,7 +121,7 @@ function lectureDonnee(sData) {
     document.getElementsByTagName("h5")[0].innerHTML = "Joueurs dans la file d'attente : "+Total;
     let i = 0;
     while(parseInt(i)<Total){
-      console.log(donnes[i]["login"]);
+      /*console.log(donnes[i]["login"]);*/
       if(p!==null){
         if(donnes[i] && p[i] && donnes[i]['login']!=document.getElementById("joueurActu").innerHTML){
             p[i].innerHTML = donnes[i]["login"];
