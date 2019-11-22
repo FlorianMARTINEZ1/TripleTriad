@@ -1,4 +1,4 @@
-var caseEnvoie = 10;
+caseEnvoie = 10;
 var idCarteJoue = 0;
 var donnée = 0;
 var idG = document.getElementById("id").innerHTML;
@@ -43,7 +43,7 @@ function removeCaseCard(etat) {
 
 function lireDonnee(sData) {
   var donnes = JSON.parse(sData);
-  if(donnes[0]['casejoue'] != null && g2.currentPlayer==1 && g2.ajoue!=1){
+  if(donnes[0]['casejoue'] != null && (( donnes[0]["etat"]=="joueur1" && donnes[0]["challenger"] != document.getElementById("joueur1").value ) || (donnes[0]["etat"]=="joueur2"  && donnes[0]["challenger"] == document.getElementById("joueur1").value))){
     console.log("en attent de réponse, le joueur en face a joué");
     let jouecase = "case"+donnes[0]['casejoue'];
     let img = donnes[0]['idcartejoue'];
@@ -77,15 +77,6 @@ function lireDonnee(sData) {
   }
   else if(donnes[0]['casejoue'] != null){
     console.log("en attente de réponse, currentPlayer ="+g2.currentPlayer);
-    if(temps==4){
-        g2.ajoue = g2.currentPlayer-1;
-        temps = 0;
-    }
-    else{
-      temps = temps + 1 ;
-    }
-
-
   }
   else{
     console.log("en attente de jeu, currentPlayer ="+g2.currentPlayer);
@@ -211,7 +202,8 @@ function envoieDonner(etat) {
   };
   let casejouer = caseEnvoie.substr(4);
   casejouer = parseInt(casejouer);
-  xhr.open("GET", "api/envoieDonner.php?case="+casejouer+"&carte="+idCarteJoue+"&id="+idG,true);
+  let log = document.getElementById("joueur1").value;
+  xhr.open("GET", "api/envoieDonner.php?case="+casejouer+"&carte="+idCarteJoue+"&id="+idG+"&log="+log,true);
   xhr.send();
 }
 
@@ -219,14 +211,15 @@ function envoieDonner(etat) {
  * Test en haut, en bas, a droite et à gauche si il y a des cartes
  * si oui, on compare les valeurs pour ensuite changer la couleur si le joueur gagne
  */
-var findCard = function(carteJoue) {
+/*var findCard = function(carteJoue) {
 
   for (var i = 0; i < allCards.length; i++) {
     if (allCards[i].donneID() === Number(carteJoue)) {
       return allCards[i];
     }
   }
-}
+}*/
+
 function action(C,Cart,couleur){
     C.setAttribute("src", "css/cartes/FF8/" + Cart.donneNom() + "." + couleur + ".jpg"); // On change la couleur
     C.style.width="100px";

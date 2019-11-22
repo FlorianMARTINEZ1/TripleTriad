@@ -11,6 +11,15 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+var findCard = function(carteJoue) {
+
+  for (var i = 0; i < allCards.length; i++) {
+    if (allCards[i].donneID() === Number(carteJoue)) {
+      return allCards[i];
+    }
+  }
+}
+
 function request(callback) {
   var xhr = new XMLHttpRequest(); // créer une requête HTTP
 

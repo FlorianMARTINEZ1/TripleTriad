@@ -161,16 +161,17 @@ class ModelGame extends Model{
       return $plateau;
     }
 
-    public static function envoie($id,$case,$carte){
+    public static function envoie($id,$case,$carte,$etat){
       try{
-        $sql = "UPDATE game SET game.casejoue=:casej , game.idcartejoue=:carte WHERE game.id=:id ;";
+        $sql = "UPDATE game SET game.casejoue=:casej , game.idcartejoue=:carte , game.etat=:etat WHERE game.id=:id ;";
         // Préparation de la requête
         $req_prep = Model::$pdo->prepare($sql);
 
         $values = array(
             "casej" => $case,
             "carte" => $carte,
-            "id" => $id
+            "id" => $id,
+            "etat" =>$etat
         );
         // On donne les valeurs et on exécute la requête
         $req_prep->execute($values);

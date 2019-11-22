@@ -154,14 +154,14 @@ function drop(ev) {
  * Test en haut, en bas, a droite et à gauche si il y a des cartes
  * si oui, on compare les valeurs pour ensuite changer la couleur si le joueur gagne
  */
-var findCard = function(carteJoue) {
+/*var findCard = function(carteJoue) {
 
   for (var i = 0; i < allCards.length; i++) {
     if (allCards[i].donneID() === Number(carteJoue)) {
       return allCards[i];
     }
   }
-}
+}*/
 
 function action(C, Cart, couleur) {
   C.setAttribute("src", "css/cartes/FF8/" + Cart.donneNom() + "." + couleur + ".jpg"); // On change la couleur

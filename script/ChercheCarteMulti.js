@@ -5,6 +5,15 @@
 var allCards;
 var tabCartes;
 
+var findCard = function(carteJoue) {
+
+  for (var i = 0; i < allCards.length; i++) {
+    if (allCards[i].donneID() === Number(carteJoue)) {
+      return allCards[i];
+    }
+  }
+}
+
 function request(callback) {
   var xhr = new XMLHttpRequest(); // créer une requête HTTP
 

@@ -45,7 +45,6 @@ function attente(callback){
   xhr.send(null);
 }
 
-
 function afficherPanneau(){
   let panneau = document.getElementById("panneau");
   if(panneau.style.display == "block"){
@@ -101,7 +100,6 @@ function join(Data){
       },500);
     }
   }
-
 }
 
 setInterval(function () {
