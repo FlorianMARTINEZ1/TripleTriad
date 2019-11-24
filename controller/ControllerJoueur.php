@@ -22,7 +22,7 @@ class ControllerJoueur {
 
     }
 
-    public static function validate(){;
+    public static function validate(){
      $login = myGet('login');
      $nonce = myGet("nonce");
      $c = ModelJoueur::select($login);
