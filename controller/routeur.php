@@ -3,6 +3,7 @@
 
 require_once 'ControllerJoueur.php';
 require_once 'ControllerGame.php';
+require_once 'ControllerCreateCarte.php';
 // On recupère l'action passée dans l'URL
 
 function myGet($nomvar){
