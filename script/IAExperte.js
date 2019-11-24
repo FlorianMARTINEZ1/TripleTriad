@@ -26,7 +26,7 @@ class IAExperte extends IA {
         terrainP.push(i);
       }
     }*/
-    var dureeP = 4; //- terrainP.length;
+    var dureeP = 9; //- terrainP.length;
     var currentPlay = this.game.getCurrentPlayer();
     var idCarteJoue = -1;
     var idCaseJoue = -1;
@@ -35,15 +35,19 @@ class IAExperte extends IA {
   }
 
   mettreAJourGame() {
-    this.gameMinim = this.gameMinim.miseAJour();
+    this.gameMinim.generateChilds(3);
+    this.gameMinim = this.gameMinim.miseAJour(0);
   }
 
   play() {
     this.setCasesVides();
     this.mettreAJourGame();
-    this.gameMinim = this.gameMinim.bestChild();
-    console.log(this.gameMinim.getIdCarteJoue() + ", " + this.gameMinim.getIdCaseJoue());
-    super.play(this.gameMinim.getIdCarteJoue(), this.gameMinim.getIdCaseJoue());
+    var g = this.gameMinim.bestChild();
+    /*console.log(this.gameMinim.getIdCarteJoue() + ", " + this.gameMinim.getIdCaseJoue());
+    super.play(this.gameMinim.getIdCarteJoue(), this.gameMinim.getIdCaseJoue());*/
+    this.mettreAJourGame();
+    console.log(g.getIdCarteJoue() + ", " + g.getIdCaseJoue());
+    super.play(g.getIdCarteJoue(), g.getIdCaseJoue());
   }
 
 }

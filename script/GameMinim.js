@@ -12,30 +12,39 @@ class GameMinim {
     this.childs = [];
     if (this.duree > 1) {
       this.updateColorGrid();
-      this.generateChilds();
     }
+    if (this.duree == 9) {
+      this.generateChilds(3);
+    }
+
   }
   getIdCaseJoue() {
     return this.idCaseJoue;
   }
 
   getIdCarteJoue() {
-    return this.idCarteJoue;
+    return 5 - this.deckJ2.length + this.idCarteJoue;
   }
   genListWithout(index, list) {
     return list.slice(0, index).concat(list.slice(index + 1));
 
   }
 
-  generateChilds() {
-    console.log('Please work');
+  generateChilds(number) {
+    console.log(this.terrainLibre[0]);
     for (var i = 0; i < this.terrainLibre.length; i++) {
 
       var x = this.terrainLibre[i];
       var newTerrain = this.genListWithout(i, this.terrainLibre);
       if (this.currentP == 0) {
         for (var j = 0; j < this.deckJ1.length; j++) {
-          this.childs.push(new GameMinim(this.genListWithout(j, this.deckJ1), this.deckJ2, newTerrain, this.duree - 1, 1, x, this.deckJ1[j], this.colorGrid.slice()));
+          let g = new GameMinim(this.genListWithout(j, this.deckJ1), this.deckJ2, newTerrain, this.duree - 1, 1, x - 1, this.deckJ1[j] - 1, this.colorGrid.slice());
+          if (this.childs.indexOf(g) == -1) {
+            this.childs.push(g);
+          }
+          if (number > 1 && this.duree - number > 1) {
+            this.childs[this.childs.length - 1].generateChilds(number - 1);
+          }
           //On met dans Childs une new GameMinim constitué de :
           /*
           deckJ1 - la carte jouée
@@ -50,7 +59,13 @@ class GameMinim {
         }
       } else {
         for (var j = 0; j < this.deckJ2.length; j++) {
-          this.childs.push(new GameMinim(this.deckJ1, this.genListWithout(j, this.deckJ2), newTerrain, this.duree - 1, 0, x, this.deckJ2[j], this.colorGrid.slice()));
+          let g = new GameMinim(this.genListWithout(j, this.deckJ1), this.deckJ2, newTerrain, this.duree - 1, 1, x - 1, this.deckJ1[j] - 1, this.colorGrid.slice());
+          if (this.childs.indexOf(g) == -1) {
+            this.childs.push(g);
+          }
+          if (number > 1 && this.duree - number > 1) {
+            this.childs[this.childs.length - 1].generateChilds(number - 1);
+          }
           //On met dans Childs une new GameMinim constitué de :
           /*
           deckJ1
@@ -68,7 +83,6 @@ class GameMinim {
 
   updateColorGrid() {
     if (this.idCarteJoue != -1) {
-      console.log("Je fonctionne ?" + this.idCarteJoue);
       this.colorGrid[this.idCaseJoue - 1] = (this.currentP == 1 ? 0 : 1) + 1;
       if (this.idCaseJoue === 8 || this.idCaseJoue === 5 || this.idCaseJoue === 2) {
         var w = this.idCaseJoue + 3;
@@ -143,18 +157,18 @@ class GameMinim {
     return this.childs[besti];
   }
 
-  miseAJour() {
+  miseAJour(n) {
     if (this.idCarteJoue == -1) {
       return this;
     }
     var tabCartepuisCase = [];
     var carteJoue;
-    for (var i = 1; i <= 5; i++) {
-      if (document.getElementById('drag' + i)) {
-        tabCartepuisCase.push(i);
+    if (n == 0) {
+      for (var i = 1; i <= 5; i++) {
+        if (document.getElementById('drag' + i)) {
+          tabCartepuisCase.push(i);
+        }
       }
-    }
-    if (tabCartepuisCase.length < this.deckJ1.length) {
       for (var i = 0; i < this.deckJ1.length; i++) {
         if (tabCartepuisCase.indexOf(this.deckJ1[i]) == -1) {
           carteJoue = this.deckJ1[i];
@@ -187,10 +201,14 @@ class GameMinim {
     }
 
     for (var i = 0; i < this.childs.length; i++) {
-      if (this.childs[i].getIdCaseJoue() == idCaseJoue && this.childs[i].getIdCarteJoue() == idCarteJoue) {
+      console.log(this.childs[i].getIdCaseJoue() == idCaseJoue);
+      if (this.childs[i].getIdCaseJoue() == idCaseJoue && this.childs[i].getIdCarteJoue() == carteJoue) {
+        console.log(tabCartepuisCase + " " + this.terrainLibre);
         return this.childs[i];
       }
     }
+    console.log(tabCartepuisCase + " " + this.terrainLibre);
+    console.log("J'ai pas fonctionné" + idCaseJoue + " " + carteJoue + " " + this.childs.length);
   }
 
 

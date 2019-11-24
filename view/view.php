@@ -183,6 +183,10 @@
   } else {
       echo '<script type="text/javascript" src="./script/main.js"></script>';
   }
+  if ($view == "createCard"){
+    echo '<script type="text/javascript" src="./script/createCard.js"></script>';
+    echo '<script type="text/javascript" src="./CamanJS-4.1.1/dist/caman.full.min.js"></script>';
+  }
    ?>
 
 </body>

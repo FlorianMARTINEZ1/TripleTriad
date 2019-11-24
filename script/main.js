@@ -47,7 +47,10 @@ function stopMusic() {
 var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
 document.getElementById("choix").innerHTML = choixjoueur;
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
-var g2 = new Game('j1', 'j2', 1, 'solo', choixjoueur);
+var g2;
+setTimeout(function() {
+  g2 = new Game("j1", "j2 ", 1, 'solo', choixjoueur);
+}, 500);
 // permet de simuler une partie comme on a pas
 //récuperer la game dans le fonction initialisation.
 
