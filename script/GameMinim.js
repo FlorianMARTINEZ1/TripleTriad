@@ -11,6 +11,7 @@ class GameMinim {
     this.colorGrid = colorg;
     this.childs = [];
     if (this.duree > 1) {
+      this.updateColorGrid();
       this.generateChilds();
     }
   }
