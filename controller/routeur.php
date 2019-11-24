@@ -24,7 +24,7 @@ if(is_null(myGet('action'))){
 	$action = "accueil";
 }
 else{
-  $action = myget('action');
+  $action = myGet('action');
 }
 
 
