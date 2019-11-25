@@ -35,9 +35,12 @@
 
     </p>
     <form id="form1" runat="server">
-      <input type="file" accept="image/*" onchange="loadFile(event)">
-      <img id="output"/>
-      <input type='button' onclick='showImgUrl()' value='click to see the url of the img' />
+      <div id="container"></div>
+
+      <img id="image-id" src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+
+      <canvas id="sample" width=300 height=300 style="background-color: #aaaaaa;" data-caman-hidpi-disabled="true"></canvas>
+      <canvas id="canvas"></canvas>
 
     </form>
 
@@ -45,7 +48,13 @@
       <input type="submit" value="Envoyer" />
     </p>
   </fieldset>
+
 </form>
 
     </body>
+  <footer>
+    <script type="text/javascript" src="../../CamanJS-4.1.1/dist/caman.full.min.js"></script>
+    <script type="text/javascript" src="../../CamanJS-4.1.1/adapters/jquery.js"></script>
+    <script type="text/javascript" src="../../script/createCard.js"></script>
+  </footer>
 </html>
