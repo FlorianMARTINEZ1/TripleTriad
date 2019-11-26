@@ -19,17 +19,6 @@ html {
   position: fixed;
 }
 
-header {
-  margin-bottom: 50%;
-  z-index: 100;
-}
-
-#menuIcon {
-  position: fixed;
-  right: 53px;
-  top: 65px;
-}
-
 #form {
   opacity: 1;
   width: 50%;
@@ -45,6 +34,27 @@ legend {
   text-align: center;
 }
 
+img {
+  transition-property: width, margin-left;
+  transition-duration: 0.5s;
+  margin-left: 0px;
+  width: 100px;
+  height: 100px;
+  margin-right: 0;
+}
+
+/*---Menu-Setting--*/
+header {
+  z-index: 100;
+  margin-bottom: 0%;
+}
+
+#menuIcon {
+  position: fixed;
+  right: 53px;
+  top: 65px;
+}
+
 a {
   transition-property: background-color;
 }
@@ -57,7 +67,6 @@ a {
   background-color: rgba(72, 131, 146, 1);
 }
 
-/*---Menu-Setting--*/
 #backgrndmenu {
   position: fixed;
   width: 0%;
@@ -105,12 +114,12 @@ a {
   opacity: 1;
 }
 
-img {
-  transition-property: width, margin-left;
-  transition-duration: 0.5s;
-  margin-left: 0px;
+nav, nav.brand-logo, #nav {
+  background-color: rgba(34, 61, 68, 0.4);
 }
 
+/*===Fin Menu===*/
+/*===End Game===*/
 #vide {
   position: absolute;
   top: 50%;
@@ -143,12 +152,8 @@ img {
   transform: translate(-50%, -50%);
 }
 
-img {
-  width: 100px;
-  height: 100px;
-  margin-right: 0;
-}
-
+/*===Fin EndGame===*/
+/*===Affichage partie===*/
 div {
   height: 104px;
 }
@@ -157,9 +162,9 @@ div {
   margin-top: 100px;
   width: 318px;
   height: 333px;
-  /*plateau 3*3 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /*--Création plateau 3par3---*/
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 4px;
   grid-row-gap: 1px;
@@ -276,15 +281,8 @@ h4.score {
   grid-row-end: 3;
 }
 
-nav, nav.brand-logo, #nav {
-  background-color: rgba(34, 61, 68, 0.4);
-}
-
-header {
-  margin-bottom: 0%;
-}
-
-/*Formulaire*/
+/*===Fin Affichage Partie===*/
+/*===Formulaire===*/
 .jeu {
   display: none;
 }
@@ -336,7 +334,7 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
 }
 
 .waves-effect.ff8 {
-  /* The alpha value allows the text and background color
- of the button to still show through. */
   background-color: rgba(72, 131, 146, 1);
 }
+
+/*===Fin Formulaire===*/
