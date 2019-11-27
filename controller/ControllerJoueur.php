@@ -324,7 +324,9 @@ class ControllerJoueur {
             $pagetitle='Compte créé';
             require File::build_path(array('view','viewJoueur.php'));
       }
+      else{
       ControllerJoueur::create();
+    }
     }
 
     public static function create(){
