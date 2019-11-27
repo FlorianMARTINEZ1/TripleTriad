@@ -7,6 +7,10 @@ html {
     Arial, sans-serif;
 }
 
+header {
+  margin-bottom: 0%;
+}
+
 .preloader-background {
   height: 100%;
   width: 100%;
@@ -31,10 +35,6 @@ html {
 #delete {
   position: relative;
   top: 30px;
-}
-
-header {
-  margin-bottom: 0%;
 }
 
 #backform {
