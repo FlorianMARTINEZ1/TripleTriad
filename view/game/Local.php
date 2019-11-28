@@ -27,7 +27,7 @@
       </form>
     </div>
   </div>
-
+<!--main du joueur -->
   <div id="plateaujeu" class="container jeu" style="opacity:1;">
     <div class="row">
       <div class="col s4 gauche">
@@ -43,8 +43,8 @@
         </div>
         <h4 id="score-un" class="center score">ici le score</h4>
       </div>
-
-
+<!--Fin de la main -->
+<!-- Plateau -->
       <div class="col s4">
         <div class="plateau">
           <div class="case case1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -58,8 +58,8 @@
           <div class="case case9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
       </div>
-
-
+<!--Fin plateau-->
+<!--main du joueur -->
       <div class="col s4 droite">
         <h4 id="deux" class="center nickname"></h4>
         <div class="cards">
@@ -73,7 +73,7 @@
         </div>
         <h4 id="score-deux" class="center score">ici le score</h4>
       </div>
-
+<!--Fin de la main -->
     </div>
   </div>
   <div id="choix" style="display:none;">
