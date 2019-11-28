@@ -77,6 +77,8 @@
             </p>
             <h5 class="center">Mode de jeux</h5>
           </div>
+
+<!--Debut de la liste des modes disponibles-->
           <div class="row">
             <div class="col s6 m4 l2">
               <div class="card modeJeu">
@@ -138,6 +140,7 @@
             </div>
 
           </div>
+<!--Fin de la liste des modes disponibles-->
         </div>
       </div>
     </div>
