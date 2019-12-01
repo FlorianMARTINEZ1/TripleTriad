@@ -11,10 +11,10 @@ class Conf
     'database' => 'martinezf',
     // A l'IUT, c'est votre login
     // Sur votre machine, vous avez surement un compte 'root'
-    'login' => 'root',
+    'login' => 'martinezf',
     // A l'IUT, c'est votre mdp (INE par defaut)
     // Sur votre machine personelle, vous avez creez ce mdp a l'installation
-    'password' => 'root'
+    'password' => 'projetFF8'
   );
 
     public static function getLogin()
