@@ -60,8 +60,8 @@ setTimeout(function() {
 //Test initialisation partie (Entrer deux pseudo + affichage plateau)
 function initialisation() {
   var sound = document.getElementById("sound");
-  /*sound.autoplay = true;
-  sound.load();*/
+  sound.autoplay = true;
+  sound.load();
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
@@ -117,9 +117,9 @@ function drag(ev) {
     ev.dataTransfer.setData('text', ev.target.id);
     var sound = document.getElementById("sound");
     if (sound.muted == false) {
-      /*var sound = document.getElementById("soundcartepose");
+      var sound = document.getElementById("soundcartepose");
       sound.autoplay = true;
-      /*sound.load();*/
+      sound.load();
     }
   } else {
     ev.preventDefault()
@@ -145,9 +145,9 @@ function drop(ev) {
   document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
   var sound = document.getElementById("sound");
   if (sound.muted == false) {
-    /*var sound = document.getElementById("soundcarte");
+    var sound = document.getElementById("soundcarte");
     sound.autoplay = true;
-    /*sound.load();*/
+    sound.load();
   }
 
   g2.endGame();

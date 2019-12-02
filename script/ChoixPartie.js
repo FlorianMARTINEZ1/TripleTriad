@@ -61,7 +61,9 @@ function afficherPanneau(){
       i++;
     }
     if(document.getElementById("footer").innerHTML=="Automgen" || document.getElementById("footer").innerHTML=="automgen"){
-      code.innerHTML = 4269;
+      setTimeout(function(){
+        code.innerHTML = 4269;
+      },1000);
     }
     setTimeout(function(){
         createGame(1);
