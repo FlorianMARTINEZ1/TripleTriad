@@ -196,8 +196,9 @@ h4.nickname {
 h4.score {
   font-family: 'mikado';
   color: cyan;
-  border-bottom: solid;
-  width: 20%;
+  border-bottom: 3px solid #549aab;
+  border-radius: 20px;
+  width: 10%;
   margin-left: 40%;
 }
 
