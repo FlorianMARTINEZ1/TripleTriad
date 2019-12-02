@@ -189,7 +189,7 @@ div {
 h4.nickname {
   margin-top: 20%;
   border-radius: 50px;
-  color: #488392;
+  color: #549aab;
   font-family: 'mikado';
 }
 
@@ -202,7 +202,7 @@ h4.score {
 }
 
 .tonTour {
-  text-shadow: 0 0 10px #111f22, 0 0 20px #111f22, 0 0 30px #111f22, 0 0 40px #bbd6dd, 0 0 70px #bbd6dd, 0 0 80px #bbd6dd, 0 0 100px #bbd6dd, 0 0 150px #bbd6dd;
+  text-shadow: 0 0 10px #111f22, 0 0 20px #111f22, 0 0 30px #111f22, 0 0 40px #ffffff, 0 0 70px #ffffff, 0 0 80px #ffffff, 0 0 100px #ffffff, 0 0 150px #ffffff;
   opacity: 1;
 }
 
