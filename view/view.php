@@ -185,7 +185,8 @@
   }
   if ($view == "createCard"){
     echo '<script type="text/javascript" src="./script/createCard.js"></script>';
-    echo '<script type="text/javascript" src="./CamanJS-4.1.1/dist/caman.full.min.js"></script>';
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"></script>';
+    echo '<script type="text/javascript" src="../TripleTriad/CamanJS-4.1.1/adapters/jquery.js"></script>';
   }
    ?>
 
