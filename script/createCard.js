@@ -26,7 +26,7 @@ $.ajax({
   type: "POST",
   url: "script.php",
   data: {
-    imgBase64: dataURLRed
+    imgBase64: dataURLRed,
     imgBase64: dataURLBlue
   }
 }).done(function(o) {
