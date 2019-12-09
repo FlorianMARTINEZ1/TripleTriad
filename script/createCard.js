@@ -19,20 +19,23 @@ img.onload = function() {
 
 }
 
-var dataURLRed = canvasRed.toDataURL();
-var dataURLBlue = canvasBlue.toDataURL();
+function f() {
+  var dataURLBlue = canvasBlue.toDataURL();
+  var dataURLRed = canvasRed.toDataURL();
 
-$.ajax({
-  type: "POST",
-  url: "script.php",
-  data: {
-    imgBase64: dataURLRed,
-    imgBase64: dataURLBlue
-  }
-}).done(function(o) {
-  console.log('saved');
-  // If you want the file to be visible in the browser
-  // - please modify the callback in javascript. All you
-  // need is to return the url to the file, you just saved
-  // and than put the image in your browser.
-});
+
+  $.ajax({
+    type: "POST",
+    url: "script.php",
+    data: {
+      imgBase64: dataURLRed,
+      imgBase64: dataURLBlue
+    }
+  }).done(function (o) {
+    console.log('saved');
+    // If you want the file to be visible in the browser
+    // - please modify the callback in javascript. All you
+    // need is to return the url to the file, you just saved
+    // and than put the image in your browser.
+  });
+}
