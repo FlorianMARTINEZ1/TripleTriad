@@ -3,95 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f869b3fc-d6c3-487b-af57-1c580d0f1d60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/.gitmodules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/Cakefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/adapters/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.full.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.full.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/dist/caman.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/analyze.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/autoload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/blender.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/blenders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/blur.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/calculate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/caman.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/camera.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/compoundBlur.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/convert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/docco.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/edges.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/event.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/filters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/io.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/layer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/logger.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/pixelInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/plugin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/posterize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/presets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/renderer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/stackBlur.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/store.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/threshold.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/docs/util.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/browser/autoload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/browser/curves.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/browser/hidpi.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/browser/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/images/test1_1280.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/images/test1_640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/node/basic.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/node/filter.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/examples/uploaders/caman_upload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/proxies/caman_proxy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/analyze.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/autoload.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/blender.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/calculate.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/caman.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/convert.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/event.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/filter.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/io.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/layer.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/logger.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/pixelinfo.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/plugin.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/renderer.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/store.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/core/util.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/lib/blenders.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/lib/filters.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/src/lib/size.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/bench" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/ext/grey.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/ext/grey.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/ext/test-loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/testacular.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/blenders.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/calculate.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/context.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/filters.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/initialization.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/layers.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/renderer.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CamanJS-4.1.1/test/unit/sanity.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/ChercheCarte.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/ChercheCarte.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/createCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/createCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/carte/createCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/carte/createCard.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,13 +26,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/ChercheCarte.js">
+        <entry file="file://$PROJECT_DIR$/view/carte/createCard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="660">
+              <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -126,83 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/createCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/ModelDecks.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/Carte.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1665">
-              <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="128" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/ModelHistorique.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/ControllerGame.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="198" column="57" selection-start-line="198" selection-start-column="51" selection-end-line="198" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/Game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/GameIA.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+            <state relative-caret-position="354">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -235,6 +71,7 @@
         <option value="$PROJECT_DIR$/script/GameIA.js" />
         <option value="$PROJECT_DIR$/script/Game.js" />
         <option value="$PROJECT_DIR$/view/view.php" />
+        <option value="$PROJECT_DIR$/view/carte/createCard.php" />
         <option value="$PROJECT_DIR$/script/createCard.js" />
       </list>
     </option>
@@ -295,6 +132,12 @@
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="carte" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -339,7 +182,9 @@
       <workItem from="1571141139153" duration="380000" />
       <workItem from="1573200715919" duration="3369000" />
       <workItem from="1573205068579" duration="568000" />
-      <workItem from="1575896389857" duration="876000" />
+      <workItem from="1575896389857" duration="2252000" />
+      <workItem from="1575959491873" duration="1242000" />
+      <workItem from="1575965696949" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="testmodel php">
       <created>1569482125662</created>
@@ -383,17 +228,31 @@
       <option name="project" value="LOCAL" />
       <updated>1573204637873</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="canvas">
+      <created>1575897325848</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575897325848</updated>
+    </task>
+    <task id="LOCAL-00008" summary="function f">
+      <created>1575899459512</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575899459512</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8956000" />
+    <option name="totallyTimeSpent" value="12175000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="1613" height="1025" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.22910902" />
+      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.23548181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -411,7 +270,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.32924107" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -433,7 +292,9 @@
     <MESSAGE value="fix" />
     <MESSAGE value="modif bd historique" />
     <MESSAGE value="modif bd historique IA" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif bd historique IA" />
+    <MESSAGE value="canvas" />
+    <MESSAGE value="function f" />
+    <option name="LAST_COMMIT_MESSAGE" value="function f" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/php/testModel.html" />
@@ -456,13 +317,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="110" column="1" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css" />
     <entry file="file://$PROJECT_DIR$/php/historiqueAjax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -477,13 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/Carte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="128" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/ModelHistorique.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -493,22 +341,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/ControllerGame.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
+        <state relative-caret-position="1125">
           <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/main.js">
+    <entry file="file://$PROJECT_DIR$/view/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/GameIA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+        <state relative-caret-position="2460">
+          <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -519,30 +360,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/view.php">
+    <entry file="file://$PROJECT_DIR$/script/GameIA.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="198" column="57" selection-start-line="198" selection-start-column="51" selection-end-line="198" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1980">
+          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/ChercheCarte.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+        <state relative-caret-position="364">
+          <caret line="65" column="60" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/Carte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="94" column="38" lean-forward="true" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/carte/createCard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/script/createCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="354">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
