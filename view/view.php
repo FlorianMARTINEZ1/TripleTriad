@@ -42,6 +42,7 @@
             $log = $_SESSION["login"];
             echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".rawurlencode($log)."\">Mon Compte</a></li>";
             echo '<li><a href="./index.php?action=update&controller=joueur&login='.rawurlencode($log).'">Modifier son compte</a></li>';
+            echo '<li><a href="./index.php?action=historique&controller=joueur&login='.rawurlencode($log).'">Historique</a></li>';
 
             if(Session::is_admin()){
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
