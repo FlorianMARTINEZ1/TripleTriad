@@ -11,6 +11,34 @@ header {
   margin-bottom: 0%;
 }
 
+.joueur{
+  background-color:white;
+  top : -9px;
+  position :relative;
+  color:black;
+  display: none;
+  opacity: 1;
+  transition : opacity;
+}
+
+#form1 div{
+  margin-left: 33%;
+  height: 68px;
+}
+
+#icons,#close {
+  top : 25px;
+}
+
+#listsearch{
+  top: -14px;
+  position: relative;
+}
+
+.joueur:hover{
+  background-color: #F07716;
+}
+
 .preloader-background {
   height: 100%;
   width: 100%;
@@ -189,7 +217,7 @@ a {
   opacity: 1;
 }
 
-nav, nav.brand-logo, #nav {
+nav, nav.brand-logo, #nav ,#form1{
   background-color: rgba(34, 61, 68, 0.4);
 }
 
