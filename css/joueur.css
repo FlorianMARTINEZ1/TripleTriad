@@ -176,6 +176,12 @@ nav, nav.brand-logo, #nav {
   background-color: rgba(34, 61, 68, 0.4);
 }
 
+@media only screen and (min-width: 993px){
+  .container {
+    width : 85%;
+  }
+}
+
 /*===Fin Menu===*/
 div {
   height: 104px;

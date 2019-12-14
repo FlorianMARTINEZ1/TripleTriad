@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -12,9 +10,22 @@
   <!-- Social media Font -->
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
 
+
   <!-- Materialize: Compiled and minified CSS -->
-  <link rel="stylesheet" type="text/css" href="./css/game.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <?php
+    if($controller == "game" && $view != "Accueil"){ // controller game
+      echo '<link rel="stylesheet" type="text/css" href="./css/game.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">';
+    }
+    else if($view == "Accueil"){ // Accueil du site
+      echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <link rel="stylesheet" type="text/css" href="./css/main.css">';
+    }
+    else{ // controller joueur
+      echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <link rel="stylesheet" type="text/css" href="./css/joueur.css">';
+    }
+   ?>
 
 
 
@@ -25,180 +36,203 @@
 <body>
   <header>
     <nav id="nav">
-				<div class="nav-wrapper container">
-			        <a data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="dropdown1" class="dropdown-content">
+        <?php
+          if(isset($_SESSION["login"])){
+            $log = $_SESSION["login"];
+            echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".rawurlencode($log)."\">Mon Compte</a></li>";
+            echo '<li><a href="./index.php?action=update&controller=joueur&login='.rawurlencode($log).'">Modifier son compte</a></li>';
 
-			        <a href="./" class="brand-logo">Triple Triad</a>
+            if(Session::is_admin()){
+              echo '<li><a href="./index.php?action=create&controller=produit">Ajouter un produit</a></li>';
+              echo '<li><a href="./index.php?action=readAll&controller=client">Liste des clients</a></li>';
+              echo '<li><a href="./index.php?action=readAllFromClients&controller=commande">Liste des commandes</a></li>';
+            }
+            echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+          }
+         ?>
+      </ul>
+        <div class="nav-wrapper container right">
+              <a data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-			        <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <a href="./" class="brand-logo">Triple Triad</a>
+
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
 
                 <li><a href="">Règles</a></li>
                 <li><a href="">Report Bug/Contact</a></li>
                 <?php
                   if (!isset($_SESSION['login'])) {
-                      echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
-                      echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
-                  } else {
-                      $log=$_SESSION['login'];
-                      echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
-                      echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+                        echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                        echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+                      }
+                  else{
+                    $log=$_SESSION['login'];
+                    echo '<li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">arrow_drop_down</i><i class="material-icons right">assignment_ind</i>Mon Compte</a></li>';
                   }?>
 
-			        </ul>
-    		  	</div>
-			</nav>
+              </ul>
+            </div>
+      </nav>
       <ul id="sidenav" class="sidenav">
         <li><a href="">Règles</a></li>
         <li><a href="">Report Bug/Contact</a></li>
         <?php
+
           if (!isset($_SESSION['login'])) {
-              echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
-              echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
-          } else {
-              $log=$_SESSION['login'];
-              echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".$log."\">Mon Compte</a></li>";
-              echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
+                echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
+                echo "<li><a href=\"./index.php?action=create&controller=joueur\">Inscription</a></li>";
+              }
+          else{
+            $log=$_SESSION['login'];
+            echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".rawurlencode($log)."\">Mon Compte</a></li>";
+            echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }?>
        </ul>
   </header>
-  <audio id="sound" preload="auto" loop>
-    <source src="css/sound.mp3" type="audio/mpeg">
-    <source src="css/sound.ogg" type="audio/ogg">
-  </audio>
-  <audio id="soundcartepose" preload="auto">
-    <source src="css/carte.mp3" type="audio/mpeg">
-    <source src="css/carte.ogg" type="audio/ogg">
-  </audio>
-  <audio id="soundcarte" preload="auto">
-    <source src="css/carteposé.mp3" type="audio/mpeg">
-    <source src="css/carteposé.ogg" type="audio/ogg">
-  </audio>
-
   <?php
+  if( static::$object == "game" && $view !='accueil'){ // charge les sons de la partie si le controller est game
+    echo '<audio id="sound" preload="auto" loop>
+      <source src="css/sound.mp3" type="audio/mpeg">
+      <source src="css/sound.ogg" type="audio/ogg">
+    </audio>
+    <audio id="soundcartepose" preload="auto">
+      <source src="css/carte.mp3" type="audio/mpeg">
+      <source src="css/carte.ogg" type="audio/ogg">
+    </audio>
+    <audio id="soundcarte" preload="auto">
+      <source src="css/carteposé.mp3" type="audio/mpeg">
+      <source src="css/carteposé.ogg" type="audio/ogg">
+    </audio>';
+  }
   $filepath = File::build_path(array("view", static::$object /* $ controller  */, "$view.php"));
   require $filepath;
-  ?>
-  <div id="fingame" class="card" style="display: none;">
-    <div id="vide">
-    </div>
-    <div class="partiefini center">
-      <h4>Fin de la partie</h4>
-      <p id="gagnant">
-        Bravo !
-      </p>
-      <div class="row center">
-        <button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>
-      </div>
-    </div>
-  </div>
-  <div id="boutonSon">
-    <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i id="volume" class="material-icons">volume_off</i></a>
-  </div>
-  <div id="menuIcon">
-    <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
-  </div>
-  <div id="menu" class="">
-    <div id="backgrndmenu" class="card"></div>
-    <div class="listmenu">
-      <div>
-        <h3>Regle du jeu </h2>
-          <p>
-            Vous pouvez y accéder <a href="">ici</a>.
-          </p>
-      </div>
-      <div>
-        <h3>Quitter le jeu</h2>
-          <p>
-            cliquez <a href="./index.html">ici</a>.
-          </p>
-      </div>
-      <div>
-        <h3>Relancer une partie ? </h2>
-          <p>
-            <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
-          </p>
-      </div>
-    </div>
-  </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript" src="./script/Card.js"></script>
-  <script type="text/javascript"> var equilibre = <?php echo $_SESSION["equilibre"]?>; </script>
-  <?php
-  if ($view == "EnLigne") {
-      echo '<script type="text/javascript"> var multi = true;</script> ';
-  } else {
-      echo '<script type="text/javascript"> var multi = false;</script> ';
-  }
+  if(static::$object == "game" && $view!="Accueil"){
+    echo '  <div id="fingame" class="card" style="display: none;">
+        <div id="vide">
+        </div>
+        <div class="partiefini center">
+          <h4>Fin de la partie</h4>
+          <p id="gagnant">
+            Bravo !
+          </p>
+          <div class="row center">
+            <button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>
+          </div>
+        </div>
+      </div>
+      <div id="boutonSon">
+        <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i id="volume" class="material-icons">volume_off</i></a>
+      </div>
+      <div id="menuIcon">
+        <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
+      </div>
+      <div id="menu" class="">
+        <div id="backgrndmenu" class="card"></div>
+        <div class="listmenu">
+          <div>
+            <h3>Regle du jeu </h2>
+              <p>
+                Vous pouvez y accéder <a href="">ici</a>.
+              </p>
+          </div>
+          <div>
+            <h3>Quitter le jeu</h2>
+              <p>
+                cliquez <a href="./index.html">ici</a>.
+              </p>
+          </div>
+          <div>
+            <h3>Relancer une partie ? </h2>
+              <p>
+                <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
+              </p>
+          </div>
+        </div>
+      </div>
 
-  if ($view == "Enligne") {
-      echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
-  } else {
-      echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
-  }
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script type="text/javascript" src="./script/Card.js"></script>
+      <script type="text/javascript"> var equilibre = '.htmlspecialchars($_SESSION["equilibre"]).' ; </script>';
 
-  ?>
-  <script type="text/javascript" src="./script/Joueur.js"></script>
-  <?php
-  if ($view == 'IA'||$view== 'IAvsIA') {
-      echo '<script type="text/javascript" src="./script/IA.js"></script>';
-  } else {
-      echo '<script type="text/javascript" src="./script/Game.js"></script>';
-  }
-  if ($type=="faible") {
-      echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
-  } elseif ($type=="moyen") {
-      echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
-  } elseif ($type=="forte") {
-      echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
-  } elseif ($type=="experte") {
-      echo '<script type="text/javascript" src="./script/GameMinim.js"></script>';
-      echo '<script type="text/javascript" src="./script/IAExperte.js"></script>';
-  } elseif ($type=="2IA") {
-      if ($typeIA0=="faible" || $typeIA1=="faible") {
+      if ($view == "EnLigne") {
+          echo '<script type="text/javascript"> var multi = true;</script> ';
+      } else {
+          echo '<script type="text/javascript"> var multi = false;</script> ';
+      }
+
+      if ($view == "Enligne") {
+          echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
+      } else {
+          echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
+      }
+
+      ?>
+      <script type="text/javascript" src="./script/Joueur.js"></script>
+      <?php
+      if ($view == 'IA'||$view== 'IAvsIA') {
+          echo '<script type="text/javascript" src="./script/IA.js"></script>';
+      } else {
+          echo '<script type="text/javascript" src="./script/Game.js"></script>';
+      }
+      if ($type=="faible") {
           echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
-      }
-      if ($typeIA0=="moyen" || $typeIA1=="moyen") {
+      } elseif ($type=="moyen") {
           echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
-      }
-      if ($typeIA0=="forte" || $typeIA1=="forte") {
+      } elseif ($type=="forte") {
           echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+      } elseif ($type=="experte") {
+          echo '<script type="text/javascript" src="./script/GameMinim.js"></script>';
+          echo '<script type="text/javascript" src="./script/IAExperte.js"></script>';
+      } elseif ($type=="2IA") {
+          if ($typeIA0=="faible" || $typeIA1=="faible") {
+              echo '<script type="text/javascript" src="./script/IARandom.js"></script>';
+          }
+          if ($typeIA0=="moyen" || $typeIA1=="moyen") {
+              echo '<script type="text/javascript" src="./script/IAMoyen.js"></script>';
+          }
+          if ($typeIA0=="forte" || $typeIA1=="forte") {
+              echo '<script type="text/javascript" src="./script/IAForte.js"></script>';
+          }
+          if($typeIA0=="experte" || $typeIA1=="experte"){
+            echo '<script type="text/javascript" src="./script/GameMinim.js"></script>';
+            echo '<script type="text/javascript" src="./script/IAExperte.js"></script>';
+          }
       }
-      if($typeIA0=="experte" || $typeIA1=="experte"){
-        echo '<script type="text/javascript" src="./script/GameMinim.js"></script>';
-        echo '<script type="text/javascript" src="./script/IAExperte.js"></script>';
+
+      if ($view == 'IA') {
+          echo '<script type="text/javascript" src="./script/GameIA.js"></script>';
       }
-  }
+      if ($view == 'IAvsIA') {
+          echo '<script type="text/javascript" src="./script/GameIAvsIA.js"></script>';
+      }
 
-  if ($view == 'IA') {
-      echo '<script type="text/javascript" src="./script/GameIA.js"></script>';
-  }
-  if ($view == 'IAvsIA') {
-      echo '<script type="text/javascript" src="./script/GameIAvsIA.js"></script>';
-  }
+      if ($view == "Enligne") {
+          echo '<script type="text/javascript" src="./script/multi.js"></script>';
+      } else {
+          echo '<script type="text/javascript" src="./script/main.js"></script>';
+      }
+      if ($view == "createCard"){
+        echo '<script type="text/javascript" src="./script/createCard.js"></script>';
+      }
+    }
+    if (isset($_SESSION['login'])) {
+         echo '<div id="loginSession" style="display:none;">'.htmlspecialchars($_SESSION['login']).'</div>';
+    }?>
 
-  if ($view == "Enligne") {
-      echo '<script type="text/javascript" src="./script/multi.js"></script>';
-  } else {
-      echo '<script type="text/javascript" src="./script/main.js"></script>';
-  }
-  if ($view == "createCard"){
-    echo '<script type="text/javascript" src="./script/createCard.js"></script>';
+  </body>
+  <footer>
+  </footer>
+  <?php
+    if($controller != "game" || $view="Accueil" || $controller = "joueur"){
+      echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>';
+    }
 
-  }
    ?>
-
-</body>
-<footer>
-  <?php if (isset($_SESSION['login'])) {
-       echo '<div id="loginSession" style="display:none;">'.$_SESSION['login'].'</div>';
-   } else {
-   }?>
-</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>$(document).ready(function(){$('.sidenav').sidenav();});</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+   <script src="./script/general.js"></script>
 
 
 </html>

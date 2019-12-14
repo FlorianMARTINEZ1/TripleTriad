@@ -8,18 +8,12 @@ class ControllerJoueur {
     protected static $object = 'joueur';
 
     public static function readAllPlayerConnected() {
-
-
         $tab_j = ModelJoueur::checkJoueursConnected();
         /*$tab_j = ModelJoueur::selectAll();*/
         $controller='joueur';
         $view='userList';
         $pagetitle='Liste des joueurs';
-
-
-        require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
-
-
+        require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
     public static function validate(){
@@ -44,21 +38,14 @@ class ControllerJoueur {
          ControllerJoueur::error();
        }
      }
-
-
-
    }
-
 
     public static function ChoixHerbergement(){
 
       $controller='joueur';
       $view='ChoixModePartie';
       $pagetitle='Choix partie';
-
-
-      require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
-
+      require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
     public static function quitteFile(){
@@ -76,7 +63,7 @@ class ControllerJoueur {
         $view='EnAttente';
         $pagetitle='File D\'attente';
 
-        require File::build_path(array('view','viewJoueur.php')); //"redirige" vers la vue
+        require File::build_path(array('view','view.php')); //"redirige" vers la vue
       }
       else{
           ControllerJoueur::connect();
@@ -91,7 +78,7 @@ class ControllerJoueur {
         $view = 'ChoixModeMulti';
         $pagetitle="Choix du mode";
         $type="recherche";
-        require File::build_path(array('view','viewJoueur.php'));
+        require File::build_path(array('view','view.php'));
       }
       else{
         ControllerJoueur::connect();
@@ -104,7 +91,7 @@ class ControllerJoueur {
       $view='connect';
       $pagetitle='connection';
 
-      require File::build_path(array('view','viewJoueur.php'));
+      require File::build_path(array('view','view.php'));
     }
 
     public static function connected(){
@@ -127,14 +114,14 @@ class ControllerJoueur {
         $view='detail';
         $pagetitle='Mon compte';
 
-        require File::build_path(array('view','viewJoueur.php'));
+        require File::build_path(array('view','view.php'));
       }
       else{
         $msg = "Erreur, l'identifiant ou le mot de passe est incorrect";
         $controller='joueur';
         $view='connect';
         $pagetitle='connection';
-        require File::build_path(array('view','viewJoueur.php'));
+        require File::build_path(array('view','view.php'));
 
       }
 
@@ -148,8 +135,7 @@ class ControllerJoueur {
       session_unset();     // unset $_SESSION variable for the run-time
       session_destroy();
       setcookie(session_name(),'',time()-1);
-
-      require File::build_path(array('view','Accueil.php'));
+      ControllerGame::Accueil();
     }
 
 
@@ -168,10 +154,10 @@ class ControllerJoueur {
             $view='error';
             $pagetitle='ERROR';
 
-            require File::build_path(array('view','viewJoueur.php'));
+            require File::build_path(array('view','view.php'));
           }
           else{
-            require File::build_path(array('view','viewJoueur.php'));
+            require File::build_path(array('view','view.php'));
           }
       }
       else{
@@ -188,7 +174,7 @@ class ControllerJoueur {
           $view='deleted';
           $pagetitle='Compte supprimé';
           ModelJoueur::delete($log);
-          require File::build_path(array('view','viewJoueur.php'));
+          require File::build_path(array('view','view.php'));
       }
       else{
          ControllerJoueur::connect();
@@ -201,7 +187,7 @@ class ControllerJoueur {
       $controller='joueur';
       $view='error';
       $pagetitle='ERROR';
-      require File::build_path(array("view","viewJoueur.php"));
+      require File::build_path(array("view","view.php"));
 
     }
     public static function update(){
@@ -214,7 +200,7 @@ class ControllerJoueur {
             $view='error';
             $pagetitle='ERROR';
 
-            require File::build_path(array("view","viewJoueur.php"));
+            require File::build_path(array("view","view.php"));
           }
           else{
 
@@ -223,7 +209,7 @@ class ControllerJoueur {
           $view='update';
           $pagetitle='Modification du compte';
 
-          require File::build_path(array("view","viewJoueur.php"));
+          require File::build_path(array("view","view.php"));
         }
 
       }
@@ -264,7 +250,7 @@ class ControllerJoueur {
           $view='updated';
           $pagetitle='Compte modifiér';
 
-          require File::build_path(array('view','viewJoueur.php'));
+          require File::build_path(array('view','view.php'));
       }
       else{
         ControllerJoueur::connect();
@@ -322,7 +308,7 @@ class ControllerJoueur {
             $controller='joueur';
             $view='created';
             $pagetitle='Compte créé';
-            require File::build_path(array('view','viewJoueur.php'));
+            require File::build_path(array('view','view.php'));
       }
       else{
       ControllerJoueur::create();
@@ -337,7 +323,7 @@ class ControllerJoueur {
         $action='create';
         $j = new ModelJoueur("","","");
 
-        require File::build_path(array('view','viewJoueur.php'));
+        require File::build_path(array('view','view.php'));
     }
 
     public static function historique()
@@ -346,7 +332,7 @@ class ControllerJoueur {
       $view = 'historique';
       $pagetitle='Historique';
       $tabHistorique = ModelHistorique::getHistoriqueJoueur($_SESSION['login']);
-      require File::build_path(array('view','viewJoueur.php'));
+      require File::build_path(array('view','view.php'));
 
     }
 

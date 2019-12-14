@@ -26,5 +26,5 @@
         echo '<script type="text/javascript" src="./script/actuConnect.js"></script>';
         ?>
 
-        <div id="loginSession" style="display:none;"><?php echo $_SESSION['login'];?></div>';
+        <div id="loginSession" style="display:none;"><?php echo htmlspecialchars($_SESSION['login']);?></div>';
          <script type="text/javascript" src="./script/footer.js"></script>';

@@ -56,7 +56,7 @@
  <div id="button">
     <a class="waves-effect waves-light ff8 btn" href="./index.php?action=quitteFile&controller=joueur" >Quitter la file</a>
  </div>
- <div id="joueurActu" style="display:none;"><?php echo $login ?></div>
+ <div id="joueurActu" style="display:none;"><?php echo htmlspecialchars($login); ?></div>
  <div id="papa" style="display:none;">
 
  </div>

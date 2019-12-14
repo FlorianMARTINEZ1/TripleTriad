@@ -49,6 +49,12 @@ header {
   margin-bottom: 0%;
 }
 
+@media only screen and (min-width: 993px){
+  .container {
+    width : 85%;
+  }
+}
+
 #menuIcon {
   position: fixed;
   right: 53px;
