@@ -16,6 +16,16 @@ class ControllerJoueur {
         require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
+    public static function readAll(){
+      if(Session::is_admin()){
+        $tab_j = ModelJoueur::selectAll();
+        $controller = 'joueur';
+        $view = 'list';
+        $pagetitle = 'Liste des joueurs';
+        require File::build_path(array('view', 'view.php'));
+      }
+    }
+
     public static function validate(){
      $login = myGet('login');
      $nonce = myGet("nonce");

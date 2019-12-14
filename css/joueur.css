@@ -105,6 +105,23 @@ legend {
   font-size: 25px;
 }
 
+/*===List Joueurs===*/
+
+#listJoueurs{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#listJoueurs .row{
+  width: 30%;
+}
+
+#listJoueurs div{
+  height: auto;
+}
+
+/*=== fin List Joueurs===*/
+
 h5 {
   text-align: center;
   background-color: white;

@@ -44,9 +44,8 @@
             echo '<li><a href="./index.php?action=update&controller=joueur&login='.rawurlencode($log).'">Modifier son compte</a></li>';
 
             if(Session::is_admin()){
-              echo '<li><a href="./index.php?action=create&controller=produit">Ajouter un produit</a></li>';
-              echo '<li><a href="./index.php?action=readAll&controller=client">Liste des clients</a></li>';
-              echo '<li><a href="./index.php?action=readAllFromClients&controller=commande">Liste des commandes</a></li>';
+              echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
+              echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }
