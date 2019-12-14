@@ -16,6 +16,31 @@ class ControllerJoueur {
         require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
+    public static function stat(){
+      /** On récupère les stats **/
+      if(Session::is_admin()){
+        require_once File::build_path(array('model','ModelGame.php'));
+        $nbPartie = ModelHistorique::nbPartie();
+        $nbJoueur = ModelJoueur::nbJoueur();
+        $win_rate_IAForte = ModelHistorique::winRateIAFO();
+        $win_rate_IAMoyen = ModelHistorique::winRateIAM();
+        $win_rate_IAFaible = ModelHistorique::winRateIAFA();
+        $plusHautScore = ModelHistorique::hautScore();
+        $plusGrandNombreDePartieDunJoueur = ModelHistorique::plusGrandnbParti();
+        $nombreDePartieMultiEnCeMomentEnLigne = ModelGame::nbPartie();
+
+        $controller='joueur';
+        $view='stats';
+        $pagetitle='Statistiques';
+        require File::build_path(array('view','view.php')); //"redirige" vers la vue
+      }
+      else{
+        ControllerGame::Accueil();
+      }
+
+
+    }
+
     public static function readAll(){
       if(Session::is_admin()){
         $tab_j = ModelJoueur::selectAll();
@@ -23,6 +48,9 @@ class ControllerJoueur {
         $view = 'list';
         $pagetitle = 'Liste des joueurs';
         require File::build_path(array('view', 'view.php'));
+      }
+      else{
+        ControllerGame::Accueil();
       }
     }
 
