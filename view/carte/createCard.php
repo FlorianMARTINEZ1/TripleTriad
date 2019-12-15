@@ -8,7 +8,7 @@
 
 <body>
 
-  <form method="post" action="./php/creerCarte.php">
+  <form class="CreateurCarte" method="post" action="./php/creerCarte.php">
     <fieldset>
       <legend>Mon formulaire :</legend>
       <p>
@@ -17,25 +17,28 @@
       </p>
       <p>
         <label for="ValN">ValN</label> :
-        <input type="text" placeholder="Ex : 5" name="valN" id="ValN" required />
+        <input type="number" placeholder="Ex : 5" name="valN" id="ValN" min="1" max="10" required />
 
       </p>
       <p>
         <label for="ValS">ValS</label> :
-        <input type="text" placeholder="Ex : 5" name="valS" id="ValS" required />
+        <input type="number" placeholder="Ex : 5" name="valS" id="ValS" min="1" max="10" required />
 
       </p>
       <p>
         <label for="ValO">ValO</label> :
-        <input type="text" placeholder="Ex : 5" name="valO" id="ValO" required />
+        <input type="number" placeholder="Ex : 5" name="valO" id="ValO" min="1" max="10" required />
 
       </p>
       <p>
         <label for="ValE">ValE</label> :
-        <input type="text" placeholder="Ex : 5" name="valE" id="ValE" required />
+        <input type="number" placeholder="Ex : 5" name="valE" id="ValE" min="1" max="10" required />
 
       </p>
       <div>
+        <label for="source">Source</label> :
+        <input type="text" value="autre" name="source" id="source"required />
+
         <input type="file" accept="image/*" name="imageCanvas" onchange="readURL(this)" required>
         <div class="col-lg-6">
           <canvas id="canvasRed"></canvas>

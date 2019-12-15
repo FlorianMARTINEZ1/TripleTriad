@@ -10,6 +10,7 @@ class Carte {
   private $valO;
   private $valE;
   private $couleur;
+  private $source;
 
 
   public function getNomCarte() {
@@ -58,7 +59,10 @@ class Carte {
   public function setValE($valE2) {
        $this->valE = $valE2;
   }
-
+  public function setSource($source)
+  {
+    $this->source=$source;
+  }
 
 
 public function __construct($nomCarte = NULL, $N = NULL, $S = NULL, $O = NULL, $E = NULL) {
@@ -138,9 +142,9 @@ public function afficher2(){
 }
 
 public function save(){
-  require_once "Model.php";
+  require_once File::build_path(array("model","Model.php"));
   try{
-  $sql = "INSERT INTO carte (nomCarte,valN,valS,valO,valE) VALUES (:nomCarte,:val_N,:val_S,:val_O,:val_E)";
+  $sql = "INSERT INTO carte (nomCarte,valN,valS,valO,valE,source) VALUES (:nomCarte,:val_N,:val_S,:val_O,:val_E,:source)";
   $req_prep = Model::$pdo->prepare($sql);
 
 $value = array(
@@ -149,6 +153,7 @@ $value = array(
       "val_S" => $this->valS,
       "val_O" => $this->valO,
       "val_E" => $this->valE,
+      "source" => $this->source,
     );
 
   $req_prep->execute($value);
