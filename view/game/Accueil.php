@@ -7,9 +7,7 @@
         <div class="card-content">
           <h5 class="center">Règles</h5>
           <p class="p-regle grey-text text-lighten-1">
-            Chaques cartes possèdes quatres valeurs. Lorsqu'une carte est posée à côté d'une carte d'une autre couleur,
-            il y a confrontation. On regarde alors si la carte posé possède une valeur superieur à la carte affrontée.
-            Si c'est le cas, alors elle change de couleur, sinon, elle reste de sa couleur.
+          Chaque carte possède quatre valeurs. Lorsqu'une carte est posée à côté d'une carte d'une autre couleur, il y a confrontation. On regarde alors si la carte posée possède une valeur supérieure à la carte affrontée. Si c'est le cas, alors elle change de couleur, sinon, elle reste de sa couleur.
           </p>
           <h5 class="center">Mode de jeux</h5>
         </div>
