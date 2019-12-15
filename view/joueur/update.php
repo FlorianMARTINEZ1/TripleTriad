@@ -13,6 +13,7 @@
       ?>
       <div class="row">
         <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
           <input id="login" type="text" class="validate" name="login"<?php
             if(strcmp($action, 'create')==0){
               echo 'required';
@@ -26,6 +27,7 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
           <input  id="nom" type="text" class="validate" name="nom" required <?php
 
            if($action=='create'){
@@ -40,6 +42,7 @@
           <label for="nom">Nom</label>
         </div>
         <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
           <input id="prenom" type="text" class="validate" name="prenom" required <?php
           if($action=='create'){
 
@@ -53,12 +56,14 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
           <input id="email" type="email" class="validate" name=email required>
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
+          <i class="material-icons prefix">security</i>
           <input id="password" type="password" class="validate" name=password required>
           <label for="password">Mots de passe</label>
         </div>

@@ -41,6 +41,8 @@
           <canvas id="canvasRed"></canvas>
           <canvas id="canvasBlue"></canvas>
         </div>
+          <input type="hidden" name="urlRed" id="URLRed">
+          <input type="hidden" name="urlBlue" id="URLBlue">
       </div>
 
       <p>
