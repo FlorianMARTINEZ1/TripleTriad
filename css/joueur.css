@@ -11,6 +11,7 @@ header {
   margin-bottom: 0%;
 }
 
+/*== Liste Joueur Admin== */
 .joueur{
   background-color:white;
   top : -9px;
@@ -19,6 +20,10 @@ header {
   display: none;
   opacity: 1;
   transition : opacity;
+}
+
+#listJoueurs .joueur a{
+    color : #3c6b77;
 }
 
 #form1 div{
@@ -36,8 +41,10 @@ header {
 }
 
 .joueur:hover{
-  background-color: #F07716;
+  background-color: #3c6b77;
 }
+
+/*== Fin Liste Joueur Admin== */
 
 .preloader-background {
   height: 100%;
