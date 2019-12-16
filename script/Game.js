@@ -91,22 +91,37 @@ class Game {
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
         if (this.listPlayer[0].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
+          let victoire = document.getElementById("victoire");
+          victoire.muted = false;
+          victoire.play();
           this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
+          let gameover = document.getElementById("Gameover");
+          gameover.muted = false;
+          gameover.play();
           this.addHistorique();
         }
 
       } else if (this.listPlayer[0].getScore() < this.listPlayer[1].getScore()) {
         if (this.listPlayer[1].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
+          let victoire = document.getElementById("victoire");
+          victoire.muted = false;
+          victoire.play();
           this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
+          let gameover = document.getElementById("Gameover");
+          gameover.muted = false;
+          gameover.play();
           this.addHistorique();
         }
       } else {
         document.getElementById("gagnant").innerHTML = "bravo aux 2 joueurs pour cette égalité ! ";
+        let victoire = document.getElementById("victoire");
+        victoire.muted = false;
+        victoire.play();
         this.addHistorique();
       }
 

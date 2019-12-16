@@ -102,6 +102,14 @@
       <source src="css/sound.mp3" type="audio/mpeg">
       <source src="css/sound.ogg" type="audio/ogg">
     </audio>
+    <audio id="victoire" preload="auto" >
+      <source src="css/victoire.mp3" type="audio/mpeg">
+      <source src="css/victoire.ogg" type="audio/ogg">
+    </audio>
+    <audio id="Gameover" preload="auto" >
+      <source src="css/Gameover.mp3" type="audio/mpeg">
+      <source src="css/Gameover.ogg" type="audio/ogg">
+    </audio>
     <audio id="soundcartepose" preload="auto">
       <source src="css/carte.mp3" type="audio/mpeg">
       <source src="css/carte.ogg" type="audio/ogg">

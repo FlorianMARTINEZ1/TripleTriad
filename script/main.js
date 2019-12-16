@@ -36,10 +36,10 @@ function stopMusic() {
   if (sound.muted == true) {
     sound.muted = false;
     sound.autoplay = true;
-    bouton.innerHTML = "volume_off";
+    bouton.innerHTML = "volume_up";
   } else {
     sound.muted = true;
-    bouton.innerHTML = "volume_up";
+    bouton.innerHTML = "volume_off";
 
   }
 
