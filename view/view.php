@@ -52,6 +52,7 @@
             if(Session::is_admin()){
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
+              echo '<li><a href="./index.php?action=createCard&controller=createurcarte">Ajouter une carte</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }
@@ -128,7 +129,7 @@
         </div>
       </div>
       <div id="boutonSon">
-        <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i id="volume" class="material-icons">volume_off</i></a>
+        <a class="waves-effect waves-light ff8 btn " onclick="stopMusic()"> <i id="volume" class="material-icons">volume_up</i></a>
       </div>
       <div id="menuIcon">
         <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
