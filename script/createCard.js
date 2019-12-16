@@ -38,14 +38,15 @@ function readURL(input) {
     cty.fillRect(59, 0, 3, 62);
     ctx.drawImage(img, 3, 3, 56, 56);
     cty.drawImage(img, 3, 3, 56, 56);
+    var dataURLBlue = canvasBlue.toDataURL();
+    var dataURLRed = canvasRed.toDataURL();
+    document.getElementById('URLBlue').value = dataURLBlue;
+    document.getElementById('URLRed').value = dataURLRed
 
   }
 
 
-  var dataURLBlue = canvasBlue.toDataURL();
-  var dataURLRed = canvasRed.toDataURL();
-  document.getElementById('URLBlue').value = dataURLBlue;
-  document.getElementById('URLRed').value = dataURLRed
+
 
 
 
