@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="utf-8" />
-  <title> Mon premier php </title>
-</head>
 
-<body>
-
+<div class="container">
   <form class="CreateurCarte" method="post" action="./php/creerCarte.php">
     <fieldset>
       <legend>Mon formulaire :</legend>
@@ -54,8 +47,4 @@
     </fieldset>
   </form>
 
-
-
-</body>
-
-</html>
+  </div>
