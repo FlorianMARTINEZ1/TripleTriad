@@ -18,7 +18,7 @@ require_once '../lib/File.php';
      $fileNamer = File::build_path(array("css","cartes",$_POST['source'],$_POST['nomCarte'].'.rouge.jpg'));
      $fileNameb = File::build_path(array("css","cartes",$_POST['source'],$_POST['nomCarte'].'.bleu.jpg'));
      file_put_contents($fileNamer, $fileDatar);
-     file_put_contents($fileNameb, $fileDatab);
+     file_put_contents($fileNameb, $fileDatab);//test pour push
 
 
  ?>
