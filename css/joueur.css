@@ -11,6 +11,41 @@ header {
   margin-bottom: 0%;
 }
 
+/*== Liste Joueur Admin== */
+.joueur{
+  background-color:white;
+  top : -9px;
+  position :relative;
+  color:black;
+  display: none;
+  opacity: 1;
+  transition : opacity;
+}
+
+#listJoueurs .joueur a{
+    color : #3c6b77;
+}
+
+#form1 div{
+  margin-left: 33%;
+  height: 68px;
+}
+
+#icons,#close {
+  top : 25px;
+}
+
+#listsearch{
+  top: -14px;
+  position: relative;
+}
+
+.joueur:hover{
+  background-color: #3c6b77;
+}
+
+/*== Fin Liste Joueur Admin== */
+
 .preloader-background {
   height: 100%;
   width: 100%;
@@ -105,6 +140,23 @@ legend {
   font-size: 25px;
 }
 
+/*===List Joueurs===*/
+
+#listJoueurs{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#listJoueurs .row{
+  width: 30%;
+}
+
+#listJoueurs div{
+  height: auto;
+}
+
+/*=== fin List Joueurs===*/
+
 h5 {
   text-align: center;
   background-color: white;
@@ -172,8 +224,14 @@ a {
   opacity: 1;
 }
 
-nav, nav.brand-logo, #nav {
+nav, nav.brand-logo, #nav ,#form1{
   background-color: rgba(34, 61, 68, 0.4);
+}
+
+@media only screen and (min-width: 993px){
+  .container {
+    width : 85%;
+  }
 }
 
 /*===Fin Menu===*/

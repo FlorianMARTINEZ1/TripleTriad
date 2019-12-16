@@ -6,7 +6,10 @@ class ControllerGame {
     protected static $object = 'game';
 
     public static function accueil() {
-        require File::build_path(array('view','Accueil.php')); //"redirige" vers la vue
+      $controller='game';
+      $view='Accueil';
+      $pagetitle='Accueil';
+      require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
     public static function error(){

@@ -7,6 +7,7 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="joueur1" type="text" <?php
             if (isset($_SESSION['login'])) {
                 echo 'value="'.$_SESSION['login'].'"';
@@ -17,6 +18,7 @@
             <label for="joueur1">Joueur 1</label>
           </div>
           <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="joueur2" type="text" value="joueur 2" class="validate" maxlength="12" minlength="1" required>
             <label for="joueur2">Joueur 2</label>
           </div>

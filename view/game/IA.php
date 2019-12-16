@@ -7,6 +7,7 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="joueur1" type="text" <?php
             if (isset($_SESSION['login'])) {
                 echo 'value="'.$_SESSION['login'].'" readonly';
@@ -18,6 +19,7 @@
             <label for="joueur1">Joueur</label>
           </div>
           <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="joueur2" type="text"
                <?php
                       if ($type=="faible") {

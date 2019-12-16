@@ -7,6 +7,7 @@
       <form class="col s12">
         <div class="row center">
           <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="joueur1" type="text"
               <?php
                 if ($typeIA0=="faible") {
@@ -23,6 +24,7 @@
             <label for="IA0"></label>
           </div>
           <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="joueur2" type="text"
                <?php
                       if ($typeIA1=="faible") {
