@@ -22,11 +22,10 @@ class ControllerJoueur {
         require_once File::build_path(array('model','ModelGame.php'));
         $nbPartie = ModelHistorique::nbPartie();
         $nbJoueur = ModelJoueur::nbJoueur();
-        $win_rate_IAForte = ModelHistorique::winRateIAFO();
-        $win_rate_IAMoyen = ModelHistorique::winRateIAM();
-        $win_rate_IAFaible = ModelHistorique::winRateIAFA();
-        $plusHautScore = ModelHistorique::hautScore();
-        $plusGrandNombreDePartieDunJoueur = ModelHistorique::plusGrandnbParti();
+        $win_rate_IAForte = ModelHistorique::nbWinIAFO();
+        $win_rate_IAMoyen = ModelHistorique::nbWinIAM();
+        $win_rate_IAFaible = ModelHistorique::nbWinIAFA();
+        //$plusGrandNombreDePartieDunJoueur = ModelHistorique::plusGrandnbParti();
         $nombreDePartieMultiEnCeMomentEnLigne = ModelGame::nbPartie();
 
         $controller='joueur';
