@@ -40,6 +40,8 @@ class ModelCard extends Model{
       return false;
   }
 
+  
+
 
 }
 

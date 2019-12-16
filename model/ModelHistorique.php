@@ -73,5 +73,66 @@ class ModelHistorique extends Model{
         }
     }
 
+    public static function getDeck($id)
+    {
+        try {
+            $sql = "SELECT * from Decks WHERE id=:id";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+
+            $values = array(
+                "id" => $id
+            );
+
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute($values);
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Decks');
+            $tab = $req_prep->fetchAll();
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            if (empty($tab))
+                return false;
+            return $tab[0];
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+    public static function getNom($id)
+    {
+        try {
+            $sql = "SELECT nomCarte from carte WHERE id=:id";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+
+            $values = array(
+                "id" => $id
+            );
+
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute($values);
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'carte');
+            $tab = $req_prep->fetchAll();
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            if (empty($tab))
+                return false;
+            return $tab[0];
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
 }
 ?>
