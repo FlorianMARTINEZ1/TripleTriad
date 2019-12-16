@@ -106,21 +106,21 @@ function afficheMenu() {
   }
 }
 
-
 function stopMusic() {
   let bouton = document.getElementById("volume");
   var sound = document.getElementById("sound");
   if (sound.muted == true) {
     sound.muted = false;
     sound.autoplay = true;
-    bouton.innerHTML = "volume_off";
+    bouton.innerHTML = "volume_up";
   } else {
     sound.muted = true;
-    bouton.innerHTML = "volume_up";
+    bouton.innerHTML = "volume_off";
 
   }
 
 }
+
 var choixjoueur = document.getElementById("choix").innerHTML;
 var g2 = new Game('j1', 'j2', 1,'multi',choixjoueur);
 // permet de simuler une partie comme on a pas
