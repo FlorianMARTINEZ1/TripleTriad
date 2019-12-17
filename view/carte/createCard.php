@@ -33,6 +33,7 @@
             <input type="number" placeholder="Ex : 5" name="valE" id="ValE" min="1" max="10" oninput="onInput()" required />
           </p>
         </div>
+        <button type="button" class="btn-rand">Random Value</button>
       </div>
       <div id="src">
         <label for="source">Source</label> 

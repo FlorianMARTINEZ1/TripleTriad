@@ -1,5 +1,5 @@
 div#form-create {
-    width: 60%;
+    width: 50%;
 }
 
 form#create-card {
@@ -42,6 +42,26 @@ div#src {
 }
 
 div#locaCard {
-    width: 40%;
+    width: 35%;
     margin: auto;
+}
+
+button.btn-rand {
+  background-color: #bdcbdb; /* Green */
+  border: none;
+  color: #000;
+  height: 30px;
+  width: 130px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+button.btn-rand:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px #000;
 }
