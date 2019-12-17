@@ -29,6 +29,7 @@ div.backgr {
     width: 1024px;
     background-color: #223d44;
     opacity: 0.8;
+    border-radius: 40px;
 }
 
 nav {
