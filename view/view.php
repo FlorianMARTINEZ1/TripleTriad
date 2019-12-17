@@ -13,11 +13,11 @@
 
   <!-- Materialize: Compiled and minified CSS -->
   <?php
-    if($controller == "game" && $view != "Accueil"){ // controller game
+    if($controller == "game" && $view != "Accueil" && $view != "ChoixDeck"){ // controller game
       echo '<link rel="stylesheet" type="text/css" href="./css/game.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">';
     }
-    else if($view == "Accueil"){ // Accueil du site
+    else if($view == "Accueil" || $view == "ChoixDeck"){ // Accueil du site
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/main.css">';
     } else if ($view == "createCard") {
@@ -97,7 +97,7 @@
        </ul>
   </header>
   <?php
-  if( static::$object == "game" && $view !='accueil'){ // charge les sons de la partie si le controller est game
+  if( static::$object == "game" && $view !='accueil' && $view !="ChoixDeck"){ // charge les sons de la partie si le controller est game
     echo '<audio id="sound" preload="auto" loop>
       <source src="css/sound.mp3" type="audio/mpeg">
       <source src="css/sound.ogg" type="audio/ogg">
@@ -122,8 +122,11 @@
   $filepath = File::build_path(array("view", static::$object /* $ controller  */, "$view.php"));
   require $filepath;
 
-  if(static::$object == "game" && $view!="Accueil"){
-    echo '  <div id="fingame" class="card" style="display: none;">
+  if(static::$object == "game" &&  $view!="Accueil" && $view !="ChoixDeck"){
+    echo ' <div id="deck" style="display:none">'.$deck.'</div> 
+
+
+    <div id="fingame" class="card" style="display: none;">
         <div id="vide">
         </div>
         <div class="partiefini center">

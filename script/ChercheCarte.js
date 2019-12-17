@@ -19,8 +19,8 @@ function request(callback) {
       allCards = callback(xhr.responseText); // on récupère les données.
     }
   };
-
-  xhr.open("GET", "php/test.php", true); // on les cherche dans le fichier php/test.php
+  let deck = document.getElementById("deck");
+  xhr.open("GET", "php/test.php?deck="+deck.innerHTML, true); // on les cherche dans le fichier php/test.php
   xhr.send(null);
 }
 

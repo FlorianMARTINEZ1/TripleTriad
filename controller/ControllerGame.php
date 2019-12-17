@@ -12,7 +12,16 @@ class ControllerGame {
       require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
+    public static function choix(){
+        $action = myGet("game");
+        $controller='game';
+        $view='ChoixDeck';
+        $pagetitle='Choix du deck';
+        require File::build_path(array('view','view.php'));
+    }
+
     public static function error(){
+      $deck =  myGet("deck");
       $controller='game';
       $view='error';
       $pagetitle='Error 404 ';
@@ -20,6 +29,7 @@ class ControllerGame {
     }
 
     public static function equilibre() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='Local';
       $pagetitle='Partie équilibrée';
@@ -30,6 +40,7 @@ class ControllerGame {
     }
 
     public static function aleatoire() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='Local';
       $pagetitle='Partie aléatoire';
@@ -39,6 +50,7 @@ class ControllerGame {
 
     }
     public static function IAfaible() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='IA';
       $pagetitle='IA faible';
@@ -48,6 +60,7 @@ class ControllerGame {
 
     }
     public static function IAmoyen() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='IA';
       $pagetitle='IA moyenne';
@@ -58,6 +71,7 @@ class ControllerGame {
 
     }
     public static function IAforte() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='IA';
       $pagetitle='IA forte';
@@ -67,6 +81,7 @@ class ControllerGame {
 
     }
     public static function IAexperte() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='IA';
       $pagetitle='IA Experte';

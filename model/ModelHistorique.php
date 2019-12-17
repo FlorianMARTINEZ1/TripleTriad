@@ -138,7 +138,7 @@ class ModelHistorique extends Model{
     public static function nbPartie()
     {
         try {
-            $sql = "SELECT COUNT(*) from historique";
+            $sql = "SELECT COUNT(*) from Historique";
             // Préparation de la requête
             $req_prep = Model::$pdo->prepare($sql);
 
@@ -146,7 +146,7 @@ class ModelHistorique extends Model{
             $req_prep->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab = $req_prep->fetchAll();
             // Attention, si il n'y a pas de résultats, on renvoie false
             if (empty($tab))
@@ -175,7 +175,7 @@ class ModelHistorique extends Model{
             $req_prep->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab = $req_prep->fetchAll();
             $sql2 = "Select count(*)
             From Historique
@@ -187,7 +187,7 @@ class ModelHistorique extends Model{
             $req_prep2->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab2 = $req_prep2->fetchAll();
             // Attention, si il n'y a pas de résultats, on renvoie false
             if (empty($tab))
@@ -204,7 +204,7 @@ class ModelHistorique extends Model{
         }
     }
 
-    
+
 
     public static function nbWinIAM()
     {
@@ -219,7 +219,7 @@ class ModelHistorique extends Model{
             $req_prep->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab = $req_prep->fetchAll();
             $sql2 = "Select count(*)
             From Historique
@@ -231,7 +231,7 @@ class ModelHistorique extends Model{
             $req_prep2->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab2 = $req_prep2->fetchAll();
             // Attention, si il n'y a pas de résultats, on renvoie false
             if (empty($tab))
@@ -262,7 +262,7 @@ class ModelHistorique extends Model{
             $req_prep->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab = $req_prep->fetchAll();
             $sql2 = "Select count(*)
             From Historique
@@ -274,7 +274,7 @@ class ModelHistorique extends Model{
             $req_prep2->execute();
 
             // On récupère les résultats comme précédemment
-            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'historique');
+            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab2 = $req_prep2->fetchAll();
             // Attention, si il n'y a pas de résultats, on renvoie false
             if (empty($tab))
