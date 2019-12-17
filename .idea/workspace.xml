@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f869b3fc-d6c3-487b-af57-1c580d0f1d60" name="Default Changelist" comment="">
+    <list default="true" id="f869b3fc-d6c3-487b-af57-1c580d0f1d60" name="Default Changelist" comment="début lol">
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Alistar.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Alistar.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Amumu.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Amumu.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Anivia.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Anivia.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Annie.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Annie.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aphelios.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aphelios.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ashe.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ashe.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aurelion Sol.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aurelion Sol.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Azir.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Azir.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Bard.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Bard.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Blitzcrank.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Blitzcrank.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Brand.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Brand.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Braum.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Braum.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Caitlyn.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Caitlyn.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Camille.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Camille.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Cassiopeia.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Cassiopeia.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Cho Gath.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Cho Gath.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Corki.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Corki.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Darius.bleu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Darius.rouge.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/creerCarte.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/creerCarte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/createCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/createCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/carte/createCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/carte/createCard.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,37 +59,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/carte/createCard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/createCard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="112" column="43" lean-forward="true" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/creerCarte.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/Carte.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1076">
-              <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+              <caret line="22" column="95" selection-start-line="22" selection-start-column="95" selection-end-line="22" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -69,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/ControllerCreateurCarte.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="589">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -139,8 +146,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,6 +177,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,11 +186,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/css/cartes" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css/cartes" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -220,6 +232,8 @@
       <workItem from="1576163850652" duration="184000" />
       <workItem from="1576495838750" duration="1103000" />
       <workItem from="1576580050098" duration="1775000" />
+      <workItem from="1576585372651" duration="185000" />
+      <workItem from="1576585647385" duration="2398000" />
     </task>
     <task id="LOCAL-00001" summary="testmodel php">
       <created>1569482125662</created>
@@ -284,17 +298,24 @@
       <option name="project" value="LOCAL" />
       <updated>1575966357304</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="début lol">
+      <created>1576585499913</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576585499913</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16937000" />
+    <option name="totallyTimeSpent" value="19520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.255119" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -312,7 +333,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32829374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -367,7 +388,8 @@
     <MESSAGE value="canvas" />
     <MESSAGE value="function f" />
     <MESSAGE value="input hidden data storage canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="input hidden data storage canvas" />
+    <MESSAGE value="début lol" />
+    <option name="LAST_COMMIT_MESSAGE" value="début lol" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/php/testModel.html" />
@@ -457,20 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/createCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="112" column="43" lean-forward="true" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/carte/createCard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -478,10 +486,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/script/createCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="112" column="43" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/Carte.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1076">
+        <state relative-caret-position="1380">
           <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Akali.rouge.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ahri.bleu.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Aatrox.bleu.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ahri.rouge.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Akali.bleu.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Aatrox.rouge.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/autre/NEPUPUUUU.bleu.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/autre/David504.bleu.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/creerCarte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="95" selection-start-line="22" selection-start-column="95" selection-end-line="22" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -494,15 +547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/ControllerCreateurCarte.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/creerCarte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="589">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
         </state>
       </provider>
     </entry>

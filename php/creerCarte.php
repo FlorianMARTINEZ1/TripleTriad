@@ -20,7 +20,7 @@ require_once '../lib/File.php';
      $fileNameb = File::build_path(array("css","cartes",$_POST['source'],$_POST['nomCarte'].'.bleu.jpg'));
      file_put_contents($fileNamer, $fileDatar);
      file_put_contents($fileNameb, $fileDatab);//test pour push
-     header('Location: ./../../index.php');
+     header('Location: ./../../TripleTriad/index.php?action=createCard&controller=CreateurCarte');
      exit();
 
 
