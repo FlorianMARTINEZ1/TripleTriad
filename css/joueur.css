@@ -1,293 +1,317 @@
 html {
-  background-image: url(./img/ff8.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family:
-    /*'finalf',*/
+    background-image: url(./img/ff8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: /*'finalf',*/
     Arial, sans-serif;
 }
 
 header {
-  margin-bottom: 0%;
+    margin-bottom: 0%;
 }
+
 
 /*== Liste Joueur Admin== */
-.joueur{
-  background-color:white;
-  top : -9px;
-  position :relative;
-  color:black;
-  display: none;
-  opacity: 1;
-  transition : opacity;
+
+.joueur {
+    background-color: white;
+    top: -9px;
+    position: relative;
+    color: black;
+    display: none;
+    opacity: 1;
+    transition: opacity;
 }
 
-#listJoueurs .joueur a{
-    color : #3c6b77;
+#listJoueurs .joueur a {
+    color: #3c6b77;
 }
 
-#form1 div{
-  margin-left: 33%;
-  height: 68px;
+#form1 div {
+    margin-left: 33%;
+    height: 68px;
 }
 
-#icons,#close {
-  top : 25px;
+#icons,
+#close {
+    top: 25px;
 }
 
-#listsearch{
-  top: -14px;
-  position: relative;
+#listsearch {
+    top: -14px;
+    position: relative;
 }
 
-.joueur:hover{
-  background-color: #3c6b77;
+.joueur:hover {
+    background-color: #3c6b77;
 }
+
 
 /*== Fin Liste Joueur Admin== */
 
 .preloader-background {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  text-align: center;
-  opacity: 0.7;
-  background-color: white;
-  padding-top: 24%;
-  margin-top: -33vh;
-  transition: background-color 5s, opacity 5s !important;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    opacity: 0.7;
+    background-color: white;
+    padding-top: 24%;
+    margin-top: -33vh;
+    transition: background-color 5s, opacity 5s !important;
 }
 
 .transitionloader {
-  background-color: #3c6b77;
-  opacity: 1;
+    background-color: #3c6b77;
+    opacity: 1;
 }
 
 #h5 {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 #delete {
-  position: relative;
-  top: 30px;
+    position: relative;
+    top: 30px;
 }
 
+
+/*===Formulaire Inscription===*/
+
 #backform {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  background-color: transparent;
-  width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #569399c0;
+    border-radius: 30px;
+    width: 50%;
+    padding-top: 20px;
 }
 
 legend {
-  color: black;
+    color: black;
+}
+
+div#emailrow {
+    margin: 0;
 }
 
 div#bckgrnd {
-  z-index: 0;
-  position: absolute;
-  width: 55%;
-  height: 280px;
-  text-align: center;
-  background-color: #3c6b77;
-  opacity: 0.4;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 35px;
+    z-index: 0;
+    position: absolute;
+    width: 55%;
+    height: 280px;
+    text-align: center;
+    background-color: #3c6b77;
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 35px;
+    text-align: center;
 }
 
 div#log-mdp {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #backform label {
-  display: block;
-  text-align: center;
+    display: block;
 }
 
 div#btn-co {
-  height: 60px;
-}
-
-div#bckgrndins {
-  z-index: 0;
-  position: absolute;
-  width: 55%;
-  height: 650px;
-  text-align: center;
-  background-color: #3c6b77;
-  opacity: 0.4;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 80px;
+    height: 60px;
 }
 
 article div.card-panel {
-  height: 50vh;
-  margin-top: 5%;
-  text-align: center;
+    height: 50vh;
+    margin-top: 5%;
+    text-align: center;
 }
 
 legend {
-  text-align: center;
-  font-weight: bold;
-  font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
 }
+
+
+/*===Fin Formulaire Inscription===*/
+
 
 /*===List Joueurs===*/
 
-#listJoueurs{
-  display: flex;
-  flex-wrap: wrap;
+#listJoueurs {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#listJoueurs .row{
-  width: 30%;
+#listJoueurs .row {
+    width: 30%;
 }
 
-#listJoueurs div{
-  height: auto;
+#listJoueurs div {
+    height: auto;
 }
+
 
 /*=== fin List Joueurs===*/
 
 h5 {
-  text-align: center;
-  background-color: white;
-  transition-property: width, height;
+    text-align: center;
+    background-color: white;
+    transition-property: width, height;
 }
 
 .afficheh5 {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
+
 /*===Menu===*/
+
 #button {
-  text-align: center;
-  height: 100%;
-  margin-top: 31%;
+    text-align: center;
+    height: 100%;
+    margin-top: 31%;
 }
 
 .btn {
-  height: auto;
+    height: auto;
 }
 
 #boutonSon {
-  right: 0px;
-  top: 65px;
-  position: fixed;
+    right: 0px;
+    top: 65px;
+    position: fixed;
 }
 
 #menuIcon {
-  position: fixed;
-  right: 53px;
-  top: 65px;
+    position: fixed;
+    right: 53px;
+    top: 65px;
 }
 
 a {
-  transition-property: background-color;
+    transition-property: background-color;
 }
 
-#menuIcon a, #boutonSon a {
-  background-color: #223d44;
+#menuIcon a,
+#boutonSon a {
+    background-color: #223d44;
 }
 
-#menuIcon a:hover, #boutonSon a:hover, #nav li a:hover {
-  background-color: rgba(72, 131, 146, 1);
+#menuIcon a:hover,
+#boutonSon a:hover,
+#nav li a:hover {
+    background-color: rgba(72, 131, 146, 1);
 }
 
 #menu {
-  position: fixed;
-  width: 0%;
-  visibility: hidden;
-  height: 0%;
-  opacity: 0;
-  top: 0%;
-  margin-left: 12.5%;
-  text-align: center;
-  background-color: #223d44;
-  transition-property: opacity, top;
+    position: fixed;
+    width: 0%;
+    visibility: hidden;
+    height: 0%;
+    opacity: 0;
+    top: 0%;
+    margin-left: 12.5%;
+    text-align: center;
+    background-color: #223d44;
+    transition-property: opacity, top;
 }
 
 #menu.ma-transition {
-  top: 10%;
-  width: 75%;
-  visibility: visible;
-  height: 75%;
-  opacity: 1;
+    top: 10%;
+    width: 75%;
+    visibility: visible;
+    height: 75%;
+    opacity: 1;
 }
 
-nav, nav.brand-logo, #nav ,#form1{
-  background-color: rgba(34, 61, 68, 0.4);
+nav,
+nav.brand-logo,
+#nav,
+#form1 {
+    background-color: rgba(34, 61, 68, 0.4);
 }
 
-@media only screen and (min-width: 993px){
-  .container {
-    width : 85%;
-  }
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 85%;
+    }
 }
+
 
 /*===Fin Menu===*/
+
 div {
-  height: 104px;
+    height: 104px;
 }
 
+
 /*===Formulaire===*/
+
 fieldset {
-  z-index: 2;
-  color: white;
-  border: none;
+    z-index: 2;
+    color: white;
+    border: none;
 }
 
 div.input-field label {
-  color: black !important;
-  font-weight: bold;
+    color: black !important;
+    font-weight: bold;
 }
 
-.formulaire, .form, .formdiv {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
+.formulaire,
+.form,
+.formdiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
 }
+
 
 /* label color */
+
 .input-field label {
-  color: #000 !important;
+    color: #000 !important;
 }
+
 
 /*underline color focus */
+
 input[type=text]:not(.browser-default):focus:not([readonly]) {
-  border-bottom: 1px solid #1f897f;
-  box-shadow: 0 1px 0 0 #1f897f;
+    border-bottom: 1px solid #1f897f;
+    box-shadow: 0 1px 0 0 #1f897f;
 }
 
+
 /* label color focus */
+
 input[type=text]:not(.browser-default):focus:not([readonly])+label {
-  color: #1f897f;
+    color: #1f897f;
 }
 
 .input-field>label:not(.label-icon).active {
-  transform: translateY(-14px) scale(0.8);
-  transform-origin: 0 0;
+    transform: translateY(-14px) scale(0.8);
+    transform-origin: 0 0;
 }
 
 .waves-effect.ff8:hover {
-  background-color: #65a4b3;
+    background-color: #65a4b3;
 }
 
 .waves-effect.ff8 {
-  /* The alpha value allows the text and background color
+    /* The alpha value allows the text and background color
  of the button to still show through. */
-  background-color: rgba(72, 131, 146, 1);
+    background-color: rgba(72, 131, 146, 1);
 }
+
 
 /*===Fin Formulaire===*/

@@ -5,7 +5,8 @@ div#form-create {
 form#create-card {
     padding: 2% 10%;
     margin-top: 5%;
-    background-color: #1c7a8ba8;
+    background-color: #569399c0;
+    border-radius: 40px;
 }
 
 div#label-card {
