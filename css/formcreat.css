@@ -1,0 +1,46 @@
+div#form-create {
+    width: 60%;
+}
+
+form#create-card {
+    padding: 2% 10%;
+    margin-top: 5%;
+    background-color: #1c7a8ba8;
+}
+
+div#label-card {
+    width: 60%;
+    margin: auto;
+}
+
+fieldset#fieldcreate {
+    border: none;
+    text-align: center;
+}
+
+fieldset#fieldcreate legend {
+    font-size: 24px;
+}
+
+fieldset#fieldcreate label {
+    color: #000;
+    font-size: 16px;
+}
+
+fieldset#fieldcreate input {
+    text-align: center;
+}
+
+fieldset#fieldcreate input::placeholder {
+    color: rgb(63, 63, 63);
+    text-align: center;
+}
+
+div#src {
+    height: 160px;
+}
+
+div#locaCard {
+    width: 40%;
+    margin: auto;
+}
