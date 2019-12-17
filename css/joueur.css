@@ -88,6 +88,7 @@ header {
     border-radius: 30px;
     width: 50%;
     padding-top: 20px;
+    padding-bottom: 60px;
 }
 
 legend {
@@ -116,6 +117,15 @@ div#bckgrnd {
 div#log-mdp {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+#backform div.row,
+#backform div.row div.input-field {
+    height: 60px;
+}
+
+#backform div.row p span {
+    color: #000;
 }
 
 #backform label {

@@ -61,33 +61,33 @@
             <label for="email">Email</label>
           </div>
       </div>
-      <?php
-        if(Session::is_admin()){
-           echo ' <p>
-            <label>
-              <input type="checkbox" name="admin" />
-                <span>Mettre en administrateur</span>
-            </label>
-            </p>';
-        }
-      ?>
       <input type="hidden" <?php
 
-       echo 'value="'.static::$object.'" readonly';
+echo 'value="'.static::$object.'" readonly';
 
 
-       ?> name="controller" id="controller" required/>
+?> name="controller" id="controller" required/>
 
        <input type='hidden' name='action'
        <?php
          if($action=='create'){
-            echo 'value="created"';
-         }
-         else{
-             echo 'value="updated"';
-         }
-           ?>>
+           echo 'value="created"';
+          }
+          else{
+            echo 'value="updated"';
+          }
+          ?>>
       <div class="row center">
+          <?php
+            if(Session::is_admin()){
+               echo ' <p>
+                <label>
+                  <input type="checkbox" name="admin" />
+                    <span>Mettre en administrateur</span>
+                </label>
+                </p>';
+            }
+          ?>
         <input class="waves-effect waves-light ff8 btn " type="submit" value="Envoyer" />
       </div>
     </fieldset>
