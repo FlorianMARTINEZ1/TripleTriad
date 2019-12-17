@@ -11,6 +11,7 @@ class ModelCard extends Model{
   private $valS;
   private $valO;
   private $valE;
+  private $source;
   private $couleur;
   protected static $object = 'carte';
   protected static $primary='id';
@@ -40,7 +41,7 @@ class ModelCard extends Model{
       return false;
   }
 
-  
+
 
 
 }

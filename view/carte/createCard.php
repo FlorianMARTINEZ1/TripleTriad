@@ -1,42 +1,42 @@
 <div id="form-create" class="container">
-  <form id="create-card" class="CreateurCarte" method="post" action="./php/creerCarte.php">
+  <form id="create-card" class="CreateurCarte" method="post" action="./index.php">
     <fieldset id="fieldcreate">
       <legend>Créez votre carte</legend>
         <div id="label-card" class="center">
           <p>
-            <label for="nomCarte">Nom de la carte</label> 
+            <label for="nomCarte">Nom de la carte</label>
             <input type="text" placeholder="Ex : gilbert" name="nomCarte" id="nomCarte" maxlength="15" required />
           </p>
         </div>
       <div class="row">
         <div class="col s3">
           <p>
-            <label for="ValN">ValN</label> 
+            <label for="ValN">ValN</label>
             <input type="number" placeholder="Ex : 5" name="valN" id="ValN" min="1" max="10" oninput="onInput()" required />
           </p>
         </div>
         <div class="col s3">
           <p>
-            <label for="ValS">ValS</label> 
+            <label for="ValS">ValS</label>
             <input type="number" placeholder="Ex : 5" name="valS" id="ValS" min="1" max="10" oninput="onInput()" required />
           </p>
         </div>
         <div class="col s3">
           <p>
-            <label for="ValO">ValO</label> 
+            <label for="ValO">ValO</label>
             <input type="number" placeholder="Ex : 5" name="valO" id="ValO" min="1" max="10" oninput="onInput()" required />
           </p>
         </div>
         <div class="col s3">
           <p>
-            <label for="ValE">ValE</label> 
+            <label for="ValE">ValE</label>
             <input type="number" placeholder="Ex : 5" name="valE" id="ValE" min="1" max="10" oninput="onInput()" required />
           </p>
         </div>
         <button type="button" class="btn-rand" onclick="randValue()">Random Value</button>
       </div>
       <div id="src">
-        <label for="source">Source</label> 
+        <label for="source">Source</label>
         <div id="locaCard" class="center">
           <select name="source" id="srcCard">
             <option value="autre">Autre</option>
@@ -52,6 +52,8 @@
         </div>
           <input type="hidden" name="urlRed" id="URLRed">
           <input type="hidden" name="urlBlue" id="URLBlue">
+          <input type="hidden" name="action" value="CardCreated">
+          <input type="hidden" name="controller" value="CreateurCarte">
       </div>
 
       <p>
