@@ -14,7 +14,7 @@
 
 <!--Debut de la liste des modes disponibles-->
         <div class="row">
-          <div class="col s6 m4 l4">
+          <div class="col s6 m4 l3">
             <div class="card modeJeu">
               <a class="modal-trigger white-text" href="./?action=<?php echo $action; ?>&deck=FF8">
                 <div class="card-content center">
@@ -24,7 +24,7 @@
             </div>
           </div>
 
-          <div class="col s6 m4 l4">
+          <div class="col s6 m4 l3">
             <div class="card modeJeu">
               <a class="modal-trigger white-text" href="./?action=<?php echo $action; ?>&deck=FF10">
                 <div class="card-content center">
@@ -34,11 +34,21 @@
             </div>
           </div>
 
-          <div class="col s6 m4 l4">
+          <div class="col s6 m4 l3">
             <div class="card modeJeu">
               <a class="modal-trigger white-text" href="./?action=<?php echo $action; ?>&deck=autre">
                 <div class="card-content center">
-                  <div>Autre</div>
+                  <div>Autres</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=<?php echo $action; ?>&deck=lol">
+                <div class="card-content center">
+                  <div>LOL</div>
                 </div>
               </a>
             </div>
