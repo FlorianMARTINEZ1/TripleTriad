@@ -2,80 +2,190 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f869b3fc-d6c3-487b-af57-1c580d0f1d60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aatrox.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ahri.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Akali.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Alistar.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Amumu.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Anivia.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Annie.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aphelios.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ashe.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Aurelion Sol.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Azir.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Bard.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Blitzcrank.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Brand.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Braum.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Caitlyn.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Camille.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Cassiopeia.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Cho Gath.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Corki.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Darius.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Diana.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Diana.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Dr. Mundo.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Dr. Mundo.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Draven.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Draven.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ekko.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ekko.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ControllerCreateurCarte.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControllerCreateurCarte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Aatrox.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Aatrox.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Aatrox.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Ahri.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Ahri.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Ahri.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Akali.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Akali.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Akali.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Alistar.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Alistar.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Alistar.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Amumu.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Amumu.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Amumu.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Anivia.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Anivia.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Anivia.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Annie.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Annie.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Annie.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Aphelios.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Aphelios.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Aphelios.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Ashe.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Ashe.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Ashe.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Aurelion Sol.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Aurelion Sol.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Aurelion Sol.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Azir.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Azir.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Azir.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Bard.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Bard.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Bard.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Blitzcrank.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Blitzcrank.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Blitzcrank.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Brand.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Brand.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Brand.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Braum.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Braum.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Braum.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Caitlyn.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Caitlyn.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Caitlyn.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Camille.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Camille.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Camille.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Cassiopeia.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Cassiopeia.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Cassiopeia.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Cho Gath.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Cho Gath.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Cho Gath.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Corki.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Corki.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Corki.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Darius.bleu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cartes/lol/Darius.rouge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/css/cartes/lol/Darius.rouge.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/createCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/createCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Elise.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Elise.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Evelynn.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Evelynn.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ezreal.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ezreal.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiddlesticks.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiddlesticks.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiora.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiora.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fizz.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fizz.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Galio.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Galio.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gangplanks.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gangplanks.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Garen.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Garen.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gnar.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gnar.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gragas.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gragas.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Graves.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Graves.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Hecarim.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Hecarim.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Heimerdinger.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Heimerdinger.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Illaoi.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Illaoi.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Irelia.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Irelia.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ivern.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ivern.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Janna.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Janna.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jarvan IV.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jarvan IV.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jax.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jax.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jayce.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jayce.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jhin.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jhin.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jinx.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jinx.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kaisa.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kaisa.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kalista.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kalista.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karma.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karma.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karthus.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karthus.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kassadin.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kassadin.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Katarina.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Katarina.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayle.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayle.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayn.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayn.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kennen.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kennen.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kha' Zix.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kha' Zix.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kindred.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kindred.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kled.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kled.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kog Maw.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kog Maw.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leblanc.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leblanc.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lee Sin.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lee Sin.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leona.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leona.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lissandra.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lissandra.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lucian.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lucian.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lulu.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lulu.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lux.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lux.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malphite.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malphite.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malzahar.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malzahar.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maokai.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maokai.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maître Yi.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maître Yi.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Miss Fortune.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Miss Fortune.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Mordekaiser.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Mordekaiser.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Morgana.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Morgana.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nami.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nami.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nasus.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nasus.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nautilus.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nautilus.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Neeko.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Neeko.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nidalee.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nidalee.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nocturne.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nocturne.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nunu.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nunu.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Olaf.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Olaf.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Orianna.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Orianna.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ornn.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ornn.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pantheon.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pantheon.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Poppy.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Poppy.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pyke.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pyke.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Qiyana.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Qiyana.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Quinn.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Quinn.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rakan.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rakan.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rammus.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rammus.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rek Sai.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rek Sai.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Renekton.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Renekton.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rengar.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rengar.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Riven.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Riven.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rumble.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rumble.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ryze.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ryze.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sejuani.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sejuani.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Senna.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Senna.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shaco.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shaco.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shen.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shen.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shyvana.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shyvana.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Singed.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Singed.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sion.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sion.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sivir.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sivir.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Skarner.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Skarner.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sona.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sona.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Soraka.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Soraka.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Swain.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Swain.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sylvas.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sylvas.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Syndra.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Syndra.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Tahm Kench.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Tahm Kench.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taliyah.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taliyah.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Talon.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Talon.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taric.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taric.rouge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Wukong.bleue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Wukong.rouge.jpg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,8 +216,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/createCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="15" lean-forward="true" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+            <state relative-caret-position="405">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -165,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,7 +337,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -283,6 +393,7 @@
       <workItem from="1576580050098" duration="1775000" />
       <workItem from="1576585372651" duration="185000" />
       <workItem from="1576585647385" duration="5548000" />
+      <workItem from="1576599085008" duration="342000" />
     </task>
     <task id="LOCAL-00001" summary="testmodel php">
       <created>1569482125662</created>
@@ -365,12 +476,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22670000" />
+    <option name="totallyTimeSpent" value="23012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.26009962" />
+      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.26286662" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -523,60 +634,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Akali.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Alistar.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Amumu.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Akali.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Alistar.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Amumu.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/lol/Anivia.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ashe.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ashe.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ashe.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/css/cartes/lol/Azir.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Braum.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Darius.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Braum.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Darius.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/lol/Darius.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Cassiopeia.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/David504.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Cassiopeia.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/autre/David504.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/autre/David504.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/niconi.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/autre/niconi.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/autre/niconi.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/NEPUPUUUU.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/autre/NEPUPUUUU.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/autre/NEPUPUUUU.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/produitsBizare.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/autre/produitsBizare.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/autre/produitsBizare.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -586,15 +675,9 @@
     <entry file="file://$PROJECT_DIR$/css/cartes/lol/Cho Gath.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Camille.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Bard.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Azir.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Camille.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Bard.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Azir.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/css/cartes/lol/Annie.rouge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -631,12 +714,8 @@
     <entry file="file://$PROJECT_DIR$/css/cartes/FF10/Anima.bleue.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ahri.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Aatrox.bleu.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ahri.bleu.jpg" />
+    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Aatrox.bleu.jpg" />
     <entry file="file://$PROJECT_DIR$/controller/ControllerCreateurCarte.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -646,8 +725,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/createCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="15" lean-forward="true" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+        <state relative-caret-position="405">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>
