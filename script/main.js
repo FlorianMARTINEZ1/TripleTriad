@@ -168,7 +168,7 @@ function drop(ev) {
 }*/
 
 function action(C, Cart, couleur) {
-  C.setAttribute("src", "css/cartes/FF8/" + Cart.donneNom() + "." + couleur + ".jpg"); // On change la couleur
+  C.setAttribute("src", "css/cartes/"+Cart.donneSource()+"/" + Cart.donneNom() + "." + couleur + ".jpg"); // On change la couleur
   C.style.width = "100px";
   C.style.marginLeft = "0px";
 }

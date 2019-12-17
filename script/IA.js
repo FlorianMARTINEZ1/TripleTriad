@@ -131,9 +131,9 @@ class IA extends Joueur {
     let idC = newimg.className;
     let CarteRetourne = findCard(idC);
     if (this.index == 0) {
-      newimg.setAttribute("src", "css/cartes/FF8/" + CarteRetourne.donneNom() + ".bleue.jpg");
+      newimg.setAttribute("src", "css/cartes/"+CarteRetourne.donneSource()+"/" + CarteRetourne.donneNom() + ".bleue.jpg");
     } else {
-      newimg.setAttribute("src", "css/cartes/FF8/" + CarteRetourne.donneNom() + ".rouge.jpg");
+      newimg.setAttribute("src", "css/cartes/"+CarteRetourne.donneSource()+"/" + CarteRetourne.donneNom() + ".rouge.jpg");
     }
 
     var img = document.getElementsByClassName('case' + this.casesVides[idCase])[0].appendChild(newimg);
