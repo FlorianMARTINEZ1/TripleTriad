@@ -39,7 +39,7 @@ img.onload = function() {
   cty.fillRect(59, 0, 3, 62);
   ctx.drawImage(img, 3, 3, 56, 56);
   cty.drawImage(img, 3, 3, 56, 56);
-
+  trace();
 }
 
 function onInput() {
@@ -98,6 +98,14 @@ function onInput() {
   }
   img.onload();
 
+
+  trace()
+}
+function trace() {
+  var N = document.getElementById("ValN").value;
+  var S = document.getElementById("ValS").value;
+  var O = document.getElementById("ValO").value;
+  var E = document.getElementById("ValE").value;
   if (N == 10) {
     N = "A";
   }
