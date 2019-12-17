@@ -1,13 +1,14 @@
 //Class Card
 
 class Card {
-  constructor(id,nomCarte, valN, valS, valO, valE, couleur) {
+  constructor(id,nomCarte, valN, valS, valO, valE, couleur,source) {
     this.id = id;
     this.nomCarte = nomCarte;
     this.valN = valN;
     this.valS = valS;
     this.valO = valO;
     this.valE = valE
+    this.source = source;
     this.couleur = couleur;
   }
 
@@ -17,6 +18,10 @@ class Card {
 
   donneID(){
     return this.id;
+  }
+
+  donneSource() {
+    return this.source;
   }
 
   donneNom() {

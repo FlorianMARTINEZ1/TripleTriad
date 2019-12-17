@@ -46,7 +46,7 @@ class ControllerCreateurCarte{
     $fileNameb = File::build_path(array("css","cartes",$_POST['source'],$_POST['nomCarte'].'.bleu.jpg'));
     file_put_contents($fileNamer, $fileDatar);
     file_put_contents($fileNameb, $fileDatab);//test pour push
-
+    $_SESSION["message"] = "carte créée !";
     ControllerCreateurCarte::createCard();
   }
 

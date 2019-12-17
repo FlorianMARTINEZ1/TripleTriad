@@ -58,6 +58,12 @@
 
       <p>
         <input type="submit" value="Envoyer" />
+         <?php
+         if(isset($_SESSION["message"])){
+           echo $_SESSION["message"];
+           unset($_SESSION["message"]);
+         }
+        ?>
       </p>
     </fieldset>
   </form>
