@@ -143,3 +143,11 @@ function onInput() {
   document.getElementById('URLBlue').value = dataURLBlue;
   document.getElementById('URLRed').value = dataURLRed;
 }
+
+function randValue() {
+  document.getElementById("ValN").value=Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValS").value=Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValO").value=Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValE").value=Math.floor((Math.random() * 10) + 1);
+  onInput();
+}
