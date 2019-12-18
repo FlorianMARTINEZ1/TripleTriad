@@ -5,21 +5,6 @@ require_once 'lib/File.php';
 class ControllerGame {
     protected static $object = 'game';
 
-    public static function accueil() {
-      $controller='game';
-      $view='Accueil';
-      $pagetitle='Accueil';
-      require File::build_path(array('view','view.php')); //"redirige" vers la vue
-    }
-
-    public static function choix(){
-        $action = myGet("game");
-        $controller='game';
-        $view='ChoixDeck';
-        $pagetitle='Choix du deck';
-        require File::build_path(array('view','view.php'));
-    }
-
     public static function error(){
       $deck =  myGet("deck");
       $controller='game';

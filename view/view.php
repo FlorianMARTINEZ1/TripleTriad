@@ -13,11 +13,11 @@
 
   <!-- Materialize: Compiled and minified CSS -->
   <?php
-    if($controller == "game" && $view != "Accueil" && $view != "ChoixDeck"){ // controller game
+    if($controller == "game"){ // controller game
       echo '<link rel="stylesheet" type="text/css" href="./css/game.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">';
     }
-    else if($view == "Accueil" || $view == "ChoixDeck"){ // Accueil du site
+    else if($controller == "site"){ // controller site
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/main.css">';
     } else if ($view == "createCard") {
@@ -65,8 +65,8 @@
 
               <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                <li><a href="">Règles</a></li>
-                <li><a href="">Report Bug/Contact</a></li>
+                <li><a href="./index.php?action=regle">Règles</a></li>
+                <li><a href="./index.php?action=contact">Report Bug/Contact</a></li>
                 <?php
                   if (!isset($_SESSION['login'])) {
                         echo "<li><a href=\"./index.php?action=connect&controller=joueur\">Connexion</a></li>";
@@ -97,7 +97,7 @@
        </ul>
   </header>
   <?php
-  if( static::$object == "game" && $view !='accueil' && $view !="ChoixDeck"){ // charge les sons de la partie si le controller est game
+  if($controller == "game"){ // charge les sons de la partie si le controller est game
     echo '<audio id="sound" preload="auto" loop>
       <source src="css/sound.mp3" type="audio/mpeg">
       <source src="css/sound.ogg" type="audio/ogg">
@@ -119,11 +119,13 @@
       <source src="css/carteposé.ogg" type="audio/ogg">
     </audio>';
   }
+
+  // charge la vue de la fonction appellé.
   $filepath = File::build_path(array("view", static::$object /* $ controller  */, "$view.php"));
   require $filepath;
 
-  if(static::$object == "game" &&  $view!="Accueil" && $view !="ChoixDeck"){
-    echo ' <div id="deck" style="display:none">'.$deck.'</div> 
+  if($controller == "game"){
+    echo ' <div id="deck" style="display:none">'.$deck.'</div>
 
 
     <div id="fingame" class="card" style="display: none;">
@@ -244,7 +246,7 @@
 
   </footer>
   <?php
-    if($controller != "game" || $view="Accueil" || $controller = "joueur"){
+    if($controller != "game"){
       echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>';
     }

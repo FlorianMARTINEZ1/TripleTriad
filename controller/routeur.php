@@ -4,6 +4,7 @@
 require_once 'ControllerJoueur.php';
 require_once 'ControllerGame.php';
 require_once 'ControllerCreateurCarte.php';
+require_once 'ControllerSite.php';
 // On recupère l'action passée dans l'URL
 
 function myGet($nomvar){
@@ -18,7 +19,7 @@ function myGet($nomvar){
 	 }
 }
 
-$controller_default = "game";
+$controller_default = "site";
 
 if(is_null(myGet('action'))){
 	$action = "accueil";
