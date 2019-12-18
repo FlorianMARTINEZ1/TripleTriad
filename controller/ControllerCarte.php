@@ -1,21 +1,16 @@
 <?php
 require_once 'lib/File.php';
 
-class ControllerCreateurCarte{
+class ControllerCarte{
 
   protected static $object = 'carte';
-  public static function createCard(){
+  public static function create(){
     $controller='carte';
-    $view='createCard';
+    $view='update';
     $pagetitle='Formulaire de création de carte';
     require File::build_path(array('view','view.php'));
   }
-  public static function created(){
-    $controller='carte';
-    $view='created';
-    $pagetitle='Carte créée';
-    require File::build_path(array('view','view.php'));
-  }
+
   public static function error(){
     $controller='carte';
     $view='error';
@@ -23,7 +18,7 @@ class ControllerCreateurCarte{
     require File::build_path(array('view','view.php'));
   }
 
-  public static function CardCreated(){
+  public static function created(){
     require_once File::build_path(array('model','ModelCard.php'));
     $data = array('nomCarte' => $_POST['nomCarte'],
                   'valN' => $_POST['valN'],
@@ -46,8 +41,11 @@ class ControllerCreateurCarte{
     $fileNameb = File::build_path(array("css","cartes",$_POST['source'],$_POST['nomCarte'].'.bleue.jpg'));
     file_put_contents($fileNamer, $fileDatar);
     file_put_contents($fileNameb, $fileDatab);//test pour push
-    $_SESSION["message"] = "carte créée !";
-    ControllerCreateurCarte::createCard();
+    $message = "carte créée !";
+    $controller='carte';
+    $view='update';
+    $pagetitle='Carte créée';
+    require File::build_path(array('view','view.php'));
   }
 
 }

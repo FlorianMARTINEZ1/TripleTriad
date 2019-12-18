@@ -172,7 +172,7 @@ class ControllerJoueur {
       session_unset();     // unset $_SESSION variable for the run-time
       session_destroy();
       setcookie(session_name(),'',time()-1);
-      ControllerGame::Accueil();
+      ControllerSite::Accueil();
     }
 
 

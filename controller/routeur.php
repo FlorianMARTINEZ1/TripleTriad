@@ -3,7 +3,7 @@
 
 require_once 'ControllerJoueur.php';
 require_once 'ControllerGame.php';
-require_once 'ControllerCreateurCarte.php';
+require_once 'ControllerCarte.php';
 require_once 'ControllerSite.php';
 // On recupère l'action passée dans l'URL
 

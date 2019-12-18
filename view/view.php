@@ -20,7 +20,7 @@
     else if($controller == "site"){ // controller site
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/main.css">';
-    } else if ($view == "createCard") {
+    } else if ($view == "update" && $controller == "carte") {
             echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/main.css">
             <link rel="stylesheet" type="text/css" href="./css/formcreat.css">
@@ -52,7 +52,7 @@
             if(Session::is_admin()){
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
-              echo '<li><a href="./index.php?action=createCard&controller=createurcarte">Ajouter une carte</a></li>';
+              echo '<li><a href="./index.php?action=create&controller=carte">Ajouter une carte</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }

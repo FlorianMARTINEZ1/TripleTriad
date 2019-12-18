@@ -52,16 +52,15 @@
         </div>
           <input type="hidden" name="urlRed" id="URLRed">
           <input type="hidden" name="urlBlue" id="URLBlue">
-          <input type="hidden" name="action" value="CardCreated">
-          <input type="hidden" name="controller" value="CreateurCarte">
+          <input type="hidden" name="action" value="created">
+          <input type="hidden" name="controller" value="carte">
       </div>
 
       <p>
         <input type="submit" value="Envoyer" />
          <?php
-         if(isset($_SESSION["message"])){
-           echo $_SESSION["message"];
-           unset($_SESSION["message"]);
+         if(isset($message)){
+           echo $message;
          }
         ?>
       </p>
