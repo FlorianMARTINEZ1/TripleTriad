@@ -58,7 +58,7 @@
           }
          ?>
       </ul>
-        <div class="nav-wrapper container right">
+        <div class="nav-wrapper container">
               <a data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
               <a href="./" class="brand-logo">Triple Triad</a>
