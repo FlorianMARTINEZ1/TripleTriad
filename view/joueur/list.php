@@ -18,7 +18,7 @@
         <?php
         foreach ($tab_j as $j)
             echo'
-              <div class="row joueur" id="'.htmlspecialchars($j->get('login')).'" style="display:none; ">
+              <div class="row joueur" id="'.htmlspecialchars($j->get('login')).'" style="display:block; ">
                   <div class="col s12 m12">
                       <div class="card white darken-1">
                           <div class="card-content black-text">
