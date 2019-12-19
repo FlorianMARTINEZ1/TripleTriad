@@ -21,7 +21,9 @@
       <input type="hidden" name="controller" value="joueur">
 
       <div id="btn-co" class="row center">
-        <input class="waves-effect waves-light ff8 btn " type="submit" value="Envoyer" />
+       <div class="btn_form col s12">
+           <input id=""  class=" waves-effect waves-light ff8 btn " type="submit" value="Envoyer" />
+       </div>
       </div>
       <?php
       if(isset($msg)){

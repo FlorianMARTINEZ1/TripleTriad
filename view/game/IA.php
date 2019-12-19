@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="row center">
-          <a class="waves-effect waves-light ff8 btn " onclick="initialisation()">Envoyer</a>
+          <a class="waves-effect waves-light ff8 btn  center" onclick="initialisation()">Envoyer</a>
         </div>
       </form>
     </div>

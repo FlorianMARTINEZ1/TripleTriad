@@ -1,191 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f869b3fc-d6c3-487b-af57-1c580d0f1d60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Elise.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Elise.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Evelynn.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Evelynn.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ezreal.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ezreal.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiddlesticks.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiddlesticks.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiora.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fiora.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fizz.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Fizz.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Galio.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Galio.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gangplanks.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gangplanks.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Garen.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Garen.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gnar.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gnar.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gragas.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Gragas.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Graves.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Graves.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Hecarim.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Hecarim.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Heimerdinger.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Heimerdinger.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Illaoi.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Illaoi.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Irelia.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Irelia.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ivern.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ivern.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Janna.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Janna.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jarvan IV.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jarvan IV.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jax.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jax.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jayce.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jayce.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jhin.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jhin.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jinx.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Jinx.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kaisa.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kaisa.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kalista.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kalista.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karma.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karma.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karthus.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Karthus.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kassadin.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kassadin.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Katarina.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Katarina.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayle.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayle.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayn.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kayn.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kennen.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kennen.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kha' Zix.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kha' Zix.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kindred.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kindred.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kled.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kled.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kog Maw.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Kog Maw.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leblanc.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leblanc.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lee Sin.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lee Sin.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leona.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Leona.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lissandra.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lissandra.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lucian.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lucian.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lulu.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lulu.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lux.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Lux.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malphite.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malphite.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malzahar.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Malzahar.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maokai.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maokai.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maître Yi.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Maître Yi.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Miss Fortune.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Miss Fortune.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Mordekaiser.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Mordekaiser.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Morgana.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Morgana.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nami.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nami.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nasus.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nasus.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nautilus.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nautilus.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Neeko.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Neeko.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nidalee.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nidalee.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nocturne.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nocturne.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nunu.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Nunu.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Olaf.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Olaf.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Orianna.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Orianna.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ornn.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ornn.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pantheon.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pantheon.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Poppy.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Poppy.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pyke.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Pyke.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Qiyana.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Qiyana.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Quinn.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Quinn.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rakan.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rakan.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rammus.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rammus.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rek Sai.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rek Sai.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Renekton.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Renekton.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rengar.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rengar.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Riven.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Riven.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rumble.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Rumble.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ryze.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Ryze.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sejuani.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sejuani.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Senna.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Senna.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shaco.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shaco.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shen.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shen.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shyvana.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Shyvana.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Singed.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Singed.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sion.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sion.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sivir.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sivir.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Skarner.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Skarner.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sona.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sona.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Soraka.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Soraka.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Swain.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Swain.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sylvas.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Sylvas.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Syndra.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Syndra.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Tahm Kench.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Tahm Kench.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taliyah.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taliyah.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Talon.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Talon.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taric.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Taric.rouge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Wukong.bleue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/cartes/lol/Wukong.rouge.jpg" afterDir="false" />
+    <list default="true" id="67b8451b-6175-4941-bfae-ac853893f440" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/joueur.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/joueur.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/game/IA.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/game/IA.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/joueur/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/joueur/connect.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -199,25 +20,34 @@
       <executable />
     </execution>
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/ControllerCreateurCarte.php">
+        <entry file="file://$PROJECT_DIR$/view/game/IA.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state relative-caret-position="615">
+              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/joueur/connect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/script/createCard.js">
+        <entry file="file://$PROJECT_DIR$/css/joueur.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="341">
+              <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -226,8 +56,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addDeck</find>
-      <find>caman</find>
+      <find>btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,37 +65,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/php/testModel.html" />
-        <option value="$PROJECT_DIR$/php/testModel.php" />
-        <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/formulaireCarte.html" />
-        <option value="$PROJECT_DIR$/script/Card.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/script/ChercheCarte.js" />
-        <option value="$PROJECT_DIR$/model/ModelHistorique.php" />
-        <option value="$PROJECT_DIR$/model/ModelDecks.php" />
-        <option value="$PROJECT_DIR$/php/historiqueAjax.php" />
-        <option value="$PROJECT_DIR$/script/main.js" />
-        <option value="$PROJECT_DIR$/script/GameIA.js" />
-        <option value="$PROJECT_DIR$/script/Game.js" />
-        <option value="$PROJECT_DIR$/view/view.php" />
-        <option value="$PROJECT_DIR$/php/Carte.php" />
-        <option value="$PROJECT_DIR$/view/carte/createCard.php" />
-        <option value="$PROJECT_DIR$/php/creerCarte.php" />
-        <option value="$PROJECT_DIR$/controller/ControllerCreateurCarte.php" />
-        <option value="$PROJECT_DIR$/script/createCard.js" />
+        <option value="$PROJECT_DIR$/view/game/IA.php" />
+        <option value="$PROJECT_DIR$/view/joueur/connect.php" />
+        <option value="$PROJECT_DIR$/css/joueur.css" />
       </list>
     </option>
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="293" />
-    <option name="y" value="53" />
+    <option name="x" value="304" />
+    <option name="y" value="27" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -275,7 +82,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,75 +92,45 @@
             <path>
               <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="cartes" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="cartes" type="462c0819:PsiDirectoryNode" />
-              <item name="autre" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="cartes" type="462c0819:PsiDirectoryNode" />
-              <item name="lol" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="joueur" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
-              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css/cartes" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/css/cartes" />
-    </key>
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -373,145 +149,24 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f869b3fc-d6c3-487b-af57-1c580d0f1d60" name="Default Changelist" comment="" />
-      <created>1569482015950</created>
+      <changelist id="67b8451b-6175-4941-bfae-ac853893f440" name="Default Changelist" comment="" />
+      <created>1576747102996</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1569482015950</updated>
-      <workItem from="1569482020014" duration="1302000" />
-      <workItem from="1570179645399" duration="2461000" />
-      <workItem from="1571141139153" duration="380000" />
-      <workItem from="1573200715919" duration="3369000" />
-      <workItem from="1573205068579" duration="568000" />
-      <workItem from="1575896389857" duration="2252000" />
-      <workItem from="1575959491873" duration="1242000" />
-      <workItem from="1575965696949" duration="1393000" />
-      <workItem from="1575979606969" duration="510000" />
-      <workItem from="1576155484817" duration="5000" />
-      <workItem from="1576163850652" duration="184000" />
-      <workItem from="1576495838750" duration="1103000" />
-      <workItem from="1576580050098" duration="1775000" />
-      <workItem from="1576585372651" duration="185000" />
-      <workItem from="1576585647385" duration="5548000" />
-      <workItem from="1576599085008" duration="342000" />
+      <updated>1576747102996</updated>
+      <workItem from="1576747106480" duration="295000" />
+      <workItem from="1576747415088" duration="895000" />
     </task>
-    <task id="LOCAL-00001" summary="testmodel php">
-      <created>1569482125662</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1569482125662</updated>
-    </task>
-    <task id="LOCAL-00002" summary="cards">
-      <created>1569483233551</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1569483233551</updated>
-    </task>
-    <task id="LOCAL-00003" summary="local non pris en compte dans la bd">
-      <created>1573201551504</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1573201551504</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fix">
-      <created>1573203205062</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1573203205062</updated>
-    </task>
-    <task id="LOCAL-00005" summary="modif bd historique">
-      <created>1573204495115</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1573204495115</updated>
-    </task>
-    <task id="LOCAL-00006" summary="modif bd historique IA">
-      <created>1573204637873</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1573204637873</updated>
-    </task>
-    <task id="LOCAL-00007" summary="canvas">
-      <created>1575897325848</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1575897325848</updated>
-    </task>
-    <task id="LOCAL-00008" summary="function f">
-      <created>1575899459512</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1575899459512</updated>
-    </task>
-    <task id="LOCAL-00009" summary="input hidden data storage canvas">
-      <created>1575966357304</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1575966357304</updated>
-    </task>
-    <task id="LOCAL-00010" summary="début lol">
-      <created>1576585499913</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1576585499913</updated>
-    </task>
-    <task id="LOCAL-00011" summary="début lol">
-      <created>1576588367848</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1576588367849</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23012000" />
+    <option name="totallyTimeSpent" value="1190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.26286662" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32937366" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32829374" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" x="279" y="104" width="338" height="896" id="Project" order="0" visible="true" weight="0.24681793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18926397" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -529,7 +184,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -539,271 +194,57 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="testmodel php" />
-    <MESSAGE value="cards" />
-    <MESSAGE value="local non pris en compte dans la bd" />
-    <MESSAGE value="fix" />
-    <MESSAGE value="modif bd historique" />
-    <MESSAGE value="modif bd historique IA" />
-    <MESSAGE value="canvas" />
-    <MESSAGE value="function f" />
-    <MESSAGE value="input hidden data storage canvas" />
-    <MESSAGE value="début lol" />
-    <option name="LAST_COMMIT_MESSAGE" value="début lol" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/view.php">
+    <entry file="file://$PROJECT_DIR$/view/site/ChoixDeck.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
+        <state relative-caret-position="360">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/Game.js">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/joueur/EnAttente.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="-266" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/site/Accueil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="88" lean-forward="true" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/GameIA.js">
+    <entry file="file://$PROJECT_DIR$/view/game/IA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+        <state relative-caret-position="615">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/ChercheCarte.js">
+    <entry file="file://$PROJECT_DIR$/view/joueur/connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="65" column="60" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
+        <state relative-caret-position="345">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="28" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/main.js">
+    <entry file="file://$PROJECT_DIR$/css/joueur.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="341">
+          <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/carte/createCard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/Carte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Akali.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/creerCarte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="95" selection-start-line="22" selection-start-column="95" selection-end-line="22" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/ModelCard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Akali.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Alistar.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Amumu.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Anivia.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ashe.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ashe.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Azir.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Braum.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Darius.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Darius.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Cassiopeia.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/David504.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/David504.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/niconi.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/niconi.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/NEPUPUUUU.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/NEPUPUUUU.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/produitsBizare.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/autre/produitsBizare.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Corki.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Cho Gath.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Camille.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Bard.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Azir.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Annie.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ahri.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Aatrox.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Scavenger.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Monarch.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Phenix.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Elmidea.rouge.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Acarnan.bleue.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Ahuri.bleue.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Alienator.bleue.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF8/Ao.bleue.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/FF10/Anima.bleue.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Ahri.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/cartes/lol/Aatrox.bleu.jpg" />
-    <entry file="file://$PROJECT_DIR$/controller/ControllerCreateurCarte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/createCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>TripleTriad</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

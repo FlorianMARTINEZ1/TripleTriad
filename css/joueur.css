@@ -134,6 +134,7 @@ div#log-mdp {
 
 div#btn-co {
     height: 60px;
+    margin: 0;
 }
 
 article div.card-panel {
@@ -286,6 +287,9 @@ div.input-field label {
     width: 50%;
 }
 
+.btn_form{
+    height: 10px;
+}
 
 /* label color */
 
