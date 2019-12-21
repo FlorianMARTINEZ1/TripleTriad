@@ -34,7 +34,7 @@ class ControllerJoueur {
         require File::build_path(array('view','view.php')); //"redirige" vers la vue
       }
       else{
-        ControllerGame::Accueil();
+        ControllerSite::Accueil();
       }
 
 
@@ -49,7 +49,7 @@ class ControllerJoueur {
         require File::build_path(array('view', 'view.php'));
       }
       else{
-        ControllerGame::Accueil();
+        ControllerSite::Accueil();
       }
     }
 
@@ -89,7 +89,7 @@ class ControllerJoueur {
       require_once File::build_path(array('controller','ControllerGame.php'));
       $login = $_SESSION['login'];
       ModelJoueur::metEnFileDAttente($login,0);
-      ControllerGame::Accueil();
+      ControllerSite::Accueil();
     }
 
     public static function rechercheJoueur() {
