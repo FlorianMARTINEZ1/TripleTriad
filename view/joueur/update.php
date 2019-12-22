@@ -14,7 +14,7 @@
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
             <input  id="nom" type="text" class="validate" name="nom" required <?php
-              if($action=='create'){                
+              if($action=='create'){
               }
               else{
                 echo 'value="'.htmlspecialchars($j->get('nom')).'"';
@@ -26,7 +26,7 @@
           <i class="material-icons prefix">account_circle</i>
           <input id="prenom" type="text" class="validate" name="prenom" required <?php
           if($action=='create'){
-            
+
           }
           else{
             echo 'value="'.htmlspecialchars($j->get('prenom')).'"' ;
@@ -82,7 +82,11 @@ echo 'value="'.static::$object.'" readonly';
             if(Session::is_admin()){
                echo ' <p>
                 <label>
-                  <input type="checkbox" name="admin" />
+                  <input type="checkbox" name="admin" ';
+                  if($action != 'create' && $j->get("admin") == 1){
+                    echo 'checked ';
+                  }
+                  echo '/>
                     <span>Mettre en administrateur</span>
                 </label>
                 </p>';

@@ -1,20 +1,20 @@
 function getProd(value){
-  var recherche = document.getElementById("search").value.toLowerCase();
-  var joueurs = document.querySelectorAll('.joueur');
-  Array.prototype.forEach.call(joueurs, function(joueur) {
+  var motsRecherche = document.getElementById("search").value.toLowerCase();
+  var recherches = document.querySelectorAll('.recherche');
+  Array.prototype.forEach.call(recherches, function(recherche) {
     // On a bien trouvé les termes de recherche.
 
-      if(recherche.length == 0){ // pas d'entrer dans la searchbar
-        joueur.style.display ='block';
+      if(motsRecherche.length == 0){ // pas d'entrer dans la searchbar
+        recherche.style.display ='block';
       }
-      else if(recherche.length <= 1){ // pas assez d'élément pour la recherche (~1 caractère)
-        joueur.style.display = 'none';
+      else if(motsRecherche.length <= 1){ // pas assez d'élément pour la recherche (~1 caractère)
+        recherche.style.display = 'none';
       }
-      else if (joueur.id.toLowerCase().indexOf(recherche) > -1) { // si il y a plus de caractère on affiche les joueurs correspondant aux caractères
-        joueur.style.display = 'block';
+      else if (recherche.id.toLowerCase().indexOf(motsRecherche) > -1) { // si il y a plus de caractère on affiche les joueurs correspondant aux caractères
+        recherche.style.display = 'block';
 
       } else {
-        joueur.style.display = 'none';
+        recherche.style.display = 'none';
       }
 
   });

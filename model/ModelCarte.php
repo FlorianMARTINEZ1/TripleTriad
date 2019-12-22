@@ -4,7 +4,7 @@
 require_once "Model.php";
 
 
-class ModelCard extends Model{
+class ModelCarte extends Model{
 
   private $nomCarte;
   private $valN;

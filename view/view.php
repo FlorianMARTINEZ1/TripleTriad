@@ -52,6 +52,7 @@
             if(Session::is_admin()){
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
+              echo '<li><a href="./index.php?action=readAll&controller=carte">Liste des Cartes</a></li>';
               echo '<li><a href="./index.php?action=create&controller=carte">Ajouter une carte</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
@@ -250,7 +251,7 @@
       echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>';
     }
-    if($view == "list" && $controller== "joueur"){
+    if($view == "list" && ($controller== "joueur" || $controller == "carte")){
       	echo	'<script src="./script/searchBar.js"></script>';
     }
 

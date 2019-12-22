@@ -237,96 +237,9 @@ class ModelJoueur extends Model{
         }
     }
 
-    
+
 
  }
 
-
-
-
-
-
-
-
-
-
-
-
-  /*  public static function getAllJoueurs() {
-        try {
-            $pdo = Model::$pdo;
-            $sql = "SELECT * from joueur";
-            $rep = $pdo->query($sql);
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'ModelJoueur');
-
-            return $rep->fetchAll();
-        } catch (PDOException $e) {
-            if (Conf::getDebug()) {
-                echo $e->getMessage(); // affiche un message d'erreur
-            } else {
-                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
-            }
-            die();
-        }
-    }
-
-
-
-
-
-  public function save(){
-
-    try{
-    $sql = "INSERT INTO joueur (login,nom,prenom) VALUES (:log,:nom,:prenom)";
-    $req_prep = Model::$pdo->prepare($sql);
-
-    $value = array(
-        "log" => $this->login,
-        "nom" => $this->nom,
-        "prenom" => $this->prenom,
-      );
-
-    $req_prep->execute($value);
-    } catch (PDOException $e) {
-              if (Conf::getDebug()) {
-                  return false;
-                  /*echo $e->getMessage();*/ // affiche un message d'erreur
-                /*
-              } else {
-                  echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
-              }
-              die();
-          }
-
-
-    } */
-
-    /* public function update(){
-
-
-    try{
-    $sql = "UPDATE joueur SET nom =:nom, prenom=:prenom WHERE login=:log ";
-    $req_prep = Model::$pdo->prepare($sql);
-
-    $value = array(
-        "log" => $this->login,
-        "nom" => $this->nom,
-        "prenom" => $this->prenom,
-      );
-
-    $req_prep->execute($value);
-    } catch (PDOException $e) {
-              if (Conf::getDebug()) {
-                  return false;
-                  /*echo $e->getMessage();*/ // affiche un message d'erreur
-
-            /*  } else {
-                  echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
-              }
-              die();
-          }
-
-
-    } */
 
 ?>

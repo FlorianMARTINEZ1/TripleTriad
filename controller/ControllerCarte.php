@@ -1,12 +1,70 @@
 <?php
 require_once 'lib/File.php';
+require_once File::build_path(array('model','ModelCarte.php'));
 
 class ControllerCarte{
 
   protected static $object = 'carte';
+
+  public static function readAll(){
+    if(Session::is_admin()){
+      $tab_c = ModelCarte::selectAll();
+      $controller = 'carte';
+      $view = 'list';
+      $pagetitle = 'Liste des cartes';
+      require File::build_path(array('view', 'view.php'));
+    }
+    else{
+      ControllerSite::Accueil();
+    }
+  }
+
+  public static function update(){
+    $id = myGet("id");
+    $c = ModelCarte::select($id);
+    if(Session::is_admin() && $c != false){
+      $controller = 'carte';
+      $action="update";
+      $view = 'update';
+      $pagetitle = 'Modification carte';
+      require File::build_path(array('view', 'view.php'));
+    }
+    else{
+      ControllerSite::Accueil();
+    }
+  }
+
+  public static function updated(){
+    if(!is_null(myGet("id")) && ModelCarte::select(myGet("id")) != false && Session::is_admin()){
+      $data = array('id' => $_POST["id"],
+                    'nomCarte' => $_POST['nomCarte'],
+                    'valN' => $_POST['valN'],
+                    'valS' => $_POST['valS'],
+                    'valO' => $_POST['valO'],
+                    'valE' => $_POST['valE'],
+                    'source' => $_POST["source"],);
+
+      ModelCarte::update($data);
+      $message = "carte modifié !";
+      $c = ModelCarte::select(myGet("id"));
+      $controller='carte';
+      $view='update';
+      $action="update";
+      $pagetitle='Carte modifié';
+      require File::build_path(array('view','view.php'));
+
+    }
+    else{
+      ControllerSite::Accueil();
+    }
+  }
+
+
+
   public static function create(){
     $controller='carte';
     $view='update';
+    $action="create";
     $pagetitle='Formulaire de création de carte';
     require File::build_path(array('view','view.php'));
   }
@@ -19,7 +77,6 @@ class ControllerCarte{
   }
 
   public static function created(){
-    require_once File::build_path(array('model','ModelCard.php'));
     $data = array('nomCarte' => $_POST['nomCarte'],
                   'valN' => $_POST['valN'],
                   'valS' => $_POST['valS'],
@@ -27,7 +84,7 @@ class ControllerCarte{
                   'valE' => $_POST['valE'],
                   'source' => $_POST["source"],);
 
-    ModelCard::save($data);
+    ModelCarte::save($data);
     $imgr = $_POST['urlRed'];
     $imgb = $_POST['urlBlue'];
     $imgr = str_replace('data:image/png;base64,', '', $imgr);
@@ -44,6 +101,7 @@ class ControllerCarte{
     $message = "carte créée !";
     $controller='carte';
     $view='update';
+    $action="create";
     $pagetitle='Carte créée';
     require File::build_path(array('view','view.php'));
   }
