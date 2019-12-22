@@ -19,6 +19,22 @@ class ControllerCarte{
     }
   }
 
+  public static function delete(){
+    $id = myGet('id');
+    if(Session::is_admin()){
+        $controller='carte';
+        $view='deleted';
+        $pagetitle='Carte supprimé';
+        ModelCarte::delete($id);
+        require File::build_path(array('view','view.php'));
+    }
+    else{
+       ControllerProduit::readAll();
+    }
+
+
+  }
+
   public static function update(){
     $id = myGet("id");
     $c = ModelCarte::select($id);
