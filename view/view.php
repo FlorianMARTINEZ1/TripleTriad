@@ -16,6 +16,14 @@
     if($controller == "game"){ // controller game
       echo '<link rel="stylesheet" type="text/css" href="./css/game.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">';
+    } else if($controller == "site" && $view == 'Regle'){ // controller site
+      echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/main.css">
+            <link rel="stylesheet" type="text/css" href="./css/rules.css">';
+    } else if($controller == "site" && $view == 'Contact'){ // controller site
+      echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/main.css">
+            <link rel="stylesheet" type="text/css" href="./css/contact.css">';
     }
     else if($controller == "site"){ // controller site
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
