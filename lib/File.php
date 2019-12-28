@@ -10,7 +10,7 @@ class File{
     $DS = DIRECTORY_SEPARATOR;
 	  $ROOT_FOLDER = __DIR__ . $DS . "..";
     /*$ROOT_FOLDER ="/home/ann2/ginestes/public_html/PHPH/TD5";*/
-    return $ROOT_FOLDER.$DS. join($DS, $path_array);;
+    return $ROOT_FOLDER.$DS. join($DS, $path_array);
 
   }
 

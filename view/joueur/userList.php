@@ -1,7 +1,7 @@
 
         <?php
         echo '<arcticle>';
-        echo '<div class="card-panel" style="text-align:center;height: 46%;margin-top: 5%;">Les joueurs qui ne jouent pas sont affichés en <strong style="color:blue;">bleu</strong> et ceux qui joue sont afficher en <strong style="color:red;">rouge</strong>, votre pseudo est afficher en <strong style="color:green;">vert</strong>.
+        echo '<div class="card-panel" style="text-align:center;height: 46%;margin-top: 5%;">Les joueurs qui ne jouent pas sont affichés en <strong style="color:blue;">bleu</strong> et ceux qui jouent sont affichés en <strong style="color:red;">rouge</strong>, votre pseudo est affiché en <strong style="color:green;">vert</strong>.
                 </div>';
         echo '<div class="card-panel" style="
         height: 50%;
