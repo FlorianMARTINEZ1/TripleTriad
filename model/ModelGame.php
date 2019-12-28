@@ -99,7 +99,7 @@ class ModelGame extends Model{
     }
 
     public static function convertCards($id){
-        require_once File::build_path(array('model','ModelCard.php'));
+        require_once File::build_path(array('model','ModelCarte.php'));
         $sql = 'SELECT * FROM game where id = \''.$id.'\'';
         // Préparation de la requête
         $rep = Model::$pdo->query($sql);
@@ -129,20 +129,20 @@ class ModelGame extends Model{
         );
 
         $req_prep->execute($values);
-        $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelCard");
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelCarte");
         echo json_encode($req_prep->fetchAll(PDO::FETCH_ASSOC));
 
     }
 
 
     public static function selectDixCarte(){
-      require_once File::build_path(array('model','ModelCard.php'));
-      $sql = 'SELECT SQL_NO_CACHE * FROM carte ORDER BY RAND( ) LIMIT 10';
+      require_once File::build_path(array('model','ModelCarte.php'));
+      $sql = 'SELECT SQL_NO_CACHE * FROM carte WHERE source=\'FF8\' ORDER BY RAND( ) LIMIT 10';
       // Préparation de la requête
 
       $rep = Model::$pdo->query($sql);
 
-      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelCard");
+      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelCarte");
 
       $tab = $rep->fetchAll(); // contient les 10 cartes
       $tabid;

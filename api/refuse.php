@@ -3,8 +3,9 @@
 require_once '../lib/File.php';
 require_once File::build_path(array('model','ModelGame.php'));
 
-$id= $_GET['id'];
+$id= $_POST['id'];
 ModelGame::refuse($id);
+echo "Success";
 
 
 

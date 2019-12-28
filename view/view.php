@@ -134,9 +134,10 @@
   require $filepath;
 
   if($controller == "game"){
-    echo ' <div id="deck" style="display:none">'.$deck.'</div>
-
-
+    if(isset($deck)){
+        echo ' <div id="deck" style="display:none">'.$deck.'</div>';
+    }
+    echo '
     <div id="fingame" class="card" style="display: none;">
         <div id="vide">
         </div>
@@ -258,6 +259,10 @@
     if($controller != "game"){
       echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>';
+      if($view == "userList"){
+        echo '<script type="text/javascript" src="./script/actuConnect.js"></script>
+              <script type="text/javascript" src="./script/footer.js"></script>';
+      }
     }
     if($view == "list" && ($controller== "joueur" || $controller == "carte")){
       	echo	'<script src="./script/searchBar.js"></script>';

@@ -45,6 +45,7 @@ function lireDonnee(sData) {
   var donnes = JSON.parse(sData);
   if(donnes[0]['casejoue'] != null && (( donnes[0]["etat"]=="joueur1" && donnes[0]["challenger"] != document.getElementById("joueur1").value ) || (donnes[0]["etat"]=="joueur2"  && donnes[0]["challenger"] == document.getElementById("joueur1").value))){
     console.log("en attent de réponse, le joueur en face a joué");
+    console.log("current = "+g2.currentPlayer);
     let jouecase = "case"+donnes[0]['casejoue'];
     let img = donnes[0]['idcartejoue'];
     removeCaseCard(1);
@@ -64,6 +65,7 @@ function lireDonnee(sData) {
     casee.removeAttribute('ondragover');
     confrontation(img,jouecase);
     g2.setTurn();
+    console.log("current = "+g2.currentPlayer);
     /*g2.currentPlayer==0;*/
     document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
     document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;

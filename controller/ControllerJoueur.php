@@ -8,12 +8,17 @@ class ControllerJoueur {
     protected static $object = 'joueur';
 
     public static function readAllPlayerConnected() {
+      if(isset($_SESSION["login"])){
         $tab_j = ModelJoueur::checkJoueursConnected();
         /*$tab_j = ModelJoueur::selectAll();*/
         $controller='joueur';
         $view='userList';
         $pagetitle='Liste des joueurs';
         require File::build_path(array('view','view.php')); //"redirige" vers la vue
+      }
+      else{
+        ControllerJoueur::connect();
+      }
     }
 
     public static function stat(){
