@@ -91,9 +91,6 @@ function onInput() {
     var somme = Number(N) + Number(S) + Number(O) + Number(E);
   }
   img.onload();
-
-
-  trace()
 }
 
 function trace() {
