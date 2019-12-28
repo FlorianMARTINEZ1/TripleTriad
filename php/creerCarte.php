@@ -6,6 +6,7 @@ require_once '../lib/File.php';
      require_once 'Carte.php';
      //Création d'un objet PHP de classe Carte à partir des données envoyées dans le formulaire
      $Carte1 = new Carte($_POST['nomCarte'],$_POST['valN'],$_POST['valS'],$_POST['valO'],$_POST['valE']);
+     $Carte1->setSource($_POST["source"]);
      //On enregistre cet objet dans la base de donnée
      $Carte1->save();
      //On s'occupe maintenant des images des cartes le suffixe r correspond à l'image rouge et le suffixe b à l'image bleue
