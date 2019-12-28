@@ -146,8 +146,14 @@
           <p id="gagnant">
             Bravo !
           </p>
-          <div class="row center">
-            <button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>
+          <div class="row center">';
+          if ($view == "Enligne") {
+            echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="location.href = \'./index.php?action=enAttente&controller=joueur\';">Rejouer</button>';
+          }
+          else{
+            echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>';
+          }
+          echo'
           </div>
         </div>
       </div>
@@ -186,15 +192,11 @@
       <script type="text/javascript" src="./script/Card.js"></script>
       <script type="text/javascript"> var equilibre = '.htmlspecialchars($_SESSION["equilibre"]).' ; </script>';
 
-      if ($view == "EnLigne") {
-          echo '<script type="text/javascript"> var multi = true;</script> ';
-      } else {
-          echo '<script type="text/javascript"> var multi = false;</script> ';
-      }
-
       if ($view == "Enligne") {
+          echo '<script type="text/javascript"> var multi = true;</script> ';
           echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
       } else {
+          echo '<script type="text/javascript"> var multi = false;</script> ';
           echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
       }
 

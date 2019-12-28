@@ -43,7 +43,7 @@ function removeCaseCard(etat) {
 
 function lireDonnee(sData) {
   var donnes = JSON.parse(sData);
-  if(donnes[0]['casejoue'] != null && (( donnes[0]["etat"]=="joueur1" && donnes[0]["challenger"] != document.getElementById("joueur1").value ) || (donnes[0]["etat"]=="joueur2"  && donnes[0]["challenger"] == document.getElementById("joueur1").value))){
+  if(donnes[0] && donnes[0]['casejoue'] != null && (( donnes[0]["etat"]=="joueur1" && donnes[0]["challenger"] != document.getElementById("joueur1").value ) || (donnes[0]["etat"]=="joueur2"  && donnes[0]["challenger"] == document.getElementById("joueur1").value))){
     console.log("en attent de réponse, le joueur en face a joué");
     console.log("current = "+g2.currentPlayer);
     let jouecase = "case"+donnes[0]['casejoue'];
