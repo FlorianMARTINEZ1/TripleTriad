@@ -145,7 +145,30 @@ function initialisation() {
   document.getElementById('deux').innerHTML =  joueurDeux;
   document.getElementById('score-un').innerHTML = 5;
   document.getElementById('score-deux').innerHTML = 5;
+  addDeck(0);
+  addDeck(5);
 
+}
+
+function addDeck(increment) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+
+    }
+  };
+  let tabID = [];
+  for (let i = 0; i < 5; i++) {
+    tabID.push(allCards[i + increment].donneID());
+
+  }
+  tabID.sort(function(a, b) {
+    return a - b
+  });
+
+  //xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
+  xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4]);
+  xhr.send();
 }
 
 function drag(ev) {
