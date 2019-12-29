@@ -1,7 +1,25 @@
 <?php
-    echo '<article><div="card-container"> <div class="card-panel" style="width:70%;height:100%;margin:5% auto;background-color: rgba(72, 131, 146, 0.5);"><div class="card-content" style="height:100%"><h3> Historique : </h3>';
+    echo '<article><div="card-container"> <div class="card-panel" style="width:70%;height:100%;margin:5% auto;background-color: rgba(72, 131, 146, 0.5);"><div class="card-content" style="height:100%"><h3> Historique </h3>';
     if($tabHistorique!=false){
-        foreach($tabHistorique as $value)
+        $size = sizeof($tabHistorique);
+        if(!isset($_GET['page']))
+        {
+            $page = 1;
+        }
+        else
+        {
+            if($_GET['page'] >= 1)
+            {
+                $page = $_GET['page'];
+            }
+            else
+            {
+                $page = 1;
+            }
+        }
+        $reverse = array_reverse($tabHistorique);
+        $reverseSliced = array_slice($reverse, intval(($page-1)*4), 4);
+        foreach($reverseSliced as $value)
         {
             $deckJ1 = ModelHistorique::getDeck($value['deckJ1']);
             $deckJ2 = ModelHistorique::getDeck($value['deckJ2']);
@@ -41,6 +59,30 @@
     {
         echo 'Vous n\'avez aucune partie dans votre historique !';
     }
-    
+
+
+    echo '<div class="center">
+    <div class="pagination">';
+    if($page >1){
+    echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.intval($page-1).'">&laquo;</a>';
+    }
+    for ($i = 1; $i<=intval(($size/4)+1);$i++)
+    {
+        if($i == $page)
+        {
+            echo '<a class="active" href="#">'.$i.'</a>';
+        }
+        else
+        {
+            echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.$i.'">'.$i.'</a>';
+        }
+    }
+    if($page<intval(($size/4)+1))
+    {
+        echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.intval($page+1).'">&raquo;</a>';
+    }
+    echo'
+    </div>
+  </div>';
     echo '</div></div></article>';
 ?>
