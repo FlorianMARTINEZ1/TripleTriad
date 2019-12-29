@@ -107,7 +107,7 @@ class ModelHistorique extends Model{
     public static function getNom($id)
     {
         try {
-            $sql = "SELECT nomCarte from carte WHERE id=:id";
+            $sql = "SELECT nomCarte, source from carte WHERE id=:id";
             // Préparation de la requête
             $req_prep = Model::$pdo->prepare($sql);
 
