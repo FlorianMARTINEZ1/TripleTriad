@@ -8,7 +8,7 @@
         }
         else
         {
-            if($_GET['page'] >= 1)
+            if($_GET['page'] >= 1 &&$_GET['page']<=intval(($size/4)+1))
             {
                 $page = $_GET['page'];
             }
