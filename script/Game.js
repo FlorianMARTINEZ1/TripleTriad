@@ -76,7 +76,14 @@ class Game {
       this.getDeck(0, this.readDeck);
       this.idDeck2 = 0;
       this.getDeck(5, this.readDeck);
+      function end() {
+        g2.endGamePrint()
+      }
+      setTimeout(end, 3000);
+    }
+  }
 
+    endGamePrint(){
       document.getElementById("fingame").removeAttribute("display");
       document.getElementById("fingame").setAttribute("style", "display:fixed;");
       document.getElementById('plateaujeu').style.display = 'none';
@@ -124,10 +131,6 @@ class Game {
         victoire.play();
         this.addHistorique();
       }
-
-    } else {
-
-    }
   }
 
   getDeck(increment, callback) {
