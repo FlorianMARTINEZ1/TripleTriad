@@ -170,7 +170,7 @@ class Game {
 
 
   addHistorique() {
-    if(logged == 1)
+    if(logged == true)
     {
       if(multi==true){
         var xhr = new XMLHttpRequest();

@@ -205,11 +205,11 @@
       }
       if(isset($_SESSION['login']))
       {
-        echo '<script type="text/javascript"> var logged = 1;</script> ';
+        echo '<script type="text/javascript"> var logged = true;</script> ';
       }
       else
       {
-        echo '<script type="text/javascript"> var logged = 0;</script> ';
+        echo '<script type="text/javascript"> var logged = false;</script> ';
       }
 
       ?>
