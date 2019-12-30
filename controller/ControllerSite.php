@@ -1,5 +1,6 @@
 <?php
 require_once 'lib/File.php';
+require_once File::build_path(array('model','ModelHistorique.php')); // chargement du modèle
 
 
 class ControllerSite {
@@ -36,6 +37,14 @@ class ControllerSite {
         $pagetitle='Choix du deck';
         require File::build_path(array('view','view.php'));
     }
+
+    public static function classement(){
+      $controller='site';
+      $view='classement';
+      $pagetitle='Classement';
+      $tabClassement = ModelHistorique::classement();
+      require File::build_path(array('view','view.php'));
+  }
 
     public static function error(){
         $controller='site';

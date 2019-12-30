@@ -38,7 +38,7 @@
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/joueur.css">';
     }
-    if($view == 'historique')
+    if($view == 'historique'||$view == 'classement')
     {
       echo '<link rel="stylesheet" type="text/css" href="./css/pagination.css">';
     }
@@ -77,7 +77,7 @@
               <a href="./" class="brand-logo">Triple Triad</a>
 
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-
+              <li><a href="./index.php?action=classement">Classement</a></li>
                 <li><a href="./index.php?action=regle">Règles</a></li>
                 <li><a href="./index.php?action=contact">Report Bug/Contact</a></li>
                 <?php

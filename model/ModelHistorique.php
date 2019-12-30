@@ -291,5 +291,75 @@ class ModelHistorique extends Model{
         }
     }
 
+    public static function classement()
+    {
+        try {
+            $sql = "SELECT nomJ1, COUNT(*) FROM Historique WHERE scoreJ1 > scoreJ2 GROUP BY nomJ1";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute();
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab = $req_prep->fetchAll();
+            $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 GROUP BY nomJ2";
+            // Préparation de la requête
+            $req_prep2 = Model::$pdo->prepare($sql2);
+
+            // On donne les valeurs et on exécute la requête
+            $req_prep2->execute();
+
+            // On récupère les résultats comme précédemment
+            $req_prep2->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab2 = $req_prep2->fetchAll();
+
+            $tabClassement = array();
+            foreach($tab as $value)
+            {
+                unset($value[0]);
+                unset($value[1]);
+                $value['nom'] = $value['nomJ1'];
+                unset($value['nomJ1']);
+                array_push($tabClassement, $value);
+            }
+           
+            for($i=0;$i<sizeof($tab2);$i++)
+            {
+                $added = false;
+                for($j=0;$j<sizeof($tabClassement);$j++)
+                {
+                    if($tab2[$i]['nomJ2']==$tabClassement[$j]['nom'])
+                    {
+                        $tabClassement[$j]['COUNT(*)'] = $tabClassement[$j]['COUNT(*)'] + $tab2[$i]['COUNT(*)'];
+                        $added = true;
+                    }
+                }
+                if($added == false)
+                {
+                    unset($tab2[$i][0]);
+                    unset($tab2[$i][0]);
+                    $tab2[$i]['nom'] = $tab2[$i]['nomJ2'];
+                    unset($tab2[$i]['nomJ2']);
+                    array_push($tabClassement, $tab2[$i]);
+                }
+            }
+            
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            if (empty($tabClassement))
+                return false;
+            return $tabClassement;
+
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
 }
 ?>
