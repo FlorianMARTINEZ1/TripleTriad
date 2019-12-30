@@ -203,6 +203,14 @@
           echo '<script type="text/javascript"> var multi = false;</script> ';
           echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
       }
+      if(isset($_SESSION['login']))
+      {
+        echo '<script type="text/javascript"> var logged = 1;</script> ';
+      }
+      else
+      {
+        echo '<script type="text/javascript"> var logged = 0;</script> ';
+      }
 
       ?>
       <script type="text/javascript" src="./script/Joueur.js"></script>
