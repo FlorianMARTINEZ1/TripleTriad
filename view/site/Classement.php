@@ -33,7 +33,7 @@
     
         return $new_array;
     }
-    echo '<article><div="card-container"> <div class="card-panel" style="width:70%;height:100%;margin:5% auto;background-color: rgba(72, 131, 146, 0.5);"><div class="card-content" style="height:100%"><h3 style="text-align:center"> Classement </h3>';
+    echo '<article><div="card-container"> <div class="card-panel"><div class="card-content" style="height:100%"><h3 style="text-align:center"> Classement </h3>';
     $size = sizeof($tabClassement);
     
     if(!isset($_GET['page']))
@@ -52,19 +52,21 @@
         }
     }
     $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
-    echo '<div style="display:flex;width:40%;margin:auto"><div>Place</div><div style="flex-grow:1;padding-left:3%">Nom </div><div>Nombre de parties gagnées</div></div>';
+    echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties gagnées</p></div>';
     $i = 1;
     foreach($ClassementTrié as $value)
     {
         if($i>intval($page*15-15)&&$i<=intval($page*15))
-        if(isset($_SESSION['login'])&&$value['nom']==$_SESSION['login'])
         {
-            echo '<div style="background-color:darkgray;display:flex;width:40%;margin:auto"><div>'.$i.'</div><div style="flex-grow:1;padding-left:10%"> '.$value['nom'].'</div><div>'.$value['COUNT(*)']. '</div></div>';
-        }
-        else
-        {
-            echo '<div style="display:flex;width:40%;margin:auto"><div>'.$i.'</div><div style="flex-grow:1;padding-left:10%"> '.$value['nom'].'</div><div>'.$value['COUNT(*)']. '</div></div>';
+            if(isset($_SESSION['login'])&&$value['nom']==$_SESSION['login'])
+            {
+                echo '<div id=place'.$i.' class="contain logged"><p>'.$i.'</p><p class="name"> '.$value['nom'].'</p><p>'.$value['COUNT(*)']. '</p></div>';
+            }
+            else
+            {
+                echo '<div id=place'.$i.' class="contain"><p>'.$i.'</p><p class="name"> '.$value['nom'].'</p><p>'.$value['COUNT(*)']. '</p></div>';
 
+            }
         }
         $i++;
     }

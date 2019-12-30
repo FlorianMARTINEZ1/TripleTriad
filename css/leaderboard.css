@@ -1,0 +1,41 @@
+#place1{
+    background-color :gold;
+}
+#place2{
+    background-color:silver;
+}
+#place3
+{
+    background-color:sienna;
+}
+
+.contain
+{
+    padding : 2px;
+    display:flex;
+    width:40%;
+    margin:auto;
+}
+
+.name
+{
+    flex-grow:1;
+    padding-left:10%;
+}
+
+p{
+    margin:auto;
+}
+
+.card-panel
+{
+    width:70%;
+    height:100%;
+    margin:5% auto;
+    background-color: rgba(72, 131, 146, 0.5);
+}
+
+.logged
+{
+    border:solid 2px;
+}
