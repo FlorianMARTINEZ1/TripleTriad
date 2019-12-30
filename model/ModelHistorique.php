@@ -294,7 +294,7 @@ class ModelHistorique extends Model{
     public static function classement()
     {
         try {
-            $sql = "SELECT nomJ1, COUNT(*) FROM Historique WHERE scoreJ1 > scoreJ2 GROUP BY nomJ1";
+            $sql = "SELECT nomJ1, COUNT(*) FROM Historique WHERE scoreJ1 > scoreJ2 AND nomJ1!='IAForte' AND nomJ1!='IAMoyen' AND nomJ1!='IAFaible' GROUP BY nomJ1";
             // Préparation de la requête
             $req_prep = Model::$pdo->prepare($sql);
 
@@ -304,7 +304,7 @@ class ModelHistorique extends Model{
             // On récupère les résultats comme précédemment
             $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
             $tab = $req_prep->fetchAll();
-            $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 GROUP BY nomJ2";
+            $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 AND nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' GROUP BY nomJ2";
             // Préparation de la requête
             $req_prep2 = Model::$pdo->prepare($sql2);
 
