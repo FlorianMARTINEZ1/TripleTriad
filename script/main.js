@@ -77,7 +77,6 @@ function initialisation() {
   addDeck(5);
 
 
-
   if (choixjoueur == 1 && document.getElementById("IA")) {
     g2.getListPlayer()[1].play();
   } else if (document.getElementById("IA0")) {

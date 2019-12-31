@@ -180,16 +180,11 @@ class ModelJoueur extends Model{
 
    public static function checkJoueursConnectedJSON(){
       try {
-
-
       $sql = "SELECT * from joueur LEFT JOIN game ON joueur.joue=game.id WHERE connecte=1;";
       // Préparation de la requête
-
       $rep = Model::$pdo->query($sql);
-
       $rep->setFetchMode(PDO::FETCH_CLASS, "ModelJoueur");
       echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
-
       } catch (PDOException $e) {
           if (Conf::getDebug()) {
               echo $e->getMessage(); // affiche un message d'erreur
@@ -200,10 +195,6 @@ class ModelJoueur extends Model{
       }
 
   }
-
-
-
-
     // une methode d'affichage.
     public function afficher() {
         echo "Joueur {$this->prenom} {$this->nom} de login {$this->login}";

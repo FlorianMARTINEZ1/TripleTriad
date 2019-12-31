@@ -172,7 +172,7 @@ class Game {
   addHistorique() {
     if(logged == true)
     {
-      if(multi==true){
+      if(multi==true && parseInt(document.getElementById("choix").innerHTML) == 1){ // 1 seul joueur envoie l'hisotrique
         var xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = function () {

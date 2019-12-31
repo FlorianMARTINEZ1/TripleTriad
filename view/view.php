@@ -202,11 +202,10 @@
 
       if ($view == "Enligne") {
           echo '<script type="text/javascript"> var multi = true;</script> ';
-          echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
       } else {
           echo '<script type="text/javascript"> var multi = false;</script> ';
-          echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
       }
+      echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
       if(isset($_SESSION['login']))
       {
         echo '<script type="text/javascript"> var logged = true;</script> ';
