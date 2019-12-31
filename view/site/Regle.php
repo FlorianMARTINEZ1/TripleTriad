@@ -7,7 +7,7 @@
             <input type="radio" name="r" id="r4">
             <input type="radio" name="r" id="r5">
             <div class="card-content  slide s1">
-                <p>Bonjour</p>
+                <p>          Chaque carte possède quatre valeurs. Lorsqu'une carte est posée à côté d'une carte d'une autre couleur, il y a confrontation. On regarde alors si la carte posée possède une valeur supérieure à la carte affrontée. Si c'est le cas, alors elle change de couleur, sinon, elle reste de sa couleur.</p>
             </div>
 
             <div class="card-content  slide s2">

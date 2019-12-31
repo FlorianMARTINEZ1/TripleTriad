@@ -5,9 +5,9 @@
       <h3 class="center spe">f</h3>
       <div class="regle">
         <div class="card-content">
-          <h5 class="center">Règles</h5>
+          <h5 class="center">Credit</h5>
           <p class="p-regle grey-text text-lighten-1">
-          Chaque carte possède quatre valeurs. Lorsqu'une carte est posée à côté d'une carte d'une autre couleur, il y a confrontation. On regarde alors si la carte posée possède une valeur supérieure à la carte affrontée. Si c'est le cas, alors elle change de couleur, sinon, elle reste de sa couleur.
+            Jeu réalisé par GINESTE Sébastien, SARISOY Cem, MARUEJOL Pierre et MARTINE Florian sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de montpellier !<br /> Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
           </p>
           <h5 class="center">Mode de jeux</h5>
         </div>
