@@ -284,6 +284,9 @@
     if($view == "list" && ($controller== "joueur" || $controller == "carte")){
       	echo	'<script src="./script/searchBar.js"></script>';
     }
+    if($view == "Accueil"){
+      echo  '<script type="text/javascript" src="./script/Accueil.js"></script>';
+    }
 
    ?>
    <script src="./script/general.js"></script>

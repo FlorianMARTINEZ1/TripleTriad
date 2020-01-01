@@ -55,15 +55,29 @@ div.card {
     color: white;
 }
 
-div.modeJeu {
+div.modeJeu, div#retour {
     background-color: #223d44;
     transition: 0.5s;
 }
 
-div.modeJeu:hover {
+div.modeJeu:hover, div#retour:hover {
     transform: translateY(-5px);
     box-shadow: 0 3px 8px #000;
 }
+
+.none{
+  display: none;
+}
+
+#retour{
+  position: relative;
+  left: 48%;
+  padding: 3px;
+  width: 33px;
+  bottom: 19px;
+  display: none;
+}
+
 
 div.regle {
     background-color: #111f22;

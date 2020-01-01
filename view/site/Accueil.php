@@ -7,65 +7,36 @@
         <div class="card-content">
           <h5 class="center">Credit</h5>
           <p class="p-regle grey-text text-lighten-1">
-            Jeu réalisé par GINESTE Sébastien, SARISOY Cem, MARUEJOL Pierre et MARTINE Florian sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de montpellier !<br /> Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
+            Jeu réalisé par GINESTE Sébastien, SARISOY Cem, MARUEJOL Pierre et MARTINE Florian sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de montpellier ! Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
           </p>
           <h5 class="center">Mode de jeux</h5>
         </div>
 
 <!--Debut de la liste des modes disponibles-->
         <div class="row">
-          <div class="col s6 m4 l2">
+          <div class="col s6 m4 l4">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=equilibre">
+              <a id="local" class="modal-trigger white-text" href="./?action=choix&game=equilibre">
                 <div class="card-content center">
-                  <div>Equilibré</div>
+                  <div>local</div>
                 </div>
               </a>
             </div>
           </div>
 
-          <div class="col s6 m4 l2">
+          <div class="col s6 m4 l4">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=aleatoire">
+              <a id="IA" class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
                 <div class="card-content center">
-                  <div>Aléatoire</div>
+                  <div>IA</div>
                 </div>
               </a>
             </div>
           </div>
 
-          <div class="col s6 m4 l2">
+          <div class="col s6 m4 l4">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
-                <div class="card-content center">
-                  <div>IAFaible</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col s6 m4 l2">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAmoyen">
-                <div class="card-content center">
-                  <div>IAMoyen</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col s6 m4 l2">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAforte">
-                <div class="card-content center">
-                  <div>IAForte</div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col s6 m4 l2">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./index.php?action=enAttente&controller=joueur">
+              <a id="Multijoueur" class="modal-trigger white-text" href="./index.php?action=enAttente&controller=joueur">
                 <div class="card-content center">
                   <div>Multijoueur</div>
                 </div>
@@ -74,6 +45,69 @@
           </div>
 
         </div>
+        <div class="row none">
+          <div class="col s6 m6 l6">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=choix&game=equilibre">
+                <div class="card-content center">
+                  <div>equilibre</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m6 l6">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+                <div class="card-content center">
+                  <div>aléatoire</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row none">
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=choix&game=equilibre">
+                <div class="card-content center">
+                  <div>IA faible</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+                <div class="card-content center">
+                  <div>IA moyen</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+                <div class="card-content center">
+                  <div>IA forte</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+                <div class="card-content center">
+                  <div>IA vs IA</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
 <!--Fin de la liste des modes disponibles-->
       </div>
     </div>
