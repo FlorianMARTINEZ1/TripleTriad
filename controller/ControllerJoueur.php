@@ -152,12 +152,7 @@ class ControllerJoueur {
         else{
           $_SESSION['admin'] = true;
         }
-
-        $controller='joueur';
-        $view='detail';
-        $pagetitle='Mon compte';
-
-        require File::build_path(array('view','view.php'));
+        ControllerJoueur::read();
       }
       else{
         $msg = "Erreur, l'identifiant ou le mot de passe est incorrect";
