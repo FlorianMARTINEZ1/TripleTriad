@@ -63,7 +63,7 @@
     else
     {
         echo '<div class="buttons"><a href="index.php?action=classement';
-        if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=0';}
+        if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=1';}
         echo'&win=0">Nombre de parties jouées</a>';
     }
     if(isset($_GET['win'])&&$_GET['win']==1)
@@ -73,7 +73,7 @@
     else
     {
         echo '<a href="index.php?action=classement';
-        if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=0';}
+        if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=1';}
         echo '&win=1">Nombre de parties gagnées</a></div>';
     }
 
