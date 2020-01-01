@@ -64,12 +64,12 @@
             echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".rawurlencode($log)."\">Mon Compte</a></li>";
             echo '<li><a href="./index.php?action=update&controller=joueur&login='.rawurlencode($log).'">Modifier son compte</a></li>';
             echo '<li><a href="./index.php?action=historique&controller=joueur&login='.rawurlencode($log).'">Historique</a></li>';
+            echo '<li><a href="./index.php?action=create&controller=carte">Ajouter une carte</a></li>';
 
             if(Session::is_admin()){
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=carte">Liste des Cartes</a></li>';
-              echo '<li><a href="./index.php?action=create&controller=carte">Ajouter une carte</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }

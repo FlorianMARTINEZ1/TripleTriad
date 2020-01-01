@@ -79,10 +79,17 @@
         <label for="source">Source</label>
         <div id="locaCard" class="center">
           <select name="source" id="srcCard">
-            <option <?php if($action=="update" && $c->get("source") == "autre"){echo 'selected';} ?> value="autre">Autre</option>
-            <option <?php if($action=="update" && $c->get("source") == "lol"){echo 'selected';} ?> value="lol">League Of Legends</option>
-            <option <?php if($action=="update" && $c->get("source") == "smashbros"){echo 'selected';} ?> value="smashbros">Super Smash Bros</option>
-            <option <?php if($action=="update" && $c->get("source") == "starcraft"){echo 'selected';} ?> value="starcraft">Starcraft</option>
+            <?php
+              if($action == "create" && !Session::is_admin()){
+                echo '<option selected value="autre">Autre</option>';
+              }
+              else{
+                echo '<option '; if($action=="update" && $c->get("source") == "autre"){echo 'selected';} echo 'value="autre">Autre</option>';
+                echo '<option '; if($action=="update" && $c->get("source") == "lol"){echo 'selected';} echo 'value="lol">League Of Legends</option>';
+                echo '<option '; if($action=="update" && $c->get("source") == "smashbros"){echo 'selected';} echo 'value="smashbros">Super Smash Bros</option>';
+                echo '<option '; if($action=="update" && $c->get("source") == "starcraft"){echo 'selected';} echo 'value="starcraft">Starcraft</option>';
+              }
+            ?>
           </select>
         </div>
         <input type="file" accept="image/*" name="imageCanvas" onchange="readURL(this)"  <?php if($action!="update"){echo 'required';} ?> >
@@ -111,14 +118,14 @@
 
       <p>
         <input type="submit" value="Envoyer" />
-         <?php
-         if(isset($message)){
-           echo "<br />".htmlspecialchars($message);
-         }
-        ?>
       </p>
     </fieldset>
   </form>
+  <?php
+    if(isset($message)){
+      echo '<script type="text/javascript"> alert("'.htmlspecialchars($message).'") </script> ';
+    }
+  ?>
   <script type="text/javascript" src="./script/createCard.js"></script>
 
   </div>
