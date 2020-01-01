@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col s6 m4 l4">
             <div class="card modeJeu">
-              <a id="local" class="modal-trigger white-text" href="./?action=choix&game=equilibre">
+              <a id="local" class="modal-trigger white-text" href="choixmode">
                 <div class="card-content center">
                   <div>local</div>
                 </div>
@@ -26,7 +26,7 @@
 
           <div class="col s6 m4 l4">
             <div class="card modeJeu">
-              <a id="IA" class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+              <a id="IA" class="modal-trigger white-text" href="choixmode">
                 <div class="card-content center">
                   <div>IA</div>
                 </div>
@@ -58,7 +58,7 @@
 
           <div class="col s6 m6 l6">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+              <a class="modal-trigger white-text" href="./?action=choix&game=aleatoire">
                 <div class="card-content center">
                   <div>aléatoire</div>
                 </div>
@@ -69,7 +69,7 @@
         <div class="row none">
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=equilibre">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
                 <div class="card-content center">
                   <div>IA faible</div>
                 </div>
@@ -79,7 +79,7 @@
 
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAmoyen">
                 <div class="card-content center">
                   <div>IA moyen</div>
                 </div>
@@ -89,7 +89,7 @@
 
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAforte">
                 <div class="card-content center">
                   <div>IA forte</div>
                 </div>
@@ -98,7 +98,7 @@
           </div>
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+              <a class="modal-trigger white-text" href="./?action=choix&game=IAvsIA">
                 <div class="card-content center">
                   <div>IA vs IA</div>
                 </div>
