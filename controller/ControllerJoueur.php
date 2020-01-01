@@ -2,6 +2,7 @@
 require_once 'lib/File.php';
 require_once File::build_path(array('model','ModelJoueur.php')); // chargement du modèle
 require_once File::build_path(array('model','ModelHistorique.php')); // chargement du modèle
+require_once File::build_path(array('model','ModelCarte.php')); // chargement du modèle
 require_once File::build_path(array('lib','Security.php'));
 
 class ControllerJoueur {
@@ -30,7 +31,7 @@ class ControllerJoueur {
         $win_rate_IAForte = ModelHistorique::nbWinIAFO();
         $win_rate_IAMoyen = ModelHistorique::nbWinIAM();
         $win_rate_IAFaible = ModelHistorique::nbWinIAFA();
-        //$plusGrandNombreDePartieDunJoueur = ModelHistorique::plusGrandnbParti();
+        $nbCartes = ModelCarte::nbCartes();
         $nombreDePartieMultiEnCeMomentEnLigne = ModelGame::nbPartie();
 
         $controller='joueur';
