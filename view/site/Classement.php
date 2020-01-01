@@ -76,7 +76,7 @@
         if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=1';}
         echo '&win=1">Nombre de parties gagnées</a></div>';
     }
-
+    
     $size = sizeof($tabClassement);
     
     if(!isset($_GET['page']))
@@ -85,7 +85,7 @@
     }
     else
     {
-        if($_GET['page'] >= 1 &&$_GET['page']<=intval(($size/15)+1))
+        if($_GET['page'] >= 1 &&$_GET['page']<=ceil($size/15))
         {
             $page = $_GET['page'];
         }
@@ -97,6 +97,7 @@
     $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
     echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
     $i = 1;
+    
     foreach($ClassementTrié as $value)
     {
         if($i>intval($page*15-15)&&$i<=intval($page*15))
@@ -118,9 +119,12 @@
     echo '<div class="center">
     <div class="pagination">';
     if($page >1){
-    echo '<a href="index.php?action=classement&page='.intval($page-1).'">&laquo;</a>';
+    echo '<a href="index.php?action=classement';
+    if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+    if(isset($_GET['win'])) echo '&win='.$_GET['win'];
+    echo '&page='.intval($page-1).'">&laquo;</a>';
     }
-    for ($i = 1; $i<=intval(($size/15)+1);$i++)
+    for ($i = 1; $i<=ceil(($size/15));$i++)
     {
         if($i == $page)
         {
@@ -128,12 +132,18 @@
         }
         else
         {
-            echo '<a href="index.php?action=classement&page='.$i.'">'.$i.'</a>';
+            echo '<a href="index.php?action=classement';
+            if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+            if(isset($_GET['win'])) echo '&win='.$_GET['win'];
+            echo '&page='.$i.'">'.$i.'</a>';
         }
     }
-    if($page<intval(($size/15)+1))
+    if($page<ceil(($size/15)))
     {
-        echo '<a href="index.php?action=classement&page='.intval($page+1).'">&raquo;</a>';
+        echo '<a href="index.php?action=classement';
+        if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+        if(isset($_GET['win'])) echo '&win='.$_GET['win'];  
+        echo '&page='.intval($page+1).'">&raquo;</a>';
     }
     echo'
     </div>

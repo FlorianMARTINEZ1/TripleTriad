@@ -8,7 +8,7 @@
         }
         else
         {
-            if($_GET['page'] >= 1 &&$_GET['page']<=intval(($size/4)+1))
+            if($_GET['page'] >= 1 &&$_GET['page']<=ceil($size/4))
             {
                 $page = $_GET['page'];
             }
@@ -66,7 +66,7 @@
     if($page >1){
     echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.intval($page-1).'">&laquo;</a>';
     }
-    for ($i = 1; $i<=intval(($size/4)+1);$i++)
+    for ($i = 1; $i<=ceil($size/4);$i++)
     {
         if($i == $page)
         {
@@ -77,7 +77,7 @@
             echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.$i.'">'.$i.'</a>';
         }
     }
-    if($page<intval(($size/4)+1))
+    if($page<ceil($size/4))
     {
         echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.intval($page+1).'">&raquo;</a>';
     }
