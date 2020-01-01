@@ -162,6 +162,89 @@ class ModelHistorique extends Model{
         }
     }
 
+    public static function getNbPartieJoueur($joueur)
+    {
+        try {
+            $arr = array("login" => $joueur);
+
+            $sql = "SELECT COUNT(*) from Historique WHERE nomJ1=:login AND (nomJ2='IAForte' OR nomJ2='IAMoyen' OR nomJ2='IAFaible')";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute($arr);
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab = $req_prep->fetchAll();
+
+            $sql = "SELECT COUNT(*) from Historique WHERE (nomJ2!='IAForte' and nomJ2!='IAMoyen' and nomJ2!='IAFaible' and nomJ1=:login) OR nomJ2 =:login";
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute($arr);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab2 = $req_prep->fetchAll();
+
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            $array = array();
+            array_push($array, $tab[0][0]);
+            array_push($array, $tab2[0][0]);
+            if (empty($array))
+                return false;
+            return $array;
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+
+    public static function getNbWinJoueur($joueur)
+    {
+        try {
+            $arr = array("login" => $joueur);
+
+            $sql = "SELECT COUNT(*) from Historique WHERE nomJ1=:login AND (nomJ2='IAForte' OR nomJ2='IAMoyen' OR nomJ2='IAFaible') AND scoreJ1>scoreJ2";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute($arr);
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab = $req_prep->fetchAll();
+
+            $sql = "SELECT COUNT(*) from Historique WHERE nomJ1=:login AND nomJ2!='IAForte' AND nomJ2 !='IAFaible' AND nomJ2 !='IAMoyen' AND scoreJ1 > scoreJ2";
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute($arr);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab2 = $req_prep->fetchAll();
+
+            $sql = "SELECT COUNT(*) from Historique WHERE nomJ2 = :login AND scoreJ2>scoreJ1";
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->execute($arr);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Historique');
+            $tab3 = $req_prep->fetchAll();
+
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            $array = array();
+            array_push($array, $tab[0][0]);
+            array_push($array, intval($tab2[0][0] + $tab3[0][0]));
+            if (empty($array))
+                return false;
+            return $array;
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
     public static function nbWinIAfo()
     {
         try {

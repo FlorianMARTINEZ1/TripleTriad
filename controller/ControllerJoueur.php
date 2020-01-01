@@ -190,6 +190,11 @@ class ControllerJoueur {
           $controller='joueur';
           $view='detail';
           $pagetitle='Mon compte';
+          if(isset($_SESSION['login']))
+          {
+            $nbWin = ModelHistorique::getNbWinJoueur($_SESSION['login']);
+            $nbPartie = ModelHistorique::getNbPartieJoueur($_SESSION['login']);
+          }
           $j = ModelJoueur::select($log);
           if ($j==false){
 
