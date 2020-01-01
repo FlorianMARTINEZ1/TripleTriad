@@ -36,7 +36,7 @@
 
           <div class="col s6 m4 l4">
             <div class="card modeJeu">
-              <a id="Multijoueur" class="modal-trigger white-text" href="./index.php?action=enAttente&controller=joueur">
+              <a id="Multijoueur" class="modal-trigger white-text" href="choixmode">
                 <div class="card-content center">
                   <div>Multijoueur</div>
                 </div>
@@ -101,6 +101,35 @@
               <a class="modal-trigger white-text mode IA" href="./?action=IAvsIA&controller=game">
                 <div class="card-content center">
                   <div>IA vs IA</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row noneMulti">
+          <div class="col s6 m4 l4">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text local" href="./?action=rechercheJoueur&controller=joueur">
+                <div class="card-content center">
+                  <div>Partie rapide</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s6 m4 l4">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text local" href="./?action=ChoixHerbergement&controller=joueur">
+                <div class="card-content center">
+                  <div>Hébergement d'une partie</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s6 m4 l4">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text local" href="./?action=readAllPlayerConnected&controller=joueur">
+                <div class="card-content center">
+                  <div>Choix de l'adversaire</div>
                 </div>
               </a>
             </div>

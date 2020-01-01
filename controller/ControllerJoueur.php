@@ -111,22 +111,6 @@ class ControllerJoueur {
       else{
           ControllerJoueur::connect();
       }
-
-
-    }
-
-    public static function enAttente() {
-      if(isset($_SESSION['login'])){
-        $controller ='joueur';
-        $view = 'ChoixModeMulti';
-        $pagetitle="Choix du mode";
-        $type="recherche";
-        require File::build_path(array('view','view.php'));
-      }
-      else{
-        ControllerJoueur::connect();
-      }
-
     }
 
     public static function connect(){

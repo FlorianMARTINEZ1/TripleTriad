@@ -34,6 +34,18 @@ $(function () {
       }
     });
 
+    multi.on("click",function(e){
+      e.preventDefault();
+      if( $(".noneMulti").css("display") == "none"){
+        $(".noneMulti").css({display : "block"});
+        $(".row:first").css({display : "none"});
+        retour.css({display : "block"});
+      }
+    });
+
+
+
+
     $(".mode").on("click",function(e){
       e.preventDefault();
       lienpartie = $(this).attr('href');
@@ -65,6 +77,9 @@ $(function () {
         }
         if($(".noneIA").css("display") == "block"){
             $(".noneIA").css({display : "none"});
+        }
+        if($(".noneMulti").css("display") == "block"){
+            $(".noneMulti").css({display : "none"});
         }
         retour.css({display : "none"});
         $(".row:first").css({display : "block"});
