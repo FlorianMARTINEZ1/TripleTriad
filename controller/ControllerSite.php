@@ -30,14 +30,6 @@ class ControllerSite {
 
     }
 
-    public static function choix(){
-        $action = myGet("game");
-        $controller='site';
-        $view='ChoixDeck';
-        $pagetitle='Choix du deck';
-        require File::build_path(array('view','view.php'));
-    }
-
     public static function classement(){
       $controller='site';
       $view='classement';

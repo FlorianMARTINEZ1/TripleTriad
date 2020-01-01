@@ -45,10 +45,10 @@
           </div>
 
         </div>
-        <div class="row none">
+        <div class="row noneLocal">
           <div class="col s6 m6 l6">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=equilibre">
+              <a class="modal-trigger white-text mode local" href="./?action=equilibre&controller=game">
                 <div class="card-content center">
                   <div>equilibre</div>
                 </div>
@@ -58,7 +58,7 @@
 
           <div class="col s6 m6 l6">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=aleatoire">
+              <a class="modal-trigger white-text mode local" href="./?action=aleatoire&controller=game">
                 <div class="card-content center">
                   <div>aléatoire</div>
                 </div>
@@ -66,10 +66,10 @@
             </div>
           </div>
         </div>
-        <div class="row none">
+        <div class="row noneIA">
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAfaible">
+              <a class="modal-trigger white-text mode IA" href="./?action=IAfaiblecontroller=game">
                 <div class="card-content center">
                   <div>IA faible</div>
                 </div>
@@ -79,7 +79,7 @@
 
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAmoyen">
+              <a class="modal-trigger white-text mode IA" href="./?action=IAmoyen&controller=game">
                 <div class="card-content center">
                   <div>IA moyen</div>
                 </div>
@@ -89,7 +89,7 @@
 
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAforte">
+              <a class="modal-trigger white-text mode IA" href="./?action=IAforte&controller=game">
                 <div class="card-content center">
                   <div>IA forte</div>
                 </div>
@@ -98,7 +98,7 @@
           </div>
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text" href="./?action=choix&game=IAvsIA">
+              <a class="modal-trigger white-text mode IA" href="./?action=IAvsIA&controller=game">
                 <div class="card-content center">
                   <div>IA vs IA</div>
                 </div>
@@ -106,9 +106,53 @@
             </div>
           </div>
         </div>
-
-
 <!--Fin de la liste des modes disponibles-->
+<!--Debut de la liste des modes de deck disponibles-->
+        <div class="row decknone">
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text deck" href="&deck=FF8">
+                <div class="card-content center">
+                  <div>FF8</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text deck" href="&deck=FF10">
+                <div class="card-content center">
+                  <div>FF10</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text deck" href="&deck=autre">
+                <div class="card-content center">
+                  <div>Autres</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col s6 m4 l3">
+            <div class="card modeJeu">
+              <a class="modal-trigger white-text deck" href="&deck=lol">
+                <div class="card-content center">
+                  <div>LOL</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+
+
+        </div>
+<!--Fin de la liste des modes de deck disponibles-->
       </div>
     </div>
   </div>

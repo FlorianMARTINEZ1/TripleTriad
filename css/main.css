@@ -65,7 +65,7 @@ div.modeJeu:hover, div#retour:hover {
     box-shadow: 0 3px 8px #000;
 }
 
-.none{
+.noneLocal, .decknone, .noneIA{
   display: none;
 }
 
