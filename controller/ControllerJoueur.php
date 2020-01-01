@@ -116,7 +116,7 @@ class ControllerJoueur {
     public static function connect(){
       $controller='joueur';
       $view='connect';
-      $pagetitle='connection';
+      $pagetitle='Connexion';
 
       require File::build_path(array('view','view.php'));
     }
