@@ -2,6 +2,7 @@ $(function () {
     var local = $("#local");
     var iA = $("#IA");
     var multi = $("#Multijoueur");
+    var titre = $("#titre");
     var lienpartie;
     var classemode;
     var anciendeck;
@@ -16,30 +17,34 @@ $(function () {
 
     var retour = $("#retour");
 
+    function anime(elem1,elem2){
+      elem1.animate({'opacity': 0}, 500, function () {
+        elem1.css({display : "none", opacity : "1"});
+        elem2.css({display : "block", opacity : "0"}).animate({'opacity': 1}, 500);
+      });
+    }
+
     local.on("click",function(e){
       e.preventDefault();
       if( $(".noneLocal").css("display") == "none"){
-        $(".noneLocal").css({display : "block"});
-        $(".row:first").css({display : "none"});
-        retour.css({display : "block"});
+        anime($(".row:first"), $(".noneLocal"));
+        retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
       }
     });
 
     iA.on("click",function(e){
       e.preventDefault();
       if( $(".noneIA").css("display") == "none"){
-        $(".noneIA").css({display : "block"});
-        $(".row:first").css({display : "none"});
-        retour.css({display : "block"});
+        anime($(".row:first"), $(".noneIA"));
+        retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
       }
     });
 
     multi.on("click",function(e){
       e.preventDefault();
       if( $(".noneMulti").css("display") == "none"){
-        $(".noneMulti").css({display : "block"});
-        $(".row:first").css({display : "none"});
-        retour.css({display : "block"});
+        anime($(".row:first"), $(".noneMulti"));
+        retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
       }
     });
 
@@ -48,6 +53,9 @@ $(function () {
 
     $(".mode").on("click",function(e){
       e.preventDefault();
+      titre.animate({'opacity': 0}, 500, function () {
+          $(this).text('Choix du deck');
+      }).animate({'opacity': 1}, 500);
       lienpartie = $(this).attr('href');
       $(".deck").each(function(index){
         $(this).attr({
@@ -57,32 +65,33 @@ $(function () {
       classemode = $(this).attr('class');
       if(classemode.indexOf("IA") != -1){
         classemode = ".noneIA";
+        anime($(".noneIA"), $(".decknone:first"));
       }
       else{
         classemode = ".noneLocal";
+        anime($(".noneLocal"), $(".decknone:first"));
       }
-      $(".noneIA, .noneLocal").css({display : "none"});
-      $(".decknone:first").css({display : "block"});
     });
 
     retour.on("click",function(e){
       e.preventDefault();
       if($(".decknone:first").css("display") == "block"){
-          $(".decknone:first").css({display : "none"});
-          $(classemode).css({display : "block"});
+          anime($(".decknone:first"), $(classemode));
+          titre.animate({'opacity': 0}, 500, function () {
+              $(this).text('Mode de jeux');
+          }).animate({'opacity': 1}, 500);
       }
       else {
         if($(".noneLocal").css("display") == "block"){
-            $(".noneLocal").css({display : "none"});
+            anime($(".noneLocal"), $(".row:first"));
         }
         if($(".noneIA").css("display") == "block"){
-            $(".noneIA").css({display : "none"});
+            anime($(".noneIA"), $(".row:first"));
         }
         if($(".noneMulti").css("display") == "block"){
-            $(".noneMulti").css({display : "none"});
+            anime($(".noneMulti"), $(".row:first"));
         }
-        retour.css({display : "none"});
-        $(".row:first").css({display : "block"});
+        retour.animate({'opacity': 0}, 500, function () {retour.css({display : "none", opacity : "1"});});
       }
     });
 

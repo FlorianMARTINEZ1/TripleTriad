@@ -9,7 +9,7 @@
           <p class="p-regle grey-text text-lighten-1">
             Jeu réalisé par GINESTE Sébastien, SARISOY Cem, MARUEJOL Pierre et MARTINEZ Florian sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de montpellier ! Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
           </p>
-          <h5 class="center">Mode de jeux</h5>
+          <h5 id="titre" class="center">Mode de jeux</h5>
         </div>
 
 <!--Debut de la liste des modes disponibles-->
