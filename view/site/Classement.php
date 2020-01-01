@@ -34,6 +34,49 @@
         return $new_array;
     }
     echo '<article><div="card-container"> <div class="card-panel"><div class="card-content" style="height:100%"><h3 style="text-align:center"> Classement </h3>';
+    
+    if(!isset($_GET['IA'])||$_GET['IA']==1)
+    {
+        echo '<div class="buttons"><a class="active" href="#">Classement Général</a>';
+    }
+    else
+    {
+        echo '<div class="buttons"><a href="index.php?action=classement&IA=1';
+        if(isset($_GET['win'])){echo '&win='.$_GET['win'];}else{echo '&win=0';}
+        echo '">Classement Général</a>';
+    }
+    if(isset($_GET['IA'])&&$_GET['IA']!=1)
+    {
+        echo '<a class="active" href="#">Multijoueur Seulement</a></div>';
+    }
+    else
+    {
+        echo '<a href="index.php?action=classement&IA=0';
+        if(isset($_GET['win'])){echo '&win='.$_GET['win'];}else{echo '&win=0';}
+        echo '">Multijoueur Seulement</a></div>';
+    }
+    
+    if(!isset($_GET['win'])||$_GET['win']!=1)
+    {
+        echo '<div class="buttons"><a class="active" href="#">Nombre de parties jouées</a>';
+    }
+    else
+    {
+        echo '<div class="buttons"><a href="index.php?action=classement';
+        if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=0';}
+        echo'&win=0">Nombre de parties jouées</a>';
+    }
+    if(isset($_GET['win'])&&$_GET['win']==1)
+    {
+        echo '<a class="active" href="#">Nombre de parties gagnées</a></div>';
+    }
+    else
+    {
+        echo '<a href="index.php?action=classement';
+        if(isset($_GET['IA'])){echo '&IA='.$_GET['IA'];}else{echo'&IA=0';}
+        echo '&win=1">Nombre de parties gagnées</a></div>';
+    }
+
     $size = sizeof($tabClassement);
     
     if(!isset($_GET['page']))
@@ -52,7 +95,7 @@
         }
     }
     $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
-    echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties gagnées</p></div>';
+    echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
     $i = 1;
     foreach($ClassementTrié as $value)
     {

@@ -42,7 +42,23 @@ class ControllerSite {
       $controller='site';
       $view='classement';
       $pagetitle='Classement';
-      $tabClassement = ModelHistorique::classement();
+      if(isset($_GET['IA'])&&$_GET['IA']==0)
+      {
+        $IA = false;
+      }
+      else
+      {
+        $IA = true;
+      }
+      if(isset($_GET['win'])&&$_GET['win']==1)
+      {
+        $win = true;
+      }
+      else
+      {
+        $win = false;
+      }
+      $tabClassement = ModelHistorique::classement($IA, $win);
       require File::build_path(array('view','view.php'));
   }
 
