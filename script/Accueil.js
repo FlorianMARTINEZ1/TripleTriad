@@ -24,11 +24,15 @@ $(function () {
       });
     }
 
+    function retourAppartion(){
+      retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
+    }
+
     local.on("click",function(e){
       e.preventDefault();
       if( $(".noneLocal").css("display") == "none"){
         anime($(".row:first"), $(".noneLocal"));
-        retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
+        retourAppartion()
       }
     });
 
@@ -36,7 +40,7 @@ $(function () {
       e.preventDefault();
       if( $(".noneIA").css("display") == "none"){
         anime($(".row:first"), $(".noneIA"));
-        retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
+        retourAppartion()
       }
     });
 
@@ -44,7 +48,7 @@ $(function () {
       e.preventDefault();
       if( $(".noneMulti").css("display") == "none"){
         anime($(".row:first"), $(".noneMulti"));
-        retour.css({display : "block",opacity : "0"}).animate({'opacity': 1}, 500);
+        retourAppartion()
       }
     });
 
