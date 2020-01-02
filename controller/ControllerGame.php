@@ -76,6 +76,7 @@ class ControllerGame {
 
     }
     public static function IAvsIA() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='IAvsIA';
       $pagetitle='IAvsIA';
