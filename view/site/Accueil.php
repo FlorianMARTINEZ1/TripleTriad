@@ -7,7 +7,7 @@
         <div class="card-content">
           <h5 class="center">Credit</h5>
           <p class="p-regle grey-text text-lighten-1">
-            Jeu réalisé par GINESTE Sébastien, SARISOY Cem, MARUEJOL Pierre et MARTINEZ Florian sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de montpellier ! Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
+            Jeu réalisé par Sébastien GINESTE, Florian MARTINEZ, Pierre MARUEJOL et Cem SARISOY sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de Montpellier ! Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
           </p>
           <h5 id="titre" class="center">Mode de jeux</h5>
         </div>
@@ -18,7 +18,7 @@
             <div class="card modeJeu">
               <a id="local" class="modal-trigger white-text" href="choixmode">
                 <div class="card-content center">
-                  <div>local</div>
+                  <div>Local</div>
                 </div>
               </a>
             </div>
@@ -50,7 +50,7 @@
             <div class="card modeJeu">
               <a class="modal-trigger white-text mode local" href="./?action=equilibre&controller=game">
                 <div class="card-content center">
-                  <div>equilibre</div>
+                  <div>Équilibré</div>
                 </div>
               </a>
             </div>
@@ -60,7 +60,7 @@
             <div class="card modeJeu">
               <a class="modal-trigger white-text mode local" href="./?action=aleatoire&controller=game">
                 <div class="card-content center">
-                  <div>aléatoire</div>
+                  <div>Aléatoire</div>
                 </div>
               </a>
             </div>
@@ -71,7 +71,7 @@
             <div class="card modeJeu">
               <a class="modal-trigger white-text mode IA" href="./?action=IAfaiblecontroller=game">
                 <div class="card-content center">
-                  <div>IA faible</div>
+                  <div>IA Faible</div>
                 </div>
               </a>
             </div>
@@ -81,7 +81,7 @@
             <div class="card modeJeu">
               <a class="modal-trigger white-text mode IA" href="./?action=IAmoyen&controller=game">
                 <div class="card-content center">
-                  <div>IA moyen</div>
+                  <div>IA Moyen</div>
                 </div>
               </a>
             </div>
@@ -91,7 +91,7 @@
             <div class="card modeJeu">
               <a class="modal-trigger white-text mode IA" href="./?action=IAforte&controller=game">
                 <div class="card-content center">
-                  <div>IA forte</div>
+                  <div>IA Forte</div>
                 </div>
               </a>
             </div>
