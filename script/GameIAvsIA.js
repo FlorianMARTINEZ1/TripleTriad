@@ -5,11 +5,11 @@ class Game {
     var j2;
     var j1 = new IAForte(this);
     var joueurDeux = document.getElementById('joueur2').value; // cherche quel IA Joue
-    if (joueurDeux == "IAForte") {
+    if (joueurDeux == "IA Forte") {
       j2 = new IAForte(this);
-    } else if (joueurDeux == "IAMoyen") {
+    } else if (joueurDeux == "IA Moyen") {
       j2 = new IAMoyen(this);
-    } else if (joueurDeux == "IAFaible") {
+    } else if (joueurDeux == "IA Faible") {
       j2 = new IARandom(this);
     }
     this.listPlayer = [j1, j2];
@@ -91,9 +91,8 @@ class Game {
       sound.muted = true;
       var joueurUn = document.getElementById('joueur1').value;
       var joueurDeux = document.getElementById('joueur2').value;
-      console.log(this.listPlayer[0].getName());
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
-        if (this.listPlayer[0].getName() == "IA0") {
+        if (this.listPlayer[0].getName() == joueurUn) {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
           this.addHistorique();
         } else {
@@ -102,11 +101,11 @@ class Game {
         }
 
       } else if (this.listPlayer[0].getScore() < this.listPlayer[1].getScore()) {
-        if (this.listPlayer[1].getName() == "IA0") {
+        if (this.listPlayer[1].getName() == joueurUn) {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
           this.addHistorique();
         } else {
-          document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
+          document.getElementById("gagnant").innerHTML = "bravo au joueur " +joueurDeux;
           this.addHistorique();
         }
       } else {

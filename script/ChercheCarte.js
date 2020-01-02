@@ -121,10 +121,10 @@ function readData(sData) { // initalise les cartes pour le jeu
         tabElement[i].setAttribute("class", tabCartes[i].donneID());
       }
     }
-    else if (document.getElementById("IA")) { // // DEUXIEME PARTIE = DECK IA
-      tabElement[i] = document.getElementById("drag" + (i + 1));
-      tabElement[i].setAttribute("src", "css/cartes/"+tabCartes[i].donneSource()+"/DosDeCarte.jpg");
-      tabElement[i].setAttribute("class", tabCartes[i].donneID());
+    else if (document.getElementById("IA") && modeType != "2IA") { // DEUXIEME PARTIE = DECK IA
+        tabElement[i] = document.getElementById("drag" + (i + 1));
+        tabElement[i].setAttribute("src", "css/cartes/"+tabCartes[i].donneSource()+"/DosDeCarte.jpg");
+        tabElement[i].setAttribute("class", tabCartes[i].donneID());
     }
     else { // DEUXIEME PARTIE = DECK J2
       if(multi){ // JEU MULTI
@@ -142,7 +142,7 @@ function readData(sData) { // initalise les cartes pour le jeu
           tabElement[i].setAttribute("class", tabCartes[i].donneID());
         }
       }
-      else{ // JEU LOCAL
+      else{ // JEU LOCAL ou IA vs IA
         tabElement[i] = document.getElementById("drag" + (i + 1));
         tabElement[i].setAttribute("src", "css/cartes/"+tabCartes[i].donneSource()+"/" + tabCartes[i].donneNom() + ".rouge.jpg");
         tabElement[i].setAttribute("class", tabCartes[i].donneID());
