@@ -10,7 +10,7 @@
                 <div class="rules-content">
                     <h5 class="center">Règle principale</h5>
                     <div class="rules-details">
-                        <img src="../css/cartes/autre/produitsBizare.bleue.jpg" alt="">
+                        <img src="./css/cartes/autre/produitsBizare.bleue.jpg" alt="">
                         <p class="p-regle">
                         Bienvenue aventurier, voici la règle ultime qu'il te faut connaître afin de devenir le maître du Triple Triad.
                         </br></br>
@@ -31,10 +31,10 @@
                         Le mode équilibré est un mode où votre deck ainsi que le deck de l'adversaire sont équilibré. C'est à dire que la somme de toutes les valeurs de votre deck est proche de celle du deck adverse. Dans ce mode, la stratégie est essentiel pour gagner.
                         <br>
                         <br>
-                        Le mode aléatoire, quant à lui, est un mode où la valeur tôtal de votre deck peut être supérieur, ce qui est plutôt cool n'est-ce pas, ou bien presque égale, comme dans le mode Équilibré, mais elle peut aussi être inférieur, ça c'est moins cool. Dans ce mode, la chance est un excellent moyen de gagné mais elle ne fait pas tout. Alors, bonne chance ! 
+                        Le mode aléatoire, quant à lui, est un mode où la valeur tôtal de votre deck peut être supérieur, ce qui est plutôt cool n'est-ce pas, ou bien presque égale, comme dans le mode Équilibré, mais elle peut aussi être inférieur, ça c'est moins cool. Dans ce mode, la chance est un excellent moyen de gagné mais elle ne fait pas tout. Alors, bonne chance !
                         </p>
                     </div>
-                </div> 
+                </div>
            </div>
             <div class="card-content slide s3">
             <div class="rules-content">
@@ -51,7 +51,7 @@
                     <h5 class="center">Multijoueur</h5>
                     <div class="rules-details">
                         <p class="p-regle">
-                        Vous voilà le maître incontesté du Triple Triad ! Enfin pas tout à fait, je vous ai menti. Pour l'être vraiment, confrontez vous à d'autres joueurs tout autour de la Planète dans le mode Multijoueur. Vous pouvez choisir de défier vos amis en les choisissant, ou bien, vous pouvez laisser le hasard décider de votre adversaire pour encore plus de plaisir. 
+                        Vous voilà le maître incontesté du Triple Triad ! Enfin pas tout à fait, je vous ai menti. Pour l'être vraiment, confrontez vous à d'autres joueurs tout autour de la Planète dans le mode Multijoueur. Vous pouvez choisir de défier vos amis en les choisissant, ou bien, vous pouvez laisser le hasard décider de votre adversaire pour encore plus de plaisir.
                         </p>
                     </div>
                 </div>
