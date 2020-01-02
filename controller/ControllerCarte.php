@@ -36,6 +36,7 @@ class ControllerCarte{
   }
 
   public static function update(){
+    require_once File::build_path(array('model','ModelCategorieDeck.php'));
     $id = myGet("id");
     $c = ModelCarte::select($id);
     if(Session::is_admin() && $c != false){
@@ -43,6 +44,7 @@ class ControllerCarte{
       $action="update";
       $view = 'update';
       $pagetitle = 'Modification carte';
+      $tab_deck = ModelCategorieDeck::selectAll();
       require File::build_path(array('view', 'view.php'));
     }
     else{
@@ -78,10 +80,13 @@ class ControllerCarte{
 
 
   public static function create(){
+    require_once File::build_path(array('model','ModelCategorieDeck.php'));
     $controller='carte';
     $view='update';
     $action="create";
     $pagetitle='Formulaire de création de carte';
+    $tab_deck = ModelCategorieDeck::selectAll();
+
     require File::build_path(array('view','view.php'));
   }
 

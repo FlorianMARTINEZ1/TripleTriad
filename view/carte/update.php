@@ -84,10 +84,9 @@
                 echo '<option selected value="autre">Autre</option>';
               }
               else{
-                echo '<option '; if($action=="update" && $c->get("source") == "autre"){echo 'selected';} echo 'value="autre">Autre</option>';
-                echo '<option '; if($action=="update" && $c->get("source") == "lol"){echo 'selected';} echo 'value="lol">League Of Legends</option>';
-                echo '<option '; if($action=="update" && $c->get("source") == "smashbros"){echo 'selected';} echo 'value="smashbros">Super Smash Bros</option>';
-                echo '<option '; if($action=="update" && $c->get("source") == "starcraft"){echo 'selected';} echo 'value="starcraft">Starcraft</option>';
+                foreach ($tab_deck as $deck) {
+                  echo '<option '; if($action=="update" && $c->get("source") == $deck->get("nomDeck")){echo 'selected ';} echo 'value="'.htmlspecialchars($deck->get("nomDeck")).'">'.htmlspecialchars($deck->get("affichageDeck")).'</option>';
+                }
               }
             ?>
           </select>

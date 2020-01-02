@@ -73,7 +73,7 @@ function initialisation() {
   }
   if(document.getElementById('deck').innerHTML == "lol"){
     sound.volume = 0.7;
-  }
+  } 
   else{
     sound.volume = 0.2;
   }
