@@ -6,6 +6,7 @@ $(function () {
     var lienpartie;
     var classemode;
     var anciendeck;
+    var nomMode;
     var tabDeck = [$(".deck").length];
     $(".deck").each(function(index){
       tabDeck[index] = $(this).attr("href");
@@ -57,8 +58,9 @@ $(function () {
 
     $(".mode").on("click",function(e){
       e.preventDefault();
+      nomMode = $(this).text();
       titre.animate({'opacity': 0}, 500, function () {
-          $(this).text('Choix du deck');
+          $(this).text('Choix du deck pour le mode de jeux : '+nomMode);
       }).animate({'opacity': 1}, 500);
       lienpartie = $(this).attr('href');
       $(".deck").each(function(index){
