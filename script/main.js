@@ -61,6 +61,7 @@ setTimeout(function() {
 function initialisation() {
   var sound = document.getElementById("sound");
   sound.autoplay = true;
+  sound.muted = false;
   sound.load();
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;

@@ -19,6 +19,7 @@ class Game {
     j2.setIndex();
     this.id = ids;
     this.dureeGame = 0;
+    this.sonmute = false;
 
     this.idDeck1 = 0;
     this.idDeck2 = 0;
@@ -66,6 +67,12 @@ class Game {
     this.listPlayer[0].play();
   }
 
+  lanceSon(son) {
+    if (this.sonmute == false) {
+      son.play();
+    }
+  }
+
   endGame() {
     if (this.dureeGame == 9) {
       this.idDeck1 = 0;
@@ -83,27 +90,28 @@ class Game {
   endGamePrint() { // regarde si la partie est finie
 
     if (this.dureeGame == 9) {
-      
+
       document.getElementById("fingame").removeAttribute("display");
       document.getElementById("fingame").setAttribute("style", "display:fixed;");
       document.getElementById('plateaujeu').style.display = 'none';
       var sound = document.getElementById("sound");
-      sound.muted = true;
+      if(sound.muted == false){
+          sound.muted = true;
+      }
+      else{
+        this.sonmute = true;
+      }
       var joueurUn = document.getElementById('joueur1').value;
       var joueurDeux = document.getElementById('joueur2').value;
       console.log(this.listPlayer[0].getName());
       if (this.listPlayer[0].getScore() > this.listPlayer[1].getScore()) {
         if (this.listPlayer[0].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
-          let victoire = document.getElementById("victoire");
-          victoire.muted = false;
-          victoire.play();
+          this.lanceSon(document.getElementById("victoire"));
           this.addHistorique();
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
-          let gameover = document.getElementById("Gameover");
-          gameover.muted = false;
-          gameover.play();
+          this.lanceSon(document.getElementById("Gameover"));
           this.addHistorique();
         }
 
@@ -111,21 +119,15 @@ class Game {
         if (this.listPlayer[1].getName() == "j1") {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurUn;
           this.addHistorique();
-          let victoire = document.getElementById("victoire");
-          victoire.muted = false;
-          victoire.play();
+          this.lanceSon(document.getElementById("victoire"));
         } else {
           document.getElementById("gagnant").innerHTML = "bravo au joueur " + joueurDeux;
-          let gameover = document.getElementById("Gameover");
-          gameover.muted = false;
-          gameover.play();
+          this.lanceSon(document.getElementById("Gameover"));
           this.addHistorique();
         }
       } else {
         document.getElementById("gagnant").innerHTML = "bravo aux 2 joueurs pour cette égalité ! ";
-        let victoire = document.getElementById("victoire");
-        victoire.muted = false;
-        victoire.play();
+        this.lanceSon(document.getElementById("victoire"));
         this.addHistorique();
       }
 
