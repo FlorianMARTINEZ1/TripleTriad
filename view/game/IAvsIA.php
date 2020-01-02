@@ -11,13 +11,13 @@
             <input id="joueur1" type="text"
               <?php
                 if ($typeIA0=="faible") {
-                    echo 'value="IAFaible"';
+                    echo 'value="IA Faible"';
                 } elseif ($typeIA0=="moyen") {
-                    echo 'value="IAMoyen"';
+                    echo 'value="IA Moyen"';
                 }  elseif ($typeIA0=="forte") {
-                    echo 'value="IAForte"';
+                    echo 'value="IA Forte"';
                 } else {
-                  echo 'value="IAExperte"';
+                  echo 'value="IA Experte"';
                 }
               ?>
            class="validate" maxlength="12" minlength="1" required>
@@ -28,13 +28,13 @@
             <input id="joueur2" type="text"
                <?php
                       if ($typeIA1=="faible") {
-                          echo 'value="IAFaible"';
+                          echo 'value="IA Faible"';
                       } elseif ($typeIA1=="moyen") {
-                          echo 'value="IAMoyen"';
+                          echo 'value="IA Moyen"';
                       }  elseif ($typeIA1=="forte") {
-                          echo 'value="IAForte"';
+                          echo 'value="IA Forte"';
                       } else {
-                        echo 'value="IAExperte"';
+                        echo 'value="IA Experte"';
                       }
 
 

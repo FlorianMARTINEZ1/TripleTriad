@@ -394,7 +394,8 @@ class ModelHistorique extends Model{
                 {
                     $sql = "SELECT nomJ1, COUNT(*) FROM Historique WHERE scoreJ1 > scoreJ2 AND nomJ1!='IAForte' AND nomJ1!='IAMoyen' AND nomJ1!='IAFaible' GROUP BY nomJ1";
                 }
-                else{
+                else
+                {
                     $sql = "SELECT nomJ1, COUNT(*) FROM Historique WHERE nomJ1!='IAForte' AND nomJ1!='IAMoyen' AND nomJ1!='IAFaible' GROUP BY nomJ1";
                 }
             }
@@ -409,11 +410,25 @@ class ModelHistorique extends Model{
             $tab = $req_prep->fetchAll();
             if($IA==false)
             {
-                $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 AND nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' AND nomJ1!='IAForte' AND nomJ1!='IAMoyen' AND nomJ1!='IAFaible' GROUP BY nomJ2";
+                if($win==true)
+                {
+                    $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 AND nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' AND nomJ1!='IAForte' AND nomJ1!='IAMoyen' AND nomJ1!='IAFaible' GROUP BY nomJ2";
+                }
+                else
+                {
+                    $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' AND nomJ1!='IAForte' AND nomJ1!='IAMoyen' AND nomJ1!='IAFaible' GROUP BY nomJ2";
+                }
             }
             else
             {
-                $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 AND nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' GROUP BY nomJ2";
+                if($win==true)
+                {
+                    $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE scoreJ1 < scoreJ2 AND nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' GROUP BY nomJ2";
+                }
+                else
+                {
+                    $sql2 = "SELECT nomJ2, COUNT(*) FROM Historique WHERE nomJ2!='IAForte' AND nomJ2!='IAMoyen' AND nomJ2!='IAFaible' GROUP BY nomJ2";
+                }
             }
             // Préparation de la requête
             $req_prep2 = Model::$pdo->prepare($sql2);
@@ -438,13 +453,15 @@ class ModelHistorique extends Model{
             for($i=0;$i<sizeof($tab2);$i++)
             {
                 $added = false;
-                for($j=0;$j<sizeof($tabClassement);$j++)
+                $j=0;
+                while($j<sizeof($tabClassement)&&!$added)
                 {
                     if($tab2[$i]['nomJ2']==$tabClassement[$j]['nom'])
                     {
                         $tabClassement[$j]['COUNT(*)'] = $tabClassement[$j]['COUNT(*)'] + $tab2[$i]['COUNT(*)'];
                         $added = true;
                     }
+                    $j++;
                 }
                 if($added == false)
                 {

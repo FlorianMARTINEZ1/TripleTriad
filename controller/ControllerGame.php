@@ -6,11 +6,7 @@ class ControllerGame {
     protected static $object = 'game';
 
     public static function error(){
-      $deck =  myGet("deck");
-      $controller='game';
-      $view='error';
-      $pagetitle='Error 404 ';
-      require File::build_path(array('view','view.php'));
+      ControllerSite::Accueil();
     }
 
     public static function equilibre() {
@@ -76,6 +72,7 @@ class ControllerGame {
 
     }
     public static function IAvsIA() {
+      $deck =  myGet("deck");
       $controller='game';
       $view='IAvsIA';
       $pagetitle='IAvsIA';
