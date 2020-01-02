@@ -33,6 +33,9 @@
     
         return $new_array;
     }
+    if($tabClassement!=false)
+    {
+        $size = sizeof($tabClassement);
     echo '<article><div="card-container"> <div class="card-panel"><div class="card-content" style="height:100%"><h3 style="text-align:center"> Classement </h3>';
     
     if(!isset($_GET['IA'])||$_GET['IA']==1)
@@ -77,7 +80,8 @@
         echo '&win=1">Nombre de parties gagnées</a></div>';
     }
     
-    $size = sizeof($tabClassement);
+    
+    
     
     if(!isset($_GET['page']))
     {
@@ -96,8 +100,8 @@
     }
     $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
     echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
-    $i = 1;
     
+    $i = 1;
     foreach($ClassementTrié as $value)
     {
         if($i>intval($page*15-15)&&$i<=intval($page*15))
@@ -145,8 +149,13 @@
         if(isset($_GET['win'])) echo '&win='.$_GET['win'];  
         echo '&page='.intval($page+1).'">&raquo;</a>';
     }
+
     echo'
     </div>
   </div>';
+    }
+    else{
+        echo 'Il n\'y a aucune partie !';
+    }
     echo '</div></div></article>';
 ?>
