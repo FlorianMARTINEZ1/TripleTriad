@@ -36,6 +36,7 @@ function stopMusic() {
   if (sound.muted == true) {
     sound.muted = false;
     sound.autoplay = true;
+    sound.play();
     bouton.innerHTML = "volume_up";
   } else {
     sound.muted = true;
@@ -60,9 +61,16 @@ setTimeout(function() {
 //Test initialisation partie (Entrer deux pseudo + affichage plateau)
 function initialisation() {
   var sound = document.getElementById("sound");
-  sound.autoplay = true;
-  sound.muted = false;
-  sound.load();
+  var bouton = document.getElementById("volume");
+  if(bouton.innerHTML == "volume_up"){
+    sound.autoplay = true;
+    sound.muted = false;
+    sound.load();
+  }
+  else{
+    sound.muted = true;
+    sound.load();
+  }
   sound.volume = 0.2;
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
