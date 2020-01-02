@@ -1,0 +1,24 @@
+html {
+    height: 100%;
+    background-image: url(./img/ff8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: cadetblue;
+    font-family:  Arial, sans-serif;
+}
+
+header {
+    margin-bottom: 0%;
+}
+
+#menuDroite{
+  margin-right: 0px;
+}
+
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 85%;
+    }
+}

@@ -9,9 +9,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Social media Font -->
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
-
-
   <!-- Materialize: Compiled and minified CSS -->
+
   <?php
     if($controller == "game"){ // controller game
       echo '<link rel="stylesheet" type="text/css" href="./css/game.css">
@@ -46,7 +45,9 @@
     {
       echo '<link rel="stylesheet" type="text/css" href="./css/leaderboard.css">';
     }
+
    ?>
+   <link rel="stylesheet" type="text/css" href="./css/general.css">
 
 
 
@@ -75,7 +76,7 @@
           }
          ?>
       </ul>
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper container" id="menuDroite">
               <a data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
               <a href="./" class="brand-logo">Triple Triad</a>
