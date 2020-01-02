@@ -1,5 +1,6 @@
 <?php
 require_once 'lib/File.php';
+require_once File::build_path(array('model','ModelHistorique.php')); // chargement du modèle
 
 
 class ControllerSite {
@@ -29,13 +30,29 @@ class ControllerSite {
 
     }
 
-    public static function choix(){
-        $action = myGet("game");
-        $controller='site';
-        $view='ChoixDeck';
-        $pagetitle='Choix du deck';
-        require File::build_path(array('view','view.php'));
-    }
+    public static function classement(){
+      $controller='site';
+      $view='classement';
+      $pagetitle='Classement';
+      if(isset($_GET['IA'])&&$_GET['IA']==0)
+      {
+        $IA = false;
+      }
+      else
+      {
+        $IA = true;
+      }
+      if(isset($_GET['win'])&&$_GET['win']==1)
+      {
+        $win = true;
+      }
+      else
+      {
+        $win = false;
+      }
+      $tabClassement = ModelHistorique::classement($IA, $win);
+      require File::build_path(array('view','view.php'));
+  }
 
     public static function error(){
         $controller='site';

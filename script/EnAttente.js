@@ -95,7 +95,7 @@ function  challenge(callback){
 function Data(sData){
   var game = sData;
   if(typeof game === "string"){
-    if(game.length == 66 || game.length == 67){
+    if(game.length == 66 || game.length == 67 || game.length == 68){
       console.log("demande envoyé et/ou game déjà prise");
       accepte(DataAccepte);
     }

@@ -9,9 +9,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Social media Font -->
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
-
-
   <!-- Materialize: Compiled and minified CSS -->
+
   <?php
     if($controller == "game"){ // controller game
       echo '<link rel="stylesheet" type="text/css" href="./css/game.css">
@@ -38,7 +37,17 @@
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/joueur.css">';
     }
+    if($view == 'historique'||$view == 'classement')
+    {
+      echo '<link rel="stylesheet" type="text/css" href="./css/pagination.css">';
+    }
+    if($view == 'classement')
+    {
+      echo '<link rel="stylesheet" type="text/css" href="./css/leaderboard.css">';
+    }
+
    ?>
+   <link rel="stylesheet" type="text/css" href="./css/general.css">
 
 
 
@@ -56,24 +65,24 @@
             echo "<li><a href=\"./index.php?action=read&controller=joueur&login=".rawurlencode($log)."\">Mon Compte</a></li>";
             echo '<li><a href="./index.php?action=update&controller=joueur&login='.rawurlencode($log).'">Modifier son compte</a></li>';
             echo '<li><a href="./index.php?action=historique&controller=joueur&login='.rawurlencode($log).'">Historique</a></li>';
+            echo '<li><a href="./index.php?action=create&controller=carte">Ajouter une carte</a></li>';
 
             if(Session::is_admin()){
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=carte">Liste des Cartes</a></li>';
-              echo '<li><a href="./index.php?action=create&controller=carte">Ajouter une carte</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }
          ?>
       </ul>
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper container" id="menuDroite">
               <a data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
               <a href="./" class="brand-logo">Triple Triad</a>
 
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-
+              <li><a href="./index.php?action=classement">Classement</a></li>
                 <li><a href="./index.php?action=regle">Règles</a></li>
                 <li><a href="./index.php?action=contact">Report Bug/Contact</a></li>
                 <?php
@@ -134,9 +143,10 @@
   require $filepath;
 
   if($controller == "game"){
-    echo ' <div id="deck" style="display:none">'.$deck.'</div>
-
-
+    if(isset($deck)){
+        echo ' <div id="deck" style="display:none">'.$deck.'</div>';
+    }
+    echo '
     <div id="fingame" class="card" style="display: none;">
         <div id="vide">
         </div>
@@ -145,8 +155,14 @@
           <p id="gagnant">
             Bravo !
           </p>
-          <div class="row center">
-            <button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>
+          <div class="row center">';
+          if ($view == "Enligne") {
+            echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="location.href = \'./index.php?action=enAttente&controller=joueur\';">Rejouer</button>';
+          }
+          else{
+            echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>';
+          }
+          echo'
           </div>
         </div>
       </div>
@@ -185,16 +201,19 @@
       <script type="text/javascript" src="./script/Card.js"></script>
       <script type="text/javascript"> var equilibre = '.htmlspecialchars($_SESSION["equilibre"]).' ; </script>';
 
-      if ($view == "EnLigne") {
+      if ($view == "Enligne") {
           echo '<script type="text/javascript"> var multi = true;</script> ';
       } else {
           echo '<script type="text/javascript"> var multi = false;</script> ';
       }
-
-      if ($view == "Enligne") {
-          echo '<script type="text/javascript" src="./script/ChercheCarteMulti.js"></script>';
-      } else {
-          echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
+      echo '<script type="text/javascript" src="./script/ChercheCarte.js"></script>';
+      if(isset($_SESSION['login']))
+      {
+        echo '<script type="text/javascript"> var logged = true;</script> ';
+      }
+      else
+      {
+        echo '<script type="text/javascript"> var logged = false;</script> ';
       }
 
       ?>
@@ -258,9 +277,16 @@
     if($controller != "game"){
       echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>';
+      if($view == "userList"){
+        echo '<script type="text/javascript" src="./script/actuConnect.js"></script>
+              <script type="text/javascript" src="./script/footer.js"></script>';
+      }
     }
     if($view == "list" && ($controller== "joueur" || $controller == "carte")){
       	echo	'<script src="./script/searchBar.js"></script>';
+    }
+    if($view == "Accueil"){
+      echo  '<script type="text/javascript" src="./script/Accueil.js"></script>';
     }
 
    ?>

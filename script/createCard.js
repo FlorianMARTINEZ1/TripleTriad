@@ -23,20 +23,14 @@ img.onload = function() {
   canvasBlue.height = 62;
   canvasRed.width = 62;
   canvasRed.height = 62;
-  cty.fillStyle = "#000000";
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(0, 0, 62, 62);
-  cty.fillRect(0, 0, 62, 62);
   cty.fillStyle = "#ee5555";
   ctx.fillStyle = "#5555ee";
-  ctx.fillRect(0, 0, 62, 3);
-  ctx.fillRect(0, 59, 62, 3);
-  ctx.fillRect(0, 0, 3, 62);
-  ctx.fillRect(59, 0, 3, 62);
-  cty.fillRect(0, 0, 62, 3);
-  cty.fillRect(0, 59, 62, 3);
-  cty.fillRect(0, 0, 3, 62);
-  cty.fillRect(59, 0, 3, 62);
+  ctx.fillRect(0, 0, 62, 62);
+  cty.fillRect(0, 0, 62, 62);
+  cty.fillStyle = "#000000";
+  ctx.fillStyle = "#000000";
+  ctx.fillRect(3, 3, 56, 56);
+  cty.fillRect(3, 3, 56, 56);
   ctx.drawImage(img, 3, 3, 56, 56);
   cty.drawImage(img, 3, 3, 56, 56);
   trace();
@@ -97,10 +91,8 @@ function onInput() {
     var somme = Number(N) + Number(S) + Number(O) + Number(E);
   }
   img.onload();
-
-
-  trace()
 }
+
 function trace() {
   var N = document.getElementById("ValN").value;
   var S = document.getElementById("ValS").value;
@@ -153,9 +145,9 @@ function trace() {
 }
 
 function randValue() {
-  document.getElementById("ValN").value=Math.floor((Math.random() * 10) + 1);
-  document.getElementById("ValS").value=Math.floor((Math.random() * 10) + 1);
-  document.getElementById("ValO").value=Math.floor((Math.random() * 10) + 1);
-  document.getElementById("ValE").value=Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValN").value = Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValS").value = Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValO").value = Math.floor((Math.random() * 10) + 1);
+  document.getElementById("ValE").value = Math.floor((Math.random() * 10) + 1);
   onInput();
 }

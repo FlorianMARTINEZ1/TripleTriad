@@ -41,6 +41,74 @@ class ModelCarte extends Model{
       return false;
   }
 
+  public static function getAllCarte(){
+    try {
+      require_once File::build_path(array('model','Model.php'));
+      $rep = Model::$pdo->query("SELECT * FROM carte");
+      $rep->setFetchMode(PDO::FETCH_CLASS, 'ModelCarte');
+      echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+      } catch (PDOException $e) {
+              if (Conf::getDebug()) {
+                  echo $e->getMessage(); // affiche un message d'erreur
+              } else {
+                  echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+              }
+              die();
+          }
+  }
+
+  public static function nbCartes()
+    {
+        try {
+            $sql = "SELECT COUNT(*) from carte";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+
+            // On donne les valeurs et on exécute la requête
+            $req_prep->execute();
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'carte');
+            $tab = $req_prep->fetchAll();
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            if (empty($tab))
+                return false;
+            return $tab[0][0];
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
+
+  public static function getAllCarteWithDeck($deck){
+  try {
+    require_once File::build_path(array('model','Model.php'));
+    $sql = "SELECT * FROM carte WHERE source=:source";
+    // Préparation de la requête
+    $rep = Model::$pdo->prepare($sql);
+    $values = array(
+        "source" => $deck,
+    );
+    // On donne les valeurs et on exécute la requête
+    $rep->execute($values);
+    $rep->setFetchMode(PDO::FETCH_CLASS, 'Carte');
+    echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+    } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+  }
+
+  
+
 
 
 

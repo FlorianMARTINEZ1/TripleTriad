@@ -6,7 +6,7 @@
             <input type="radio" name="r" id="r3">
             <input type="radio" name="r" id="r4">
             <input type="radio" name="r" id="r5">
-            
+
             <div class="card-content  slide s1">
                 <div class="rules-content">
                     <h5 class="center">Règles</h5>

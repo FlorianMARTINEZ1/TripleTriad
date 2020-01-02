@@ -2,18 +2,24 @@
 require_once 'lib/File.php';
 require_once File::build_path(array('model','ModelJoueur.php')); // chargement du modèle
 require_once File::build_path(array('model','ModelHistorique.php')); // chargement du modèle
+require_once File::build_path(array('model','ModelCarte.php')); // chargement du modèle
 require_once File::build_path(array('lib','Security.php'));
 
 class ControllerJoueur {
     protected static $object = 'joueur';
 
     public static function readAllPlayerConnected() {
+      if(isset($_SESSION["login"])){
         $tab_j = ModelJoueur::checkJoueursConnected();
         /*$tab_j = ModelJoueur::selectAll();*/
         $controller='joueur';
         $view='userList';
         $pagetitle='Liste des joueurs';
         require File::build_path(array('view','view.php')); //"redirige" vers la vue
+      }
+      else{
+        ControllerJoueur::connect();
+      }
     }
 
     public static function stat(){
@@ -25,7 +31,7 @@ class ControllerJoueur {
         $win_rate_IAForte = ModelHistorique::nbWinIAFO();
         $win_rate_IAMoyen = ModelHistorique::nbWinIAM();
         $win_rate_IAFaible = ModelHistorique::nbWinIAFA();
-        //$plusGrandNombreDePartieDunJoueur = ModelHistorique::plusGrandnbParti();
+        $nbCartes = ModelCarte::nbCartes();
         $nombreDePartieMultiEnCeMomentEnLigne = ModelGame::nbPartie();
 
         $controller='joueur';
@@ -105,28 +111,12 @@ class ControllerJoueur {
       else{
           ControllerJoueur::connect();
       }
-
-
-    }
-
-    public static function enAttente() {
-      if(isset($_SESSION['login'])){
-        $controller ='joueur';
-        $view = 'ChoixModeMulti';
-        $pagetitle="Choix du mode";
-        $type="recherche";
-        require File::build_path(array('view','view.php'));
-      }
-      else{
-        ControllerJoueur::connect();
-      }
-
     }
 
     public static function connect(){
       $controller='joueur';
       $view='connect';
-      $pagetitle='connection';
+      $pagetitle='Connexion';
 
       require File::build_path(array('view','view.php'));
     }
@@ -146,12 +136,7 @@ class ControllerJoueur {
         else{
           $_SESSION['admin'] = true;
         }
-
-        $controller='joueur';
-        $view='detail';
-        $pagetitle='Mon compte';
-
-        require File::build_path(array('view','view.php'));
+        ControllerJoueur::read();
       }
       else{
         $msg = "Erreur, l'identifiant ou le mot de passe est incorrect";
@@ -184,6 +169,11 @@ class ControllerJoueur {
           $controller='joueur';
           $view='detail';
           $pagetitle='Mon compte';
+          if(isset($_SESSION['login']))
+          {
+            $nbWin = ModelHistorique::getNbWinJoueur($_SESSION['login']);
+            $nbPartie = ModelHistorique::getNbPartieJoueur($_SESSION['login']);
+          }
           $j = ModelJoueur::select($log);
           if ($j==false){
 

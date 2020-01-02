@@ -1,196 +1,188 @@
-var donnée;
-var idGame = document.getElementById("idGame").value;
-var nom;
+$(function () {
+    var donnée;
+    var idGame = $("#idGame").val();
+    var nom;
 
-function  request(callback){
-  var xhr = new XMLHttpRequest(); // créer une requête HTTP
+    $.get(
+        './api/userList.php', // Le fichier cible côté serveur.
+        "false",// Nous utilisons false, pour dire que nous n'envoyons pas de données.
+        affichage, // Nous renseignons uniquement le nom de la fonction de retour.
+        'json' // Format des données reçues.
+    );
+    setInterval(function () {
+      $.get(
+              './api/userList.php', // Le fichier cible côté serveur.
+              "false",// Nous utilisons false, pour dire que nous n'envoyons pas de données.
+              affichage, // Nous renseignons uniquement le nom de la fonction de retour.
+              'json' // Format des données reçues.
+          );
+      $.get(
+              './api/AttenteConfirmation.php?id='+idGame, // Le fichier cible côté serveur.
+              "true",// Nous utilisons true, pour dire que nous envoyons des données.
+              relocation, // Nous renseignons uniquement le nom de la fonction de retour.
+              'json' // Format des données reçues.
+          );
+    }, 2000);
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
-      donnée = callback(xhr.responseText); // on récupère les données.
+    activeLien();
+
+    function activeLien(){
+      $(".bleue").on("click",function(e) {
+          e.preventDefault();
+          nom = e.target.innerHTML;
+          $.post(
+                "./api/challenge.php",
+                {
+                    loginChallenger : $("#session").val(),
+                    loginChallenged : nom,
+                },
+                function(data){
+                    console.log(data);
+                    if(data.search( 'Success' ) != -1){
+                        alert("requete envoyé avec succés !");
+                    }
+                    else{
+                        alert("requete non envoyé (erreur)");
+                    }
+                },
+                "text"
+            );
+      });
+
+      $(".accepte").on("click",function(e){
+        e.preventDefault();
+        accepter();
+      });
+
+      $(".refuse").on("click",function(e){
+        e.preventDefault();
+        refuser();
+      });
+
+
+
     }
-  };
 
-  xhr.open("GET", "api/userList.php", true); // on les cherche dans le fichier php/test.php
-  xhr.send(null);
-}
-
-function  challenge(callback){
- var xhr = new XMLHttpRequest(); // créer une requête HTTP
-
- xhr.onreadystatechange = function () {
-   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
-     donnée = callback(xhr.responseText); // on récupère les données.
-   }
- };
- let challenger = document.getElementById("session").value;
- xhr.open("GET", "api/challenge.php?loginChallenger="+challenger+"&loginChallenged="+nom, true); // on les cherche dans le fichier php/test.php
- xhr.send(null);
-}
-
-function  accepte(callback){
- var xhr = new XMLHttpRequest(); // créer une requête HTTP
-
- xhr.onreadystatechange = function () {
-   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
-     donnée = callback(xhr.responseText); // on récupère les données.
-   }
- };
- xhr.open("GET", "api/accepte.php?id="+idGame, true); // on les cherche dans le fichier php/test.php
- xhr.send(null);
-}
-
-function attente(callback){
-  var xhr = new XMLHttpRequest(); // créer une requête HTTP
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
-      donnée = callback(xhr.responseText); // on récupère les données.
+    function accepter() {
+        $.post(
+              "./api/accepte.php",
+              {
+                  id : idGame,
+              },
+              function(data){
+                  console.log(data);
+                  if(data.search( 'Success' ) != -1){
+                    alert("demande accepté");
+                    window.location = './?action=EnLigne&controller=game';
+                  }
+                  else{
+                    alert("requete non envoyé (erreur)");
+                  }
+              },
+              "text"
+        );
     }
-  };
-  xhr.open("GET", "api/AttenteConfirmation.php?id="+document.getElementById("idGame").value, true); // on les cherche dans le fichier php/test.php
-  xhr.send(null);
-}
 
-function  refuser(callback){
- var xhr = new XMLHttpRequest(); // créer une requête HTTP
+    function refuser() {
+        $.post(
+              "./api/refuse.php",
+              {
+                  id : idGame,
+              },
+              function(data){
+                  console.log(data);
+                  if(data.search( 'Success' ) != -1){
+                    alert("demande refusé");
+                  }
+                  else{
+                    alert("requete non envoyé (erreur)");
+                  }
+              },
+              "text"
+        );
+    }
 
- xhr.onreadystatechange = function () {
-   if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
-     donnée = callback(xhr.responseText); // on récupère les données.
-   }
- };
- xhr.open("GET", "api/refuse.php?id="+idGame, true); // on les cherche dans le fichier php/test.php
- xhr.send(null);
-}
-
-function readData(sData) {
-  var donnes = JSON.parse(sData);
-  let p = document.getElementsByTagName("p");
-  let papa = document.getElementsByClassName("card-panel")[1];
-  let CountChild = papa.childElementCount;
-  let Total = donnes.length;
-  let i = 0;
-  while(parseInt(""+i)<Total){
-    if(donnes[i] && p[i]){
-      if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
-        idGame=donnes[i]['joue'];
-        document.getElementById("idGame").value=donnes[i]['joue'];
-      }
-      else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
-        if(p[i-1]){
-          if(p[i].innerHTML == p[i-1].innerHTML){
-            papa.removeChild(p[i]);
+    function relocation(Data){
+      if(Data.length!=0){
+        var donnes = Data;
+        if(donnes.length != 0){
+          if(donnes[0]["etat"] == "accepte"){
+            window.location ="./?action=EnLigne&controller=game";
           }
         }
-        idGame=donnes[i]['joue'];
-        document.getElementById("idGame").value=donnes[i]['joue'];
-      }
-      else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
-      }
-      else if(donnes[i]['joue']){
-        p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté !';
-      }
-      else{
-        p[i].innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i]['login']+'</a> est connecté !';
       }
     }
-    else{
-      var newP = document.createElement("p");
-      if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-            newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
+
+  function affichage(Data) {
+    var donnes = Data;
+    let p = document.getElementsByTagName("p");
+    let papa = document.getElementsByClassName("card-panel")[1];
+    let CountChild = papa.childElementCount;
+    let Total = donnes.length;
+    let i = 0;
+    while(parseInt(""+i)<Total){
+      if(donnes[i] && p[i]){
+        if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" class="accepte"> Accepter ? </a> --<a style="color:red" href="#" class="refuse"> Refuser ?</a>';
           idGame=donnes[i]['joue'];
-      }
-      else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
-        newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
-      }
-      else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-          newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
-      }
-
-      else if(donnes[i]['joue']){
-        newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]["login"]+'</a> est connecté ! ';
-
+          document.getElementById("idGame").value=donnes[i]['joue'];
+        }
+        else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+          if(p[i-1]){
+            if(p[i].innerHTML == p[i-1].innerHTML){
+              papa.removeChild(p[i]);
+            }
+          }
+          idGame=donnes[i]['joue'];
+          document.getElementById("idGame").value=donnes[i]['joue'];
+        }
+        else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
+        }
+        else if(donnes[i]['joue']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté !';
+        }
+        else{
+          p[i].innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i]['login']+'</a> est connecté !';
+        }
       }
       else{
-        newP.innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i]["login"]+'</a> est connecté ! ';
+        var newP = document.createElement("p");
+        if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+              newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
+            idGame=donnes[i]['joue'];
+        }
+        else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
+          newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+        }
+        else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
+            newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
+        }
+
+        else if(donnes[i]['joue']){
+          newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]["login"]+'</a> est connecté ! ';
+
+        }
+        else{
+          newP.innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i]["login"]+'</a> est connecté ! ';
+        }
+        papa.appendChild(newP);
       }
-      papa.appendChild(newP);
+      i=parseInt(""+i)+1;
     }
-    i=parseInt(""+i)+1;
-  }
-  console.log("total "+Total);
-  console.log("CountChild "+CountChild);
-  if(Total<CountChild){
-    let nbr = CountChild - Total;
-    while(nbr != 0 ){
-        papa.removeChild(papa.lastChild);
-        nbr--;
+    console.log("total "+Total);
+    console.log("CountChild "+CountChild);
+    if(Total<CountChild){
+      let nbr = CountChild - Total;
+      while(nbr != 0 ){
+          papa.removeChild(papa.lastChild);
+          nbr--;
+      }
     }
-  }
-  i=0;
-  for(var j=0;j<elements.length;j++){
-    elements[j].onclick = function(e) {
-      e.preventDefault();
-       nom = e.target.innerHTML;
-       challenge(Data);
-    };
+    i=0;
+    activeLien();
   }
 
 
-}
-
-
-function accepter(){
-  accepte(DataAccepte);
-}
-
-function relocation(sData){
-  if(sData.length!=0){
-    var donnes = JSON.parse(sData);
-    if(donnes.length != 0){
-      if(donnes[0]["etat"] == "accepte"){
-        window.location ="./?action=EnLigne";
-    }
-  }
- }
-}
-
-function DataAccepte(sData){
-  alert("demande accepté");
-  window.location = './?action=EnLigne';
-}
-
-function refuse(){
-  refuser(DataRefuse);
-}
-
-function DataRefuse(sData){
-  alert("demande refusé");
-}
-
-function Data(sData){
-  var game = sData;
-  alert("demande envoyé");
-
-}
-let elements = document.getElementsByClassName("bleue");
-
-for(var i=0;i<elements.length;i++){
-  elements[i].onclick = function(e) {
-    e.preventDefault();
-     nom = e.target.innerHTML;
-     challenge(Data);
-  };
-}
-
-request(readData);
-
-setInterval(function () {
-  request(readData);
-  attente(relocation);
-
-}, 2000);
+});
