@@ -91,6 +91,7 @@ class ControllerGame {
       $login = $_SESSION['login'];
       $j = ModelJoueur::select($login);
       $id = $j->get("joue");
+      $deck = "FF8";
       $AutreJoueur = 0;
       $commence = 0;
       $game = ModelGame::select($id);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html <?php if($controller == "game" && $deck == "lol"){echo 'id="lol"';} ?> >
 
 <head>
   <meta charset="utf-8">
@@ -117,24 +117,25 @@
   <?php
   if($controller == "game"){ // charge les sons de la partie si le controller est game
     echo '<audio id="sound" preload="auto" loop>
-      <source src="css/sound.mp3" type="audio/mpeg">
-      <source src="css/sound.ogg" type="audio/ogg">
+      <source src="css/son/'.$deck.'/sound.mp3" type="audio/mpeg">
+      <source src="css/son/'.$deck.'/sound.ogg" type="audio/ogg">
     </audio>
     <audio id="victoire" preload="auto" >
-      <source src="css/victoire.mp3" type="audio/mpeg">
-      <source src="css/victoire.ogg" type="audio/ogg">
+      <source src="css/son/'.$deck.'/victoire.mp3" type="audio/mpeg">
+      <source src="css/son/'.$deck.'/victoire.ogg" type="audio/ogg">
     </audio>
     <audio id="Gameover" preload="auto" >
-      <source src="css/Gameover.mp3" type="audio/mpeg">
-      <source src="css/Gameover.ogg" type="audio/ogg">
-    </audio>
+      <source src="css/son/'.$deck.'/Gameover.mp3" type="audio/mpeg">
+      <source src="css/son/'.$deck.'/Gameover.ogg" type="audio/ogg">
+    </audio>';
+    echo '
     <audio id="soundcartepose" preload="auto">
-      <source src="css/carte.mp3" type="audio/mpeg">
-      <source src="css/carte.ogg" type="audio/ogg">
+      <source src="css/son/carte.mp3" type="audio/mpeg">
+      <source src="css/son/carte.ogg" type="audio/ogg">
     </audio>
     <audio id="soundcarte" preload="auto">
-      <source src="css/carteposé.mp3" type="audio/mpeg">
-      <source src="css/carteposé.ogg" type="audio/ogg">
+      <source src="css/son/carteposé.mp3" type="audio/mpeg">
+      <source src="css/son/carteposé.ogg" type="audio/ogg">
     </audio>';
   }
 
