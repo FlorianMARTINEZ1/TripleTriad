@@ -71,7 +71,12 @@ function initialisation() {
     sound.muted = true;
     sound.load();
   }
-  sound.volume = 0.2;
+  if(document.getElementById('deck').innerHTML == "lol"){
+    sound.volume = 0.7;
+  }
+  else{
+    sound.volume = 0.2;
+  }
   var joueurUn = document.getElementById('joueur1').value;
   var joueurDeux = document.getElementById('joueur2').value;
 
