@@ -34,7 +34,7 @@
         return $new_array;
     }
     
-        $size = sizeof($tabClassement);
+        
     echo '<article><div="card-container"> <div class="card-panel"><div class="card-content" style="height:100%"><h3 style="text-align:center"> Classement </h3>';
     
     if(!isset($_GET['IA'])||$_GET['IA']==1)
@@ -81,78 +81,78 @@
     
     if($tabClassement!=false)
     {
-    
-    
-    if(!isset($_GET['page']))
-    {
-    $page = 1;
-    }
-    else
-    {
-        if($_GET['page'] >= 1 &&$_GET['page']<=ceil($size/15))
+        $size = sizeof($tabClassement);
+        
+        if(!isset($_GET['page']))
         {
-            $page = $_GET['page'];
+        $page = 1;
         }
         else
         {
-            $page = 1;
-        }
-    }
-    $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
-    echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
-    
-    $i = 1;
-    foreach($ClassementTrié as $value)
-    {
-        if($i>intval($page*15-15)&&$i<=intval($page*15))
-        {
-            if(isset($_SESSION['login'])&&$value['nom']==$_SESSION['login'])
+            if($_GET['page'] >= 1 &&$_GET['page']<=ceil($size/15))
             {
-                echo '<div id=place'.$i.' class="contain logged"><p>'.$i.'</p><p class="name"> '.$value['nom'].'</p><p>'.$value['COUNT(*)']. '</p></div>';
+                $page = $_GET['page'];
             }
             else
             {
-                echo '<div id=place'.$i.' class="contain"><p>'.$i.'</p><p class="name"> '.$value['nom'].'</p><p>'.$value['COUNT(*)']. '</p></div>';
-
+                $page = 1;
             }
         }
-        $i++;
-    }
-
-
-    echo '<div class="center">
-    <div class="pagination">';
-    if($page >1){
-    echo '<a href="index.php?action=classement';
-    if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
-    if(isset($_GET['win'])) echo '&win='.$_GET['win'];
-    echo '&page='.intval($page-1).'">&laquo;</a>';
-    }
-    for ($i = 1; $i<=ceil(($size/15));$i++)
-    {
-        if($i == $page)
+        $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
+        echo '<div class="contain"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
+        
+        $i = 1;
+        foreach($ClassementTrié as $value)
         {
-            echo '<a class="active" href="#">'.$i.'</a>';
+            if($i>intval($page*15-15)&&$i<=intval($page*15))
+            {
+                if(isset($_SESSION['login'])&&$value['nom']==$_SESSION['login'])
+                {
+                    echo '<div id=place'.$i.' class="contain logged"><p>'.$i.'</p><p class="name"> '.$value['nom'].'</p><p>'.$value['COUNT(*)']. '</p></div>';
+                }
+                else
+                {
+                    echo '<div id=place'.$i.' class="contain"><p>'.$i.'</p><p class="name"> '.$value['nom'].'</p><p>'.$value['COUNT(*)']. '</p></div>';
+
+                }
+            }
+            $i++;
         }
-        else
+
+
+        echo '<div class="center">
+        <div class="pagination">';
+        if($page >1){
+        echo '<a href="index.php?action=classement';
+        if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+        if(isset($_GET['win'])) echo '&win='.$_GET['win'];
+        echo '&page='.intval($page-1).'">&laquo;</a>';
+        }
+        for ($i = 1; $i<=ceil(($size/15));$i++)
+        {
+            if($i == $page)
+            {
+                echo '<a class="active" href="#">'.$i.'</a>';
+            }
+            else
+            {
+                echo '<a href="index.php?action=classement';
+                if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+                if(isset($_GET['win'])) echo '&win='.$_GET['win'];
+                echo '&page='.$i.'">'.$i.'</a>';
+            }
+        }
+        if($page<ceil(($size/15)))
         {
             echo '<a href="index.php?action=classement';
             if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
-            if(isset($_GET['win'])) echo '&win='.$_GET['win'];
-            echo '&page='.$i.'">'.$i.'</a>';
+            if(isset($_GET['win'])) echo '&win='.$_GET['win'];  
+            echo '&page='.intval($page+1).'">&raquo;</a>';
         }
-    }
-    if($page<ceil(($size/15)))
-    {
-        echo '<a href="index.php?action=classement';
-        if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
-        if(isset($_GET['win'])) echo '&win='.$_GET['win'];  
-        echo '&page='.intval($page+1).'">&raquo;</a>';
-    }
 
-    echo'
-    </div>
-  </div>';
+        echo'
+        </div>
+        </div>';
     }
     else{
         echo 'Il n\'y a aucune partie !';
