@@ -22,7 +22,7 @@
                   <div class="col s12 m12">
                       <div class="card white darken-1">
                           <div class="card-content black-text">
-                              <span class="card-title">'. htmlspecialchars($c->get('id')) .') '. htmlspecialchars($c->get('nomCarte')) .'</span>
+                              <span class="card-title">'. htmlspecialchars($c->get('id')) .' - '. htmlspecialchars($c->get('nomCarte')) .'</span>
                               <p style="display:flex">
                                 <img src="css/cartes/'.htmlspecialchars($c->get("source")).'/'.htmlspecialchars($c->get('nomCarte')).'.bleue.jpg"  />
                                 <img src="css/cartes/'.htmlspecialchars($c->get("source")).'/'.htmlspecialchars($c->get('nomCarte')).'.rouge.jpg"  />
