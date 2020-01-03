@@ -8,7 +8,11 @@ class ControllerCarte{
 
   public static function readAll(){
     if(Session::is_admin()){
-      $tab_c = ModelCarte::selectAll();
+      if(!is_null(myGet("deck"))){
+          $tab_c = ModelCarte::selectAllWithDeck(myGet("deck"));
+      }else{
+          $tab_c = ModelCarte::selectAll();
+      }
       $controller = 'carte';
       $view = 'list';
       $pagetitle = 'Liste des cartes';
@@ -22,6 +26,10 @@ class ControllerCarte{
   public static function delete(){
     $id = myGet('id');
     if(Session::is_admin()){
+        $carte = ModelCarte::select($id);
+        $path_img = File::build_path_directorie(array('css','cartes',$carte->get("source")),$carte->get("nomCarte"));
+        unlink($path_img.".bleue.jpg"); // supprime la carte bleu
+        unlink($path_img.".rouge.jpg"); // supprime la carte rouge
         $controller='carte';
         $view='deleted';
         $pagetitle='Carte supprimé';
