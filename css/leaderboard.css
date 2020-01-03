@@ -1,13 +1,13 @@
 #place1 {
-    background-color: gold;
+    background: rgba(255, 255, 0);
 }
 
 #place2 {
-    background-color: silver;
+    background: rgb(200, 200, 200);
 }
 
 #place3 {
-    background-color: sienna;
+    background: rgba(185, 114, 45);
 }
 
 h3 {
@@ -34,7 +34,8 @@ p {
     width: 70%;
     height: 100%;
     margin: 5% auto;
-    background-color: rgba(72, 131, 146, 0.5);
+    background: rgba(34, 61, 68, 0.6);
+    border-radius: 30px;
 }
 
 .logged {
@@ -59,8 +60,14 @@ p {
     background: rgba(34, 61, 68, 0.75);
 }
 
+.buttons a:hover {
+    background: rgba(39, 104, 112, 0.75);
+    border: 1px solid rgb(28, 74, 80);
+    ;
+}
+
 .buttons a.active {
-    background: rgba(37, 68, 34, 0.75);
+    background: rgba(37, 68, 34, 0.863);
     color: white;
-    border: 1px solid #4CAF50;
+    border: 1px solid rgb(43, 136, 34);
 }
