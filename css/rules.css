@@ -62,7 +62,7 @@ input[name="r"] {
 .slide .rules-content {
     border: 1px solid #fff;
     width: 100%;
-    height: 380px;
+    height: 100%;
     padding: 10px;
     background: rgba(34, 61, 68, 0.767);
     border-radius: 30px;
@@ -93,6 +93,16 @@ input[name="r"] {
     height: 100px;
     margin: auto;
     align-self: center;
+}
+
+@media only screen and (min-width: 993px) {
+    .slide .rules-content .rules-details p {
+        font-size: 11px;
+    }
+    .slide .rules-content .rules-details img {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 #r1:checked~.s1 {
