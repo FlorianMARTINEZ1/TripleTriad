@@ -32,6 +32,38 @@ class ModelCategorieDeck extends Model{
       return false;
   }
 
+  public static function getnbCartesWithDeck($deck){
+    try {
+        $sql = "SELECT COUNT(*) from carte where source =:deck";
+        // Préparation de la requête
+        $req_prep = Model::$pdo->prepare($sql);
+
+        $value = array(
+            "deck" => $deck,
+        );
+
+        // On donne les valeurs et on exécute la requête
+        $req_prep->execute($value);
+
+
+        // On récupère les résultats comme précédemment
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'carte');
+        $tab = $req_prep->fetchAll();
+        // Attention, si il n'y a pas de résultats, on renvoie false
+        if (empty($tab))
+            return false;
+        return $tab[0][0];
+    } catch (PDOException $e) {
+        if (Conf::getDebug()) {
+            echo $e->getMessage(); // affiche un message d'erreur
+        } else {
+            echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+        }
+        die();
+    }
+
+  }
+
 
 }
 

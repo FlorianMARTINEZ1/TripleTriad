@@ -1,0 +1,17 @@
+article{
+  text-align: center;
+  margin-top: 4%;
+  width: 100%;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  background: rgba(34, 61, 68, 0.8);
+}
+
+th, tr,td{
+  text-align: center;
+}
+
+h4{
+  padding-top: 3%;
+}

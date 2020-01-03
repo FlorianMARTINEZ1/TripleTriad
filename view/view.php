@@ -33,6 +33,11 @@
             <link rel="stylesheet" type="text/css" href="./css/formcreat.css">
             ';
     }
+    else if ($controller == "deck"){
+      echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <link rel="stylesheet" type="text/css" href="./css/deck.css">
+            <link rel="stylesheet" type="text/css" href="./css/joueur.css">';
+    }
     else{ // controller joueur
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/joueur.css">';
@@ -71,6 +76,7 @@
               echo '<li><a href="./index.php?action=stat&controller=joueur">Statistiques</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=joueur">Liste des Joueurs</a></li>';
               echo '<li><a href="./index.php?action=readAll&controller=carte">Liste des Cartes</a></li>';
+              echo '<li><a href="./index.php?action=readAll&controller=deck">Liste des Decks</a></li>';
             }
             echo "<li><a href=\"./index.php?action=deconnect&controller=joueur\">Deconnexion</a></li>";
           }

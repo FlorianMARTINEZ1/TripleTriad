@@ -5,6 +5,7 @@ require_once 'ControllerJoueur.php';
 require_once 'ControllerGame.php';
 require_once 'ControllerCarte.php';
 require_once 'ControllerSite.php';
+require_once 'ControllerDeck.php';
 // On recupère l'action passée dans l'URL
 
 function myGet($nomvar){
