@@ -1,5 +1,3 @@
-
-
 /*== Liste Joueur-carte Admin== */
 
 .recherche {
@@ -16,13 +14,14 @@
     color: #3c6b77;
 }
 
-#listCard{
-  display: flex;
-  flex-wrap: wrap;
+#listCard {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-div#listCard , #listCard div{
-  height: 100%;
+div#listCard,
+#listCard div {
+    height: 100%;
 }
 
 #form1 div {
@@ -82,7 +81,7 @@ div#listCard , #listCard div{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    background-color: #569399c0;
+    background: rgba(34, 61, 68, 0.75);
     border-radius: 30px;
     width: 50%;
     padding-top: 20px;
@@ -90,7 +89,7 @@ div#listCard , #listCard div{
 }
 
 legend {
-    color: black;
+    color: #fff;
 }
 
 div#emailrow {
@@ -123,11 +122,21 @@ div#log-mdp {
 }
 
 #backform div.row p span {
-    color: #000;
+    color: #fff;
+}
+
+#backform div div.row input {
+    color: #fff !important;
 }
 
 #backform label {
     display: block;
+    color: #fff !important;
+}
+
+input[type=text]:not(.browser-default),
+input[type=email]:not(.browser-default) {
+    color: white;
 }
 
 div#btn-co {
@@ -285,9 +294,10 @@ div.input-field label {
     width: 50%;
 }
 
-.btn_form{
+.btn_form {
     height: 10px;
 }
+
 
 /* label color */
 

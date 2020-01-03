@@ -13,7 +13,7 @@
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
-            <input  id="nom" type="text" class="validate" name="nom" required <?php
+            <input  id="nom" type="text" class="validate" name="nom" maxlength=20 required <?php
               if($action=='create'){
               }
               else{
