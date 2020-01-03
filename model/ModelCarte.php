@@ -41,6 +41,29 @@ class ModelCarte extends Model{
       return false;
   }
 
+  public static function selectAllWithDeck($deck){
+  try {
+    $sql = "SELECT * FROM carte WHERE source=:source";
+    // Préparation de la requête
+    $rep = Model::$pdo->prepare($sql);
+    $values = array(
+        "source" => $deck,
+    );
+    // On donne les valeurs et on exécute la requête
+    $rep->execute($values);
+    $rep->setFetchMode(PDO::FETCH_CLASS, 'ModelCarte');
+    return $rep->fetchAll();
+
+    } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+  }
+
   public static function getAllCarte(){
     try {
       require_once File::build_path(array('model','Model.php'));
@@ -107,7 +130,7 @@ class ModelCarte extends Model{
         }
   }
 
-  
+
 
 
 

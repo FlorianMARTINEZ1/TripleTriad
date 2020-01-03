@@ -25,6 +25,9 @@
                         <a href="./?controller=deck&action=delete&deck='.rawurlencode($deck->get("nomDeck")).'" >
                           <i class="material-icons">cancel</i>
                         </a>
+                        <a href="./index.php?controller=carte&action=readAll&deck='.rawurlencode($deck->get("nomDeck")).'">
+                          <i class="material-icons">remove_red_eye</i>
+                        </a>
                       </span>
                     </td>
                 </tr>';
