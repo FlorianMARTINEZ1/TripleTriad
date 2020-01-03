@@ -19,10 +19,10 @@
                     <td>'.htmlspecialchars($nombreCarte).'</td>
                     <td>
                       <span>
-                        <a href="./index.php?action=read&id='.rawurlencode($deck->get("nomDeck")).'&controller=deck">
+                        <a href="./?action=update&deck='.rawurlencode($deck->get("nomDeck")).'&controller=deck">
                           <i class="material-icons">edit</i>
                         </a>
-                        <a href="./index.php?controller=deck&action=delete&id='.rawurlencode($deck->get("nomDeck")).'" >
+                        <a href="./?controller=deck&action=delete&deck='.rawurlencode($deck->get("nomDeck")).'" >
                           <i class="material-icons">cancel</i>
                         </a>
                       </span>
@@ -31,4 +31,10 @@
         }
         ?>
       </table>
+
+      <div>
+        <p>
+          Voulez-vous ajoutez un nouveau deck ? cliquez <a href="./?action=create&controller=deck">ici</a>
+        </p>
+      </div>
     </article>

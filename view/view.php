@@ -33,10 +33,13 @@
             <link rel="stylesheet" type="text/css" href="./css/formcreat.css">
             ';
     }
-    else if ($controller == "deck"){
+    else if ($controller == "deck" & $view != "deleted"){
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" type="text/css" href="./css/deck.css">
             <link rel="stylesheet" type="text/css" href="./css/joueur.css">';
+      if($view =="update"){
+        echo '<link rel="stylesheet" type="text/css" href="./css/formcreat.css">';
+      }
     }
     else{ // controller joueur
       echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">

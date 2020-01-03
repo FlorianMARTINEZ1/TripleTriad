@@ -15,3 +15,8 @@ th, tr,td{
 h4{
   padding-top: 3%;
 }
+
+article a{
+  color: white;
+  text-decoration: underline;
+}

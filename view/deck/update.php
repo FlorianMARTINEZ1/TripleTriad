@@ -1,9 +1,9 @@
 <div id="form-create" class="container">
-  <form id="create-card" class="CreateurCarte" method="post" action="./index.php">
+  <form id="create-card" class="CreateurCarte" method="post" action="./index.php" enctype="multipart/form-data" >
     <fieldset id="fieldcreate">
       <legend><?php
           if($action!="update"){
-            echo 'Créez votre carte';
+            echo 'Créez votre deck';
           }
           else{
             echo 'Modification';
@@ -11,113 +11,56 @@
 
       ?>
       </legend>
-        <div id="label-card" class="center">
+      <div class="row">
+          <div class="col s6 m6 l6">
           <p>
-            <label for="nomCarte">Nom de la carte</label>
-            <input type="text" name="nomCarte" <?php
+            <label for="nomDeck">Source du deck</label>
+            <input type="text" name="nomDeck" <?php
               if($action!="update"){
-                  echo 'placeholder="Ex : gilbert"';
+                  echo 'placeholder="Ex : Onepiece"';
               }else{
-                  echo 'value="'.htmlspecialchars($c->get("nomCarte")).'"';
+                  echo 'value="'.htmlspecialchars($deck->get("nomDeck")).'" readonly';
               }
              ?>
-             id="nomCarte" maxlength="15" required />
+             id="nomDeck" maxlength="10" required />
           </p>
         </div>
+          <div class="col s6 m6 l6">
+          <p>
+            <label for="affichageDeck">Nom du deck</label>
+            <input type="text" name="affichageDeck" <?php
+              if($action!="update"){
+                  echo 'placeholder="Ex : One Piece"';
+              }else{
+                  echo 'value="'.htmlspecialchars($deck->get("affichageDeck")).'"';
+              }
+             ?> id="affichageDeck" maxlength="64" required />
+          </p>
+        </div>
+      </div>
       <div class="row">
-        <div class="col s3">
-          <p>
-            <label for="ValN">Valeur Nord</label>
-            <input type="number" name="valN" <?php
-              if($action!="update"){
-                  echo 'placeholder="Ex : 5"';
-              }else{
-                  echo 'value="'.htmlspecialchars($c->get("valN")).'"';
-              }
-             ?> id="ValN" min="1" max="10" oninput="onInput()" required />
-          </p>
+        <div class="col s4 m4 l6">
+            <label for="fond">Musique de fond</label>
+            <input type="file" accept="audio/*" name="fond" >
         </div>
-        <div class="col s3">
-          <p>
-            <label for="ValS">Valeur Sud</label>
-            <input type="number" name="valS" <?php
-              if($action!="update"){
-                  echo 'placeholder="Ex : 5"';
-              }else{
-                  echo 'value="'.htmlspecialchars($c->get("valS")).'"';
-              }
-             ?> id="ValS" min="1" max="10" oninput="onInput()" required />
-          </p>
+        <div class="col s4 m4 l6">
+          <label for="victoire">Musique de victoire</label>
+          <input type="file" accept="audio/*" name="victoire" >
         </div>
-        <div class="col s3">
-          <p>
-            <label for="ValO">Valeur Ouest</label>
-            <input type="number" name="valO" <?php
-              if($action!="update"){
-                  echo 'placeholder="Ex : 5"';
-              }else{
-                  echo 'value="'.htmlspecialchars($c->get("valO")).'"';
-              }
-             ?> id="ValO" min="1" max="10" oninput="onInput()" required />
-          </p>
+        <div class="col s4 m4 l6">
+          <label for="défaite">Musique de défaite</label>
+          <input type="file" accept="audio/*" name="défaite">
         </div>
-        <div class="col s3">
-          <p>
-            <label for="ValE">Valeur Est</label>
-            <input type="number" name="valE" <?php
-              if($action!="update"){
-                  echo 'placeholder="Ex : 5"';
-              }else{
-                  echo 'value="'.htmlspecialchars($c->get("valE")).'"';
-              }
-             ?> id="ValE" min="1" max="10" oninput="onInput()" required />
-          </p>
+        <div class="col s4 m4 l6">
+          <label for="fondImg">Image de fond</label>
+          <input type="file" accept="image/jpg/*" name="fondImg" >
         </div>
-        <button type="button" class="btn-rand" onclick="randValue()">Random Value</button>
-      </div>
-      <div id="src">
-        <label for="source">Source</label>
-        <div id="locaCard" class="center">
-          <select name="source" id="srcCard">
-            <?php
-              if($action == "create" && !Session::is_admin()){
-                echo '<option selected value="autre">Autre</option>';
-              }
-              else{
-                foreach ($tab_deck as $deck) {
-                  echo '<option '; if($action=="update" && $c->get("source") == $deck->get("nomDeck")){echo 'selected ';} echo 'value="'.htmlspecialchars($deck->get("nomDeck")).'">'.htmlspecialchars($deck->get("affichageDeck")).'</option>';
-                }
-              }
-            ?>
-          </select>
         </div>
-        <input type="file" accept="image/*" name="imageCanvas" onchange="readURL(this)"  <?php if($action!="update"){echo 'required';} ?> >
-        <?php
-        if($action!="update"){
-          echo'<div class="col-lg-6">
-            <canvas id="canvasRed"></canvas>
-            <canvas id="canvasBlue"></canvas>
-          </div>';
-        }else{
-          echo '<div class="clo-lg-6">
-                    <img src="css/cartes/'.htmlspecialchars($c->get("source")).'/'.htmlspecialchars($c->get('nomCarte')).'.bleue.jpg"  />
-                    <img src="css/cartes/'.htmlspecialchars($c->get("source")).'/'.htmlspecialchars($c->get('nomCarte')).'.rouge.jpg"  />
-          </div>';
-        }
-
-        ?>
-          <?php
-          if($action!="create"){echo '<input type="hidden" name="id" value="'.htmlspecialchars($c->get("id")).'">';}
-          ?>
-          <input type="hidden" name="urlRed" id="URLRed">
-          <input type="hidden" name="urlBlue" id="URLBlue">
-          <input type="hidden" name="action"  <?php if($action!="update"){echo 'value="created"';}else{echo 'value="updated"';} ?>>
-          <input type="hidden" name="controller" value="carte">
-      </div>
-
-      <p>
-        <input type="submit" value="Envoyer" />
-      </p>
+        <input type="hidden" name="action"  <?php if($action!="update"){echo 'value="created"';}else{echo 'value="updated"';} ?>>
+        <input type="hidden" name="controller" value="deck">
+        <p>
+          <input type="submit" value="Envoyer" />
+        </p>
     </fieldset>
   </form>
   <?php
@@ -125,6 +68,4 @@
       echo '<script type="text/javascript"> alert("'.htmlspecialchars($message).'") </script> ';
     }
   ?>
-  <script type="text/javascript" src="./script/createCard.js"></script>
-
-  </div>
+</div>

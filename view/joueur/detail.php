@@ -1,10 +1,10 @@
 
         <?php
         echo '<arcticle>
-                <div class="card-panel" style="height: 50%;text-align: center; margin-top: 5%; background-color:#569399c0;padding-bottom: 5%;">';
+                <div class="card-panel" style="height: 50%;text-align: center; margin-top: 5%; background-color:rgba(34, 61, 68, 0.8);padding-bottom: 5%;color:white">';
                 echo '<h3 style="text-decoration:underline">'.htmlspecialchars($j->get('login')).'</h3>';
                 if(Session::is_user($j->get('login')) ||  Session::is_admin()){
-                    echo '<p> Si vous voulez supprimer votre compte cliquez <a href="./index.php?action=delete&controller=joueur&login='.htmlspecialchars($j->get('login')).'" style="color: #0000b3;">ici</a> . </p>';
+                    echo '<p> Si vous voulez supprimer votre compte cliquez <a href="./index.php?action=delete&controller=joueur&login='.htmlspecialchars($j->get('login')).'" style="color:white;text-decoration:underline">ici</a> . </p>';
                     echo '<h4> Vos statistiques </h4>';
                     echo '<div style="display:flex;width:50%;margin:auto"><div style="margin:auto"><h6>IA</h6>
                     <p>Nb parties : '.$nbPartie[0].'</p><p>Nb victoires : '.$nbWin[0].'</p><p>Ratio : ';
