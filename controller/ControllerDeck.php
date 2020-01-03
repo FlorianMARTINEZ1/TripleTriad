@@ -63,12 +63,14 @@ class ControllerDeck{
   }
 
   public static function updated(){//fini
-    if(!is_null(myGet("deck")) && ModelCategorieDeck::select(myGet("deck")) != false && Session::is_admin()){
-      $deck= $_POST['nomDeck'];
+    if(!is_null(myGet("nomDeck")) && ModelCategorieDeck::select(myGet("nomDeck")) != false && Session::is_admin()){
+      $deck= myGet('nomDeck');
       $data = array('nomDeck' => $deck,
-                    'affichageDeck' => $_POST['affichageDeck'],);
+                    'affichageDeck' => myGet('affichageDeck'),);
 
       ModelCategorieDeck::update($data);
+
+      $message ="";
 
       if (!empty($_FILES['fond']) && is_uploaded_file($_FILES['fond']['tmp_name'])) {
         $message = $message.ControllerDeck::enregistrefichier($deck,$_FILES['fond'],"sound","fond","mp3",array("mp3","ogg","mpeg"),"son");
@@ -84,7 +86,13 @@ class ControllerDeck{
       }
 
       $message = "deck modifié !";
-      $deck = ModelCategorieDeck::select(myGet("deck"));
+      /** Vérifie que les fichiers de son et d'image du deck sont dans le serveur **/
+      $sound = file_exists(File::build_path_directorie(array('css','son',$deck),"sound.mp3"));
+      $victoire = file_exists(File::build_path_directorie(array('css','son',$deck),"victoire.mp3"));
+      $defaite = file_exists(File::build_path_directorie(array('css','son',$deck),"Gameover.mp3"));
+      $img = file_exists(File::build_path_directorie(array('css','img'),$deck.".jpg"));
+      $deck = ModelCategorieDeck::select($deck);
+      $controller = 'deck';
       $controller='deck';
       $view='update';
       $action="update";
@@ -117,9 +125,9 @@ class ControllerDeck{
   public static function created(){ //fini
     if(Session::is_admin() ){ // si le joueur est admin
       $message = "";
-      $deck= $_POST['nomDeck'];
+      $deck= myGet('nomDeck');
       $data = array('nomDeck' => $deck,
-                    'affichageDeck' => $_POST['affichageDeck'],);
+                    'affichageDeck' => myGet('affichageDeck'),);
 
       ModelCategorieDeck::save($data);
 
@@ -170,8 +178,13 @@ class ControllerDeck{
       $message = "Mauvais type de fichier pour l'image de fond .\n ";
     }
     else{
-      $sound_path = File::build_path_directorie(array('css',$dir,$deck),$name.".".$type);
-      if (!move_uploaded_file($file['tmp_name'], $sound_path)) {
+      if($dir=="img"){
+        $path = File::build_path_directorie(array('css',$dir),$name.".".$type);
+      }
+      else{
+        $path = File::build_path_directorie(array('css',$dir,$deck),$name.".".$type);
+      }
+      if (!move_uploaded_file($file['tmp_name'], $path)) {
         $message = "Impossible de mettre la musique du fond .\n";
       }
     }

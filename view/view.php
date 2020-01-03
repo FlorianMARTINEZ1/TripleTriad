@@ -125,18 +125,21 @@
   </header>
   <?php
   if($controller == "game"){ // charge les sons de la partie si le controller est game
-    echo '<audio id="sound" preload="auto" loop>
-      <source src="css/son/'.$deck.'/sound.mp3" type="audio/mpeg">
-      <source src="css/son/'.$deck.'/sound.ogg" type="audio/ogg">
-    </audio>
-    <audio id="victoire" preload="auto" >
-      <source src="css/son/'.$deck.'/victoire.mp3" type="audio/mpeg">
-      <source src="css/son/'.$deck.'/victoire.ogg" type="audio/ogg">
-    </audio>
-    <audio id="Gameover" preload="auto" >
-      <source src="css/son/'.$deck.'/Gameover.mp3" type="audio/mpeg">
-      <source src="css/son/'.$deck.'/Gameover.ogg" type="audio/ogg">
-    </audio>';
+    $tabSon = array(0 => "sound",1 => "victoire", 2 => "Gameover" );
+    foreach ($tabSon as $key => $value) {
+        if($key == 0){echo '<audio id="sound" preload="auto" loop>';}
+        else{echo '<audio id="'.htmlspecialchars($deck).'" preload="auto" >';}
+        if(file_exists(File::build_path_directorie(array('css','son',$deck),$value.".mp3"))){ // Si le son du deck existe, on les charges
+          echo '  <source src="css/son/'.htmlspecialchars($deck).'/'.htmlspecialchars($value).'.mp3" type="audio/mpeg">
+                  <source src="css/son/'.htmlspecialchars($deck).'/'.htmlspecialchars($value).'.ogg" type="audio/ogg">';
+        }
+        else{// sinon on charge ceux de base
+          echo '  <source src="css/son/FF8/sound.mp3" type="audio/mpeg">
+                  <source src="css/son/FF8/sound.ogg" type="audio/ogg">';
+        }
+        echo '</audio>';
+
+    }
     echo '
     <audio id="soundcartepose" preload="auto">
       <source src="css/son/carte.mp3" type="audio/mpeg">
