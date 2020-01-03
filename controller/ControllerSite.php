@@ -8,9 +8,15 @@ class ControllerSite {
   // s'occupe de générer les pages extérieux aux joueur et aux parties
 
     public static function accueil() {
+      require_once File::build_path(array('model','ModelCategorieDeck.php'));
       $controller='site';
       $view='Accueil';
       $pagetitle='Accueil';
+      $tab_deck = ModelCategorieDeck::selectAll();
+      $taille = 12/count($tab_deck);
+      if($taille<3){
+        $taille = 3;
+      }
       require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 

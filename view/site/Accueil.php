@@ -69,7 +69,7 @@
         <div class="row noneIA">
           <div class="col s6 m4 l3">
             <div class="card modeJeu">
-              <a class="modal-trigger white-text mode IA" href="./?action=IAfaiblecontroller=game">
+              <a class="modal-trigger white-text mode IA" href="./?action=IAfaible&controller=game">
                 <div class="card-content center">
                   <div>IA Faible</div>
                 </div>
@@ -137,50 +137,24 @@
         </div>
 <!--Fin de la liste des modes disponibles-->
 <!--Debut de la liste des modes de deck disponibles-->
-        <div class="row decknone">
-          <div class="col s6 m4 l3">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text deck" href="&deck=FF8">
-                <div class="card-content center">
-                  <div>FF8</div>
-                </div>
-              </a>
-            </div>
-          </div>
+        <?php
+        if(isset($tab_deck)){
+          echo '<div class="row decknone">';
+          foreach ($tab_deck as $deck) {
+             echo '<div class="col s6 m4 l'.htmlspecialchars($taille).'">
+                       <div class="card modeJeu">
+                         <a class="modal-trigger white-text deck" href="&deck='.htmlspecialchars($deck->get("nomDeck")).'">
+                           <div class="card-content center">
+                             <div>'.htmlspecialchars($deck->get("affichageDeck")).'</div>
+                           </div>
+                         </a>
+                       </div>
+                   </div>';
+          }
+          echo '</div>';
 
-          <div class="col s6 m4 l3">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text deck" href="&deck=FF10">
-                <div class="card-content center">
-                  <div>FF10</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col s6 m4 l3">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text deck" href="&deck=autre">
-                <div class="card-content center">
-                  <div>Autres</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col s6 m4 l3">
-            <div class="card modeJeu">
-              <a class="modal-trigger white-text deck" href="&deck=lol">
-                <div class="card-content center">
-                  <div>LOL</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-
-
-        </div>
+        }
+        ?>
 <!--Fin de la liste des modes de deck disponibles-->
       </div>
     </div>
