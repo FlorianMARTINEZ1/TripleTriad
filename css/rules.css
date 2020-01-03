@@ -95,7 +95,7 @@ input[name="r"] {
     align-self: center;
 }
 
-@media only screen and (min-width: 993px) {
+@media only screen and (max-width: 993px) {
     .slide .rules-content .rules-details p {
         font-size: 11px;
     }
