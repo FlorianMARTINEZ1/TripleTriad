@@ -1,68 +1,65 @@
-#place1{
-    background-color :gold;
-}
-#place2{
-    background-color:silver;
-}
-#place3
-{
-    background-color:sienna;
+#place1 {
+    background-color: gold;
 }
 
-h3{
-    margin-top:5px;
+#place2 {
+    background-color: silver;
 }
 
-.contain
-{
-    padding : 2px;
-    display:flex;
-    width:40%;
-    margin:auto;
+#place3 {
+    background-color: sienna;
 }
 
-.name
-{
-    flex-grow:1;
-    padding-left:10%;
+h3 {
+    margin-top: 5px;
 }
 
-p{
-    margin:auto;
+.contain {
+    padding: 2px;
+    display: flex;
+    width: 40%;
+    margin: auto;
 }
 
-.card-panel
-{
-    width:70%;
-    height:100%;
-    margin:5% auto;
+.name {
+    flex-grow: 1;
+    padding-left: 10%;
+}
+
+p {
+    margin: auto;
+}
+
+.card-panel {
+    width: 70%;
+    height: 100%;
+    margin: 5% auto;
     background-color: rgba(72, 131, 146, 0.5);
 }
 
-.logged
-{
-    border:solid 2px;
+.logged {
+    border: solid 2px;
 }
 
-.buttons{
-    display:flex;
+.buttons {
+    display: flex;
     margin: 0 auto;
-    width:50%;
-    height:50px;
+    width: 50%;
+    height: 50px;
 }
 
 .buttons a {
-    margin:auto;
+    margin: auto;
     color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;
-  }
-  
+}
+
 .buttons a.active {
-    background-color: #4CAF50;
+    background: rgba(34, 61, 68, 0.75);
     color: white;
     border: 1px solid #4CAF50;
-  }
+}
