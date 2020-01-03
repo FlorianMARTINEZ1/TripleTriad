@@ -45,6 +45,11 @@ function stopMusic() {
   }
 
 }
+
+
+if(existeImage){ // si le deck à une image de fond on le charge
+  document.getElementById("html").style.backgroundImage = "url(./css/img/"+document.getElementById("deck").innerHTML+".jpg)";
+}
 var choixjoueur = getRandomIntInclusive(0, 1); //choix du premier joueuer a jouer
 document.getElementById("choix").innerHTML = choixjoueur;
 request(readData); // appelle la fonction request et reçoit toutes les 10 cartes de la BD prit au hasard
@@ -73,7 +78,7 @@ function initialisation() {
   }
   if(document.getElementById('deck').innerHTML == "lol"){
     sound.volume = 0.7;
-  } 
+  }
   else{
     sound.volume = 0.2;
   }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php if($controller == "game" && $deck == "lol"){echo 'id="lol"';} ?> >
+<html id="html" >
 
 <head>
   <meta charset="utf-8">
@@ -128,7 +128,7 @@
     $tabSon = array(0 => "sound",1 => "victoire", 2 => "Gameover" );
     foreach ($tabSon as $key => $value) {
         if($key == 0){echo '<audio id="sound" preload="auto" loop>';}
-        else{echo '<audio id="'.htmlspecialchars($deck).'" preload="auto" >';}
+        else{echo '<audio id="'.htmlspecialchars($value).'" preload="auto" >';}
         if(file_exists(File::build_path_directorie(array('css','son',$deck),$value.".mp3"))){ // Si le son du deck existe, on les charges
           echo '  <source src="css/son/'.htmlspecialchars($deck).'/'.htmlspecialchars($value).'.mp3" type="audio/mpeg">
                   <source src="css/son/'.htmlspecialchars($deck).'/'.htmlspecialchars($value).'.ogg" type="audio/ogg">';
@@ -213,6 +213,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script type="text/javascript" src="./script/Card.js"></script>
       <script type="text/javascript"> var equilibre = '.htmlspecialchars($_SESSION["equilibre"]).' ; </script>
+      <script type="text/javascript"> var existeImage =';
+      if(file_exists(File::build_path_directorie(array('css','img'),$deck.".jpg"))){echo "true";} // image de fond existe
+      else{echo 'false';} // image n'existe pas;
+      echo ' ; </script>
       <script type="text/javascript"> var modeType = "'.htmlspecialchars($type).'"; </script>';
 
       if ($view == "Enligne") {
