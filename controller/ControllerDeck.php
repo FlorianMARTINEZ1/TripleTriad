@@ -6,7 +6,7 @@ class ControllerDeck{
 
   protected static $object = 'deck';
 
-  public static function readAll(){ //fonctionne
+  public static function readAll(){ //fini
     if(Session::is_admin()){
       $tab_deck = ModelCategorieDeck::selectAll();
       $controller = 'deck';
@@ -19,7 +19,7 @@ class ControllerDeck{
     }
   }
 
-  public static function delete(){//fonctionne
+  public static function delete(){//fini
     $deck = myGet('deck');
     if(Session::is_admin()){
         ModelCategorieDeck::delete($deck);
@@ -40,11 +40,17 @@ class ControllerDeck{
 
   }
 
-  public static function update(){
+  public static function update(){//fini
     $deck = myGet("deck");
     $deck = ModelCategorieDeck::select($deck);
     if(Session::is_admin() && $deck != false){
+      $deckDirectorie = $deck->get("nomDeck");
 
+      /** Vérifie que les fichiers de son et d'image du deck sont dans le serveur **/
+      $sound = file_exists(File::build_path_directorie(array('css','son',$deckDirectorie),"sound.mp3"));
+      $victoire = file_exists(File::build_path_directorie(array('css','son',$deckDirectorie),"victoire.mp3"));
+      $defaite = file_exists(File::build_path_directorie(array('css','son',$deckDirectorie),"Gameover.mp3"));
+      $img = file_exists(File::build_path_directorie(array('css','img'),$deckDirectorie.".jpg"));
       $controller = 'deck';
       $action="update";
       $view = 'update';
@@ -56,13 +62,27 @@ class ControllerDeck{
     }
   }
 
-  public static function updated(){
+  public static function updated(){//fini
     if(!is_null(myGet("deck")) && ModelCategorieDeck::select(myGet("deck")) != false && Session::is_admin()){
       $deck= $_POST['nomDeck'];
       $data = array('nomDeck' => $deck,
                     'affichageDeck' => $_POST['affichageDeck'],);
 
       ModelCategorieDeck::update($data);
+
+      if (!empty($_FILES['fond']) && is_uploaded_file($_FILES['fond']['tmp_name'])) {
+        $message = $message.ControllerDeck::enregistrefichier($deck,$_FILES['fond'],"sound","fond","mp3",array("mp3","ogg","mpeg"),"son");
+      }
+      if (!empty($_FILES['victoire']) && is_uploaded_file($_FILES['victoire']['tmp_name'])) {
+          $message = $message.ControllerDeck::enregistrefichier($deck,$_FILES['victoire'],"victoire","victoire","mp3",array("mp3","ogg","mpeg"),"son");
+      }
+      if (!empty($_FILES['défaite']) && is_uploaded_file($_FILES['défaite']['tmp_name'])) {
+          $message = $message.ControllerDeck::enregistrefichier($deck,$_FILES['défaite'],"Gameover","défaite","mp3",array("mp3","ogg","mpeg"),"son");
+      }
+      if (!empty($_FILES['fondImg']) && is_uploaded_file($_FILES['fondImg']['tmp_name'])) {
+          $message = $message.ControllerDeck::enregistrefichier($deck,$_FILES['fondImg'],$deck,"victoire","jpg",array("jpeg","jpg","png"),"img");
+      }
+
       $message = "deck modifié !";
       $deck = ModelCategorieDeck::select(myGet("deck"));
       $controller='deck';
@@ -79,7 +99,7 @@ class ControllerDeck{
 
 
 
-  public static function create(){ //fonctionne
+  public static function create(){ //fini
     $controller='deck';
     $view='update';
     $action="create";
@@ -87,14 +107,14 @@ class ControllerDeck{
     require File::build_path(array('view','view.php'));
   }
 
-  public static function error(){ //fonctionne
+  public static function error(){ //fini
     $controller='deck';
     $view='error';
     $pagetitle='Error 404 - deck non créée';
     require File::build_path(array('view','view.php'));
   }
 
-  public static function created(){ //fonctionne
+  public static function created(){ //fini
     if(Session::is_admin() ){ // si le joueur est admin
       $message = "";
       $deck= $_POST['nomDeck'];
@@ -137,7 +157,7 @@ class ControllerDeck{
   }
 
 
-  public static function enregistrefichier($deck, $file, $name, $mess , $type, $tab_allowed,$dir ){
+  public static function enregistrefichier($deck, $file, $name, $mess , $type, $tab_allowed,$dir ){ // fonction qui insert un fichier dans un dossier
     $message="";
     $explosion = explode('.',$file['name']);
     if (!in_array(end($explosion), $tab_allowed)) {

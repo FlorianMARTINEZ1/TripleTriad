@@ -41,19 +41,47 @@
       <div class="row">
         <div class="col s4 m4 l6">
             <label for="fond">Musique de fond</label>
-            <input type="file" accept="audio/*" name="fond" >
+             <?php
+             if($action=="update" && $sound==true){
+                echo '<i class="material-icons">check</i>';
+             }
+             else{
+                echo '<input type="file" accept="audio/*" name="fond">';
+             }
+             ?>
         </div>
         <div class="col s4 m4 l6">
           <label for="victoire">Musique de victoire</label>
-          <input type="file" accept="audio/*" name="victoire" >
+          <?php
+          if($action=="update" && $victoire==true){
+             echo '<i class="material-icons">check</i>';
+          }
+          else{
+            echo '<input type="file" accept="audio/*" name="victoire" >';
+          }
+          ?>
         </div>
         <div class="col s4 m4 l6">
           <label for="défaite">Musique de défaite</label>
-          <input type="file" accept="audio/*" name="défaite">
+          <?php
+          if($action=="update" && $defaite==true){
+             echo '<i class="material-icons">check</i>';
+          }
+          else{
+            echo '<input type="file" accept="audio/*" name="défaite">';
+          }
+          ?>
         </div>
         <div class="col s4 m4 l6">
           <label for="fondImg">Image de fond</label>
-          <input type="file" accept="image/jpg/*" name="fondImg" >
+          <?php
+          if($action=="update" && $img==true){
+             echo '<i class="material-icons">check</i>';
+          }
+          else{
+            echo '<input type="file" accept="image/jpg/*" name="fondImg" >';
+          }
+          ?>
         </div>
         </div>
         <input type="hidden" name="action"  <?php if($action!="update"){echo 'value="created"';}else{echo 'value="updated"';} ?>>
