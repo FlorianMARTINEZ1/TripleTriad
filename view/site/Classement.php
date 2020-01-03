@@ -33,8 +33,7 @@
     
         return $new_array;
     }
-    if($tabClassement!=false)
-    {
+    
         $size = sizeof($tabClassement);
     echo '<article><div="card-container"> <div class="card-panel"><div class="card-content" style="height:100%"><h3 style="text-align:center"> Classement </h3>';
     
@@ -80,7 +79,8 @@
         echo '&win=1">Nombre de parties gagnées</a></div>';
     }
     
-    
+    if($tabClassement!=false)
+    {
     
     
     if(!isset($_GET['page']))
