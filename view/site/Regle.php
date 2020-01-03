@@ -25,10 +25,10 @@
                     <h5 class="center">Équilibré ou Aléatoire</h5>
                     <div class="rules-details">
                         <p class="p-regle center">
-                        Vous cherchez du défi ? En voilà un, vous ne savez pas quel mode est fait pour vous, je vais vous aidez.
+                        Vous cherchez du défi ? En voilà un, vous ne savez pas quel mode est fait pour vous, je vais vous aider.
                         <br>
                         <br>
-                        Le mode équilibré est un mode où votre deck ainsi que le deck de l'adversaire sont équilibré. C'est à dire que la somme de toutes les valeurs de votre deck est proche de celle du deck adverse. Dans ce mode, la stratégie est essentiel pour gagner.
+                        Le mode équilibré est un mode où votre deck ainsi que le deck de l'adversaire sont équilibré. C'est à dire que la somme de toutes les valeurs de votre deck est proche de celle du deck adverse. Dans ce mode, la stratégie est essentielle pour gagner.
                         <br>
                         <br>
                         Le mode aléatoire, quant à lui, est un mode où la valeur tôtal de votre deck peut être supérieur, ce qui est plutôt cool n'est-ce pas, ou bien presque égale, comme dans le mode Équilibré, mais elle peut aussi être inférieur, ça c'est moins cool. Dans ce mode, la chance est un excellent moyen de gagné mais elle ne fait pas tout. Alors, bonne chance !
