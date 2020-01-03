@@ -50,16 +50,17 @@ p {
 
 .buttons a {
     margin: auto;
-    color: black;
+    color: #fff;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;
+    background: rgba(34, 61, 68, 0.75);
 }
 
 .buttons a.active {
-    background: rgba(34, 61, 68, 0.75);
+    background: rgba(37, 68, 34, 0.75);
     color: white;
     border: 1px solid #4CAF50;
 }
