@@ -24,9 +24,9 @@ header {
 
 #dropdown1 {
     top: -64px;
-    background: rgba(34, 61, 68, 0.3);
+    background: rgba(10, 24, 40);
 }
 
 #dropdown1 li:hover {
-    background: rgba(34, 61, 68, 0.6);
+    background: rgb(21, 42, 53);
 }

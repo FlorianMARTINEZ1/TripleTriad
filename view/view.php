@@ -61,6 +61,9 @@
     {
       echo '<link rel="stylesheet" type="text/css" href="./css/stats.css">';
     }
+    if ($view == 'EnAttente') {
+      echo '<link rel="stylesheet" type="text/css" href="./css/attente.css">';
+    }
 
    ?>
    <link rel="stylesheet" type="text/css" href="./css/general.css">
