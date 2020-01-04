@@ -147,7 +147,7 @@ class IA extends Joueur {
     var casee = document.getElementsByClassName('case' + this.casesVides[idCase])[0];
     casee.removeAttribute('ondrop');
     casee.removeAttribute('ondragover');
-    confrontation(newimg.className, 'case' + this.casesVides[idCase]);
+    g2.confrontation(newimg.className, 'case' + this.casesVides[idCase]);
     document.getElementById('score-un').innerHTML = g2.listPlayer[0].score;
     document.getElementById('score-deux').innerHTML = g2.listPlayer[1].score;
     g2.setTurn();
