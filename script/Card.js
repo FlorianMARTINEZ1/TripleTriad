@@ -47,6 +47,12 @@ class Card {
     return this.couleur;
   }
 
+  retourne(C, couleur) {
+    C.setAttribute("src", "css/cartes/"+this.donneSource()+"/" + this.donneNom() + "." + couleur + ".jpg"); // On change la couleur
+    C.style.width = "100px";
+    C.style.marginLeft = "0px";
+  }
+
   donneCouleurInv(){
     if(this.couleur=="bleue") return "rouge";
     else return "bleue";
