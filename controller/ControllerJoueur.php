@@ -84,11 +84,15 @@ class ControllerJoueur {
    }
 
     public static function ChoixHerbergement(){
-
-      $controller='joueur';
-      $view='ChoixModePartie';
-      $pagetitle='Choix partie';
-      require File::build_path(array('view','view.php')); //"redirige" vers la vue
+      if(Session::is_admin()){
+        $controller='joueur';
+        $view='ChoixModePartie';
+        $pagetitle='Choix partie';
+        require File::build_path(array('view','view.php')); //"redirige" vers la vue
+      }
+      else{
+        ControllerJoueur::connect();
+      }
     }
 
     public static function quitteFile(){
