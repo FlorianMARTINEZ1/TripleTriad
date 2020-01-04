@@ -57,6 +57,10 @@
     {
       echo '<link rel="stylesheet" type="text/css" href="./css/historique.css">';
     }
+    if($view == 'stats')
+    {
+      echo '<link rel="stylesheet" type="text/css" href="./css/stats.css">';
+    }
 
    ?>
    <link rel="stylesheet" type="text/css" href="./css/general.css">
