@@ -141,7 +141,7 @@ function drag(ev) {
     }
   } else {
     ev.preventDefault()
-    throw new Error("Va te faire sale tricheur");
+    throw new Error("pas bien de tricher");
   }
 
 }
