@@ -63,7 +63,6 @@ p {
 .buttons a:hover {
     background: rgba(39, 104, 112, 0.75);
     border: 1px solid rgb(28, 74, 80);
-    ;
 }
 
 .buttons a.active {

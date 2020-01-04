@@ -7,7 +7,7 @@
         <div class="card-content">
           <h5 class="center">Credit</h5>
           <p class="p-regle grey-text text-lighten-1">
-            Jeu réalisé par Sébastien GINESTE, Florian MARTINEZ, Pierre MARUEJOL et Cem SARISOY sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestres 3 du DUT informatique de Montpellier ! Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
+            Jeu réalisé par Sébastien GINESTE, Florian MARTINEZ, Pierre MARUEJOL et Cem SARISOY sous la direction de M. CHOLLET. Ce projet a été réalisé durant le semestre 3 du DUT informatique de Montpellier ! Amusez-vous bien dans ce remake du célèbre mini-jeu Triple Triad de Finale Fantasy VIII !
           </p>
           <h5 id="titre" class="center">Mode de jeux</h5>
         </div>

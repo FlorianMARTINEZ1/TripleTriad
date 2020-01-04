@@ -7,7 +7,7 @@
 }
 
 .pagination a {
-    color: black;
+    color: #fff;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
@@ -27,5 +27,6 @@
 }
 
 .pagination a:hover:not(.active) {
-    background-color: #ddd;
+    background: rgba(39, 104, 112, 0.75);
+    border: 1px solid rgb(28, 74, 80);
 }

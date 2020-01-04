@@ -155,7 +155,7 @@
         </div>';
     }
     else{
-        echo '<div>Il n\'y a aucune partie !</div>';
+        echo '<div class="center white-text">Il n\'y a aucune partie !</div>';
     }
     echo '</div></div></article>';
 ?>
