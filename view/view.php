@@ -64,6 +64,9 @@
     if ($view == 'EnAttente') {
       echo '<link rel="stylesheet" type="text/css" href="./css/attente.css">';
     }
+    if ($view == 'ChoixModePartie') {
+      echo '<link rel="stylesheet" type="text/css" href="./css/heberge.css">';
+    }
 
    ?>
    <link rel="stylesheet" type="text/css" href="./css/general.css">
@@ -196,26 +199,24 @@
       <div id="menuIcon">
         <a class="waves-effect waves-light ff8 btn" onclick="afficheMenu()"><i class="material-icons">settings</i></a>
       </div>
-      <div id="menu" class="">
-        <div id="backgrndmenu" class="card"></div>
-        <div class="listmenu">
+      <div id="menu" class="container">
+        <div id="backgrndmenu" class="card">
+        <div class="listmenu card-content center">
           <div>
-            <h3>Regle du jeu </h2>
+            <h3>Régles du jeu </h2>
               <p>
-                Vous pouvez y accéder <a href="">ici</a>.
+                Accédez aux régles en cliquant <a href="./index.php?action=regle">ici</a>.
               </p>
           </div>
           <div>
             <h3>Quitter le jeu</h2>
               <p>
-                cliquez <a href="./index.html">ici</a>.
+                Pour quitter la partie en cours cliquez <a href="./index.php">ici</a>.
               </p>
           </div>
-          <div>
-            <h3>Relancer une partie ? </h2>
-              <p>
-                <button onclick="document.location.reload(false)"> Si vous voulez rejouer cliquez ici </button>
-              </p>
+          <div class="btn-replay">
+              <button id="refresh" class="btn-menu" onclick="document.location.reload(false)">Rejouer</button>
+          </div>
           </div>
         </div>
       </div>

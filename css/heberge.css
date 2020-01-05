@@ -1,0 +1,51 @@
+button.btn-create {
+    background: rgb(55, 113, 128);
+    border: none;
+    color: #fff;
+    height: 30px;
+    width: 130px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+button.btn-create:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px #000;
+}
+
+#panneau,
+#marquer {
+    display: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 3%;
+    width: 30%;
+}
+
+#marquer {
+    margin-top: 1%;
+}
+
+#panneau .card,
+#marquer .card {
+    background: rgba(34, 61, 68, 0.7);
+    color: #fff;
+    border-radius: 30px;
+}
+
+#panneau .card h5 {
+    background: none;
+}
+
+#enter-code {
+    width: 50%;
+}
+
+div.center div.input-field label {
+    color: #fff !important;
+}
