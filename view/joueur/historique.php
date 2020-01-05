@@ -68,13 +68,15 @@
     }
     for ($i = 1; $i<=ceil($size/4);$i++)
     {
-        if($i == $page)
-        {
-            echo '<a class="active" href="#">'.$i.'</a>';
-        }
-        else
-        {
-            echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.$i.'">'.$i.'</a>';
+        if($i>=intval($page-4)&&$i<=intval($page+4)){
+            if($i == $page)
+            {
+                echo '<a class="active" href="#">'.$i.'</a>';
+            }
+            else
+            {
+                echo '<a href="index.php?action=historique&controller=joueur&login='.$_GET['login'].'&page='.$i.'">'.$i.'</a>';
+            }
         }
     }
     if($page<ceil($size/4))

@@ -130,16 +130,19 @@
         }
         for ($i = 1; $i<=ceil(($size/15));$i++)
         {
-            if($i == $page)
+            if($i>=intval($page-4)&&$i<=intval($page+4))
             {
-                echo '<a class="active" href="#">'.$i.'</a>';
-            }
-            else
-            {
-                echo '<a href="index.php?action=classement';
-                if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
-                if(isset($_GET['win'])) echo '&win='.$_GET['win'];
-                echo '&page='.$i.'">'.$i.'</a>';
+                if($i == $page)
+                {
+                    echo '<a class="active" href="#">'.$i.'</a>';
+                }
+                else
+                {
+                    echo '<a href="index.php?action=classement';
+                    if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+                    if(isset($_GET['win'])) echo '&win='.$_GET['win'];
+                    echo '&page='.$i.'">'.$i.'</a>';
+                }
             }
         }
         if($page<ceil(($size/15)))
