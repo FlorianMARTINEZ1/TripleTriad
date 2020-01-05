@@ -1,0 +1,26 @@
+#check-card {
+    width: 40%;
+}
+
+#check-card .card {
+    background: rgba(34, 61, 68, 0.75) !important;
+    border-radius: 30px;
+}
+
+div.col label {
+    color: #fff;
+    font-size: 12px;
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+}
+
+div.recherche {
+    display: block;
+}

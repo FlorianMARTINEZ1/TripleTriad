@@ -12,15 +12,33 @@
     </form>
   </div>
 
+  <div id="check-card" class="container">
+    <div class="card">
+      <div class="card-content center row">
+        <div class="col s4">
+          <input type="checkbox" name="ff8" id="ff8" onclick="afficherCarte()">
+          <label for="ff8">Final Fantasy VIII</label>
+        </div>
+        <div class="col s4">
+          <input type="checkbox" name="lol" id="lol">
+          <label for="lol">League of Legends</label>
+        </div>
+        <div class="col s4">
+          <input type="checkbox" name="autre" id="autre">
+          <label for="autre">Autre</label>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
     <div id="listCard">
         <?php
         foreach ($tab_c as $c)
             echo'
-              <div class="row recherche" id="'.htmlspecialchars($c->get('nomCarte')).'" style="display:block; ">
+              <div class="row recherche '.htmlspecialchars($c->get("source")).'" id="'.htmlspecialchars($c->get('source')).'" ">
                   <div class="col s12 m12">
-                      <div class="card white darken-1">
+                      <div class="card ">
                           <div class="card-content black-text">
                               <span class="card-title">'. htmlspecialchars($c->get('id')) .' - '. htmlspecialchars($c->get('nomCarte')) .'</span>
                               <p style="display:flex">
@@ -38,3 +56,5 @@
             ';
         ?>
     </div>
+
+    <script src="./script/list.js"></script>
