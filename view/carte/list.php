@@ -36,7 +36,7 @@
         <?php
         foreach ($tab_c as $c)
             echo'
-              <div class="row recherche '.htmlspecialchars($c->get("source")).'" id="'.htmlspecialchars($c->get('source')).'" ">
+              <div class="row recherche '.htmlspecialchars($c->get("source")).'" id="'.htmlspecialchars($c->get('nomCarte')).'" ">
                   <div class="col s12 m12">
                       <div class="card ">
                           <div class="card-content black-text">
