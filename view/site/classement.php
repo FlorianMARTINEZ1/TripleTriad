@@ -35,7 +35,7 @@
     }
     
         
-    echo '<article><div="card-container"> <div class="card-panel"><div class="card-content" style="height:100%"><h3 class="center white-text"> Classement </h3>';
+    echo '<article><div class="card-container"> <div class="card-panel"><div id="titre" class="card-content"><h3 class="center white-text"> Classement </h3>';
     
     if(!isset($_GET['IA'])||$_GET['IA']==1)
     {
@@ -99,7 +99,7 @@
             }
         }
         $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
-        echo '<div class="contain white-text"><p>Place</p><p style="flex-grow:1;padding-left:3%">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
+        echo '<div class="contain white-text"><p>Place</p><p id="titre-leaderboard">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
         
         $i = 1;
         foreach($ClassementTrié as $value)
@@ -130,19 +130,16 @@
         }
         for ($i = 1; $i<=ceil(($size/15));$i++)
         {
-            if($i>=intval($page-4)&&$i<=intval($page+4))
+            if($i == $page)
             {
-                if($i == $page)
-                {
-                    echo '<a class="active" href="#">'.$i.'</a>';
-                }
-                else
-                {
-                    echo '<a href="index.php?action=classement';
-                    if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
-                    if(isset($_GET['win'])) echo '&win='.$_GET['win'];
-                    echo '&page='.$i.'">'.$i.'</a>';
-                }
+                echo '<a class="active" href="#">'.$i.'</a>';
+            }
+            else
+            {
+                echo '<a href="index.php?action=classement';
+                if(isset($_GET['IA'])) echo '&IA='.$_GET['IA'];
+                if(isset($_GET['win'])) echo '&win='.$_GET['win'];
+                echo '&page='.$i.'">'.$i.'</a>';
             }
         }
         if($page<ceil(($size/15)))
