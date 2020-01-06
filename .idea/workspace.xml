@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b8451b-6175-4941-bfae-ac853893f440" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/contact.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/rules.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/site/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/site/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/site/Regle.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/site/Regle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/view.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,29 +18,33 @@
     </execution>
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="1560">
+              <caret line="104" column="41" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/site/Contact.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/site/Contact.php">
+        <entry file="file://$PROJECT_DIR$/view/site/Regle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="275">
+              <caret line="33" column="251" selection-start-line="33" selection-start-column="251" selection-end-line="33" selection-end-column="251" />
             </state>
           </provider>
         </entry>
@@ -76,9 +76,9 @@
         <option value="$PROJECT_DIR$/css/joueur.css" />
         <option value="$PROJECT_DIR$/view/view.php" />
         <option value="$PROJECT_DIR$/css/rules.css" />
-        <option value="$PROJECT_DIR$/view/site/Regle.php" />
         <option value="$PROJECT_DIR$/css/contact.css" />
         <option value="$PROJECT_DIR$/view/site/Contact.php" />
+        <option value="$PROJECT_DIR$/view/site/Regle.php" />
       </list>
     </option>
   </component>
@@ -108,6 +108,19 @@
             <path>
               <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
               <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="cartes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="cartes" type="462c0819:PsiDirectoryNode" />
+              <item name="autre" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TripleTriad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripleTriad" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -132,8 +145,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,6 +181,7 @@
       <workItem from="1576747106480" duration="295000" />
       <workItem from="1576747415088" duration="944000" />
       <workItem from="1576758203991" duration="603000" />
+      <workItem from="1578316172220" duration="877000" />
     </task>
     <task id="LOCAL-00001" summary="bouton connection fix">
       <created>1576748343804</created>
@@ -176,17 +190,24 @@
       <option name="project" value="LOCAL" />
       <updated>1576748343804</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="carte">
+      <created>1578316339054</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578316339054</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1842000" />
+    <option name="totallyTimeSpent" value="2719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19147758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1936912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -194,7 +215,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -221,7 +242,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bouton connection fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bouton connection fix" />
+    <MESSAGE value="carte" />
+    <option name="LAST_COMMIT_MESSAGE" value="carte" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/view/site/ChoixDeck.php">
@@ -277,21 +299,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/site/Regle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1560">
+          <caret line="104" column="41" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -304,8 +315,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/site/Contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="525">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/site/Regle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="33" column="251" selection-start-line="33" selection-start-column="251" selection-end-line="33" selection-end-column="251" />
         </state>
       </provider>
     </entry>
