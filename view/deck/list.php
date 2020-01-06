@@ -22,7 +22,7 @@
                         <a href="./?action=update&deck='.rawurlencode($deck->get("nomDeck")).'&controller=deck">
                           <i class="material-icons">edit</i>
                         </a>
-                        <a href="./?controller=deck&action=delete&deck='.rawurlencode($deck->get("nomDeck")).'" >
+                        <a class="delete" href="./?controller=deck&action=delete&deck='.rawurlencode($deck->get("nomDeck")).'" >
                           <i class="material-icons">cancel</i>
                         </a>
                         <a href="./index.php?controller=carte&action=readAll&deck='.rawurlencode($deck->get("nomDeck")).'">
@@ -40,4 +40,16 @@
           Voulez-vous ajoutez un nouveau deck ? cliquez <a href="./?action=create&controller=deck">ici</a>
         </p>
       </div>
+      <div id="menu" class="container">
+        <div id="backgrndmenu" class="card">
+        <div class="listmenu card-content center">
+            <h3>Voulez-vous vraiment supprimer ce deck ?</h3>
+            <p id="decision">
+              <a id="oui" href="#">oui</a> <a id="non" href="#">non</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
     </article>

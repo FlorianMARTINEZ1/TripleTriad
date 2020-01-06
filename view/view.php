@@ -321,6 +321,9 @@
           echo '<script src="./script/deckList.js"></script>';
         }
     }
+    if($controller == "deck" && $view == "list"){
+        echo '<script src="./script/deck.js"></script>';
+    }
     if($view == "Accueil"){
       echo  '<script type="text/javascript" src="./script/Accueil.js"></script>';
     }

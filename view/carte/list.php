@@ -27,6 +27,7 @@
                 </div>';
               if($i == 3){echo '</div>';$i=0;}
             }
+            if($i != 0){echo '</div>';}
         }
       ?>
       </div>
