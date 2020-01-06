@@ -14,19 +14,21 @@
 
   <div id="check-card" class="container">
     <div class="card">
-      <div class="card-content center row">
-        <div class="col s4">
-          <input type="checkbox" name="ff8" id="ff8" onclick="afficherCarte()">
-          <label for="ff8">Final Fantasy VIII</label>
-        </div>
-        <div class="col s4">
-          <input type="checkbox" name="lol" id="lol">
-          <label for="lol">League of Legends</label>
-        </div>
-        <div class="col s4">
-          <input type="checkbox" name="autre" id="autre">
-          <label for="autre">Autre</label>
-        </div>
+      <div class="card-content center">
+      <?php
+        if(isset($tab_deck)){ // Affiche les decks du serveur
+            $i = 0;
+            foreach ($tab_deck as $deck) { // écrit les deck de 3 en 3
+              if($i == 0){echo '<div class="row">';}$i++;
+              echo '
+                <div class="col s4">
+                  <input type="checkbox" checked name="'.htmlspecialchars($deck->get("nomDeck")).'" id="'.htmlspecialchars($deck->get("nomDeck")).'">
+                  <label for="'.htmlspecialchars($deck->get("nomDeck")).'">'.htmlspecialchars($deck->get("affichageDeck")).'</label>
+                </div>';
+              if($i == 3){echo '</div>';$i=0;}
+            }
+        }
+      ?>
       </div>
     </div>
   </div>
@@ -56,5 +58,3 @@
             ';
         ?>
     </div>
-
-    <script src="./script/list.js"></script>
