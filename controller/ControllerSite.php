@@ -20,6 +20,43 @@ class ControllerSite {
       require File::build_path(array('view','view.php')); //"redirige" vers la vue
     }
 
+    public static function demandeContact(){
+
+      if(!is_null(myGet("pseudo")) && !is_null(myGet("email")) && !is_null(myGet("subject")) && !is_null(myGet("detail-msg"))){
+
+        $login = myGet("pseudo");
+        $mail = myGet("email");
+        $sujet = myGet("subject");
+        $text = myGet("detail-msg");
+
+        $mailEcrit='
+               <html>
+                 <body>
+                   <div align="center">
+                     <u>login de l\'expéditeur :</u>'.htmlspecialchars($login).'<br />
+                     <br />
+                     '.htmlspecialchars($text).'
+                     <br />
+                   </div>
+                 </body>
+               </html>
+               ';
+
+        mail("TripleTriadContact@yopmail.com", $sujet, $mailEcrit); // envoie au contact de l'application (un admin)
+        mail($mail, $sujet, $mailEcrit); // envoie une copie au joueur
+        $message = "message envoyé ! Nous faisons tout notre possible pour vous répondre le plus rapidement possible !";
+
+      }
+      else{
+        $message = "Il y a eu une erreur dans l'envoie de votre message !";
+      }
+
+      $controller='site';
+      $view='Contact';
+      $pagetitle='Contact';
+      require File::build_path(array('view','view.php')); //"redirige" vers la vue
+    }
+
     public static function regle(){
       $controller='site';
       $view='Regle';
