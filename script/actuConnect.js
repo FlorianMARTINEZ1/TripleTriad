@@ -116,56 +116,56 @@ $(function () {
   function affichage(Data) {
     var donnes = Data;
     let p = document.getElementsByTagName("p");
-    let papa = document.getElementsByClassName("card-panel")[1];
+    let papa = document.getElementById("papa");
     let CountChild = papa.childElementCount;
     let Total = donnes.length;
-    let i = 0;
+    let i = 1;
     while(parseInt(""+i)<Total){
-      if(donnes[i] && p[i]){
-        if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" class="accepte"> Accepter ? </a> --<a style="color:red" href="#" class="refuse"> Refuser ?</a>';
-          idGame=donnes[i]['joue'];
-          document.getElementById("idGame").value=donnes[i]['joue'];
+      if(donnes[i-1] && p[i]){
+        if(document.getElementById("session") && donnes[i-1]['login']==document.getElementById("session").value&&donnes[i-1]['joue']&&donnes[i-1]['challenged']==donnes[i-1]['login']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i-1]['login']+'">'+donnes[i-1]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i-1]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" class="accepte"> Accepter ? </a> --<a style="color:red" href="#" class="refuse"> Refuser ?</a>';
+          idGame=donnes[i-1]['joue'];
+          document.getElementById("idGame").value=donnes[i-1]['joue'];
         }
-        else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
-          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+        else if(document.getElementById("session") && donnes[i-1]['login']==document.getElementById("session").value){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i-1]['login']+'">'+donnes[i-1]['login']+'</a> est connecté ! (c\'est vous)';
           if(p[i-1]){
             if(p[i].innerHTML == p[i-1].innerHTML){
               papa.removeChild(p[i]);
             }
           }
-          idGame=donnes[i]['joue'];
-          document.getElementById("idGame").value=donnes[i]['joue'];
+          idGame=donnes[i-1]['joue'];
+          document.getElementById("idGame").value=donnes[i-1]['joue'];
         }
-        else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-          p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
+        else if(donnes[i-1]['joue']&&donnes[i-1]['challenged']==donnes[i-1]['login']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i-1]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i-1]["challenger"]+'</a>)!';
         }
-        else if(donnes[i]['joue']){
-          p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté !';
+        else if(donnes[i-1]['joue']){
+          p[i].innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i-1]['login']+'</a> est connecté !';
         }
         else{
-          p[i].innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i]['login']+'</a> est connecté !';
+          p[i].innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i-1]['login']+'</a> est connecté !';
         }
       }
       else{
         var newP = document.createElement("p");
-        if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value&&donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-              newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
-            idGame=donnes[i]['joue'];
+        if(document.getElementById("session") && donnes[i-1]['login']==document.getElementById("session").value&&donnes[i-1]['joue']&&donnes[i-1]['challenged']==donnes[i-1]['login']){
+              newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i-1]['login']+'">'+donnes[i-1]['login']+'</a> est connecté ! (c\'est vous) et vous êtes invité dans une partie par <strong style="color:red;"> '+donnes[i-1]["challenger"]+'</strong>)! -- <a style="color:blue;" href="#" onclick="accepter()"> Accepter ? </a> --<a style="color:red" href="#" onclick="refuse()"> Refuser ?</a>';
+            idGame=donnes[i-1]['joue'];
         }
-        else if(document.getElementById("session") && donnes[i]['login']==document.getElementById("session").value){
-          newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i]['login']+'">'+donnes[i]['login']+'</a> est connecté ! (c\'est vous)';
+        else if(document.getElementById("session") && donnes[i-1]['login']==document.getElementById("session").value){
+          newP.innerHTML = 'Utilisateur de login <a style="color:green;" href="./index.php?action=read&controller=joueur&login='+donnes[i-1]['login']+'">'+donnes[i-1]['login']+'</a> est connecté ! (c\'est vous)';
         }
-        else if(donnes[i]['joue']&&donnes[i]['challenged']==donnes[i]['login']){
-            newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i]["challenger"]+'</a>)!';
+        else if(donnes[i-1]['joue']&&donnes[i-1]['challenged']==donnes[i-1]['login']){
+            newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i-1]['login']+'</a> est connecté ( il est invité dans une partie par <a style="color:red;" href="#"> '+donnes[i-1]["challenger"]+'</a>)!';
         }
 
-        else if(donnes[i]['joue']){
-          newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i]["login"]+'</a> est connecté ! ';
+        else if(donnes[i-1]['joue']){
+          newP.innerHTML = 'Utilisateur de login <a style="color:red;" href="#">'+donnes[i-1]["login"]+'</a> est connecté ! ';
 
         }
         else{
-          newP.innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i]["login"]+'</a> est connecté ! ';
+          newP.innerHTML = 'Utilisateur de login <a class="bleue" style="color:blue;" href="#">'+donnes[i-1]["login"]+'</a> est connecté ! ';
         }
         papa.appendChild(newP);
       }

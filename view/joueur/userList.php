@@ -1,7 +1,7 @@
 
         <?php
         echo '<arcticle>';
-        echo '<div id="waiting-player" class="container"><div class="card center"><div class="card-content"><p class="consigne">Les joueurs qui ne jouent pas sont affichés en <strong class="bleu">bleu</strong> et ceux qui jouent sont affichés en <strong class="rouge">rouge</strong>, votre pseudo est affiché en <strong class="vert">vert</strong>.</p>
+        echo '<div id="waiting-player" class="container"><div class="card center"><div id="papa" class="card-content"><p class="consigne">Les joueurs qui ne jouent pas sont affichés en <strong class="bleu">bleu</strong> et ceux qui jouent sont affichés en <strong class="rouge">rouge</strong>, votre pseudo est affiché en <strong class="vert">vert</strong>.</p>
         ';
         foreach ($tab_j as $j){
           if(isset($_SESSION['login']) && $j->get("login")==$_SESSION['login']){
