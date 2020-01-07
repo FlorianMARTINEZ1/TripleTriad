@@ -187,7 +187,7 @@
           </p>
           <div class="row center">';
           if ($view == "Enligne") {
-            echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="location.href = \'./index.php?action=enAttente&controller=joueur\';">Rejouer</button>';
+            echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="location.href = \'./index.php?action=accueil\';">Rejouer</button>';
           }
           else{
             echo '<button id="refresh" class="waves-effect waves-light ff8 btn " onclick="document.location.reload(false)">Rejouer</button>';
@@ -323,6 +323,9 @@
     }
     if($controller == "deck" && $view == "list"){
         echo '<script src="./script/deck.js"></script>';
+    }
+    if($view == "EnAttente"){
+      echo '<script type="text/javascript" src="./script/EnAttente.js"></script>';
     }
     if($view == "Accueil"){
       echo  '<script type="text/javascript" src="./script/Accueil.js"></script>';
