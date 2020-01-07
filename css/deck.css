@@ -1,22 +1,70 @@
-article{
-  text-align: center;
-  margin-top: 4%;
-  width: 100%;
-  color: white;
-  padding-left: 10%;
-  padding-right: 10%;
-  background: rgba(34, 61, 68, 0.8);
+article {
+    text-align: center;
+    margin-top: 4%;
+    width: 100%;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-th, tr,td{
-  text-align: center;
+#listDeck .container .card {
+    background: rgba(34, 61, 68, 0.8);
+    border-radius: 30px;
 }
 
-h4{
-  padding-top: 3%;
+#listDeck h4 {
+    padding: 0;
 }
 
-article a{
-  color: white;
-  text-decoration: underline;
+#listDeck .add-deck {
+    padding-top: 15px;
+}
+
+th,
+tr,
+td {
+    text-align: center;
+}
+
+h4 {
+    padding-top: 3%;
+}
+
+article a {
+    color: white;
+    text-decoration: underline;
+}
+
+div#menu .card {
+    background: rgba(34, 61, 68, 0.9);
+    border-radius: 30px;
+}
+
+div#menu {
+    position: fixed;
+    width: 0%;
+    visibility: hidden;
+    height: 0%;
+    opacity: 0;
+    top: 0%;
+    margin-left: 12.5%;
+    text-align: center;
+    background-color: #223d44;
+    transition-property: opacity, top;
+}
+
+div#menu.ma-transition {
+    width: 68%;
+}
+
+div#menu a {
+    font-size: 18px;
+}
+
+div#menu a:first-child {
+    margin-right: 15px;
+}
+
+table#table thead {
+    text-decoration: underline;
 }
