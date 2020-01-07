@@ -22,12 +22,17 @@ div.recherche .card {
     background: rgba(34, 61, 68, 0.75) !important;
 }
 
-div.recherche .card .card-action a {
-    margin: 0 !important;
+div.recherche .card .card-action {
+    text-align: center;
 }
 
 div.recherche .card .card-action a:first-child {
-    margin-right: 20px !important;
+    padding-right: 5px !important;
+}
+
+div.recherche .card .card-action a:last-child {
+    padding-left: 5px !important;
+    margin: 0 !important;
 }
 
 #listCard {
