@@ -38,7 +38,7 @@ class ControllerSite {
 
     public static function classement(){
       $controller='site';
-      $view='Classement';
+      $view='classement';
       $pagetitle='Classement';
       if(isset($_GET['IA'])&&$_GET['IA']==0)
       {
