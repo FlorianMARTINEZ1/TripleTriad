@@ -51,6 +51,14 @@ class Card {
     C.setAttribute("src", "css/cartes/"+this.donneSource()+"/" + this.donneNom() + "." + couleur + ".jpg"); // On change la couleur
     C.style.width = "100px";
     C.style.marginLeft = "0px";
+    setTimeout(function() {
+      safe(C, coul);
+    }, 100);
+  }
+
+  safe(C, couleur)
+  {
+    C.setAttribute("src", "css/cartes/"+this.donneSource()+"/" + this.donneNom() + "." + couleur + ".jpg"); // On change la couleur
   }
 
   donneCouleurInv(){

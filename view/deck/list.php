@@ -1,6 +1,9 @@
 
     <article id="listDeck">
-      <h4>Les decks</h4>
+      <div class="container">
+      <div class="card">
+        <div class="card-content">
+        <h4>Les decks</h4>
         <table id="table">
           <thead>
              <tr>
@@ -34,22 +37,26 @@
         }
         ?>
       </table>
-
-      <div>
+      <div class="add-deck">
         <p>
           Voulez-vous ajoutez un nouveau deck ? cliquez <a href="./?action=create&controller=deck">ici</a>
         </p>
+      </div>
+        </div>
       </div>
       <div id="menu" class="container">
         <div id="backgrndmenu" class="card">
         <div class="listmenu card-content center">
             <h3>Voulez-vous vraiment supprimer ce deck ?</h3>
             <p id="decision">
-              <a id="oui" href="#">oui</a> <a id="non" href="#">non</a>
+              <a id="oui" class="bleu" href="#">oui</a> <a class="rouge" id="non" href="#">non</a>
             </p>
           </div>
         </div>
       </div>
+      </div>
+
+
 
 
     </article>

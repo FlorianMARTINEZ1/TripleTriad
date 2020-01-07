@@ -336,3 +336,87 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
 
 
 /*===Fin Formulaire===*/
+
+
+/*===Detail Joueur===*/
+
+#detailJoueur {
+    width: 45%;
+}
+
+#detailJoueur div.card {
+    height: 50%;
+    text-align: center;
+    margin-top: 5%;
+    background-color: rgba(34, 61, 68, 0.8);
+    border-radius: 30px;
+    color: white;
+}
+
+#detailJoueur div.card div.card-content {
+    padding: 50px 0;
+}
+
+#detailJoueur h3 {
+    text-decoration: underline;
+    margin-top: 0;
+}
+
+.delete-link {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#detailJoueur .stats {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: auto;
+    justify-content: center;
+}
+
+#detailJoueur .stats>div:nth-child(2) {
+    margin: 0 10%;
+}
+
+
+/*===Fin detail joueur===*/
+
+
+/*===Joueur attente===*/
+
+#waiting-player {
+    margin-top: 5%;
+    width: 70%;
+    color: #fff;
+}
+
+#waiting-player .card {
+    background: rgba(34, 61, 68, 0.9);
+    padding: 30px 35px;
+    border-radius: 30px;
+}
+
+#waiting-player p {
+    font-size: 16px;
+}
+
+#waiting-player p.consigne {
+    margin-bottom: 30px;
+}
+
+.vert {
+    color: rgb(93, 219, 99);
+}
+
+.bleu {
+    color: rgb(0, 188, 245);
+}
+
+.rouge {
+    color: rgb(248, 55, 55);
+}
+
+#waiting-player p:not(:first-child) {
+    margin-top: 10px;
+}
