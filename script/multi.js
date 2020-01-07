@@ -26,7 +26,7 @@ function  requete(callback){
     }
   };
 
-  xhr.open("GET", "api/miseAjourJeu.php?id="+idG, true); // on les cherche dans le fichier php/test.php
+  xhr.open("GET", "api/miseAjourJeu.php?id="+idG, true); // on les cherche dans le fichier api/miseAjourJeu
   xhr.send(null);
 }
 function removeCaseCard(etat) {
@@ -166,8 +166,7 @@ function addDeck(increment) {
     return a - b
   });
 
-  //xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1="+allCards[0+increment].donneID()+"&idC2="+allCards[1+increment].donneID()+"&idC3="+allCards[2+increment].donneID()+"&idC4="+allCards[3+increment].donneID()+"&idC5="+allCards[4+increment].donneID());
-  xhr.open("GET", "php/historiqueAjax.php?func=addNewDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4]);
+  xhr.open("GET", "api/historiqueAjax.php?func=addNewDeck&idC1=" + tabID[0] + "&idC2=" + tabID[1] + "&idC3=" + tabID[2] + "&idC4=" + tabID[3] + "&idC5=" + tabID[4]);
   xhr.send();
 }
 
