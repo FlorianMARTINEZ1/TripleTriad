@@ -22,7 +22,7 @@
                   <div class="col s12 m12">
                       <div class="card white darken-1">
                           <div class="card-content black-text">
-                              <span class="card-title">'. htmlspecialchars($j->get('nom')) .' '. htmlspecialchars($j->get('prenom')) .'</span>
+                              <span class="card-title">'. htmlspecialchars($j->get('login')).'</span>
                               <p>Login: '.htmlspecialchars($j->get('login')).'</p>
                               <p>Nom: '.htmlspecialchars($j->get('nom')).'</p>
                               <p>Prénom: '.htmlspecialchars($j->get('prenom')).'</p>

@@ -317,6 +317,12 @@
     }
     if($view == "list" && ($controller== "joueur" || $controller == "carte")){
       	echo	'<script src="./script/searchBar.js"></script>';
+        if($controller == "carte"){
+          echo '<script src="./script/deckList.js"></script>';
+        }
+    }
+    if($controller == "deck" && $view == "list"){
+        echo '<script src="./script/deck.js"></script>';
     }
     if($view == "Accueil"){
       echo  '<script type="text/javascript" src="./script/Accueil.js"></script>';

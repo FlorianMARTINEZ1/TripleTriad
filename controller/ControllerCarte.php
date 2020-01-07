@@ -7,12 +7,14 @@ class ControllerCarte{
   protected static $object = 'carte';
 
   public static function readAll(){
+    require_once File::build_path(array('model','ModelCategorieDeck.php'));
     if(Session::is_admin()){
       if(!is_null(myGet("deck"))){
           $tab_c = ModelCarte::selectAllWithDeck(myGet("deck"));
       }else{
           $tab_c = ModelCarte::selectAll();
       }
+      $tab_deck = ModelCategorieDeck::selectAll();
       $controller = 'carte';
       $view = 'list';
       $pagetitle = 'Liste des cartes';
