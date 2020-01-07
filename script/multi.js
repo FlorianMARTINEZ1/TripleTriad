@@ -63,7 +63,7 @@ function lireDonnee(sData) {
     var casee = document.getElementsByClassName(jouecase)[0];
     casee.removeAttribute('ondrop');
     casee.removeAttribute('ondragover');
-    confrontation(img,jouecase);
+    g2.confrontation(img,jouecase);
     g2.setTurn();
     console.log("current = "+g2.currentPlayer);
     /*g2.currentPlayer==0;*/
@@ -230,3 +230,15 @@ function envoieDonner(etat) {
   xhr.open("GET", "api/envoieDonner.php?case="+casejouer+"&carte="+idCarteJoue+"&id="+idG+"&log="+log,true);
   xhr.send();
 }
+$(function(){
+  $.post(
+          "api/quitteFile.php",
+          {
+              log : document.getElementById("loginSession").innerHTML,
+          },
+          function(){},
+          "text",
+    );
+
+
+});

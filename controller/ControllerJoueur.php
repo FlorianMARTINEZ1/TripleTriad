@@ -84,7 +84,7 @@ class ControllerJoueur {
    }
 
     public static function ChoixHerbergement(){
-      if(Session::is_admin()){
+      if(isset($_SESSION["login"])){
         $controller='joueur';
         $view='ChoixModePartie';
         $pagetitle='Choix partie';

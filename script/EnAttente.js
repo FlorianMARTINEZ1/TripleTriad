@@ -1,6 +1,7 @@
 var sec = 0;
 var min = 0;
 var nbr = 0;
+var lancer = 0;
 var challenger = "";
 
 function getRandomIntInclusive(min, max) {
@@ -23,6 +24,15 @@ setInterval(function() {
     } else {
         document.getElementById("h4").innerHTML = "Temps d'attente ... " + min + " minutes et " + sec + " sec.";
     }
+    let chall = document.querySelector("#papa");
+    let nbrchild = chall.childElementCount;
+    if(nbrchild > 0){
+        challenge(Data);
+    }
+    else{
+      console.log("Personne dans la file d'attente");
+    }
+
 }, 1000);
 
 function accepte(callback) {
@@ -44,7 +54,8 @@ function quitteFile(etat) {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) { // Si la requete fonctionne ( renvoie un code de 200 )
         }
     };
-    xhr.open("GET", "./index.php?action=quitteFile&controller=joueur", true); // on les cherche dans le fichier php/test.php
+    alert("Partie trouvée ! Veuillez attendre quelques secondes avant d'être redirigé.")
+    xhr.open("GET", "api/quitteFile.php?log="+ document.getElementById("joueurActu").innerHTML, true); // on les cherche dans le fichier php/test.php
     xhr.send(null);
 }
 
@@ -102,19 +113,19 @@ function DataAccepte(sData) {
         // si la partie existe
         if (donnes[0]["challenger"] == document.getElementById("joueurActu").innerHTML || donnes[0]["challenged"] == document.getElementById("joueurActu").innerHTML) {
             // si le joueur fait partie de la game accepté
-            alert("Partie trouvé ! ");
-            quitteFile(1);
-            window.location = './?action=EnLigne';
+
+            if(lancer == 0){
+               quitteFile(1);
+               lancer = 2;
+            }
+
+            setTimeout(function(){
+              window.location = './?action=EnLigne&controller=game';
+            },4000);
+
         }
     }
 }
-
-
-setInterval(function() {
-    challenge(Data);
-}, 3000);
-
-
 
 
 function lectureDonnee(sData) {

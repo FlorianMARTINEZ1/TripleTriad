@@ -46,7 +46,6 @@ function readData(sData) { // initalise les cartes pour le jeu
     var tabId = [];
     if(multi){
       currentP = parseInt(document.getElementById("choix").innerHTML);
-      console.log("test = "+currentP)
     }
     valeurJ1 = 0;
     valeurJ2 = 0;
@@ -128,10 +127,7 @@ function readData(sData) { // initalise les cartes pour le jeu
     }
     else { // DEUXIEME PARTIE = DECK J2
       if(multi){ // JEU MULTI
-        console.log(currentP);
-        console.log(" currenP == 1 ? : "+currentP==1);
         if(currentP == 1){
-          console.log("je suis pas rentrer mdr");
           tabElement[i] = document.getElementById("drag"+(i-4));
           tabElement[i].setAttribute("src","css/cartes/"+tabCartes[i].donneSource()+"/" + tabCartes[i].donneNom() + ".bleue.jpg");
           tabElement[i].setAttribute("class", tabCartes[i].donneID());
