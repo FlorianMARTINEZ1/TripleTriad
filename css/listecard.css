@@ -1,5 +1,6 @@
 #check-card {
-    width: 40%;
+    width: 45%;
+    margin-bottom: 30px;
 }
 
 #check-card .card {
@@ -12,6 +13,12 @@ div.col label {
     font-size: 12px;
 }
 
+div#check-it.row {
+    margin: 0;
+}
+
+
+/*
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
     height: 20px;
@@ -20,7 +27,29 @@ div.col label {
     opacity: 1;
     pointer-events: all;
 }
+*/
 
 div.recherche {
     display: block;
+    background: rgba(34, 61, 68, 0.75) !important;
+}
+
+div.recherche:hover {
+    background: rgba(39, 138, 163, 0.75) !important;
+}
+
+div.recherche .card {
+    background: rgba(34, 61, 68, 0.75) !important;
+}
+
+div.recherche .card .card-action a {
+    margin: 0 !important;
+}
+
+div.recherche .card .card-action a:first-child {
+    margin-right: 20px !important;
+}
+
+div.recherche .card img {
+    margin: auto;
 }

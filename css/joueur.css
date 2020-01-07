@@ -4,14 +4,30 @@
     background-color: white;
     top: -9px;
     position: relative;
-    color: black;
     display: none;
     opacity: 1;
     transition: opacity;
 }
 
-#listJoueurs .recherche a {
-    color: #3c6b77;
+div.recherche {
+    display: block;
+    background: rgba(34, 61, 68, 0.75) !important;
+}
+
+div.recherche:hover {
+    background: rgba(39, 138, 163, 0.75) !important;
+}
+
+div.recherche .card {
+    background: rgba(34, 61, 68, 0.75) !important;
+}
+
+div.recherche .card .card-action a {
+    margin: 0 !important;
+}
+
+div.recherche .card .card-action a:first-child {
+    margin-right: 20px !important;
 }
 
 #listCard {
@@ -37,10 +53,6 @@ div#listCard,
 #listsearch {
     top: -14px;
     position: relative;
-}
-
-.recherche:hover {
-    background-color: #3c6b77;
 }
 
 
@@ -142,11 +154,23 @@ legend {
 }
 
 #listJoueurs .row {
-    width: 30%;
+    width: 26%;
 }
 
 #listJoueurs div {
     height: auto;
+}
+
+.card-content .card-title {
+    color: rgb(195, 195, 195);
+}
+
+span#login,
+span#nom,
+span#prenom,
+span#mail {
+    margin-right: 8px;
+    text-decoration: underline;
 }
 
 

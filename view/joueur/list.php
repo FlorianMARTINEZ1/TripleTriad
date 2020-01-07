@@ -18,15 +18,15 @@
         <?php
         foreach ($tab_j as $j)
             echo'
-              <div class="row recherche" id="'.htmlspecialchars($j->get('login')).'" style="display:block; ">
+              <div class="row recherche" id="'.htmlspecialchars($j->get('login')).'">
                   <div class="col s12 m12">
-                      <div class="card white darken-1">
-                          <div class="card-content black-text">
-                              <span class="card-title">'. htmlspecialchars($j->get('login')).'</span>
-                              <p>Login: '.htmlspecialchars($j->get('login')).'</p>
-                              <p>Nom: '.htmlspecialchars($j->get('nom')).'</p>
-                              <p>Prénom: '.htmlspecialchars($j->get('prenom')).'</p>
-                              <p>Mail: '.htmlspecialchars($j->get('mail')).'</p>
+                      <div class="card">
+                          <div class="card-content white-text">
+                              <span class="card-title center">'. htmlspecialchars($j->get('login')).'</span>
+                              <p><span id="login">Login:</span>'.htmlspecialchars($j->get('login')).'</p>
+                              <p><span id="nom">Nom:</span>'.htmlspecialchars($j->get('nom')).'</p>
+                              <p><span id="prenom">Prénom:</span>'.htmlspecialchars($j->get('prenom')).'</p>
+                              <p><span id="mail">Mail:</span>'.htmlspecialchars($j->get('mail')).'</p>
                           </div>
                           <div class="card-action">
                               <a href="./index.php?controller=joueur&action=update&login='.rawurlencode($j->get('login')).'">Modifier</a>
