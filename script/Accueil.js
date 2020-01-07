@@ -15,7 +15,8 @@ $(function() {
 
     $('<div />').attr({
         id: "retour",
-    }).html('<a href="#" style="color : white"><i class="material-icons">keyboard_backspace </i></a>').appendTo($(".regle"));
+        class: "center",
+    }).html('<a href="#"style="color : white"><i class="material-icons">keyboard_backspace </i></a>').appendTo($(".regle"));
 
     var retour = $("#retour");
 
