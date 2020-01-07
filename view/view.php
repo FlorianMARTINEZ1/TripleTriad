@@ -48,11 +48,11 @@
     if ($controller == 'carte' && $view == 'list') {
       echo '<link rel="stylesheet" type="text/css" href="./css/listecard.css">';
   }
-    if($view == 'historique'||$view == 'Classement')
+    if($view == 'historique'||$view == 'classement')
     {
       echo '<link rel="stylesheet" type="text/css" href="./css/pagination.css">';
     }
-    if($view == 'Classement')
+    if($view == 'classement')
     {
       echo '<link rel="stylesheet" type="text/css" href="./css/leaderboard.css">';
     }
