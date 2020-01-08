@@ -190,6 +190,7 @@ nav.brand-logo,
     width: 35vw;
     text-align: center;
     background-color: transparent;
+    border-radius: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
