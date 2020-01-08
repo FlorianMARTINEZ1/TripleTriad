@@ -11,7 +11,7 @@ if(isset($_POST["id"])){
   echo "Success";
 }
 else if(isset($_GET["log"])){
-  $j = ModelJoueur::select("log");
+  $j = ModelJoueur::select($_GET["log"]);
   $id = $j->get("joue");
   ModelGame::AttenteConfirmation($id);
 }

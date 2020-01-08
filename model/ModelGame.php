@@ -242,12 +242,18 @@ class ModelGame extends Model{
     }
 
     public static function attenteConfirmation($id){
-      $sql = 'SELECT * from game WHERE id = \''.$id.'\';';
+      $sql = 'SELECT * from game WHERE id = :id;';
       // Préparation de la requête
 
-      $rep = Model::$pdo->query($sql);
+      $rep = Model::$pdo->prepare($sql);
 
-      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+      $values = array(
+          "id" => $id
+      );
+
+      $rep->execute($values);
+
+    /*  $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");*/
       echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
 
     }
