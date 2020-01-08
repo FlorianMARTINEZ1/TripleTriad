@@ -266,6 +266,7 @@ class ModelGame extends Model{
     public static function createGame($log,$code,$autre){
       require_once "ModelJoueur.php";
       try{
+
       $joueurChallenger = ModelJoueur::select($log);
 
       if($joueurChallenger == false){
@@ -280,21 +281,22 @@ class ModelGame extends Model{
                     'challenged' => $autre,
                     'etat' => 'demande',
                     'code' => $code,
-                    'plateau' => 'ca va se faire'
+                    'plateau' => 'ca va se faire',
       );
-
       $value = parent::save($data);
 
-      $joueur = ModelJoueur::select($challenger);
+      $joueur = ModelJoueur::select($log);
 
-      $sql = 'SELECT * from game WHERE id = \''.$joueur->get("joue").'\';';
+      $sql = 'SELECT * from game WHERE id = :id';
       // Préparation de la requête
+      $values = array('id' => $joueur->get("joue"),);
+      $req_prep = Model::$pdo->prepare($sql);
+      $req_prep->execute($values);
 
-      $rep = Model::$pdo->query($sql);
 
-      $rep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
-      $tab = $rep->fetchAll();
-      echo json_encode($rep->fetchAll(PDO::FETCH_ASSOC));
+      $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelGame");
+      $tab = $req_prep->fetchAll();
+      echo json_encode($req_prep->fetchAll(PDO::FETCH_ASSOC));
 
       if($value == false){
         throw new Exception('<br />Une erreur c\'est produite durant la sauvegardes');
