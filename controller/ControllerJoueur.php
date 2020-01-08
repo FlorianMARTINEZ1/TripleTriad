@@ -169,7 +169,7 @@ class ControllerJoueur {
     public static function read(){
 
       $log =  myGet('login');
-      if(Session::is_user($log)){
+      if(Session::is_user($log) || Session::is_admin()){
           $controller='joueur';
           $view='detail';
           $pagetitle='Mon compte';

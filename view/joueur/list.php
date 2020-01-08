@@ -30,6 +30,7 @@
                           </div>
                           <div class="card-action">
                               <a href="./index.php?controller=joueur&action=update&login='.rawurlencode($j->get('login')).'">Modifier</a>
+                              <a href="./index.php?controller=joueur&action=read&login='.rawurlencode($j->get('login')).'">Statistique</a>
                               <a href="./index.php?controller=joueur&action=delete&login='.rawurlencode($j->get('login')).'">Supprimer</a>
                           </div>
                       </div>
