@@ -1,11 +1,12 @@
 div#form-create {
     width: 50%;
+    color: #ececec;
 }
 
 form#create-card {
     padding: 2% 10%;
     margin-top: 5%;
-    background-color: #569399c0;
+    background: rgba(34, 61, 68, 0.8);
     border-radius: 40px;
 }
 
@@ -24,7 +25,7 @@ fieldset#fieldcreate legend {
 }
 
 fieldset#fieldcreate label {
-    color: #000;
+    color: #ececec;
     font-size: 16px;
 }
 
@@ -33,7 +34,7 @@ fieldset#fieldcreate input {
 }
 
 fieldset#fieldcreate input::placeholder {
-    color: rgb(63, 63, 63);
+    color: rgb(161, 161, 161);
     text-align: center;
 }
 
@@ -47,21 +48,29 @@ div#locaCard {
 }
 
 button.btn-rand {
-  background-color: #bdcbdb; /* Green */
-  border: none;
-  color: #000;
-  height: 30px;
-  width: 130px;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition: 0.5s;
+    background: rgb(44, 85, 95);
+    border: none;
+    color: #ececec;
+    height: 30px;
+    width: 130px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+input[type="file"] {
+    color: #ececec;
 }
 
 button.btn-rand:hover {
     transform: translateY(-5px);
     box-shadow: 0 2px 5px #000;
+}
+
+#locaCard ul {
+    background: rgba(10, 24, 40);
 }

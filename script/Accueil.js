@@ -8,7 +8,7 @@ $(function() {
     var anciendeck;
     var nomMode;
     var tabDeck = [$(".deck").length];
-    var backgr = $(".backgr");
+
     $(".deck").each(function(index) {
         tabDeck[index] = $(this).attr("href");
     });
@@ -25,7 +25,7 @@ $(function() {
             elem1.css({ display: "none", opacity: "1" });
             elem2.css({ display: "block", opacity: "0" }).animate({ 'opacity': 1 }, 500);
         });
-        backgr.animate({ 'height': '550px' }, 500);
+
     }
 
     function retourAppartion() {
@@ -99,7 +99,7 @@ $(function() {
                 anime($(".noneMulti"), $(".row:first"));
             }
             retour.animate({ 'opacity': 0 }, 500, function() { retour.css({ display: "none", opacity: "1" }); });
-            backgr.animate({ 'height': '500px' }, 500);
+
         }
     });
 

@@ -11,40 +11,25 @@
     src: url('final_fantasy/FinalFantasyElements.TTF');
 }
 
-div.backgr {
-    position: fixed;
-    margin-top: 4%;
-    top: 42%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 500px;
-    width: 1024px;
-    background-color: #223d44;
-    opacity: 0.8;
-    border-radius: 40px;
-    margin-top: 80px;
-}
-
 nav {
     background-color: rgba(34, 61, 68, 0.4);
-}
-
-div.principale {
-    position: fixed;
-    margin-top: 4%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 600px;
-    width: 1024px;
-    /*  margin: 0;*/
-    background-color: transparent;
-    box-shadow: none;
 }
 
 div.card {
     background-color: transparent;
     color: white;
+}
+
+div.principale {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1024px;
+    /*  margin: 0;*/
+    background: rgba(32, 58, 65, 0.8);
+    box-shadow: none;
+    border-radius: 40px;
 }
 
 div.modeJeu,

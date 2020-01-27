@@ -1,5 +1,4 @@
 <div class="container">
-  <div class="backgr"></div>
   <div class="card principale">
     <div class="card-content">
       <h3 class="center spe">f</h3>
