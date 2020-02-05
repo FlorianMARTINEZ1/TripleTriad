@@ -99,7 +99,7 @@
             }
         }
         $ClassementTrié = array_sort($tabClassement, 'COUNT(*)', SORT_DESC);
-        echo '<div class="contain white-text"><p>Place</p><p id="titre-leaderboard">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div>';
+        echo '<div class="contain white-text"><p>Place</p><p id="titre-leaderboard">Nom </p><p>Nombre de parties';if(isset($_GET['win'])&&$_GET['win']==1){echo' gagnées';}echo'</p></div><div id="leadboard">';
         
         $i = 1;
         foreach($ClassementTrié as $value)
@@ -120,7 +120,7 @@
         }
 
 
-        echo '<div class="center">
+        echo '</div><div class="center">
         <div class="pagination">';
         if($page >1){
         echo '<a href="index.php?action=classement';

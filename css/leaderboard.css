@@ -24,10 +24,11 @@ h3 {
 }
 
 .contain {
-    padding: 2px;
+    padding: 5px 15px;
     display: flex;
-    width: 40%;
+    width: 42%;
     margin: auto;
+    background: rgba(34, 61, 68, 0.6);
 }
 
 .name {
