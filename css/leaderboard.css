@@ -1,13 +1,13 @@
 #place1 {
-    background: rgba(255, 255, 0);
+    background: rgba(255, 223, 0, 0.8);
 }
 
 #place2 {
-    background: rgb(200, 200, 200);
+    background: rgb(170, 167, 159, 0.8);
 }
 
 #place3 {
-    background: rgba(185, 114, 45);
+    background: rgba(170, 118, 71, 0.8);
 }
 
 h3 {
@@ -31,6 +31,10 @@ h3 {
     background: rgba(34, 61, 68, 0.6);
 }
 
+#leadboard .contain:nth-child(n+4) {
+    color: #fff;
+} 
+
 .name {
     flex-grow: 1;
     padding-left: 10%;
@@ -49,7 +53,7 @@ p {
 }
 
 .logged {
-    border: solid 2px;
+    border: solid 3px #e3e3e3  ;
 }
 
 .buttons {
