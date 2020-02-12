@@ -8,7 +8,7 @@ $(function() {
     var anciendeck;
     var nomMode;
     var tabDeck = [$(".deck").length];
-    var regle = document.getElementById("main_card");
+    var bckgrnd = document.getElementsByClassName("regle");
 
     $(".deck").each(function(index) {
         tabDeck[index] = $(this).attr("href");
@@ -26,12 +26,13 @@ $(function() {
             elem1.css({ display: "none", opacity: "1" });
             elem2.css({ display: "block", opacity: "0" }).animate({ 'opacity': 1 }, 500);
         });
-        regle.css({ height : "425px" }).animate({ 'height': '525px' }, 500);
+        bckgrnd[0].animate({ 'height': '500px' }, 500);
 
     }
 
     function retourAppartion() {
         retour.css({ display: "block", opacity: "0" }).animate({ 'opacity': 1 }, 500);
+        bckgrnd[0].animate({ 'height': '450px' }, 500);
     }
 
     local.on("click", function(e) {
