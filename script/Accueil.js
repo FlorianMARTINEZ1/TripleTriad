@@ -8,6 +8,7 @@ $(function() {
     var anciendeck;
     var nomMode;
     var tabDeck = [$(".deck").length];
+    var regle = document.getElementById("main_card");
 
     $(".deck").each(function(index) {
         tabDeck[index] = $(this).attr("href");
@@ -25,6 +26,7 @@ $(function() {
             elem1.css({ display: "none", opacity: "1" });
             elem2.css({ display: "block", opacity: "0" }).animate({ 'opacity': 1 }, 500);
         });
+        regle.css({ height : "425px" }).animate({ 'height': '525px' }, 500);
 
     }
 

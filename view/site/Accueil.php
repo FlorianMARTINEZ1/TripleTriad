@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card principale">
+  <div id="main_card" class="card principale">
     <div class="card-content">
       <h3 class="center spe">f</h3>
       <div class="regle">

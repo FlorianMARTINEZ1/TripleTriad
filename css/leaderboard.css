@@ -27,8 +27,8 @@ h3 {
     padding: 5px 15px;
     display: flex;
     width: 42%;
-    margin: auto;
-    background: rgba(34, 61, 68, 0.6);
+    margin: 5px auto;
+    background: rgba(120, 164, 176, 0.3);
 }
 
 #leadboard .contain:nth-child(n+4) {
